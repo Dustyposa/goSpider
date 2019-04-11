@@ -28,7 +28,7 @@ hey，今天我又要去干活了，而且好像今天的活比较轻松。今�
 ```
 import requests
 
-url = "http://www.baidu.com
+url = "http://www.baidu.com"
 response = requests.get(url)
 print(response.text)
 ```
