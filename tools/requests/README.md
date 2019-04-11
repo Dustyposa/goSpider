@@ -1,9 +1,9 @@
- requests 强大的请求工具 
+ ## requests 强大的请求工具 
  - [请求](https://github.com/Dustyposa/goSpider/tree/master/tools/requests#请求)
     + [请求头通用参数](https://github.com/Dustyposa/goSpider/tree/master/tools/requests#通用请求参数)
-    + [Get请求](https://github.com/Dustyposa/goSpider/tree/master/tools/requests#1.Get请求)
-    + [Post请求](https://github.com/Dustyposa/goSpider/tree/master/tools/requests#2.Post请求)
-    + [其他请求](https://github.com/Dustyposa/goSpider/tree/master/tools/requests#3.其他请求(作用Restful接口))
+    + [Get请求](https://github.com/Dustyposa/goSpider/tree/master/tools/requests#1-get-请求)
+    + [Post请求](https://github.com/Dustyposa/goSpider/tree/master/tools/requests#2-post-请求)
+    + [其他请求](https://github.com/Dustyposa/goSpider/blob/master/tools/requests/README.md#3-%E5%85%B6%E4%BB%96%E8%AF%B7%E6%B1%82%E4%BD%9C%E7%94%A8-restful-%E6%8E%A5%E5%8F%A3)
  - [响应](https://github.com/Dustyposa/goSpider/tree/master/tools/requests#响应)
     + [状态码](https://github.com/Dustyposa/goSpider/tree/master/tools/requests#状态码)
     + [文本内容](https://github.com/Dustyposa/goSpider/tree/master/tools/requests#文本内容)
