@@ -2,5 +2,4 @@
 ## 练习分类
  - 解析练习
     - [豆瓣电影Top100]()
-      - 进行正则，Beautiful4，xpath，pyquery，scrapy混合解析器的解析练习
-      
+      - 进行正则，BeautifulSoup4，xpath，pyquery，scrapy混合解析器的解析练习
