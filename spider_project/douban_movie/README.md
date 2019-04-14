@@ -6,9 +6,9 @@ https://movie.douban.com/tag/Top100
 ### 1. [分析网页](#1-分析网页确认爬取目标的数据类型)  # 需要的数据请求地址分析
 ### 2. [正则提取](#1-正则提取)  # 正则提取所须数据
 ### 3. [Css选择器提取](#2-beautifulsoup-css选择器-提取)  # 利用BeautifulSoup4 进行提取
-### 4. [Xpath选择器提取](#douban_movie#3-xpath-提取)  # 利用lxml的etree模块进行xpath提取
-### 5. [jQuery提取](#4-pyquery的数据提取)  # 有前端的知识的朋友应该很熟悉,利用的是pyquery模块,节点选择语法与jQuery一致
-### 6. [Scrapy 混合提取器](#douban_movie#5-scrapy-混合提取)  # 利用scrapy的Selector模块进行混合提取
+### 4. [Xpath选择器提取](#3-xpath-提取)  # 利用lxml的etree模块进行xpath提取
+### 5. [jQuery提取](#4-pyquery-的数据提取)  # 有前端的知识的朋友应该很熟悉,利用的是pyquery模块,节点选择语法与jQuery一致
+### 6. [Scrapy 混合提取器](#5-scrapy-混合提取)  # 利用scrapy的Selector模块进行混合提取
 ### 7. [总结](#总结)
 #### [完整代码](./douban_spider.ipynb)
 
