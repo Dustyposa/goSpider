@@ -1,8 +1,8 @@
 ### 本项目主要想通过一系列有趣的故事来教你学习爬虫和网络知识。不同于其他的爬虫教程，直接上代码或者一句话带过的网络知识。相信你能对爬虫有更深的认知。
-![](https://img.shields.io/badge/language-swift-orange.svg)
-PS1: 网络知识和故事正在构思中,目前的story只是半成品,如果你有任何idea请务必与我联系.
-PS2: 如果你现在有需要我们提前加入的内容也可以提前说哦.
-#### important_PS:如果你喜欢该项目,请手动点一下🌟哦！
+![](https://img.shields.io/badge/language-swift-orange.svg)  
+PS1: 网络知识和故事正在构思中,目前的story只是半成品,如果你有任何idea请务必与我联系.  
+PS2: 如果你现在有需要我们提前加入的内容也可以提前说哦.  
+#### important_PS:如果你喜欢该项目,请手动点一下🌟哦！  
 
 
 - spider_project  # 项目时少不了的
