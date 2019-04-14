@@ -3,7 +3,7 @@
 这里主要放置常用的爬虫工具集合，示例以 notebook的形式展示，主要用于快速上手
 ---
 #### 请求类
-- [requests](https://github.com/Dustyposa/goSpider/tree/master/tools/requests#%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8)
+- [requests](./requests#%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8)
 #### 解析类
 - [xpath]()
 - [beautiful]()
