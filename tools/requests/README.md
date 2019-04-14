@@ -1,14 +1,14 @@
  ## requests 强大的请求工具 
- - [请求](./requests#请求)
-    + [请求头通用参数](./requests#通用请求参数)
-    + [Get请求](./requests#1-get-请求)
-    + [Post请求](./requests#2-post-请求)
-    + [其他请求](./requests/README.md#3-其他请求作用-restful-接口)
- - [响应](./requests#响应)
-    + [状态码](./requests#状态码)
-    + [文本内容](./requests#文本内容)
-    + [json对象](./requests#json对象)
-    + [二进制内容](./requests#二进制内容)
+ - [请求](#请求)
+    + [请求头通用参数](#通用请求参数)
+    + [Get请求](#1-get-请求)
+    + [Post请求](#2-post-请求)
+    + [其他请求](/README.md#3-其他请求作用-restful-接口)
+ - [响应](#响应)
+    + [状态码](#状态码)
+    + [文本内容](#文本内容)
+    + [json对象](#json对象)
+    + [二进制内容](#二进制内容)
  
 ---
 ## 请求
