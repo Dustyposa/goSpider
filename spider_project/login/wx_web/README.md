@@ -126,7 +126,7 @@ session = requests.session()
 
 
 
-![png](output_14_0.png)
+![png](./images/output_14_0.png)
 
 
 
