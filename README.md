@@ -8,6 +8,8 @@ PS2: 如果你现在有需要我们提前加入的内容也可以提前说哦.
 - spider_project  # 项目时少不了的
    - 数据提取项目
       - [豆瓣top100多提取器提取](./spider_project/douban_movie/)
+   - 登录练习
+      - [微信网页登录](./spider_project/login/wx_web)
 - spider_story  # 故事+学习，详细你会喜欢
   + [爬虫和网络..待补完](./spider_story/first_day.md)
 - tools  # 爬虫工具，让你事半功倍
