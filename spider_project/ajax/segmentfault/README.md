@@ -62,7 +62,7 @@ https://segmentfault.com/
 ```
 #### 获取首页数据
     定义首页获取函数 `get_data`：
-    ```python
+
     def get_data(url):
     
         response = requests.get(url)
@@ -75,60 +75,53 @@ https://segmentfault.com/
     data = get_data(url)  # 获取数据
     data_res = {}  # 存储数据的初始化字典
     data # 查看数据
-    ```
-    ```
+
+输出结果如下：
+
     \n<!DOCTYPE HTML><html lang="zh-CN"><head><meta charset="UTF-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1"/><meta name="renderer" content="webkit"/><meta property="qc:admins" content="15317273575564615446375"/><meta property="og:image" content="https://static.segmentfault.com/v-5c8b4d77/global/img/t
     ......
-    ```
 
 ####  Scrapy 提取首页数据 
    - scrapy 混合提取，个人习惯，选用该提取方式
     
-    ```python
-    >>> from scrapy import Selector  # 导入scrapy的选择器
-    ```
-    ```python
-    se = Selector(text=data)
-    ```
+
+    >>> from scrapy import Selector
+    >>> from urllib import parse  # 用于url合并的工具
+        
+初始化选择器
     
-    
-    
-    ```python
+
     >>> se = Selector(text=data)
-    ```
-    
-    #### 提取规则说明 从下方案例可以看出,scrapy的提取器,css和xpath,以及正则提取都是支持的,我们可以混用  
-       - .css()  # 就是css规则的提取
-       - .xpath()  # 就是xpath规则的提取,需要注意的是,因为scrapy的Selector支持混用,如果xpath是在某个提取器之后,那么必须使用"./"来跟进上个提取器的提取点,不能使用"//", 因为Selector 的xapth提取器的"//"永远代表根节点
-           - response.css("#id").xpath("./a")  # 该规则表示id="id" 的节点**之后**的所有a标签节点
-           - response.css("#id").xpath("//a")  # 改规则就变成了提取所有的a标签节点,前面的css选择器的结果失效.
-       - .re()  # 就是正则的提取, 正则提取后,不需要用extract()来转化成str类型
-       - extract()  # 将当前的选择结果转化成str类型  
+
+用混合提取器提取数据
     
     
-    ```python
-    >>> poster = se.css(".nbg img").xpath("./@src").extract()  # 获取海报
-    >>> movie_name = se.css("div.pl2").xpath("./a/text()").re("\w+")  # 获取电影名
-    >>> other_name = se.css("div.pl2").xpath("./a/span/text()").extract()  # 获取电影别名
-    >>> time_actor = se.css("div.pl2").xpath("./p/text()").extract()  # 获取上映日期和演员
-    >>> score = se.css("span.rating_nums::text").extract()  # 获取评分
-    >>> comment_people = se.xpath('//span[@class="pl"]/text()').extract()  # 获取评分人数
-    >>> movie_data = {}
-    ```
     
+
+    >>> se = Selector(text=data)
+提取比较简单，规则如下：
     
-    ```python
-    for p, m, o, t, s, c in zip(poster, movie_name, other_name, time_actor, score, comment_people):
-        release_time, actor = get_time_actor(t)
-        movie_data.update({m: {"poster": p, "movie_name": m, "other_name": t, "release_time": release_time, "actor": actor, "score": s, "comment": c}})
-    print(movie_data)
-    ```
-    ```
-        {
-        '辛德勒的名单': {'poster': 'https://img3.doubanio.com/view/photo/s_ratio_poster/public/p492406163.jpg', 'movie_name': '辛德勒的名单', 'other_name': '1993-11-30(华盛顿首映) / 1994-02-04(美国) / 连姆·尼森 / 本·金斯利 / 拉尔夫·费因斯 / 卡罗琳·古多尔 / 乔纳森·萨加尔 / 艾伯丝·戴维兹 / 马尔戈萨·格贝尔 / 马克·伊瓦涅 / 碧翠斯·马科拉 / 安德烈·瑟韦林 / 弗里德里希·冯·图恩 / 克齐斯茨托夫·拉夫特...', 'release_time': ['1993-11-30(华盛顿首映)', '1994-02-04(美国)'], 'actor': ['连姆·尼森', '本·金斯利', '拉尔夫·费因斯',
-        ......
-        }
-    ```
+
+
+    items = se.css(".news__item-info.clearfix")
+    for item in items:
+        title = item.xpath(".//h4/text()").extract_first()  # 获取文章标题
+        content = item.css(".article-excerpt::text").extract_first().strip()  # 获取文章描述
+        content_url = item.xpath("./a/@href").extract_first()  # 获取文章url
+        print(title)
+        print(content)
+        print(parse.urljoin(url,content_url))  # 合并url，形成完整的url
+        print()
+
+输出结果如下：  
+(这里我们就不保存数据了，保存数据可以自行尝试。)
+
+    基于socket.io快速实现一个实时通讯应用
+    随着web技术的发展，使用场景和需求也越来越复杂，客户端不再满足于简单的请求得到状态的需求。实时通讯越来越多应用于各个领域。
+    https://segmentfault.com/a/1190000018944634
+    ......
+#### requests 获取推荐数据
+
 
 ## 总结
 以上就是我们该次提取练习的所有内容,以豆瓣电影top100的响应为例,我们讲解了常用的5种提取器.  
@@ -139,12 +132,7 @@ https://segmentfault.com/
    -  "\\w" 表示正常字符,比如英文字母,中文等常见文字
    - ".+"  表示至少匹配一次任意字符  
 
-**2. css**  
-- "." 表示class 
-- " "表示子孙节点  
-- img 就是img节点  
-- a 就是a节点
-- "#abd" 表示 id="abc"的节点
+
 
 
 #### [完整代码](./douban_spider.ipynb)
