@@ -9,6 +9,7 @@ python多线程爬虫实例
 ---
    - [豆瓣top250多线程抓取源码](./douban_top250.py)（源码较简单，如果需要解析的话请提issue，回头填坑）
     ![豆瓣movieTop250](./mul_example/douban250.gif)
+    
 python 多线程的实现
 ---
 #### 1. 让一个函数同时执行多次
