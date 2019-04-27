@@ -121,18 +121,44 @@ https://segmentfault.com/
     https://segmentfault.com/a/1190000018944634
     ......
 #### requests 获取推荐数据
-
+   1. 首先我们查看一下请求`recommend`接口的参数，如下图：
+    ![推荐参数](./images/recmmend.png)
+   2. 我们用以下代码，生成该请求头:  
+       ```python
+      >>> _ = "100f22ae30d035f334a31542ea388b4d"  # Get请求参数
+      >>> params = {"_": _}
+      >>> headers = {
+      >>>     "cookie": "PHPSESSID=web2~mi7pa9ed552n7vfmpcslr5i6va",  # 必带
+      >>>     "referer": "https://segmentfault.com/",  # 必带,常见反爬字段
+      >>> }
+   3. 请求数据，并获取需要的信息
+      ```python
+        >>> a_url = "https://segmentfault.com/api/timelines/recommend"  # 接口地址
+        >>> response = requests.get(a_url, params=params, headers=headers)
+        >>> response.json()  
+        ```
+        ```
+        'status': 0,
+        'data': [{'id': '1190000018895543',
+                   'url': '/a/1190000018895543',
+                   'createdDate': '4月17日',
+                   'votes': '51',
+                   'viewsWord': 865,
+                   'title': 'JavaScript中的原型与原型链',
+                   'status': '2',
+                   'excerpt': '前言 作为前端高频面试题之一，相信很多小伙伴都有遇到过这个问题。那么你是否清楚完整的了解它呢？ 国际惯例，让我们先抛出问题： 什么是原型、原型链 它们有什么特点 它们能做什么 怎么确定它们的关系 或许你已...'
+        ```
+        到这里就获得了字典数据，取数据就更简单了，直接用键索引即可：  
+        ```python
+        >>> response.json()["data"][0]["id]
+        ```
+        ```python
+        1190000018895543
+        ```
 
 ## 总结
-以上就是我们该次提取练习的所有内容,以豆瓣电影top100的响应为例,我们讲解了常用的5种提取器.  
-**1. 正则**  
-   - "." 表示任意非空格换行等字符
-   - ".*?"  表示贪婪匹配,最少匹配一次
-   - "()"  表示提取()中的内容
-   -  "\\w" 表示正常字符,比如英文字母,中文等常见文字
-   - ".+"  表示至少匹配一次任意字符  
+**以上就是我们获取数据的全过程，只要知道，如果请求目标网址后没有获取到页面的数据，那么一种可能就是这种ajax请求即可。**
 
 
 
-
-#### [完整代码](./douban_spider.ipynb)
+#### [完整代码](./example.ipynb)
