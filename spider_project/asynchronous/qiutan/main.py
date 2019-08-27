@@ -1,7 +1,9 @@
 import random
 import re
 import time
-from typing import Set
+from datetime import date
+from typing import Set, List, Tuple
+from itertools import starmap
 
 import requests
 
@@ -55,6 +57,8 @@ def get_all_catch_detail():
         rs = re.search(sub_sclass_pattern, response)
         assert rs is not None, f"search subsclass failed!\nresponse:{response}\nrs:{rs}"
         s_class_id, subs_class_id = rs.groups()
+        if s_class_id == "273":
+            subs_class_id = handle_australia_sclassid(s_class_id, subs_class_id)
         catch_detail_params.update(
             sclassId=s_class_id,
             subSclassId=subs_class_id,
@@ -102,8 +106,36 @@ def get_all_catch_oddlist(session, res_set, params, headers):
     print("已获取国家一年的所有比赛")
 
 
-def get_all_company_data():
-    base_url = "http://1x2d.win007.com/{}.js"
+def get_odds_data(mach_id: str) -> List[Tuple[str, str]]:
+    res_data = []
+    base_url = f"http://1x2d.win007.com/{mach_id}.js"
+    response = requests.get(base_url, headers=headers)
+    response.raise_for_status()
+    base_pattern = re.compile(r'var hometeam_cn = "(\w+)";.*?var guestteam_cn = "(\w+)";.*?var game = Array\((.*?)\);',
+                              re.S)
+    home_team_name, guest_team_name, all_games = base_pattern.groups()
+    iter_game = starmap(lambda x: x.strip('"'), all_games.split(", "))
+    for game in iter_game:
+        tmp_list = game.split("|")
+        company_name = tmp_list[-3]
+        if company_name in company_list:
+            data = company_list[1]
+            res_data.append((company_name, data))
+    return res_data
+
+
+def handle_australia_sclassid(sclassid: str, subsclassid: str):
+    today = date.today()
+    base_url: str = f"http://zq.win007.com/jsData/matchResult/{years}-{years+1}/" \
+        f"s{sclassid}_{subsclassid}.js?version={today.strftime('%Y%m%d')}"
+    res = requests.get(base_url, headers=headers)
+    res.raise_for_status()
+    pattern = re.compile(r"var arrSubLeague = \[\[\d+,'联赛'")
+    re_data = re.search(pattern, res.text)
+    if not re_data:
+        return sclassid
+    new_sclassid = re_data.group()
+    return new_sclassid
 
 
 if __name__ == "__main__":
@@ -113,7 +145,7 @@ if __name__ == "__main__":
                       "(KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36}",
     }
     years = 2019
-
-    db = MongoDb()
+    company_list = []
+    # db = MongoDb()
     # get_catch_urls()
-    get_all_catch_detail()
+    # get_all_catch_detail()
