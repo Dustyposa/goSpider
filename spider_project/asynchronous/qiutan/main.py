@@ -7,7 +7,7 @@ from itertools import starmap
 
 import requests
 
-from spider_project.asynchronous.qiutan.config import CATCH_LIST
+from spider_project.asynchronous.qiutan.config import CATCH_LIS, COMPANY_LIST
 from spider_project.asynchronous.qiutan.save_helper import MongoDb
 
 
@@ -118,8 +118,8 @@ def get_odds_data(mach_id: str) -> List[Tuple[str, str]]:
     for game in iter_game:
         tmp_list = game.split("|")
         company_name = tmp_list[-3]
-        if company_name in company_list:
-            data = company_list[1]
+        if company_name in COMPANY_LIST:
+            data = tmp_list[1]
             res_data.append((company_name, data))
     return res_data
 
@@ -144,8 +144,8 @@ if __name__ == "__main__":
         "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 "
                       "(KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36}",
     }
+
     years = 2019
-    company_list = []
     # db = MongoDb()
     # get_catch_urls()
     # get_all_catch_detail()
