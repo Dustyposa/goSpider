@@ -282,4 +282,4 @@ dangdangdang，答案就是：
 2. 客户端请求我们可以使用`requests_mock`来模拟，测试自己客户端处理响应的逻辑。
 3. 服务器端基本上所有框架都自带有 `test_client` 作为服务器测试客户端（不同框架名字可能不一样，具体参考文档）
 
-[完整代码地址]()
+[完整代码地址](https://github.com/Dustyposa/goSpider/tree/master/python_advance/%E4%BD%BF%E7%94%A8python%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%92%8C%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95%E5%AE%9E%E4%BE%8B)
