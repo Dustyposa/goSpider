@@ -28,7 +28,7 @@ from urllib import parse
 import requests
 
 
-MyResponse = typing.Dict[str, typing.List]
+MyResponse = typing.Dict[str, typing.List[str]]
 
 
 class MySpider:
@@ -69,6 +69,7 @@ class MySpider:
 ```python
 import typing
 import unittest
+from unittest import mock
 
 import requests
 import requests_mock
@@ -108,7 +109,7 @@ class TestMySpider(unittest.TestCase):
         response_data = {'data': []}
         self.assertEqual(spider_data, response_data)  # 比较是否相等
 
-    @unittest.mock.patch.object(requests, "get", side_effect=requests.ConnectionError("No network"))
+    @mock.patch.object(requests, "get", side_effect=requests.ConnectionError("No network"))
     def test_net_error(self, mocked) -> None:
         return_data: MyResponse = {"data": []}
         spider_data = self.spider.get_data()  # 获取网络错误的返回值
@@ -281,3 +282,4 @@ dangdangdang，答案就是：
 2. 客户端请求我们可以使用`requests_mock`来模拟，测试自己客户端处理响应的逻辑。
 3. 服务器端基本上所有框架都自带有 `test_client` 作为服务器测试客户端（不同框架名字可能不一样，具体参考文档）
 
+[完整代码地址]()
