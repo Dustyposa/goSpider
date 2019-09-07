@@ -1,11 +1,21 @@
+
 >### 编写功能测试的目的
 >验证应用的行为和期望一致的测试
 确认异常修复的测试（增加测试覆盖率）
 想想一个场景，因为接口需要增加一些功能，而更改了一些代码。
 那么修改的代码会不会对之前的功能有影响呢？测试就来了。
 **并且，良好的编写测试习惯，持续地写测试写文档写代码是必备的。更改代码也更加方便（重构），只用相同的测试代码即可。而且还能提升代码的可读性，测试代码也是功能的描述。**
+#### 测试的分类
+1. 单元测试（unit test）# 主要测函数
+2. 功能测试（function test）# 主要测某些代码段完整的功能
+3. 集成测试（integration test）  # 主要在线上环境测试
+4. 负载/压力测试 （load test）  # 大家比较熟悉
+5. 端到端测试 （end-to-end test） # 完整的测试产品
 
-在python中编写测试代码
+本文主要讲解功能测试实例的编写。
+
+
+在python中编写功能测试代码
 ---
 主要分为两部分，客户端测试和服务器端测试。
 目的都是为了检测自己写的代码是否实现了自己想要的功能。
@@ -67,7 +77,6 @@ class MySpider:
 它会实现对请求的拦截，以此达到我们想要的效果。
 测试代码 `test_client.py` 如下:
 ```python
-import typing
 import unittest
 from unittest import mock
 
@@ -83,7 +92,7 @@ class TestMySpider(unittest.TestCase):
 
     def test_handle_data(self) -> None:
         """测试处理代码的逻辑"""
-        return_data = {"data": []}  # 返回的基础数据
+        return_data: MyResponse = {"data": []}  # 返回的基础数据
         self.assertEqual(self.spider._handle_data(), return_data)  # none值返回，测试是否相等
 
         return_data.update(data=[
@@ -99,20 +108,20 @@ class TestMySpider(unittest.TestCase):
         shop_data: MyResponse = {"all_id": ["12", "123", "1234"]}
         mocker.get(requests_mock.ANY, json=shop_data)  # 截胡 requests.get
 
-        spider_data = self.spider.get_data()  # 获取正常返回值
-        response_data = {'data': ['http://shop.com/id/12', 'http://shop.com/id/123', 'http://shop.com/id/1234']}
+        spider_data: MyResponse = self.spider.get_data()  # 获取正常返回值
+        response_data: MyResponse = {'data': ['http://shop.com/id/12', 'http://shop.com/id/123', 'http://shop.com/id/1234']}
         self.assertEqual(spider_data, response_data)  # 比较是否相等
 
         shop_data: MyResponse = {}
         mocker.get(requests_mock.ANY, json=shop_data)  # 截胡 requests.get
-        spider_data = self.spider.get_data()  # 获取空返回值
-        response_data = {'data': []}
+        spider_data: MyResponse = self.spider.get_data()  # 获取空返回值
+        response_data: MyResponse = {'data': []}
         self.assertEqual(spider_data, response_data)  # 比较是否相等
 
     @mock.patch.object(requests, "get", side_effect=requests.ConnectionError("No network"))
     def test_net_error(self, mocked) -> None:
         return_data: MyResponse = {"data": []}
-        spider_data = self.spider.get_data()  # 获取网络错误的返回值
+        spider_data: MyResponse = self.spider.get_data()  # 获取网络错误的返回值
         self.assertEqual(spider_data, return_data)
 
 
@@ -133,7 +142,7 @@ if __name__ == '__main__':
 
 测试步骤类似，编写服务器，我们用 `flask` 和 `starlette` 进行举例，分别代表`python` 同步web框架和异步web框架。
 #### flask
-我们编写一个简单的`flask_client.py`, 代码如下:
+我们编写一个简单的`flask_server.py`, 代码如下:
 ```python
 from flask import Flask, jsonify
 
