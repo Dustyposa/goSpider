@@ -1,4 +1,5 @@
 import functools
+import types
 from typing import Callable
 
 import requests
@@ -20,7 +21,7 @@ class RequestsRetry:
         max_retry: requests.Session = kwargs.get("max_retry")  # 获取 max_retry
         adapter: HTTPAdapter = HTTPAdapter(max_retries=max_retry)  # 初始自带处理额外操作的适配器
         session.mount("http://", adapter=adapter)  # 给我们的 session 安装上 adapter, 第一个参数为前缀，代表哪种请求需要装上适配器
-        kwargs.update(session=session)
+        kwargs.update(session=session)  # 更新 session， 如果没有传session，就将带适配器的 session 传入命名参数
         try:
             response: BaseDictData = self.func(*args, **kwargs)
         except requests.ConnectTimeout:
@@ -29,17 +30,20 @@ class RequestsRetry:
         else:
             return response
 
-
-# def retry(max_retry: int = 3):
-#     """装饰器：请求重试。"""
-#     # 此处为了避免定义额外函数，直接使用 functools.partial 帮助构造 RequestsRetry 实例
-#     return functools.partial(RequestsRetry, max_retry)
-
-
-retry = functools.partial(RequestsRetry, 3)
+    def __get__(self, instance, owner) -> object:
+        """实现该方法后，可以将装饰器器用于类的函数的装饰。"""
+        if instance is None:
+            return self
+        return types.MethodType(self, instance)  # 如果有参数，就绑定至self
 
 
-@retry
+def retry(max_retry: int = 3):
+    """装饰器包装，增加请求重试参数。"""
+    # 此处为了避免定义额外函数，直接使用 functools.partial 帮助构造 RequestsRetry 实例
+    return functools.partial(RequestsRetry, max_retry)
+
+
+@retry()
 def get_data(url: str, time_out: float = 3., **kwargs) -> BaseDictData:
     """
     自动重试 timeout 错误 的方法, 用 requests 自带轮子完成！
@@ -58,4 +62,3 @@ def get_data(url: str, time_out: float = 3., **kwargs) -> BaseDictData:
 if __name__ == '__main__':
     res = get_data("http://127.0.0.1:5000/api/retry", time_out=1.)
     print(res)
-    print(get_data.__name__)
