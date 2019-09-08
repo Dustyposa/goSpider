@@ -6,9 +6,18 @@ from typing import Set, List, Tuple
 from itertools import starmap
 
 import requests
+from scrapy import Selector
 
-from spider_project.asynchronous.qiutan.config import CATCH_LIS, COMPANY_LIST
+from spider_project.asynchronous.qiutan.config import CATCH_LIST, COMPANY_LIST
 from spider_project.asynchronous.qiutan.save_helper import MongoDb
+
+
+def insert_if_nothingness(match, data):
+    res = db.mongo_col.find_one({"catch_name": match})
+    if not res:
+        db.mongo_col.insert_one(data)
+        print("insert success")
+    print("exits!")
 
 
 def get_catch_urls():
@@ -27,12 +36,13 @@ def get_catch_urls():
         else:
             if res.group(2) == "1":
                 if res.group(3) == "0":
-                    db.mongo_col.insert_one(
-                        {"catch_name": match, "homepage": base_url_dict[res.group(3)].format(res.group(1))})
+                    insert_if_nothingness(match=match, data={"catch_name": match,
+                                                             "homepage": base_url_dict[res.group(3)].format(
+                                                                 res.group(1))})
                 else:
-                    db.mongo_col.insert_one(
-                        {"catch_name": match, "homepage": base_url_dict[res.group(3)].format(res.group(1))})
-                print("insert success")
+                    insert_if_nothingness(match=match, data={"catch_name": match,
+                                                             "homepage": base_url_dict[res.group(3)].format(
+                                                                 res.group(1))})
 
 
 def get_all_catch_detail():
@@ -43,7 +53,7 @@ def get_all_catch_detail():
         "round": 1,
     }
     for data in r:
-        if len(data) > 3:
+        if len(data) > 3 and len(data[str(years)]["catch_set"]) != 0:
             continue
         url = data.get("homepage")
         if not url:
@@ -81,9 +91,8 @@ def get_all_catch_oddlist(session, res_set, params, headers):
     catch_detail_url = "http://zq.win007.com/League/LeagueOddsAjax"
     init_page = 1
     res_set_pattern = re.compile(r"\d+")
-    session.headers = headers
     params.update(round=str(init_page))
-    res = session.get(catch_detail_url, params=params)
+    res = session.get(catch_detail_url, params=params, headers=headers)
     print(res.url)
     res.raise_for_status()
     r_list = res.text.split(";")
@@ -126,16 +135,36 @@ def get_odds_data(mach_id: str) -> List[Tuple[str, str]]:
 
 def handle_australia_sclassid(sclassid: str, subsclassid: str):
     today = date.today()
-    base_url: str = f"http://zq.win007.com/jsData/matchResult/{years}-{years+1}/" \
-        f"s{sclassid}_{subsclassid}.js?version={today.strftime('%Y%m%d')}"
+    base_url: str = f"http://zq.win007.com/jsData/matchResult/{years}-{years + 1}/" \
+                    f"s{sclassid}_{subsclassid}.js?version={today.strftime('%Y%m%d')}"
     res = requests.get(base_url, headers=headers)
     res.raise_for_status()
-    pattern = re.compile(r"var arrSubLeague = \[\[\d+,'联赛'")
+    pattern = re.compile(r"var arrSubLeague = \[\[(\d+),'联赛'")
     re_data = re.search(pattern, res.text)
     if not re_data:
         return sclassid
-    new_sclassid = re_data.group()
+    new_sclassid = re_data.group(1)
     return new_sclassid
+
+
+def get_response(url, session):
+    return session.get(url).text
+
+
+def handle_response(data):
+    se_data = Selector(text=data)
+    data_list = se_data.xpath("//td").xpath("string(.)").extract()
+    return data_list[9:]
+
+
+def save_response(data):
+    print(data)
+
+
+def get_once_math_odds(url, session):
+    data = get_response(url, session)
+    handle_data = handle_response(data)
+    save_response(handle_data)
 
 
 if __name__ == "__main__":
@@ -146,6 +175,6 @@ if __name__ == "__main__":
     }
 
     years = 2019
-    # db = MongoDb()
+    db = MongoDb()
     # get_catch_urls()
     # get_all_catch_detail()
