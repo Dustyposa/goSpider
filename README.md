@@ -21,4 +21,6 @@ PS2: 如果你现在有需要我们提前加入的内容也可以提前说哦.
 - common_question  # 用来收集常见问题及爬虫技巧
 - net_knowledge  # 详尽的网络知识
 - front_knowledge  # 前端知识，提升网页分析速度，spider进阶必备
+- python_advance  # python进阶知识
+    + [编写你的功能测试代码](./python_advance/使用python客户端和服务器的功能测试实例)
 
