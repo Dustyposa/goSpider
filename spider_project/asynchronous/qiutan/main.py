@@ -1,14 +1,15 @@
+import csv
 import random
 import re
 import time
 from datetime import date
-from typing import Set, List, Tuple
-from itertools import starmap
+from typing import Set, List, Tuple, Sequence, Dict, Any, Generator
+import itertools
 
 import requests
 from scrapy import Selector
 
-from spider_project.asynchronous.qiutan.config import CATCH_LIST, COMPANY_LIST
+from spider_project.asynchronous.qiutan.config import CATCH_LIST, COMPANY_LIST, CSV_FILED
 from spider_project.asynchronous.qiutan.save_helper import MongoDb
 
 
@@ -53,8 +54,10 @@ def get_all_catch_detail():
         "round": 1,
     }
     for data in r:
-        if len(data) > 3 and len(data[str(years)]["catch_set"]) != 0:
-            continue
+        # if data[str(years)].get("catch_set"):
+        if data.get(str(years)):
+            if len(data) > 3 and len(data[str(years)].get("catch_set", 0)) != 0:
+                continue
         url = data.get("homepage")
         if not url:
             continue
@@ -98,7 +101,12 @@ def get_all_catch_oddlist(session, res_set, params, headers):
     r_list = res.text.split(";")
     if len(r_list) == 2:
         params.update(matchSeason=years)
-        res = session.get(catch_detail_url, params=params)
+        res = session.get(catch_detail_url, params=params, headers=headers)
+        r_list = res.text.split(";")
+    if len(r_list) == 2:
+        sub_sclass_id = handle_australia_sclassid(params.get("sclassId"), params.get("subSclassId"))
+        params.update(subSclassId=sub_sclass_id)
+        res = session.get(catch_detail_url, params=params, headers=headers)
         r_list = res.text.split(";")
     while len(r_list) > 2:
         for data in r_list[:-2:3]:
@@ -109,41 +117,76 @@ def get_all_catch_oddlist(session, res_set, params, headers):
         init_page += 1
         params.update(round=str(init_page), flesh=random.random())
         time.sleep(1)
-        res = session.get(catch_detail_url, params=params)
-        res.raise_for_status()
+        print(catch_detail_url)
+        res = session.get(catch_detail_url, params=params, headers=headers)
+        # res.raise_for_status()
         r_list = res.text.split(";")
     print("已获取国家一年的所有比赛")
 
 
-def get_odds_data(mach_id: str) -> List[Tuple[str, str]]:
-    res_data = []
+# def get_odds_company_data(mach_id: str) -> List[Tuple[str, str]]:
+#     res_data = []
+#     base_url = f"http://1x2d.win007.com/{mach_id}.js"
+#     score_url = f"http://op1.win007.com/oddslist/{mach_id}.htm"
+#     time_scores = get_score_time(score_url, requests.Session())
+#     response = requests.get(base_url, headers=headers)
+#     response.raise_for_status()
+#     # base_pattern = re.compile(r'var hometeam_cn="(\w+)";.*?var guestteam_cn="(\w+)";.*?var game=Array\((.*?)\);',
+#     #                           re.S)  # 获得 主队客队及公司网址
+#     base_pattern = re.compile(r'var hometeam_cn="(\w+)";.*?var guestteam_cn="(\w+)";.*?var game=Array\((.*?)\);',
+#                               re.S)  # 获得 主队客队及公司网址
+#     search_data = re.search(base_pattern, response.text)
+#     home_team_name, guest_team_name, all_games = search_data.groups()
+#     iter_game = all_games.strip('"').split('","')
+#     for game in iter_game:
+#         tmp_list = game.split("|")
+#         company_name = tmp_list[-3]
+#         if company_name in COMPANY_LIST:
+#             data = tmp_list[1]
+#             res_data.append((company_name, data))
+#     return res_data
+
+
+def get_odds_data(mach_id: str) -> Sequence[Any]:
     base_url = f"http://1x2d.win007.com/{mach_id}.js"
+    score_url = f"http://op1.win007.com/oddslist/{mach_id}.htm"
+    catch_time, score1, score2 = get_score_time(score_url, requests.Session())
+    if catch_time == "no":
+        return [None] * 6
     response = requests.get(base_url, headers=headers)
     response.raise_for_status()
-    base_pattern = re.compile(r'var hometeam_cn = "(\w+)";.*?var guestteam_cn = "(\w+)";.*?var game = Array\((.*?)\);',
-                              re.S)
-    home_team_name, guest_team_name, all_games = base_pattern.groups()
-    iter_game = starmap(lambda x: x.strip('"'), all_games.split(", "))
+    base_pattern = re.compile(
+        r'var hometeam_cn="(\w+)";.*?var guestteam_cn="(\w+)";.*?var game=Array\((.*?)\);',
+        re.S)  # 获得 主队客队及公司网址
+    search_data = re.search(base_pattern, response.text)
+    home_team_name, guest_team_name, all_games = search_data.groups()
+    iter_game = all_games.strip('"').split('","')
+    company_data = {}
     for game in iter_game:
         tmp_list = game.split("|")
         company_name = tmp_list[-3]
         if company_name in COMPANY_LIST:
-            data = tmp_list[1]
-            res_data.append((company_name, data))
-    return res_data
+            win, flat, fail = tmp_list[-14], tmp_list[-13], tmp_list[-12]  # -14, -13, -12
+            company_data[company_name] = [win, flat, fail]
+    return catch_time, home_team_name, guest_team_name, score1, score2, company_data
 
 
 def handle_australia_sclassid(sclassid: str, subsclassid: str):
     today = date.today()
-    base_url: str = f"http://zq.win007.com/jsData/matchResult/{years}-{years + 1}/" \
-                    f"s{sclassid}_{subsclassid}.js?version={today.strftime('%Y%m%d')}"
+    base_url: str = (f"http://zq.win007.com/jsData/matchResult/{years}-{years + 1}/" 
+                     f"s{sclassid}_{subsclassid}.js?version={today.strftime('%Y%m%d')}")
     res = requests.get(base_url, headers=headers)
-    res.raise_for_status()
+    if res.status_code == 404:
+        base_url: str = (f"http://zq.win007.com/jsData/matchResult/2019/"
+                         f"s{sclassid}_{subsclassid}.js?version={today.strftime('%Y%m%d')}")
+        res = requests.get(base_url, headers=headers)
+        res.raise_for_status()
     pattern = re.compile(r"var arrSubLeague = \[\[(\d+),'联赛'")
     re_data = re.search(pattern, res.text)
     if not re_data:
         return sclassid
     new_sclassid = re_data.group(1)
+    print("new_sclassid:", new_sclassid)
     return new_sclassid
 
 
@@ -157,14 +200,92 @@ def handle_response(data):
     return data_list[9:]
 
 
-def save_response(data):
+def save_response(year, catch_name, data_dict):
+    base_data = db.mongo_col.find_one({"catch_name": catch_name})
+    _id = base_data["_id"]
+    year = str(years)
+    data = base_data[year]
+    data["all_data"] = data_dict
     print(data)
+    db.mongo_col.update_one({"_id": _id}, {"$set": {year: data}})
+    print("一场比赛更新成功")
 
 
-def get_once_math_odds(url, session):
-    data = get_response(url, session)
-    handle_data = handle_response(data)
-    save_response(handle_data)
+def get_match_by_db(db) -> Generator:
+    for data in db.mongo_col.find():
+        catch_name = data["catch_name"]
+        year = years
+        catch_set = data[str(years)]["catch_set"]
+        yield f"{year}-{year + 1}", catch_name, catch_set
+        # for one_catch in catch_set:
+        #     yield f"{year}-{year+1}", catch_name, one_catch
+
+
+def get_once_math_odds():
+    g_data = get_match_by_db(db)
+    for year, catch_name, catch_set in g_data:
+        data_dict = {}
+        for one_catch in catch_set:
+            data = get_odds_data(one_catch)
+            if data[0] is None:
+                print(f"No.{one_catch} 抓取失败")
+                continue
+            res = handle_res_response((year, catch_name) + data)
+            res.update(odds=data[-1])
+            data_dict[one_catch] = res
+            print(f"No.{one_catch} 抓取成功")
+            time.sleep(3)
+        save_response(year, catch_name, data_dict)
+        print(f"所有的{catch_name}已更新完毕。")
+
+
+def handle_res_response(data):
+    res = dict(zip(CSV_FILED, data[:-1]))
+    return res
+
+
+def get_score_time(url, session) -> Sequence[str]:
+    response = session.get(url, headers=headers)
+    pattern = re.compile(
+        r'class="LName">.*?</a> ([0-9\-: ]+).*?div class="score">(\d+)</div>.*?<div class="score">(\d+)</div>', re.S)
+    re_data = pattern.search(response.text)
+    if not re_data:
+        return ["no"] * 3
+    return re_data.groups()
+
+
+def get_csv():
+    all_catch_data = db.mongo_col.find()
+    write_to_csv(get_once_catch_data(all_catch_data))
+
+
+def get_once_catch_data(all_catch_data):
+    year = str(years)
+
+    for catch in all_catch_data:
+        for data in catch[year]["all_data"].values():
+            yield data
+
+
+def write_to_csv(data):
+    file_name = f"{years}.csv"
+    odds_data = list(db.mongo_col.find_one()[str(years)]["all_data"].values())[0]["odds"]
+    fields = CSV_FILED + list(itertools.chain(*map(lambda x: itertools.repeat(x, 3), odds_data)))
+    # print(fields)
+
+    with open(file_name, "w", newline="", encoding="utf_8_sig") as f:
+        writer = csv.writer(f)
+        writer.writerow(fields)
+        for i in data:
+            res = []
+            for k, v in i.items():
+                if k != "odds":
+                    res.append(v)
+                else:
+                    res.extend(list(itertools.chain(*v.values())))
+            writer.writerow(res)
+
+    print("写入csv成功")
 
 
 if __name__ == "__main__":
@@ -174,7 +295,12 @@ if __name__ == "__main__":
                       "(KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36}",
     }
 
-    years = 2019
+    years = 2018
     db = MongoDb()
     # get_catch_urls()
-    # get_all_catch_detail()
+    get_all_catch_detail()
+    # res = get_odds_data("1720904")
+    # get_once_math_odds()
+    # get_csv()
+    # print(res)
+    # save_response(1, "英超", 2)
