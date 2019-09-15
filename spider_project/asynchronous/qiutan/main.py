@@ -216,7 +216,8 @@ def get_match_by_db(db) -> Generator:
         catch_name = data["catch_name"]
         year = years
         catch_set = data[str(years)]["catch_set"]
-        yield f"{year}-{year + 1}", catch_name, catch_set
+        if not data[str(years)].get("all_data"):
+            yield f"{year}-{year + 1}", catch_name, catch_set
         # for one_catch in catch_set:
         #     yield f"{year}-{year+1}", catch_name, one_catch
 
@@ -225,6 +226,7 @@ def get_once_math_odds():
     g_data = get_match_by_db(db)
     for year, catch_name, catch_set in g_data:
         data_dict = {}
+        print(f"开始抓取{catch_name}")
         for one_catch in catch_set:
             data = get_odds_data(one_catch)
             if data[0] is None:
@@ -298,9 +300,9 @@ if __name__ == "__main__":
     years = 2018
     db = MongoDb()
     # get_catch_urls()
-    get_all_catch_detail()
+    # get_all_catch_detail()
     # res = get_odds_data("1720904")
     # get_once_math_odds()
-    # get_csv()
+    get_csv()
     # print(res)
     # save_response(1, "英超", 2)
