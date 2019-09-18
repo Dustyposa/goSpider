@@ -159,6 +159,8 @@ def get_odds_data(mach_id: str) -> Sequence[Any]:
         r'var hometeam_cn="(\w+)";.*?var guestteam_cn="(\w+)";.*?var game=Array\((.*?)\);',
         re.S)  # 获得 主队客队及公司网址
     search_data = re.search(base_pattern, response.text)
+    if not search_data:
+        return [None] * 6
     home_team_name, guest_team_name, all_games = search_data.groups()
     iter_game = all_games.strip('"').split('","')
     company_data = {}
@@ -215,11 +217,12 @@ def get_match_by_db(db) -> Generator:
     for data in db.mongo_col.find():
         catch_name = data["catch_name"]
         year = years
-        catch_set = data[str(years)]["catch_set"]
-        if not data[str(years)].get("all_data"):
-            yield f"{year}-{year + 1}", catch_name, catch_set
-        # for one_catch in catch_set:
-        #     yield f"{year}-{year+1}", catch_name, one_catch
+        if data.get(str(years)):
+            catch_set = data[str(years)]["catch_set"]
+            if not data[str(years)].get("all_data"):
+                yield f"{year}-{year + 1}", catch_name, catch_set
+            # for one_catch in catch_set:
+            #     yield f"{year}-{year+1}", catch_name, one_catch
 
 
 def get_once_math_odds():
@@ -265,28 +268,33 @@ def get_once_catch_data(all_catch_data):
     year = str(years)
 
     for catch in all_catch_data:
-        for data in catch[year]["all_data"].values():
-            yield data
+        tmp_data = catch.get(year)
+        if tmp_data:
+            for data in catch[year]["all_data"].values():
+                yield data
 
 
 def write_to_csv(data):
     file_name = f"{years}.csv"
-    odds_data = list(db.mongo_col.find_one()[str(years)]["all_data"].values())[0]["odds"]
-    fields = CSV_FILED + list(itertools.chain(*map(lambda x: itertools.repeat(x, 3), odds_data)))
+    # odds_data = list(db.mongo_col.find_one()[str(years)]["all_data"].values())[0]["odds"]
+    odds_data = ["".join(i) for i in itertools.product(COMPANY_LIST, "胜平负")]
+    fields = CSV_FILED + odds_data
     # print(fields)
-
+    print(fields)
     with open(file_name, "w", newline="", encoding="utf_8_sig") as f:
-        writer = csv.writer(f)
-        writer.writerow(fields)
+        # writer = csv.writer(f)
+        writer = csv.DictWriter(f, fields)
+        writer.writeheader()
         for i in data:
-            res = []
+            res = {}
             for k, v in i.items():
                 if k != "odds":
-                    res.append(v)
+                    res[k] = v
                 else:
-                    res.extend(list(itertools.chain(*v.values())))
-            writer.writerow(res)
+                    for com_k, com_v in v.items():
+                        res.update(zip(["".join(ck) for ck in list(itertools.product([com_k], "胜平负"))], com_v))
 
+            writer.writerow(res)
     print("写入csv成功")
 
 
@@ -297,12 +305,12 @@ if __name__ == "__main__":
                       "(KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36}",
     }
 
-    years = 2018
+    years = 2017
     db = MongoDb()
     # get_catch_urls()
-    # get_all_catch_detail()
+    # get_all_catch_detail()  # 1
     # res = get_odds_data("1720904")
-    # get_once_math_odds()
-    get_csv()
+    # get_once_math_odds()  # 2
+    get_csv()  # 3
     # print(res)
     # save_response(1, "英超", 2)
