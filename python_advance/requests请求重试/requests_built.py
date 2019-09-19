@@ -17,7 +17,7 @@ def get_data(url: str, max_retry: int = 0, time_out: float = 1., **kwargs) -> Ba
     params: BaseDictData = kwargs.get("params", {})  # 不管你传了什么奇怪的东西， 我只收这个
     headers: BaseDictData = kwargs.get("headers", {})  # 同上
     adapter: HTTPAdapter = HTTPAdapter(max_retries=max_retry)  # 初始自带处理额外操作的适配器
-    session.mount("http://", adapter=adapter)  # 给我们的 session 安装上 adapter, 第一个参数为前缀，代表哪种请求需要装上适配器
+    session.mount("http://127.0.0.1", adapter=adapter)  # 给我们的 session 安装上 adapter, 第一个参数为主机，代表对于哪台主机的请求需要装上适配器
     try:
         response: requests.Response = session.get(
             url,
@@ -25,8 +25,8 @@ def get_data(url: str, max_retry: int = 0, time_out: float = 1., **kwargs) -> Ba
             headers=headers,
             timeout=time_out
         )
-    except requests.ConnectTimeout:
-        print(f"{max_retry}次请求都失败了，即将返回空值，请耐心等待...")
+    except requests.ConnectionError:
+        print(f"{max_retry + 1}次请求都失败了，即将返回空值，请耐心等待...")
     else:
         session.close()  # 关闭 session, 源码主要是清除所有装配器
         return response.json()
@@ -34,5 +34,5 @@ def get_data(url: str, max_retry: int = 0, time_out: float = 1., **kwargs) -> Ba
 
 
 if __name__ == '__main__':
-    res = get_data("http://127.0.0.1:5000/api/retry", 3)
+    res = get_data("http://127.0.0.1:5000/api/retry", 1)
     print(res)
