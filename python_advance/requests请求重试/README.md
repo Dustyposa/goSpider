@@ -605,3 +605,5 @@ def get_data(url: str, time_out: float = 3., **kwargs) -> BaseDictData:
 4. 利用函数装饰器实现`requests`请求重试到万能重试装饰器
 5. 类装饰器简单原理
 6. 类装饰器实战`requests`请求重试**
+
+[完整代码地址](https://github.com/Dustyposa/goSpider/tree/master/python_advance/requests%E8%AF%B7%E6%B1%82%E9%87%8D%E8%AF%95)
