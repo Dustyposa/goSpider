@@ -2,14 +2,14 @@ import csv
 import random
 import re
 import time
-from datetime import date
+from datetime import date, datetime, timedelta
 from typing import Set, List, Tuple, Sequence, Dict, Any, Generator
 import itertools
 
 import requests
 from scrapy import Selector
 
-from spider_project.asynchronous.qiutan.config import CATCH_LIST, COMPANY_LIST, CSV_FILED
+from spider_project.asynchronous.qiutan.config import CATCH_LIST, COMPANY_LIST, CSV_FILED, DELAY_TIME
 from spider_project.asynchronous.qiutan.save_helper import MongoDb
 
 
@@ -86,7 +86,7 @@ def get_all_catch_detail():
         )
         if response_set:
             db.mongo_col.update_one({"_id": _id}, {"$set": {str(years): {"catch_set": list(response_set)}}})
-        time.sleep(3)
+        time.sleep(DELAY_TIME)
 
 
 def get_all_catch_oddlist(session, res_set, params, headers):
@@ -116,7 +116,7 @@ def get_all_catch_oddlist(session, res_set, params, headers):
         print(f"page {init_page} crawled over\n{r_list}")
         init_page += 1
         params.update(round=str(init_page), flesh=random.random())
-        time.sleep(1)
+        time.sleep(DELAY_TIME)
         print(catch_detail_url)
         res = session.get(catch_detail_url, params=params, headers=headers)
         # res.raise_for_status()
@@ -153,6 +153,8 @@ def get_odds_data(mach_id: str) -> Sequence[Any]:
     catch_time, score1, score2 = get_score_time(score_url, requests.Session())
     if catch_time == "no":
         return [None] * 6
+    catch_time_obj = datetime.strptime(catch_time, "%Y-%m-%d %H:%M")
+    time_check = timedelta(minutes=5)
     response = requests.get(base_url, headers=headers)
     response.raise_for_status()
     base_pattern = re.compile(
@@ -169,13 +171,26 @@ def get_odds_data(mach_id: str) -> Sequence[Any]:
         company_name = tmp_list[-3]
         if company_name in COMPANY_LIST:
             win, flat, fail = tmp_list[-14], tmp_list[-13], tmp_list[-12]  # -14, -13, -12
-            company_data[company_name] = [win, flat, fail]
+            check_time = tmp_list[-4]
+            print(check_time)
+            check_time_obj = datetime.strptime(handle_time(check_time),
+                                               "%Y,%m,%d,%H,%M,%S")
+            if catch_time_obj - check_time_obj <= time_check:
+                print("时间符合")
+                company_data[company_name] = [win, flat, fail]
     return catch_time, home_team_name, guest_team_name, score1, score2, company_data
+
+
+def handle_time(date_str: str):
+    start, end = date_str.split("-")
+    __, s_end = end.split(",", maxsplit=1)
+
+    return ",".join([start, s_end])
 
 
 def handle_australia_sclassid(sclassid: str, subsclassid: str):
     today = date.today()
-    base_url: str = (f"http://zq.win007.com/jsData/matchResult/{years}-{years + 1}/" 
+    base_url: str = (f"http://zq.win007.com/jsData/matchResult/{years}-{years + 1}/"
                      f"s{sclassid}_{subsclassid}.js?version={today.strftime('%Y%m%d')}")
     res = requests.get(base_url, headers=headers)
     if res.status_code == 404:
@@ -239,7 +254,7 @@ def get_once_math_odds():
             res.update(odds=data[-1])
             data_dict[one_catch] = res
             print(f"No.{one_catch} 抓取成功")
-            time.sleep(3)
+            time.sleep(DELAY_TIME)
         save_response(year, catch_name, data_dict)
         print(f"所有的{catch_name}已更新完毕。")
 
@@ -305,12 +320,14 @@ if __name__ == "__main__":
                       "(KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36}",
     }
 
-    years = 2017
+    years = 2019
     db = MongoDb()
     # get_catch_urls()
     # get_all_catch_detail()  # 1
     # res = get_odds_data("1720904")
-    # get_once_math_odds()  # 2
-    get_csv()  # 3
+    get_once_math_odds()  # 2
+    # get_csv()  # 3
     # print(res)
     # save_response(1, "英超", 2)
+    # db.mongo_col.update_many({}, {"$unset": {"2018": 1}})
+    # db.mongo_col.update_many({}, {"$unset": {"2017": 1}})

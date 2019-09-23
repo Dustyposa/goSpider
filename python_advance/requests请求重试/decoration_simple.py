@@ -54,6 +54,16 @@ def strong_common_retry(
 
     @wrapt.decorator  # 保留被装饰函数的元信息
     def wrapper(wrapped, instance, args, kwargs) -> BaseDictData:
+        """
+
+        :param wrapped:
+        :param instance:如果被装饰者为普通类方法，该值为类实例
+                        如果被装饰者为 classmethod 类方法，该值为类
+                        如果被装饰者为类/函数/静态方法，该值为 None
+        :param args:
+        :param kwargs:
+        :return:
+        """
         for i in range(max_retry + 1):
             try:
                 res = wrapped(*args, **kwargs)

@@ -1,4 +1,5 @@
 import functools
+import time
 import types
 from typing import Callable
 
@@ -36,6 +37,10 @@ class RequestsRetry:
             return self
         return types.MethodType(self, instance)  # 如果有参数，就绑定至self
 
+    def itself(self, *args, **kwargs) -> BaseDictData:
+        """不做处理，调用本身"""
+        return self.func(*args, **kwargs)
+
 
 def retry(max_retry: int = 3):
     """装饰器包装，增加请求重试参数。"""
@@ -59,6 +64,30 @@ def get_data(url: str, time_out: float = 3., **kwargs) -> BaseDictData:
         return response.json()
 
 
+class MySpider:
+    def __init__(self, func: Callable):
+        self.func = func
+
+    def __call__(self, *args, **kwargs):
+        print("reset for on second")
+        time.sleep(1)
+        res_data = self.func(*args, **kwargs)
+        return res_data
+
+    def at_once_run(self, *args, **kwargs):
+        print("now, run the function")
+        return self.func(*args, **kwargs)
+
+
+@MySpider
+def spider():
+    print("正在抓取")
+
+
 if __name__ == '__main__':
-    res = get_data("http://127.0.0.1:5000/api/retry", time_out=1.)
-    print(res)
+    # res = get_data("http://127.0.0.1:5000/api/retry", time_out=1.)
+    # print(res)
+    # spider = MySpider(spider).at_once_run
+    # spider = MySpider(spider)
+
+    spider.at_once_run()
