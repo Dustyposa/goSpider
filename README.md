@@ -21,7 +21,11 @@ PS2: 如果你现在有需要我们提前加入的内容也可以提前说哦.
 - common_question  # 用来收集常见问题及爬虫技巧
 - net_knowledge  # 详尽的网络知识
 - front_knowledge  # 前端知识，提升网页分析速度，spider进阶必备
-- python_advance  # python进阶知识
-    + [编写你的功能测试代码](./python_advance/使用python客户端和服务器的功能测试实例)
-    + [从requests请求重试到万能重试装饰器](./python_advance/requests请求重试)
+- python_advance  # python进阶知识  
+    近期更新计划：     
+    + [ ] [翻译系列：异步抓取文章]()
+    + [ ] [在python脚本中运行python脚本]()
+    + [ ] [使用sentry搭建日志管理平台]()
+    + [x] [使用python编写功能测试代码实例](./python_advance/使用python客户端和服务器的功能测试实例)
+    + [x] [从requests请求重试到万能重试装饰器](./python_advance/requests请求重试)
 

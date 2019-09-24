@@ -147,10 +147,21 @@ def get_all_catch_oddlist(session, res_set, params, headers):
 #     return res_data
 
 
+def get_check_time_dict(iter_game_detail):
+    res_dict = {}
+    for g_d in iter_game_detail:
+        tmp_list = g_d.split("|")
+        key, _ = tmp_list[0].split("^")
+        v = f"{years}-{tmp_list[3]}"
+        res_dict[key] = v
+    return res_dict
+
+
 def get_odds_data(mach_id: str) -> Sequence[Any]:
     base_url = f"http://1x2d.win007.com/{mach_id}.js"
     score_url = f"http://op1.win007.com/oddslist/{mach_id}.htm"
     catch_time, score1, score2 = get_score_time(score_url, requests.Session())
+    print(f"catch_time:{catch_time},score_url:{score_url}")
     if catch_time == "no":
         return [None] * 6
     catch_time_obj = datetime.strptime(catch_time, "%Y-%m-%d %H:%M")
@@ -158,25 +169,28 @@ def get_odds_data(mach_id: str) -> Sequence[Any]:
     response = requests.get(base_url, headers=headers)
     response.raise_for_status()
     base_pattern = re.compile(
-        r'var hometeam_cn="(\w+)";.*?var guestteam_cn="(\w+)";.*?var game=Array\((.*?)\);',
+        r'var hometeam_cn="(\w+)";.*?'
+        r'var guestteam_cn="(\w+)";.*?'
+        r'var game=Array\((.*?)\);.*?'
+        r'var gameDetail=Array\((.*?)\);',
         re.S)  # 获得 主队客队及公司网址
     search_data = re.search(base_pattern, response.text)
     if not search_data:
         return [None] * 6
-    home_team_name, guest_team_name, all_games = search_data.groups()
+    home_team_name, guest_team_name, all_games, game_detail = search_data.groups()
     iter_game = all_games.strip('"').split('","')
+    iter_game_detail = game_detail.strip('"').split('","')
     company_data = {}
+    check_time_dict = get_check_time_dict(iter_game_detail)
     for game in iter_game:
         tmp_list = game.split("|")
         company_name = tmp_list[-3]
         if company_name in COMPANY_LIST:
-            win, flat, fail = tmp_list[-14], tmp_list[-13], tmp_list[-12]  # -14, -13, -12
-            check_time = tmp_list[-4]
-            print(check_time)
-            check_time_obj = datetime.strptime(handle_time(check_time),
-                                               "%Y,%m,%d,%H,%M,%S")
+            c_id, win, flat, fail = tmp_list[1], tmp_list[-14], tmp_list[-13], tmp_list[-12]  # -14, -13, -12
+            check_time_obj = datetime.strptime(check_time_dict[c_id],
+                                               "%Y-%m-%d %H:%M")
             if catch_time_obj - check_time_obj <= time_check:
-                print("时间符合")
+                print(f"时间符合:{company_name}")
                 company_data[company_name] = [win, flat, fail]
     return catch_time, home_team_name, guest_team_name, score1, score2, company_data
 
@@ -231,11 +245,12 @@ def save_response(year, catch_name, data_dict):
 def get_match_by_db(db) -> Generator:
     for data in db.mongo_col.find():
         catch_name = data["catch_name"]
-        year = years
-        if data.get(str(years)):
-            catch_set = data[str(years)]["catch_set"]
-            if not data[str(years)].get("all_data"):
-                yield f"{year}-{year + 1}", catch_name, catch_set
+        year = str(years)
+        if data.get(year):
+            catch_set = data[year]["catch_set"]
+            all_data = data[year].get("all_data", [])
+            if not all_data:
+                yield f"{years}-{years + 1}", catch_name, catch_set
             # for one_catch in catch_set:
             #     yield f"{year}-{year+1}", catch_name, one_catch
 
@@ -247,14 +262,14 @@ def get_once_math_odds():
         print(f"开始抓取{catch_name}")
         for one_catch in catch_set:
             data = get_odds_data(one_catch)
+            time.sleep(DELAY_TIME)
             if data[0] is None:
-                print(f"No.{one_catch} 抓取失败")
+                print(f"No.{one_catch} 抓取失败:{one_catch}")
                 continue
             res = handle_res_response((year, catch_name) + data)
             res.update(odds=data[-1])
             data_dict[one_catch] = res
             print(f"No.{one_catch} 抓取成功")
-            time.sleep(DELAY_TIME)
         save_response(year, catch_name, data_dict)
         print(f"所有的{catch_name}已更新完毕。")
 
@@ -320,14 +335,24 @@ if __name__ == "__main__":
                       "(KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36}",
     }
 
-    years = 2019
+    years = 2018
+    years_list = [2019, 2018, 2017]
     db = MongoDb()
     # get_catch_urls()
     # get_all_catch_detail()  # 1
     # res = get_odds_data("1720904")
     get_once_math_odds()  # 2
-    # get_csv()  # 3
+    get_csv()  # 3
     # print(res)
     # save_response(1, "英超", 2)
     # db.mongo_col.update_many({}, {"$unset": {"2018": 1}})
     # db.mongo_col.update_many({}, {"$unset": {"2017": 1}})
+    # for data in db.mongo_col.find():
+    #     _id = data.get("_id")
+    #
+    #     for y in years_list:
+    #         y = str(y)
+    #         year_data = data.get(y)
+    #         if year_data:
+    #             catch_data = year_data["catch_set"]
+    #             db.mongo_col.find_one_and_update({"_id": _id}, {"$set": {y: {"catch_set": catch_data}}})
