@@ -187,6 +187,9 @@ def get_odds_data(mach_id: str) -> Sequence[Any]:
         company_name = tmp_list[-3]
         if company_name in COMPANY_LIST:
             c_id, win, flat, fail = tmp_list[1], tmp_list[-14], tmp_list[-13], tmp_list[-12]  # -14, -13, -12
+            check_time = check_time_dict.get(c_id)
+            if not check_time:
+                continue
             check_time_obj = datetime.strptime(check_time_dict[c_id],
                                                "%Y-%m-%d %H:%M")
             if catch_time_obj - check_time_obj <= time_check:
