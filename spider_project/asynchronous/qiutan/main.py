@@ -275,7 +275,7 @@ def get_once_math_odds():
             print(f"No.{one_catch} 抓取成功")
         save_response(year, catch_name, data_dict)
         print(f"所有的{catch_name}已更新完毕。")
-
+    return True
 
 def handle_res_response(data):
     res = dict(zip(CSV_FILED, data[:-1]))
@@ -338,14 +338,20 @@ if __name__ == "__main__":
                       "(KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36}",
     }
 
-    years = 2018
+    years = 2017
     years_list = [2019, 2018, 2017]
     db = MongoDb()
     # get_catch_urls()
-    # get_all_catch_detail()  # 1
-    # res = get_odds_data("1720904")
-    get_once_math_odds()  # 2
-    get_csv()  # 3
+    over = False
+    while not over:
+        try:
+            # get_all_catch_detail()  # 1
+            # res = get_odds_data("1720904")
+            over = get_once_math_odds()  # 2
+        except requests.ConnectionError:
+            print("出错了！！！！")
+            time.sleep(5)
+    # get_csv()  # 3
     # print(res)
     # save_response(1, "英超", 2)
     # db.mongo_col.update_many({}, {"$unset": {"2018": 1}})
