@@ -14,7 +14,7 @@
 
 话不多说，start！
 
-**因为我们需要从 `requests` 请求重试开始，为了方便测试请求，我们用 `flask` 编写一个简单的服务器，用于请求。**
+**因为我们需要从 `requests` 请求重试开始，为了方便测试请求，我们用 `flask` 编写一个简单的服务器，用于请求测试。**
 
 准备请求服务器
 ----
@@ -123,14 +123,14 @@ finally:
 
 而`else`语句块，就是正常逻辑的补充处理。
 
-TIPS:
+**TIPS:**
 **在 `for...in...:`语句中也有`else`语句块，对完成循环后进行补充。**
 <details>
   <summary><code>for...in...</code>示例</summary>  
 
-比如，我们要循环检测一个列表`check_data: Union[int, str] = [1, 2, 3, 4]`是否有字符串。 
+比如，我们要循环检测一个列表`check_data: List[Union[int, str]] = [1, 2, 3, 4]`是否有字符串，如果有字符串我们就不进行后续处理，如过没有字符串，我们就调用 `handle_data` 函数。 
 
-通常，我们会这样写，一般都会写一个 `tag/signal`来标注状态。
+为了满足上面的需求，通常，我们都会写一个 `tag/signal`来标注状态，例如下面的代码：
 ```python
 has_string: bool = False
 for data in check_data:
@@ -151,7 +151,7 @@ else:
 	# 没有字符串的情况下
 	handle_data() 
 ```
-这样逻辑就可以更清晰一些。
+这样逻辑就可以更清晰一些。另外， `while 循环`也支持 `else` 语句，这里就不重复演示了。
 
 </details>
 

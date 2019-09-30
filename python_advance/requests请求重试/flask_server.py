@@ -22,6 +22,8 @@ def retry_api() -> Response:
         retry_count = 0  # 计数清零
     return jsonify({"msg": "已经三次了哦！"})
 
+# @app.route("/")
+
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host="0.0.0.0", port=9999)
