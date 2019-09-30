@@ -2,7 +2,7 @@
 ![](https://img.shields.io/badge/language-python3-orange.svg)  
 PS1: 网络知识和故事正在构思中,目前的story只是半成品,如果你有任何idea请务必与我联系.  
 PS2: 如果你现在有需要我们提前加入的内容也可以提前说哦.  
-#### important_PS:如果你喜欢该项目,请手动点一下🌟哦！  
+#### important: 如果你喜欢该项目,请手动点一下🌟哦！  
 
 
 - spider_project  # 项目时少不了的
