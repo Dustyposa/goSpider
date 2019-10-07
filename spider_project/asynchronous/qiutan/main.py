@@ -190,8 +190,11 @@ def get_odds_data(mach_id: str) -> Sequence[Any]:
             check_time = check_time_dict.get(c_id)
             if not check_time:
                 continue
-            check_time_obj = datetime.strptime(check_time_dict[c_id],
-                                               "%Y-%m-%d %H:%M")
+            try:
+                check_time_obj = datetime.strptime(check_time_dict[c_id],
+                                                   "%Y-%m-%d %H:%M")
+            except ValueError:
+                continue
             if catch_time_obj - check_time_obj <= time_check:
                 print(f"时间符合:{company_name}")
                 company_data[company_name] = [win, flat, fail]
@@ -277,6 +280,7 @@ def get_once_math_odds():
         print(f"所有的{catch_name}已更新完毕。")
     return True
 
+
 def handle_res_response(data):
     res = dict(zip(CSV_FILED, data[:-1]))
     return res
@@ -351,7 +355,7 @@ if __name__ == "__main__":
         except requests.ConnectionError:
             print("出错了！！！！")
             time.sleep(5)
-    # get_csv()  # 3
+    get_csv()  # 3
     # print(res)
     # save_response(1, "英超", 2)
     # db.mongo_col.update_many({}, {"$unset": {"2018": 1}})

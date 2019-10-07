@@ -69,7 +69,7 @@ class MySpider:
         self.func = func
 
     def __call__(self, *args, **kwargs):
-        print("reset for on second")
+        print("reset for one second")
         time.sleep(1)
         res_data = self.func(*args, **kwargs)
         return res_data
