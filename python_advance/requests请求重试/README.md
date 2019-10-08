@@ -317,12 +317,12 @@ my_function(4)
  
  只需要在`my_funtion`上面加上糖`@count_fun_time` 即可。
  ```python
- @count_fun_time
- def my_function(time_wait: int = 3):
+@count_fun_time
+def my_function(time_wait: int = 3):
     time.sleep(time_wait)
     print("运行结束")
  
- my_function()
+my_function()
 my_function(4)
  ```
  从上面的代码我们也可以，装饰器函数使用语法糖之后更加的**优雅和易懂。**

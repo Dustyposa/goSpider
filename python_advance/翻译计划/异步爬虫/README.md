@@ -22,20 +22,20 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们如何实现爬虫的并发？一般情况下我们会创建一个线程池，每个线程通过一个套接字负责一个网页的下载。例如，从`xkcd.com`下载一个页面：
 ```python
 def fetch(url: str) -> None:
-    sock = socket.socket()  # 创建套接字对象
-    sock.connect(("xkcd.com", 80))  # 与 xkcd.com 的80端口握手
-    request = f'GET {url} HTTP/1.0\r\nHost: xkcd.com\r\n\r\n'  # 构建请求头
-    sock.send(request.encode("ascii"))  # 发送数据
-    response = b''  # 初始化响应
-    chunk = sock.recv(4096)  # 每次接收 4096 b的数据
-    # 循环接收，拼接响应
-    while chunk:
-      response += chunk
-      chunk = sock.recv(4096)
+	sock = socket.socket()  # 创建套接字对象
+	sock.connect(("xkcd.com", 80))  # 与 xkcd.com 的80端口握手
+	request = f'GET {url} HTTP/1.0\r\nHost: xkcd.com\r\n\r\n'  # 构建请求头
+	sock.send(request.encode("ascii"))  # 发送数据
+	response = b''  # 初始化响应
+	chunk = sock.recv(4096)  # 每次接收 4096 b的数据
+	# 循环接收，拼接响应
+	while chunk:
+		response += chunk
+		chunk = sock.recv(4096)
    
-   # 页面已经下载完
-   links = parse_links(response)  # 解析页面，提取链接
-   q.add(links)  # 队列中加入链接
+	# 页面已经下载完
+	links = parse_links(response)  # 解析页面，提取链接
+	q.add(links)  # 队列中加入链接
 ```
 
 
@@ -58,12 +58,77 @@ def fetch(url: str) -> None:
 sock = socket.socket()  # 创建套接字对象
 sock.setbloking(False)  # 设置成非阻塞
 try:
-		sock.connect(("xkcd.com", 80))
+	sock.connect(("xkcd.com", 80))
 except BlockingIOError:
   	pass
 ```
 
-令人厌烦的是，即使工作正常，非阻塞套接字也会抛出连接异常。这个异常是复制了底层C语言函数的烦人的行为，它将`errno`设置成`EINPROGRESS`告诉你（连接）已经开始了。
+​		令人厌烦的是，即使工作正常，非阻塞套接字也会抛出连接异常。这个异常是复制了底层C语言函数的扰人行为，它将`errno`设置成`EINPROGRESS`告诉你（连接）已经开始了。
+
+​		现在我们的爬虫需要一个能够知道何时已经建立连接的方法，我们可以通过发送HTTP请求（来测试连接是否建立）。我们通过简单的while循环来实现：
+
+```python
+request = f"GET {url} HTTP/1.0\r\nHost: xkcd.com\r\n\r\n"  # 最后两个\r\n代表请求头结束
+encoded = request.encode("ascii")
+
+while True:
+    try:
+        sock.send(encoded)  # 发送 HTTP 请求
+        break  # 连接建立成功
+    except OSError as e:
+        pass
+
+print("发送成功")
+```
+
+
+
+​		这个方法不仅费电，而且不能高效地在*多个*套接字上进行等待。以前，BSD Unix的解决方案是`select`, 一个 等待事件在非阻塞套接字上或者一个小的事件数组上发生的C 语言函数。如今，对于有大量连接的互联网应用的需求导致了（`select`）被例如`poll`，在BSD上的`kqueue`和在Linux上的`epoll`替换。这些接口都与`select`相似，但是在大量请求的情况下依然表现地很好。
+
+​		Python3.4的`DefaultSelector`选择了在你的系统上可用的最佳的类`select`函数。为了注册关于网络`I/O`的通知，我们创建了一个非阻塞套接字并且使用默认`selector`注册它：
+
+```python
+from selectors import DefaultSelector, EVENT_WRITE
+
+selector = DefaultSelector()  # 创建选择器对象
+
+sock = socket.socket()
+sock.setblocking(False)
+try:
+    sock.connect(("xdcd.com", 80))
+except BlockingIOError:
+    # 使用非阻塞必定抛出该异常
+    pass
+
+def connected() -> None:
+    selector.unregister(sock.fileno())
+	print("connected!")
+
+selector.register(sock.fileno(), ENENT_WRITE, connected)  # 一个套接字会占用一个描述符，通过描述符来进行注册，事件（ENENT_WRITE）发生后，回调 connected 函数。
+```
+
+​		我们忽略掉假错误，调用`selector.register`, 传入套接字文件描述符和一个常量，该常量表示我们正在等待的事件。为了当连接可以用时得到通知，我们传入`EVENT_WRITE`：也就是说，我们想知道什么时候套接字是"可写的"。同时我们也传入了一个Python函数`connected`,以便在事件发生时运行。这样的函数就叫做`回调函数`。
+
+​		当选择器收到`I/O`通知时，我们在循环中进行处理：
+
+```python
+def loop() -> None:
+    while True:
+        events = selector.select()
+        for event_key, event_mask in events:
+            callback = envent_key.data
+            callback()
+```
+
+​		回调函数`connected`被保存在`event_key.data`中，一旦非阻塞套接字连接完成，我们将读取并执行该回调函数。
+
+​		与之前的`while`循环不同（套接字循环发送代码段），当代码运行到`select`时会暂停，等待下一次的`I/O`事件。然后循环运行等待这些事件的回调完成。如果程序未完成将会一直挂起，直到事件循环中有新的通知。
+
+​		到目前为止我们已经展示了哪些呢？我们展示了如何开始注册事件并当事件准备就绪后执行回调函数。一个可以在单线程中运行并发操作的异步的框架就是构建于我们已经展示的两个特性（非阻塞套接字和事件循环）。
+
+​		我们在这里实现了"并发"，但是不是传统意义上的"并行"。也就是说我们构建了一个重叠I/O[^ 5]\(在Windows API 中被叫做异步I/O)的微型系统。它可以在其他操作正在进行时执行新的操作。实际上它并没有利用多核来执行并行计算。然而，这个系统为I/O密集型问题设计的，而不是为了计算密集型任务。
+
+​		因此，我们的事件循环对并发I/O的场景是很有效的，因为它没有分配线程资源给每个连接。但是在我们继续之前，必须纠正一个常见的误解，即异步比多线程更快。实际上，在Python中，像我们这样的事件循环在服务少量活跃连接的时候是比多线程稍慢的。在没有全局解释锁运行时，线程在这样的工作场景下能够表现的更好。
 
 
 
@@ -71,4 +136,5 @@ except BlockingIOError:
 [^2]: Even calls to `send` can block, if the recipient is slow to acknowledge outstanding messages and the system's buffer of outgoing data is full
 [^3]: 原文作者之一
 [^4]: http://www.kegel.com/c10k.html[↩](http://aosabook.org/en/500L/a-web-crawler-with-asyncio-coroutines.html#fnref3)
+[^ 5]: 原文叫做 `overlapping`I/O,详情请参考：[https://en.wikipedia.org/wiki/Overlapped_I/O](https://en.wikipedia.org/wiki/Overlapped_I/O)
 
