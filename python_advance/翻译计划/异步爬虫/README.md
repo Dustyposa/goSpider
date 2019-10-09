@@ -158,7 +158,7 @@ class Fetcher:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 我们从调用`Fetcher.fetch`开始：
 
 ```python
-	# Fetcher 类的方法
+		# Fetcher 类的方法
     def fetch(self) -> None:
         self.sock = socket.socket()
         self.sock.setblocking(False)
@@ -174,6 +174,42 @@ class Fetcher:
             self.connected
         )
 ```
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`fetch`方法始于连接到一个套接字。但是需要注意的是该方法在连接建立好之前已经返回了。它必须返回控制权给事件循环以便等待连接建立。至于为什么，假设我们整个应用的结构是这样的：
+
+```python
+# 开始抓取 http://xkcd.com/353/
+fetcher = Fetcher("/353/")
+fetcher.fetch()
+
+while True:
+    events = selector.select()
+    for event_key, event_mask in events:
+        callback = event_key.data
+        callback(event_key, event_mask)
+```
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当调用`select`方法时，所有事件通知都会在事件循环中处理。因此`fetch`必须将控制权给事件循环，以便程序知道什么时候套接字已经建立好连接了。只有这样，`while`循环才能回调在上述`fetch`方法结束时注册的`connected`函数，
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;以下是`connected`的实现：
+
+```python
+    # 是 Fetcher 类的方法
+    def connected(self, key, mask) -> None:
+        print("connected!")
+        selector.unregister(key.fd)
+        request = f"GET {self.url} HTTP/1.0\r\nHost: xkcd.com\r\n\r\n"
+        self.sock.send(request.encode("ascii"))
+        
+        # 注册下一个回调函数
+        selector.register(
+            key.fd,
+            EVENT_READ,
+            self.read_response
+        )
+```
+
+
 
 
 

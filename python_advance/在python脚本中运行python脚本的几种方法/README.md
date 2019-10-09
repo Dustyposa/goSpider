@@ -7,3 +7,6 @@ os.system
 runpy  
 subprocess  
 
+eval
+
+Exec
