@@ -14,6 +14,7 @@ PS2: 如果你现在有需要我们提前加入的内容也可以提前说哦.
       - [思否推荐接口](./spider_project/ajax/segmentfault)
    - [爬虫加速](./spider_project/multithreading)
       - [多线程抓取豆瓣top250](./spider_project/multithreading)
+   - [球探爬虫](./spider_project/asynchronous/qiutan)
 - spider_story  # 故事+学习，详细你会喜欢
   + [爬虫和网络..待补完](./spider_story/first_day.md)
 - tools  # 爬虫工具，让你事半功倍
@@ -24,7 +25,7 @@ PS2: 如果你现在有需要我们提前加入的内容也可以提前说哦.
 - python_advance  # python进阶知识 
  
 近期文章更新计划：     
-+ [ ] [翻译系列：文章-异步抓取（ing...）]()  
++ [ ] [翻译系列：文章-异步抓取（ing...）](./python_advance/翻译计划/异步爬虫)  
 + [ ] [在python脚本中运行python脚本]()  
 + [ ] [使用sentry搭建日志管理平台]()  
 + [ ] [`how do i` 源码阅读]()  
