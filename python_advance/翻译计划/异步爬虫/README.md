@@ -194,7 +194,7 @@ while True:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;以下是`connected`的实现：
 
 ```python
-    # 是 Fetcher 类的方法
+    # Fetcher 类的方法
     def connected(self, key, mask) -> None:
         print("connected!")
         selector.unregister(key.fd)
@@ -209,7 +209,30 @@ while True:
         )
 ```
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 该方法发送一个`GET`请求。不过一个真正的应用是需要检查`send`的返回值（译者注：`send`函数的返回值表示成功发送的字节数），以防止没有一次性发送完所有数据。但是我们的请求信息比较少，而且我们的程序也很简单。直接调用`send`，然后等待响应的返回。当然，程序必须注册另一个回调函数并把控制权交回事件循环。下一个也是最后一个回调函数，`read_response`,处理服务器的回应：
 
+```python
+    # Fetcher 类的方法
+    def read_response(self, key, mask):
+        global stopped
+
+        chunk = self.sock.recv(4096)  # 每块 4K 大小
+        if chunk:
+            self.reponse += chunk
+        else:
+            selector.unregister(key.fd)  # 读取响应完成
+            links = self.parse_links()
+
+            # Python 集合操作 set-logic
+            for link in links.difference(seen_urls):
+                urls_todo.add(link)
+                Fetcher(link).fetch()   # 创建新的 Fetcher
+
+            seen_urls.update(links)
+            urls_todo.remove(self.url)
+            if not urls_todo:
+                stopped = True
+```
 
 
 
