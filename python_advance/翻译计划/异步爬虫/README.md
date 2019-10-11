@@ -213,7 +213,7 @@ while True:
 
 ```python
     # Fetcher 类的方法
-    def read_response(self, key, mask):
+    def read_response(self, key, mask) -> None:
         global stopped
 
         chunk = self.sock.recv(4096)  # 每块 4K 大小
@@ -223,15 +223,33 @@ while True:
             selector.unregister(key.fd)  # 读取响应完成
             links = self.parse_links()
 
-            # Python 集合操作 set-logic
+            # Python 集合处理逻辑
             for link in links.difference(seen_urls):
-                urls_todo.add(link)
+                urls_todo.add(link)  
                 Fetcher(link).fetch()   # 创建新的 Fetcher
 
             seen_urls.update(links)
             urls_todo.remove(self.url)
             if not urls_todo:
                 stopped = True
+```
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 每当`selector`检测到套接字可读时（"可读"可能意味着两件事：套接字有收到数据了或者已经关闭了）就会执行该回调函数。
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 该回调需要从套接字获取4k的数据。如果数据不够，不论数据是否可用`chunk`都会阻塞。如果数据足够的话，`chunk`就有4k长度并且套接字也会保留可读性，所以事件循环在下一次收到通知时，会再次执行该回调函数。当全部响应读取完成时，目标服务器就会关闭套接字，并且`chunk`就没有数据了。
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 未展示的`parse_links`方法返回值是一个`URL`的集合。我们为每个新`URL`都创建了一个`fetcher`，这里没有并发上限。注意，用回调进行异步编程的有一个优势就是：即使对公共数据进行写操作我们也不需要互斥锁，例如在我们向`seen_urls`添加链接时。因为不是抢占式多任务，所以我们的代码在任何位置都不会被中断（译者注：中断指上下文切换，在该程序中，内核没有上下文切换，而多线程多进程会频繁切换上下文）。
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 我们添加一个全局变量`stopped`用来控制循环：
+
+```python
+stoped = False
+def loop() -> None:
+    while not stoped:
+        events = selector.select()
+        for event_key, event_mask in events:
+            callback = event_key.data
+            callback()
 ```
 
 
