@@ -238,7 +238,7 @@ while True:
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 该回调需要从套接字获取4k的数据。如果数据不够，不论数据是否可用`chunk`都会阻塞。如果数据足够的话，`chunk`就有4k长度并且套接字也会保留可读性，所以事件循环在下一次收到通知时，会再次执行该回调函数。当全部响应读取完成时，目标服务器就会关闭套接字，并且`chunk`就没有数据了。
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 未展示的`parse_links`方法返回值是一个`URL`的集合。我们为每个新`URL`都创建了一个`fetcher`，这里没有并发上限。注意，用回调进行异步编程的有一个优势就是：即使对公共数据进行写操作我们也不需要互斥锁，例如在我们向`seen_urls`添加链接时。因为不是抢占式多任务，所以我们的代码在任何位置都不会被中断（译者注：中断指上下文切换，在该程序中，内核没有上下文切换，而多线程多进程会频繁切换上下文）。
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 未展示的`parse_links`方法返回值是一个`URL`的集合。我们为每个新`URL`都创建了一个`fetcher`，这里没有并发上限。注意，用回调进行异步编程的有一个优势就是：即使对公共数据进行写操作我们也不需要互斥锁，例如在我们向`seen_urls`添加链接时。因为不是抢占式多任务，所以我们的代码在任何位置都不能被中断[^7]。
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 我们添加一个全局变量`stopped`用来控制循环：
 
@@ -252,6 +252,53 @@ def loop() -> None:
             callback()
 ```
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;一旦所有页面抓取完成，`fetcher`就让全局的事件循环停止并退出程序。
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这个例子反映出了异步编程的一个典型的问题：面条式代码。我们需要某种方式来表示一系列的计算和I/O操作，并调度多个此类操作让他们并发执行。但是没有了线程，这一系列的操作都不能写到同一个函数中：只要函数开始进行一个I/O操作，它都需要显示地保存将来需要处理的任何状态（译者注：例如可读、可写等），然后返回。你需要自己思考和编写这个状态保存的代码。
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;让我们解释一下上面说的到底是什么意思。先看一下在一个线程中使用传统的阻塞套接字抓取一个链接有多简单：
+
+```python
+# 阻塞版本 
+def fetch(url: str) -> None:
+    sock = socket.socket()
+    sock.connect(('xkcd.com', 80))
+    request = f'GET {url} HTTP/1.0\r\nHost: xkcd.com\r\n\r\n'
+    sock.send(request.encode('ascii'))
+    response = b''
+    chunk = sock.recv(4096)
+    while chunk:
+        response += chunk
+        chunk = sock.recv(4096)
+
+    # 页面下载完成
+    links = parse_links(response)
+    q.add(links)
+```
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在一次套接字操作和下一次操作之间，函数记录了什么状态呢？它有一个套接字对象，一个URL和可增长的`response`。运行在线程的中的函数利用编程语言的基础特性将临时变量保存在其堆栈的局部变量中。该函数也有一个“continuation（延伸）“——即计划在I/O完成后执行的代码。运行时通过保存线程的指令指针来记住这个 continuation 部分。你不需要考虑在I/O完成后如何恢复这些局部变量以及 contination 部分。语言本身的特性就帮你解决了。
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;但是对于基于回调的异步框架，这些语言特性是没有任何帮助的。只要在等待I/O，函数必须显示保存它的状态，因为一旦函数在I/O完成之前就会返回，并且会丢失堆栈帧。在之前的回调示例中，作为局部变量的替代，我们把`sock`和`response`作为`Fetcher`实例化后的`self`的属性来保存。为了替代指令指针，通过注册`connected`和`read_reponse`回调函数来保存它的 continuation 。由此可见，随着应用功能的增加，我们手动保存回调状态的复杂性也在增加。如此繁杂的记账式工作让程序员很头痛。
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;更糟糕的是，在一次回调和下一次回调之间抛出异常会发生什么？假设我们`parse_links`方法写的很差，在解析某些HTML时抛出了异常：
+
+```python
+Traceback (most recent call last):
+  File "loop-with-callbacks.py", line 111, in <module>
+    loop()
+  File "loop-with-callbacks.py", line 106, in loop
+    callback(event_key, event_mask)
+  File "loop-with-callbacks.py", line 51, in read_response
+    links = self.parse_links()
+  File "loop-with-callbacks.py", line 67, in parse_links
+    raise Exception('parse error')
+Exception: parse error
+```
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;栈回溯信息只能展示事件循环正在运行一个回调函数。我们不知道是什么导致了错误。回调链的两端都被破坏了，不知道从哪开始从哪结束。这种上下文丢失的情况叫做“堆栈撕裂（stack ripping）”，在很多情况下都会让我们束手无策。堆栈撕裂还会阻止我们为回调链设置异常处理，即通过“`try/except`”块封装函数调用及其调用树[^8]。
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;因此，除了关于多线程和异步谁的运行效率更高的争论以外，还有一个关于哪个更容易出错的争论：如果在同步时失误，线程更容易受到数据争夺（译者注：公有数据，线程的同步与互斥问题。）的影响，但是回调发生堆栈撕裂时，调试会变得令人痛苦不堪。
+
 
 
 [^1]:  线程相关资源
@@ -260,3 +307,7 @@ def loop() -> None:
 [^4]: http://www.kegel.com/c10k.html[↩](http://aosabook.org/en/500L/a-web-crawler-with-asyncio-coroutines.html#fnref3)
 [^ 5]: 原文叫做 `overlapping`I/O,详情请参考：[https://en.wikipedia.org/wiki/Overlapped_I/O](https://en.wikipedia.org/wiki/Overlapped_I/O)
 [^6]: Jesse listed indications and contraindications for using async in ["What Is Async, How Does It Work, And When Should I Use It?":](http://pyvideo.org/video/2565/what-is-async-how-does-it-work-and-when-should). Mike Bayer compared the throughput of asyncio and multithreading for different workloads in ["Asynchronous Python and Databases":](http://techspot.zzzeek.org/2015/02/15/asynchronous-python-and-databases/)[↩](http://aosabook.org/en/500L/a-web-crawler-with-asyncio-coroutines.html#fnref5)
+[^7]: 这里的中断，就是指假如该程序有 2个协程，那么协程A是不能被协程B关闭\中断（cancel）。（一个协程函数代表一个子协程）而在多线程中，同样我们假设有2个线程，线程A是可以被线程B取消掉（也就是说能在A线程中通过信号取消/中断B线程）
+
+[^8]: For a complex solution to this problem, see http://www.tornadoweb.org/en/stable/stack_context.html[↩](http://aosabook.org/en/500L/a-web-crawler-with-asyncio-coroutines.html#fnref6)
+

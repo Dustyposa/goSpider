@@ -20,3 +20,4 @@ async def query_goods(request) -> JSONResponse:
 async def not_found(request, exc) -> JSONResponse:
     """404处理"""
     return JSONResponse(content={"msg": "no route"}, status_code=exc.status_code)
+
