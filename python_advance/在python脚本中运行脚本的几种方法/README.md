@@ -89,6 +89,18 @@ sleep over
 > https://stackoverflow.com/questions/8724557/how-to-run-a-python-script-from-another-python-script-and-get-the-returned-statu  
 > https://stackoverflow.com/questions/3781851/run-a-python-script-from-another-python-script-passing-in-arguments  
 > https://docs.python.org/zh-cn/3/library/asyncio-subprocess.html?highlight=subprocess#asyncio.asyncio.subprocess.Process.returncode  
+>
+> os.execv:
+>
+> https://docs.python.org/zh-cn/3/library/os.html
+>
+> https://blog.petrzemek.net/2014/03/23/restarting-a-python-script-within-itself/
+>
+> https://stackoverflow.com/questions/44075953/python-execv-and-pipe-output
+>
+> https://stackoverflow.com/questions/27606653/oserror-errno-8-exec-format-error/53639140#53639140
+>
+> https://stackoverflow.com/questions/27606653/oserror-errno-8-exec-format-error#comment43638333_27607257
 
 os.system  
 runpy  
@@ -96,6 +108,8 @@ subprocess
 
 os.popen
 
+os.execv
+
 eval
 
-Exec
+exec
