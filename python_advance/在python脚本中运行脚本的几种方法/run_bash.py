@@ -21,8 +21,10 @@ def os_popen_run() -> None:
 
 def os_exec_run() -> None:
     """替代当前进程的运行"""
+    print("python 正在运行")
     time.sleep(5)
-    os.execv(zsh_file, bash_cmd_list)  # = os.execl(zsh_file, *bash_cmd_list)
+    print("python 运行完毕，执行 bash 脚本")
+    os.execv(zsh_file, bash_cmd_list)  # == os.execl(zsh_file, *bash_cmd_list)
 
 
 if __name__ == '__main__':
