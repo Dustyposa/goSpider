@@ -15,8 +15,10 @@ def system_run() -> None:
 
 
 def os_popen_run() -> None:
-    os.popen()
-    os.execl()
+    """使用os.popen 运行子进程"""
+    with os.popen(bash_cmd) as pipe:
+        for line in pipe.readlines():
+            print(line)
 
 
 def os_exec_run() -> None:
@@ -29,4 +31,5 @@ def os_exec_run() -> None:
 
 if __name__ == '__main__':
     # system_run()
-    os_exec_run()
+    # os_exec_run()
+    os_popen_run()

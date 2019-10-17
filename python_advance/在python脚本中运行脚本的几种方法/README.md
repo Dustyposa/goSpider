@@ -6,7 +6,7 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;话不多说，我们来看看如何实现。不过在实现之前，我们需要把这个问题分类。第一类为：在python脚本中运行非python脚本。第二类为：在python脚本中运行python脚本。为什么要这样分呢？因为我们的主脚本为python，所有对于python脚本有特殊优待！那么，我们就一个类一个类的看看如何实现。
 
-##在python脚本中运行非python脚本
+## 在python脚本中运行非python脚本
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;首先我们用一个简单的bash脚本`test.sh`来进行测试:
 
@@ -131,7 +131,7 @@ def os_exec_run() -> None:
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`sleep 5` 的进程还在，但是`python`进程不见了！！！！！！我们再来看看PID,注意到了吗？之前`python`进程用的PID现在变成了我们的`bash`脚本进程，`python`进程直接被替代了！没错，这就是`execv`的神奇之处。好了，神奇归神奇。那么，有什么独特的用呢！！这才是关键。那我们就介绍一种常用场景，重启`python`程序，也就是常见的`restart`功能。
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们先写一段简单的脚本来进行测试，`restart,py`:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们先写一段简单的脚本来进行测试该功能，取名是件难事，就随便取一个，`restart,py`:
 
 ```python
 import os
@@ -187,6 +187,14 @@ C. 结束程序
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当然，你对代码也会有疑问，我们简单解释一下：首先是`sys.executable`，返回的是当前python解释器的文件路径（也就是我们需要的可执行文件）。其次`sys.argv`返回的是一个列表，包括了执行`python xxx xx x`除python意外以外的所有参数，在这里我们就只有一个参数了(`restart.py`, 所以在这里我们也可以用`__file__`进行替代)。
 
 > **额外注意要点：**
+>
+> 如果你是这样执行脚本的：
+>
+> `./restart.py`
+>
+> 可以使用`os.execv(__file__, sys.argv)`来运行该脚本。
+>
+> 如果你是`python restart.py`那么就跟我们演示代码的方法一致即可。
 >
 > 
 
