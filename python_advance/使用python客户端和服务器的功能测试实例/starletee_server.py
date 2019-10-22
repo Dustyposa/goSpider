@@ -1,6 +1,14 @@
-from starlette.applications import Starlette
-from starlette.responses import JSONResponse
 
+import uvicorn
+from starlette.applications import Starlette
+from starlette.responses import JSONResponse, FileResponse
+from starlette.routing import Router, Mount
+from starlette.staticfiles import StaticFiles
+
+
+# app = Router(routes=[
+#     Mount('/static', app=StaticFiles(directory='static'), name="static"),
+# ])
 app = Starlette()
 
 
@@ -21,3 +29,13 @@ async def not_found(request, exc) -> JSONResponse:
     """404处理"""
     return JSONResponse(content={"msg": "no route"}, status_code=exc.status_code)
 
+
+@app.route("/static/{path:str}")
+def static_files(request):
+    s = request.path_params.get("path")
+    return FileResponse(path="static/" + s)
+
+
+if __name__ == '__main__':
+
+    uvicorn.run(app)

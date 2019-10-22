@@ -14,7 +14,6 @@
 ls -l  # 查看当前目录的文件及文件夹详情
 sleep 5  # 休眠5s
 echo "sleep over"  # 打印输出 sleep over
-
 ```
 
 我们的目标就是在`python`脚本中运行该脚本。
@@ -195,10 +194,75 @@ C. 结束程序
 > 可以使用`os.execv(__file__, sys.argv)`来运行该脚本。
 >
 > 如果你是`python restart.py`那么就跟我们演示代码的方法一致即可。
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;是不是很神奇，重启替换进程，一气呵成，pid也不会改变。但是，还有一种情况，我们需要管理脚本的话，使用这两种方法是不太好实现的。所以，我们继续介绍后面的高级操作，**子进程管理**。这部分东西比较多了，我们也不会一一讲述，只做抛砖引玉，先介绍一个简单的：`os.popen`
+
+### 3. os.popen
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`os.popen`主要就是实现对一个子进程的管理，我们可以捕获子进程的标准输出（stdou），不同于`os.system`，如果我们不主动捕获stdout,那么子进程的输出我们在主进程是看不到的，同样，我们先编写一个简单的示例：
+
+```python
+def os_popen_run() -> None:
+    """使用os.popen 运行子进程"""
+    print("Start")
+    # bash_cmd = "zsh test.sh"
+    with os.popen(bash_cmd) as pipe:  
+        for line in pipe.readlines():
+            print(line, end="")
+```
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;通过查看源码我们可以看出，默认情况下，`os.popen`的`mode`参数为r，与文件操作的`r`类似，可读；`os.popen`返回的是一个新的对象，该对象有一个`close`用于关闭管道及进程，及`io.TextIOWrapper`对象的所有方法。主要是读操作相关方法。然后我们用 `readlines`进行等待，获取该进程所有的`stdout`并打印输出。输出结果如下：
+
+```
+Start
+# 阻塞5s后出现的下面的输出
+bash run start
+total 56
+-rw-r--r--@ 1 dustyposa  staff  11213 Oct 20 15:33 README.md
+-rw-r--r--@ 1 dustyposa  staff     29 Oct 20 14:57 check_alive.py
+-rw-r--r--@ 1 dustyposa  staff    630 Oct 17 21:56 restart.py
+-rw-r--r--@ 1 dustyposa  staff    788 Oct 20 15:33 run_bash.py
+-rw-r--r--@ 1 dustyposa  staff     67 Oct 20 15:14 test.sh
+sleep over
+```
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这样我们针对输出就能进行处理啦，比如重定向，数据清理之类。简单的，我们直接利用`print`进行重定向：
+
+```python
+# 简单修改一下代码
+    with os.popen(bash_cmd) as pipe, open("bash_out.txt", "w", encoding="u8") as fp:
+        for line in pipe.readlines():
+            print(line, end="", file=fp)
+```
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`bash_out.txt`就生成啦！数据当然和我们上面的输出结果一致。这样我们就能将输出结果保存到某些地方了！
+
+> 简单介绍一下其他功能：
 >
-> 
+> - `close`方法
+>   - 关闭标准输出的管道以及结束子进程并返回结束状态码，如果返回值为None的话，说明子进程正常退出，其余为异常退出（-N表示在POSIX中表示被信号N中断）。
+>
+> - read，readline，seek，同文件操作
+> - flush 缓存刷新
+> - fillno 返回文件描述符
+> - isatty 如果流是交互式的（即连接到终端/ tty设备），则返回True。
+>
+> 实例化对象时，还有mode参数可以为w，和文件操作类似，就是写模式，
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;到这里，我们就可以控制标准输出了，但是，我们好像还不能控制子进程，比如：如何杀死子进程，如何给子进程发送信号，子如何检查子进程状态等。那怎么办呢？不急，我们看看`os.popen`的源码，其中有一段：
 
+```python
+    if mode == "r":
+        proc = subprocess.Popen(cmd,
+                                shell=True,
+                                stdout=subprocess.PIPE,
+                                bufsize=buffering)
+        return _wrap_close(io.TextIOWrapper(proc.stdout), proc)
+```
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;看一看函数名和参数，没错， `subprocess.Popen`就是我们的秘诀！
+
+### 4. subprocess.Popen
 
 
 

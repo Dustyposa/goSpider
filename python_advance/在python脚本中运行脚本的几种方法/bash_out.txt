@@ -1,0 +1,9 @@
+bash run start
+total 56
+-rw-r--r--@ 1 dustyposa  staff  12011 Oct 20 15:40 README.md
+-rw-r--r--@ 1 dustyposa  staff      0 Oct 20 15:40 bash_out.txt
+-rw-r--r--@ 1 dustyposa  staff     29 Oct 20 14:57 check_alive.py
+-rw-r--r--@ 1 dustyposa  staff    630 Oct 17 21:56 restart.py
+-rw-r--r--@ 1 dustyposa  staff   1002 Oct 20 15:39 run_bash.py
+-rw-r--r--@ 1 dustyposa  staff     67 Oct 20 15:14 test.sh
+sleep over
