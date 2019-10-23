@@ -69,7 +69,7 @@ Y组合器是λ演算的核心概念，它是函数式编程的形式基础。Y�
 
 #### [有关如何在 Django 应用中使用 Sentry 实时监控软件错误的分步教程](https://blog.hlab.tech/a-step-by-step-tutorial-on-how-to-monitor-software-errors-in-real-time-using-sentry-in-django-web-applications/)
 
-#### [使用Spotify API 和PYthon分析音乐喜好](https://nvbn.github.io/2019/10/14/playlist-analysis/)
+#### [使用Spotify API 和Python分析音乐喜好](https://nvbn.github.io/2019/10/14/playlist-analysis/)
 
 
 
