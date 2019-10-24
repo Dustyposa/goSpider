@@ -23,7 +23,8 @@ PS2: 如果你现在有需要我们提前加入的内容也可以提前说哦.
 - net_knowledge  # 详尽的网络知识
 - front_knowledge  # 前端知识，提升网页分析速度，spider进阶必备
 - python_advance  # python进阶知识 
-- [python周报](./python_advance/python周报)
+- [python周报](./python_advance/python周报)  
+
 近期文章更新计划：     
 + [ ] [翻译系列：文章-异步抓取（ing...）](./python_advance/翻译计划/异步爬虫)  
 + [ ] [在python脚本中运行python脚本（ing...）](./python_advance/在python脚本中运行脚本的几种方法)  
