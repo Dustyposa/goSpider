@@ -299,7 +299,26 @@ Exception: parse error
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;因此，除了关于多线程和异步谁的运行效率更高的争论以外，还有一个关于哪个更容易出错的争论：如果在同步时失误，线程更容易受到数据争夺（译者注：公有数据，线程的同步与互斥问题。）的影响，但是回调发生堆栈撕裂时，调试会变得令人痛苦不堪。
 
+## 协程（Coroutines）
 
+> 译者注：下面这部分的代码比较老了，因为python34还没有 `await` `async` 这类东西，用的原始的 `yiled from` 实现的协程。以下部分可以当做原理了解，项目实操中请不要使用，请用最新写法，推荐py37+版本。后面计划出最新的`python`协程教程，敬请期待。
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 我们向你保证。编写高效回调与多线程编程简单的代码风格相结合的异步代码也是没有问题的（译者注：py37+更简单了！）。这种结合是通过一种叫“协程（coroutines）”的模式实现的。使用Python3.4的`asyncio`标准库和叫做`aiohttp`的第三方库，在协程中抓取一个URL就很简单了[^9]:
+
+```python
+    @asyncio.coroutine
+    def fetch(self, url):
+        response = yield from self.session.get(url)
+        body = yield from response.read()
+```
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 当然，代码的可扩展性也是没有问题的。与每个线程需要`50k`内存和操作系统对其有硬限制的多线程相比，一个`python 协程`在 Jesse的系统上仅仅需要`3k`的内存。python 可以轻轻松松地开启成千上万个协程。
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 协程的概念可以追溯到计算机科学的早期，也很简单：一个可暂停和继续的例程（译者注：[协程的子集]( https://en.wikipedia.org/wiki/Coroutine#Comparison_with_subroutines )）。多线程是抢占式的的，并发优先级是由操作系统控制，但是协程是协作式的：由自身选择什么时候暂停，什么时候运行下一个协程。
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 协程有很多的实现方式，即使在python中也有几种实现方式（译者注：最著名的例如：`gevent`三方库和`asynico`标准库 ，实现方式就不同）。Python3.4中的标注库`asynico`中的协程是基于生成器，`Future`类和`yield from` 语句构建的。从 Python3.5 开始，协程就是语言的一个原生特性了[^8]。但是，了解最初在在Python3.4中使用现存的语言工具实现的协程，是在Python3.5中实现原生协程的基础。
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 为了解释Python3.4中基于生成器实现的协程，我们将介绍生成器以及在它如何在`asyncio`中作为协程使用。相信你你阅读如我写书这般享受。在解释完基于生成器实现的协程之后，我们将异步网络爬虫中使用协程。
 
 [^1]:  线程相关资源
 [^2]: Even calls to `send` can block, if the recipient is slow to acknowledge outstanding messages and the system's buffer of outgoing data is full
@@ -310,4 +329,6 @@ Exception: parse error
 [^7]: 这里的中断，就是指假如该程序有 2个协程，那么协程A是不能被协程B关闭\中断（cancel）。（一个协程函数代表一个子协程）而在多线程中，同样我们假设有2个线程，线程A是可以被线程B取消掉（也就是说能在A线程中通过信号取消/中断B线程）
 
 [^8]: For a complex solution to this problem, see http://www.tornadoweb.org/en/stable/stack_context.html[↩](http://aosabook.org/en/500L/a-web-crawler-with-asyncio-coroutines.html#fnref6)
+[^9]: The `@asyncio.coroutine` decorator is not magical. In fact, if it decorates a generator function and the `PYTHONASYNCIODEBUG` environment variable is not set, the decorator does practically nothing. It just sets an attribute, `_is_coroutine`, for the convenience of other parts of the framework. It is possible to use asyncio with bare generators not decorated with `@asyncio.coroutine` at all.[↩](http://aosabook.org/en/500L/a-web-crawler-with-asyncio-coroutines.html#fnref7)
+[^ 10]:  Python 3.5's built-in coroutines are described in [PEP 492](https://www.python.org/dev/peps/pep-0492/), "Coroutines with async and await syntax."[↩](http://aosabook.org/en/500L/a-web-crawler-with-asyncio-coroutines.html#fnref8) 
 

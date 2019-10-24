@@ -1,6 +1,8 @@
-> 原文: [https://mailchi.mp/pythonweekly/python-weekly-issue-419](https://mailchi.mp/pythonweekly/python-weekly-issue-419)
-> 翻译：dusty posa
 ### 欢迎阅读《python周刊》第419期。Let us start!
+
+>原文: [https://mailchi.mp/pythonweekly/python-weekly-issue-419](https://mailchi.mp/pythonweekly/python-weekly-issue-419)
+>翻译：dusty posa
+
 ### 来自赞助商:
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/2019102318133438.png)使用 `Datadog` 监控你的python指标，日志，集群分析。使用`Datadog`的应用分析，可以深入任何纬度并且能找到你所需要的信息，来进行动态诊断和快速故障排除。[马上跟踪你的python应用吧！免费试用14天哦！](https://www.datadoghq.com/dg/apm/ts-python-tracing/?utm_source=Advertisement&utm_medium=Advertisement&utm_campaign=PythonWeekly-Tshirt)
 ## 文章、教程与话题
@@ -74,4 +76,160 @@ Y组合器是λ演算的核心概念，它是函数式编程的形式基础。Y�
 
 
 ## 有趣的项目、工具和库
+
+#### [Detectron2](https://github.com/facebookresearch/detectron2)
+
+`Detectron2`是 Facebook AI研究的下一代软件系统，它实现了最先进的目标检测算法。这是对老版本`Detectron2`的重写，起源于`maskrcnn-benchmark`.
+
+> 去github官网看了看，很高级的样子，加入百宝箱。
+
+#### [PyTorch Mobile](https://pytorch.org/mobile/home/) 
+
+来自python的端到端工作流程，可部署在在 iOS 和 Android
+
+> 移动端也能玩出新花样。
+
+#### [pyChart.js](https://github.com/IridiumIO/pyChart.js) 
+
+为`python`和`django`实现的`Chart.js`
+
+> 实现网页渲染图片，用来在模版中画图的，flask也支持了哦。例如这样的语法：
+>
+> ```html
+> <canvas id="myChart"></canvas>
+> 
+> <script>
+>     var data = {{ chartJSON | safe }}
+>     var ctx = document.getElementById("myChart").getContext('2d');
+>     var myChart = new Chart(ctx, data);
+> </script>
+> ```
+
+#### [cast-sh](https://github.com/hericlesme/cast-sh) 
+
+在你的浏览器中运行`terminal`窗口。
+
+> 用网页当作terminal界面，操作服务器。问题点就是输入输出的传输和网络定制了。最近在研究这方面，还可以。
+
+#### [CrypTen](https://github.com/facebookresearch/CrypTen) 
+
+一个用于隐私保护性机器学习的框架。
+
+> 隐私隐私，最近经常上头条，AI方面的隐私处理也是很重要的。
+
+####  [sotabench-eval](https://github.com/paperswithcode/sotabench-eval) 
+
+简单使用通用基准评估机器学习模型。
+
+> 简单是程序员的前进动力！
+
+####  [Captum](https://github.com/pytorch/captum) 
+
+`Captum`是针对`Pytouch`模型的一个可解释模型的库。`Captum`在拉丁语中意味着理解，它包含了针对`Pytouch`模型的实现的`integrated gradients(集成梯度),saliency maps(显著图), smoothgrad, vargrad and others `
+
+> emmm,有点难，，太多术语看不懂了。现在两大框架的生态也逐渐丰富起来了。
+
+#### [TorchBeast](https://github.com/facebookresearch/torchbeast) 
+
+一个用来做分布式强化学习的`Pytouch`平台。
+
+> 除了高级我还能说什么。。。
+
+####  [image_to_numpy](https://github.com/ageitgey/image_to_numpy) 
+
+使用Exif(可交换图像文件格式 )方向支持实现图片文件转 `numpy`数组。防止图片的颠倒和侧视。
+
+> 看名识库！
+
+####  [Daudin](https://github.com/terrycojones/daudin) 
+
+一个支持python命令的shell
+
+> 有点高级，切换`shell`和`python shell`不方便？
+>
+> 我们来看看官方的小示例：
+>
+> ```python
+> >>> ls | for i in _: print(i[:3]) | | wc -l
+> 11
+> ```
+>
+> 只可意会，不可言传
+
+## 新版本
+
+####  [Python 3.8.0](https://www.python.org/downloads/release/python-380/) 
+
+python3.8.0是现在的主要版本，包含了许多新的特性。。。
+
+> 好像这条有点重复
+
+####  [Django 3.0 beta 1](https://www.djangoproject.com/weblog/2019/oct/14/django-30-beta-1-released/) 
+
+ Django 3.0 beta 1现已推出 。 3.0发布周期的第二阶段也来了，是时候尝试Django 3.0中的变化了。 
+
+> Now is better than never！
+
+####  [PyPy v7.2](https://morepypy.blogspot.com/2019/10/pypy-v72-released.html) 
+
+> 好像到支持cython 3.6版本了，想python跑得更快，值得一试。
+
+## 活动和网络研讨会日程
+
+#### [Silicon Valley Python Workshops November 2019 - Palo Alto, CA](https://www.meetup.com/SV-Python-Workshops/events/265384631/)  
+
+将会有以下的话题：
+
+- Fanatic’s 的微服务之旅:一个关于我们的分布式数据管道的故事
+- Carta的新标识：我们如何让部署更简单
+
+> 实战内容比较多呀
+
+ #### [Boston Python Meetup October: Lightning Talks - Boston, MA](https://www.meetup.com/bostonpython/events/263971510/) 
+
+将会有以下的话题：
+
+- 这需要多长时间？ （进度条） 
+-  使用Open CV做人脸识别
+-  自学Python各种档案
+-  使用FitBit数据来追踪健康 状态
+- 用 python 编写一个 Git Hook
+- 什么时候是农历新年
+
+> 话题种类比较多~~
+
+####  [Snakes and Queues: Python and AMQP - London, UK](https://www.meetup.com/LondonPython/events/265681515/) 
+
+高级消息队列协议（Advanced Message Queuing Protoco）是一种用于在线异步消息传递的开放源码标准，它通过客户机之间的消息代理提供RPC和发布/订阅模式。在这次演讲中，我将向您介绍AMQP，看看它的一些Python客户端实现，最后现场编写一个Python微服务框架，它提供了我所见过的最优雅的AMQP抽象。
+
+> 感觉python微服务相关应用也慢慢变多了。
+
+####  [IndyPy Bytes: Applying Data Science to IoT - Indianapolis, IN](https://www.meetup.com/indypy/events/lbdfpqyznbdc/) 
+
+数据科学有利用人工智能、数学技巧和统计学来帮助理解数据。但随着更多更新的物联网设备出现，传统技术的可扩展性远不如它们需要的那么好，这引出了一个数学上的新方向。本次演讲将详细介绍数据科学中用于大规模分析的方法，以及物联网作为一个行业发展所必需的有用技术和概念。
+
+> 数据和机会，数据和挑战
+
+####  [San Diego Python Meetup October 2019 - San Diego, CA](https://www.meetup.com/pythonsd/events/zgtnxqyznbgc/) 
+
+将会有以下的话题：
+
+-  编程求职技巧 
+- Python席卷全球
+
+> 很硬核的样子
+
+####  [DC Python Meetup October 2019 - Arlington, VA](https://www.meetup.com/dcpython/events/264994832/) 
+
+ 了解在Python中的日期和时间，实现时间序列数据模型。 
+
+
+
+####  [Computer Generated Tweets and Other Prose Using GPT-2 - Chicago, IL](https://www.meetup.com/PyDataChi/events/265629442/) 
+
+在这里，我们将讨论如何应用GPT-2，这是一种可生成的深度学习模型，用于生成模仿一个人的tweet输入的文本。我们将重点准备输入文本，以便它可以理解的模型，以及如何确保没有过拟合。然后，我们将讨论如何在谷歌Colab上使用GPT-2和GPT2-simple，这是使用库的一种简单方法，允许你训练、运行模型并管理GPT-2的改进模型。
+
+> AI应用试验最新实战
+
+
 
