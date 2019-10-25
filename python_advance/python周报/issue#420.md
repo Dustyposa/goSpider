@@ -24,7 +24,28 @@ Vettery是一个招聘网站，它改变了人们应聘或者雇佣的方式。�
 > 谁说python不能用于大型项目，如何解决大型项目的通用问题~~值得一看！
 
 #### [用深度学习发现受欢迎的菜肴](https://engineeringblog.yelp.com/2019/10/discovering-popular-dishes-with-deep-learning.html)
-`Yelp`拥有近2亿的图片和更多的图片。这些数据包含了大量关于企业和用户建议的信息。通过前沿的机器学习技术，我们能够从数据中进行提取和分享见解。值得一提的是，“最受欢迎的菜谱”这个功能就是通过`Yelp`深度挖掘的数据让人们不用猜应该点什么。
+`Yelp`拥有近2亿的图片和更多的图片。这些数据包含了大量关于企业和用户建议的信息。通过前沿的机器学习技术，我们能够从数据中进行提取和分享见解。值得一提的是，“最受欢迎的菜谱”这个功能就是通过`Yelp`深度挖掘的数据让人们不必再纠结应该点什么。“最受欢迎的菜谱”
+以议论最多以及在餐厅经常被拍照的菜肴为重点，将用户言论和图像收集在一个方便处理的地方。在本篇文章中，我们将解释如何用机器学习实现该功能。
+> 机器学习相关的教程越来越多拉！而且都比较硬核，带场景的实战！
+
+#### [Flask路由的艺术](https://t.co/fDqJrynRdN)
+借助智能路由，让你的`Flask应用`能够动态增长。
+> 编程也是一门艺术！提高你的 Flask 技能，不容错过
+
+#### [如何使用 Create ML MLRecommender 构建一个歌曲推荐系统](https://nickymarino.com/2019/10/02/using-mlrecommender/)
+在这篇文章的结尾，我们将会学习如何使用`Create ML MLRecommender`构建歌曲推荐系统根据用户听歌历史向用户推荐歌曲。我们还将学习如何使用`python`和来自第三方的数据准备和解析一个`MLDataTable`.
+> 推荐系统又来啦，干货越来越多！ `MLRecommender`好像是苹果家的库,有机会试试。
+
+#### [Python的 if else 教程：控制你的代码流](https://www.dataquest.io/blog/python-if-else/)
+在这篇`Python`教程中学习如何使用`if,else 和 elif`.学习如何分析真实数据的同时控制代码。
+> 新手推荐，能同时学习数据处理及代码流程~属于实战项目类，干货蛮多!
+
+#### [Python中基于技术分析的算法交易](https://t.co/d2Y8pzb47F)
+
+
+#### []()
+
+
 ## 新版本
 
 ####  [Python 3.8.0](https://www.python.org/downloads/release/python-380/) 
