@@ -40,8 +40,12 @@ Vettery是一个招聘网站，它改变了人们应聘或者雇佣的方式。�
 在这篇`Python`教程中学习如何使用`if,else 和 elif`.学习如何分析真实数据的同时控制代码。
 > 新手推荐，能同时学习数据处理及代码流程~属于实战项目类，干货蛮多!
 
-#### [Python中基于技术分析的算法交易](https://t.co/d2Y8pzb47F)
+#### [Python中基于技术分析(Technical Analysis)的交易算法](https://t.co/d2Y8pzb47F)
+学习如何创建和实现一个基于技术分析的交易策略。
+> 量化交易 python 应用也很广泛哦。对了，好像最近 [zipline(一个交易算法库)](https://github.com/quantopian/zipline)也经常在`python`的`github trending`出现。 
 
+#### [初级Pygame教程：Python游戏开发课程](https://www.youtube.com/watch?v=FfWpgLFMI7w):tv:
+学习如何使用`Pygame`编写`python`游戏代码。在整个课程中，你将通过编写一个太空入侵者游戏学习
 
 #### []()
 
