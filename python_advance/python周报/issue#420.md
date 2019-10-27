@@ -95,8 +95,10 @@ Vettery是一个招聘网站，它改变了人们应聘或者雇佣的方式。�
 
 >  `PySimpleGUI`之前有看到过这个库，让`Python GUI`编程变得更加简单，早就在我的百宝箱中了，有需要的时候肯定是它！
 
-[在Python中重新实现Solaris命令，能让Python的性能比C提升17倍!](https://blogs.oracle.com/solaris/reimplementing-a-solaris-in-python-gained-17x-performance-improvement-from-c)
+[在Python中重新实现Solaris的命令，用Python的性能比用C提升了17倍!](https://blogs.oracle.com/solaris/reimplementing-a-solaris-in-python-gained-17x-performance-improvement-from-c)
 
+> Oracle中的Python应用，解决C的坑？
+>
 > 这让我想起了今年 pycon 红姐演讲的内容～python表达力提升和性能提升，不知道有没有相同点，有时间研究一下。
 >
 > [restrain-jit](https://github.com/thautwarm/restrain-jit) 红姐的项目地址，有兴趣可以和红姐联系哦，等你的 PR。
