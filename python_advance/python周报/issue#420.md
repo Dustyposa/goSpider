@@ -1,16 +1,5 @@
-### 欢迎阅读《python周刊》第420期。Let us start!
+### 欢迎阅读《pythonista周刊》第420期。Let us start!
 
-
-
-## 国内：
-
-#### PyCon China 2019 完美收官
-
-10月26日，在成都和南宁分会场如期举办的`PyCon`大会结束后，今年的`PyCon China`就完美收官啦。今年的主会场在上海，北京、杭州、深圳、成都、南宁为分会场。不知道你有没有到现场呢？不过没到现场也没关系，会场视频、ppt之后都会补上的！让哦我们一起期待明年的`PyCon2020`！
-
-> 在成都场摸鱼的我，收获多多，想必到场的你也收获多多！明年PyCon再见！感谢PyCon的全体成员，让我们能享受到交流的乐趣。
-
------ 分割线 -----
 
 >原文: [https://mailchi.mp/pythonweekly/python-weekly-issue-420](https://mailchi.mp/pythonweekly/python-weekly-issue-420)  
 >翻译：Dustyposa
@@ -75,27 +64,27 @@ Vettery是一个招聘网站，它改变了人们应聘或者雇佣的方式。�
 >
 > 准备学`python`的朋友们，请用`python35+`的版本进行学习～
 
-[使用Docker复制Jupyter Notebooks](https://blog.reviewnb.com/reproducible-notebooks/)
+#### [使用Docker复制Jupyter Notebooks](https://blog.reviewnb.com/reproducible-notebooks/)
 
 在你自己或者别人的`notebook`上重现计算步骤是很困难的，充满曲折。主要是因为我们我们无法在一个`notebook`中知道环境信息（例如：操作系统，依赖关系等）。在本片文章，我们将会为你展示如何在`docker`镜像(image)中获取环境信息，并且如何把`notebook`当作一个容器(container)来运行。
 
 > `docker`在越来越收欢迎～能够使用的范围也越来越广了。如果环境让你头疼，那么该篇文章肯定很适合你。
 
-[Keras新手指南：30分钟实现数字识别](https://www.sitepoint.com/keras-digit-recognition-tutorial/)
+#### [Keras新手指南：30分钟实现数字识别](https://www.sitepoint.com/keras-digit-recognition-tutorial/)
 
 `Shaumik Daityari`的这篇文章展示了如何通过创建一个识别手写数字的模型一步一步地创建一个人工神经网络。
 
 > 经典手写数字识别教程来了，不过这篇是`keras`的，如果近期有学习`keras`的打算，那这篇文章就相当适合你了。实战出真谛～让你掌握更牢固。
 
-[12小时代码直播 - 用 Python 创建一个在线游戏](https://www.youtube.com/watch?v=wDIQ17T3sRk) ![img](https://gallery.mailchimp.com/e2e180baf855ac797ef407fc7/images/8def3887-e9e9-4a48-95e0-74045a6a23fc.png)
+#### [12小时代码直播 - 用 Python 创建一个在线游戏](https://www.youtube.com/watch?v=wDIQ17T3sRk) ![img](https://gallery.mailchimp.com/e2e180baf855ac797ef407fc7/images/8def3887-e9e9-4a48-95e0-74045a6a23fc.png)
 
 > 震惊！直播敲代码来了！还是12小时！不过内容肯定比较干～网络知识跑不了。
 
-[PySimpleGUI简介](http://www.blog.pythonlibrary.org/2019/10/23/a-brief-intro-to-pysimplegui/)
+#### [PySimpleGUI简介](http://www.blog.pythonlibrary.org/2019/10/23/a-brief-intro-to-pysimplegui/)
 
 >  `PySimpleGUI`之前有看到过这个库，让`Python GUI`编程变得更加简单，早就在我的百宝箱中了，有需要的时候肯定是它！
 
-[在Python中重新实现Solaris的命令，用Python的性能比用C提升了17倍!](https://blogs.oracle.com/solaris/reimplementing-a-solaris-in-python-gained-17x-performance-improvement-from-c)
+#### [在Python中重新实现Solaris的命令，用Python的性能比用C提升了17倍!](https://blogs.oracle.com/solaris/reimplementing-a-solaris-in-python-gained-17x-performance-improvement-from-c)
 
 > Oracle中的Python应用，解决C的坑？
 >
@@ -103,7 +92,7 @@ Vettery是一个招聘网站，它改变了人们应聘或者雇佣的方式。�
 >
 > [restrain-jit](https://github.com/thautwarm/restrain-jit) 红姐的项目地址，有兴趣可以和红姐联系哦，等你的 PR。
 
-[使用遗传算法让Ai学习如何成为一辆“车”](https://www.youtube.com/watch?v=Ei2g8XoCkdg) ![img](https://gallery.mailchimp.com/e2e180baf855ac797ef407fc7/images/8def3887-e9e9-4a48-95e0-74045a6a23fc.png)
+#### [使用遗传算法让Ai学习如何成为一辆“车”](https://www.youtube.com/watch?v=Ei2g8XoCkdg) ![img](https://gallery.mailchimp.com/e2e180baf855ac797ef407fc7/images/8def3887-e9e9-4a48-95e0-74045a6a23fc.png)
 
 > 有视频，可以看到AI一步步学习，如何成为“车”的。
 
@@ -139,7 +128,7 @@ Vettery是一个招聘网站，它改变了人们应聘或者雇佣的方式。�
 
 > 这个库有点意思，当你循环时间比较长，但是需要看不同的阶段的变量值时，使用它可以进行类似热重载的效果，而且不会丢失数据。说起来比较复杂，我们看看：
 >
-> ![reloading.gif](./material/%23420-reloading.gif)
+> ![reloading.gif](./material/420-reloading.gif)
 
 #### [pyhttptest](https://github.com/slaily/pyhttptest)
 
@@ -198,7 +187,7 @@ Segmentation by Discriminative Sorting of Segments .
 ## 活动和网络研讨会日程
 
 
- #### [Greater Hartford Python Meetup October 2019 - Hartford, CT](https://www.meetup.com/greaterhartfordpython/events/265133964/)
+#### [Greater Hartford Python Meetup October 2019 - Hartford, CT](https://www.meetup.com/greaterhartfordpython/events/265133964/)
 
 将会有以下的话题：
 
@@ -207,7 +196,7 @@ Segmentation by Discriminative Sorting of Segments .
 
 > 第一个不用多说，第二个之前就在我的百宝箱中了。可以用python制作跨平台的移动端App，怎么发挥，看你们了！
 
-####  [San Francisco Django Meetup October 2019 - San Francisco](https://www.meetup.com/The-San-Francisco-Django-Meetup-Group/events/265460106/)
+#### [San Francisco Django Meetup October 2019 - San Francisco](https://www.meetup.com/The-San-Francisco-Django-Meetup-Group/events/265460106/)
 
 将会有以下的话题：
 
@@ -215,10 +204,18 @@ Segmentation by Discriminative Sorting of Segments .
 - `PostgreSQL`和`Django`最新的消息。
 - 为内存测试数据库使用`Docker`
 
-> Diango大会
+> Django大会
 
-这期的Pyhton周报就到这里啦，感谢您的阅读。希望你能有所收获！
 
+## Posa：
+> ❤️ Happy Pythonic ;-(Posa私人无责任播报)
+#### PyCon China 2019 完美收官
+
+10月26日，在成都和南宁分会场如期举办的`PyCon`大会结束后，今年的`PyCon China`就完美收官啦。今年的主会场在上海，北京、杭州、深圳、成都、南宁为分会场。不知道你有没有到现场呢？不过没到现场也没关系，会场视频、ppt之后都会补上的！让哦我们一起期待明年的`PyCon2020`！
+
+> 在成都场摸鱼的我，收获多多，想必到场的你也收获多多！明年PyCon再见！感谢PyCon的全体成员，让我们能享受到交流的乐趣。
+
+----- 分割线 -----
 > 某条news翻译严重出错，感谢红姐的纠正！
 >
 > 如果你发现哪里翻译有误的话，请务与我联系！感谢！
