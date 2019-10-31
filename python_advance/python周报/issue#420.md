@@ -209,15 +209,15 @@ Segmentation by Discriminative Sorting of Segments .
 
 ## Posa：
 > ❤️ Happy Pythonic ;-(Posa私人无责任播报)
-#### PyCon China 2019 完美收官
+#### [Guido 从 Dropbox 退休了](https://blog.dropbox.com/topics/company/thank-you--guido)
 
-10月26日，在成都和南宁分会场如期举办的`PyCon`大会结束后，今年的`PyCon China`就完美收官啦。今年的主会场在上海，北京、杭州、深圳、成都、南宁为分会场。不知道你有没有到现场呢？不过没到现场也没关系，会场视频、ppt之后都会补上的！让哦我们一起期待明年的`PyCon2020`！
+10月29日，Dropbox 发了该文章。`Guido`也正式退休了（辛苦啦,当然只是工作退休~依然会在社区活跃！）。文章简介了`Dropbox 与 Guido 高的相遇。到 Guido 参与 mypy 的的开发，最后到帮助女性工程师提升社区地位。`大家有兴趣可以读一读。  
+We wish him the best in his retirement. Thank you, Guido! 
+> 引用一下文章结尾~千言万语，汇成一句话。感谢 Guido ，您辛苦啦！   
+> 让我们大声地说出: **Life is short, you need Python!**
 
-> 在成都场摸鱼的我，收获多多，想必到场的你也收获多多！明年PyCon再见！感谢PyCon的全体成员，让我们能享受到交流的乐趣。
 
 ----- 分割线 -----
-> 某条news翻译严重出错，感谢红姐的纠正！
->
 > 如果你发现哪里翻译有误的话，请务与我联系！感谢！
 
 
