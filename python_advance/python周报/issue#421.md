@@ -58,7 +58,7 @@ Vettery是一个招聘网站，它改变了人们应聘或者雇佣的方式。�
 > 入门 `Hacker` ？记上小本本，键盘记录器，保护隐私！当然选择保护隐私！
 
 #### [5分钟用Python制作一个品牌二维码](https://www.youtube.com/watch?v=WSLSRrhFD6U)![img](https://gallery.mailchimp.com/e2e180baf855ac797ef407fc7/images/8def3887-e9e9-4a48-95e0-74045a6a23fc.png)
-在该视频，我们会学习如何设计你自己的二维码，并把它当作名片，宣传资料或者你的在线社交媒体。
+在该视频，我们会学习如何设计你自己的二维码，并把在你的名片，宣传资料或者你的在线社交媒体之中使用它。
 
 > 视频真只有5分钟！并且只有一半时间在写代码！
 
@@ -86,133 +86,153 @@ Vettery是一个招聘网站，它改变了人们应聘或者雇佣的方式。�
 
 #### [使用 Pandas 清理货币数据](https://pbpython.com/currency-cleanup.html) 
 这篇文章包含了几个使用`pandas`清除混乱的货币数据的小技巧，这样你就可以将数据转化为数字格式用来做进一步分析。
-> 数据清理，掌握了吗！
+> 货币数据清理，希望我也有很多的货币数据～
 
-#### [PySimpleGUI简介](http://www.blog.pythonlibrary.org/2019/10/23/a-brief-intro-to-pysimplegui/)
+#### [如何使用Python3 Django框架发送SMS消息](https://www.twilio.com/blog/broadcast-sms-text-messages-python-3-django)
 
->  `PySimpleGUI`之前有看到过这个库，让`Python GUI`编程变得更加简单，早就在我的百宝箱中了，有需要的时候肯定是它！
+在本篇指南中我们会学习如何使用`Django`框架构建一个能发送多条 SMS 信息的`Python3 web 应用`
 
-#### [在Python中重新实现Solaris的命令，用Python的性能比用C提升了17倍!](https://blogs.oracle.com/solaris/reimplementing-a-solaris-in-python-gained-17x-performance-improvement-from-c)
+>  面向Django发送短信 
 
-> Oracle中的Python应用，解决C的坑？
->
-> 这让我想起了今年 pycon 红姐演讲的内容～python表达力提升和性能提升。
->
-> [restrain-jit](https://github.com/thautwarm/restrain-jit) 红姐的项目地址，有兴趣可以和红姐联系哦，等你的 PR。
+#### [给Django后台管理增加图表](https://hodovi.ch/blog/adding-charts-django-admin/)
 
-#### [使用遗传算法让Ai学习如何成为一辆“车”](https://www.youtube.com/watch?v=Ei2g8XoCkdg) ![img](https://gallery.mailchimp.com/e2e180baf855ac797ef407fc7/images/8def3887-e9e9-4a48-95e0-74045a6a23fc.png)
+`Django` 为 `db`管理提供了一套带有 CRUD 接口的开箱即用的功能管理UI。这解决了大多数的基本内容和用户管理系统的大部分需求。但是，它并没有可以显示概要或者历史数据的探索性视图，而这正是你想从后台管理仪表盘看到的。幸运的是，`Django`后台管理是可扩展的，只要经过一些小的调整，我们就可以为后台管理增加`Javascript 图表`接口。
 
-> 有视频，可以看到AI一步步学习，如何成为“车”的。
+> 哪里不够加哪里。
 
-#### [自动化控制你GUI的库](http://blog.asrpo.com/python_gui_automation)
+#### [跟踪App Engine 上的 Python 性能 BUG](https://www.evanjones.ca/app-engine-db-serialization.html)
 
-> 可以通过图像，来选择对图像的操作（例如：将按钮截图，它就会寻找该截图，然后做你想做的操作）。
+在本文中，我将讨论我们如何使用`traces 和 logging`去发现这个问题，之后用`Google`的代码作为猴子补丁去修复这个 BUG。
 
-#### [Django大会 US 2019 视频](https://www.youtube.com/playlist?list=PL2NFhrDSOxgXXUMIGOs8lNe2B-f4pXOX-) ![img](https://gallery.mailchimp.com/e2e180baf855ac797ef407fc7/images/8def3887-e9e9-4a48-95e0-74045a6a23fc.png)
+> BUG修了吗～如何跟踪并查找BUG
 
-#### [Keras vs. tf.keras: Tensorflow 2.0 中有什么不同](https://www.pyimagesearch.com/2019/10/21/keras-vs-tf-keras-whats-the-difference-in-tensorflow-2-0/)
+#### [更快的 ZIP 解压](https://tech.marksblogg.com/faster-zip-decompression-unzip-deflate-zlib-crc32-adler32-7zip-archiver.html)
 
-> 两个 keras 有什么不同
+这篇文章介绍了作者能够找到的最快的解压ZIP文件的方法之路。
 
-#### [为带有二进制扩展的包构建Python平台的wheel文件](https://gertjanvandenburg.com/blog/wheels/)
+> 硅谷？ 谷硅？Pied Piper？ Piper Pied？
 
-> 从二进制扩展到wheel，如何制作wheel文件。
+#### [使用 DNS-OVER-HTTPS 保护你的隐私: 介绍及Python实现](https://siujoeng-lau.com/2019/09/dns-over-https/#more-1016)
 
-#### [Django开发者经常犯的7个错误](https://www.softkraft.co/7-common-mistakes-that-django-developers-make/) 
+> 保护隐私～从 Python 做起
 
-> Django开发，值得一看。
+#### [如何使用 Docker 构建一个 Django 和 Gunicorn 应用](https://www.digitalocean.com/community/tutorials/how-to-build-a-django-and-gunicorn-application-with-docker)
+
+> Django 部署教学
+
+#### [让聊天机器人通过摄像头找出免费停车位的5条经验](https://medium.com/@alex.wauters/5-learnings-from-making-a-chatbot-count-free-parking-spots-through-cameras-f80a7af4f579)
+
+> 程序员的变懒之路～
+
+#### [一些在Python中你可以做但是不应该做的奇怪的操作](https://thoughts.willcipriano.com/weird-python-tricks/)
+
+> 一些底层接口
+
+#### [用 TensorFlow 2.0 创建 Keras 模型的 3 种方式](https://www.pyimagesearch.com/2019/10/28/3-ways-to-create-a-keras-model-with-tensorflow-2-0-sequential-functional-and-model-subclassing/)
+
+> 2.0教程来了，3.0还会远吗
+
+#### [Python混淆](https://gist.github.com/shakna-israel/03172c2c06e1f6622764541dc8b4246b)
+
+> 我被混淆了
+
+
+
+## 书籍
+
+[Python & OpenGL for Scientific Visualization](https://www.labri.fr/perso/nrougier/python-opengl/#python-opengl-for-scientific-visualization)
+
+该书的目标是让`Python`程序员上手`OpenGL`,提供了最新的`OpenGL`介绍及一系列基础和进阶的技术，以实现快速、可伸缩性和漂亮的科学可视化。
+
+
+
+
 
 ## 有趣的项目、工具和库
 
-#### [MusicBot](https://github.com/Just-Some-Bots/MusicBot)
+#### [kitty](https://github.com/kovidgoyal/kitty)
 
-`MusicBot`起初是为`Discord`用`Python3.5+`编写的音乐机器人，使用的`discord.py`库。它将来自`YouTube`和其他服务器的歌曲播放到`DIscord`服务器（或多台服务器）。
+一个跨平台，快速，全功能的基于`GPU`的终端模拟器。
 
-> 不知道有没有玩`Discord`的朋友。
+> 终端爱好者的胜利
 
-#### [reloading](https://github.com/julvo/reloading)
+#### [Auto-Tinder](https://github.com/joelbarmettlerUZH/auto-tinder)
+为你训练一个自动完成 tinder 的人工智能。
 
-当python代码使用reloading循环时，可以改变你的python代码。
+> 自动 tinner，最为致命
 
-> 这个库有点意思，当你循环时间比较长，但是需要看不同的阶段的变量值时，使用它可以进行类似热重载的效果，而且不会丢失数据。说起来比较复杂，我们看看：
+
+
+#### [BrachioGraph](https://github.com/evildmp/BrachioGraph) 
+
+BrachioGraph 是一个非常便宜（总材料花费：€14）的绘图仪，用很少的技能就能构建。
+
+> 不想画画？ `Python` 来凑
+
+#### [instaloader](https://github.com/instaloader/instaloader)
+从 `Instagram`下载图片（或者视频）及他们的标题以及元数据。[ColorPalette](https://github.com/rodartha/ColorPalette/)
+
+####  [ColorPalette](https://github.com/rodartha/ColorPalette/)
+
+从任何图片查找主色调。
+
+> 之前在 trending 看到过，百宝箱。
+
+#### [PySlowFast](https://github.com/facebookresearch/SlowFast)
+`PySlowFast` 是一个来自`FAIR`开源的视频理解代码库。它提供了最先进的视频分类模型，包括了论文`SlowFast Networks for Video Recognition ` 和 `Non-local Neural Networks.` 
+
+> 学术+工业？
 >
-> ![reloading.gif](./material/420-reloading.gif)
+> 如图，看一看前沿的操作：
+>
+> ![421ava_demo.gif](https://i.loli.net/2019/11/03/xgYCfMuZI6o5TGy.gif)
 
-#### [pyhttptest](https://github.com/slaily/pyhttptest)
+#### [flask_api_example](https://github.com/apryor6/flask_api_example)
+大型`Flask API`项目的最佳实践演示。
 
-一个针对`RESTful API`的`HTTP`命令行测试工具。
+> 别犹豫了，你们要的来了！
 
-> 用Json文件就可以就行测试，如果有命令后需求，还是很简单的。
+#### [PyPong](https://github.com/skamieniarz/pypong)
 
-#### [trip-planner](https://github.com/adl1995/trip-planner)
+用`Python`和`pyxel`实现的稍作修改的克隆版，经典的`Pong`游戏。
 
-一个用于旅行计划的命令行工具。
+> 复古与回忆～
 
-> 黑科技？
+#### [napari](https://github.com/napari/napari)
 
-#### [TensorTrade](https://github.com/notadamking/tensortrade)
+用`Python`实现的一个快速，可交互的多维图片查看器。
 
-一个开源的强化学习框架，可以用来训练、评估和部署的健壮的交易算法。
+> 还在 alpha 阶段，还是一张图了解一下（什么不好用就造什么！）～
+>
+> ![421screenshot-add-image.png](https://i.loli.net/2019/11/03/5J6xLwNAgrlV8KU.png)
+>
+> 
 
-> 目前在测试阶段，最好不用用于生产哦。在 trending 也很活跃。
+#### [WhatsApp_emoji_ranker](https://github.com/DerRiedi/WhatsApp_emoji_ranker)
 
-#### [drf-typed-views](https://github.com/rsinger86/drf-typed-views)
+一个简单的程序，可以解析从`Whatsapp`导出的`.txt`文件，并且提取`emojis`并根据其频率生产条形图（使用的：`matplotlib`）
 
-在`Django REST`框架中使用类型注释来验证/反序列化请求参数。
-
-> 这个库，我没猜错的话应该是基于[pydantic](https://pydantic-docs.helpmanual.io/)的（进去看了看，果然是），type hints 越来越普及，这样的工具肯定会出现的！不过`FastAPI`原生集成了`pydantic`,值得学习。
-
-#### [Find Open Data](https://github.com/findopendata/findopendata)
-
-一个搜索`Open Data`的引擎。
-
-> 开源的搜索引擎，有需求可以看看。
-
-#### [igloo](https://github.com/getoutofmyyard/igloo) 
-
-一个超简单的`Windows`命令行工具。
-
-#### [pystickynote](https://github.com/M4cs/pystickynote)
-
-从命令行控制的便签工具。
-
-> 便签小工具。
-
-#### [xkcd-Style-Plots](https://github.com/Doometnick/xkcd-Style-Plots)
-
-使用`Randall Munroe`的`xkcd`的艺术风格创建`matplotlib plots`。
-
-> 普通画图已经不能满足！
-
-#### [SegSort](https://github.com/jyhjinghwang/SegSort)
-
-Segmentation by Discriminative Sorting of Segments .
-
-> 国内天才们的杰作，视觉方面的，已经发表在ICCV2019
-
-
+> 一张图快速了解～
+>
+> ![421emoji_hist.png](https://i.loli.net/2019/11/03/VSmNHwBW9ru8pOc.png)
+>
+> 
 
 ## 活动和网络研讨会日程
 
+#### [PyCon Canada 2019](https://2019.pycon.ca/) 
 
-#### [Greater Hartford Python Meetup October 2019 - Hartford, CT](https://www.meetup.com/greaterhartfordpython/events/265133964/)
+想让你自己沉迷于两天的精彩演讲、特别的主题演讲，不可思议的赞助商，以及其他兴趣相似的`Pythonista`吗？
 
-将会有以下的话题：
+想要了解更多？加入我们周一和周二（11月 18-19）的开发`sprints`，一个你和你的`Python`小伙伴可以在有趣的团队氛围中参与开源的个人项目的地方。
 
-- 入门`Python`中的`Async`特性
--  使用 `Kivy`创建App
+> 心动不如心动！踏上 2019 的末班车～
 
-> 第一个不用多说，第二个之前就在我的百宝箱中了。可以用python制作跨平台的移动端App，怎么发挥，看你们了！
+#### [Effortless REST W/ Flask - Charlotte, NC](https://www.meetup.com/PyDataCharlotte/events/265952190/)
 
-#### [San Francisco Django Meetup October 2019 - San Francisco](https://www.meetup.com/The-San-Francisco-Django-Meetup-Group/events/265460106/)
+你是`Python`新手，并想自己构建一些很酷的东西吗？你想知道构建真实为生产环境准备的`API`需要什么吗？你对如何通过`API`实现你最新的想法有疑问吗？你想在45分钟实现吗？如果是的，这次的`talk`就是为你准备的！
 
-将会有以下的话题：
-
-- `Django`实时聊天
-- `PostgreSQL`和`Django`最新的消息。
-- 为内存测试数据库使用`Docker`
-
-> Django大会
+> 教练！我想做`API`
 
 
 ## Posa：
@@ -227,6 +247,8 @@ We wish him the best in his retirement. Thank you, Guido!
 
 ----- 分割线 -----
 > 如果你发现哪里翻译有误的话，请务与我联系！感谢！
+>
+> 
 
 
 
