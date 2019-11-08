@@ -5,54 +5,61 @@
 >翻译：Dustyposa
 
 ### 来自赞助商:
-#### [python开发者都需要的Vettery](https://www.vettery.com/tech?utm_source=newsletter&utm_medium=pythonweekly&utm_term=tech&utm_content=grouped&utm_campaign=ad-77579)  
-Vettery是一个招聘网站，它改变了人们应聘或者雇佣的方式。准备好换工作地方了吗？免费制作简历，你的薪资你说了算，现在就和顶级雇主的HR联系吧！
-> 跟上周一样，有点南。
+使用 `Datadog` 监控你的python指标，日志，集群分析。使用`Datadog`的应用分析，可以深入任何纬度并且能找到你所需要的信息，来进行动态诊断和快速故障排除。[马上跟踪你的python应用吧！免费试用14天哦！](https://www.datadoghq.com/dg/apm/ts-python-tracing/?utm_source=Advertisement&utm_medium=Advertisement&utm_campaign=PythonWeekly-Tshirt)
+> 又来了。。。
 >
 ## 新闻
-#### [龟叔，谢谢侬！](https://blog.dropbox.com/topics/company/thank-you--guido)
-`Guido van Rossum`从`Dropbox`退休 。感谢`Guido`为`Python`社区所做的一切，退休之后也一切都好。
-> 一个 sad news。但是，python 肯定会变得越来越好！  
->:( 居然和我的私人播报重了！不管，我的播报长一些！
+####  [Python 采用 12 个月的发布周期](https://pythonweekly.us2.list-manage.com/track/click?u=e2e180baf855ac797ef407fc7&id=fea677de77&e=57c131a127)
+> Python 升级固定了！
+
+#### [在银行Python 已经取代了 Excel](https://pythonweekly.us2.list-manage.com/track/click?u=e2e180baf855ac797ef407fc7&id=85e5cd4508&e=57c131a127) 
+
+> 就是在某些银行，已经只用`Python`来处理数据了！原因其实很简单，就是`Excel`太慢了。。想想用`Excel`处理大型文件，内心是绝望的！
+>
+> 该来的还是会来的！
+
+
 
 ## 文章、教程与话题
-#### [生态系统之问：来自200+的FOSS应用经验的课程](https://www.youtube.com/watch?v=t1lvsmcPEcE)![img](https://gallery.mailchimp.com/e2e180baf855ac797ef407fc7/images/8def3887-e9e9-4a48-95e0-74045a6a23fc.png)
+####  ["Writing a PEG parser for fun and profit" - Guido van Rossum](https://www.youtube.com/watch?v=QppWTvh7_sI)  ![img](https://gallery.mailchimp.com/e2e180baf855ac797ef407fc7/images/8def3887-e9e9-4a48-95e0-74045a6a23fc.png)(42 min)
 
-该演讲围绕200个Python最成功的开源应用，从中提炼出了面向大众的构建有效软件的真实建议。从架构、测试、许可到打包和分发，这些项目有完整的生命周期和巧妙之处。等待你去学习！
-> 这个视频肯定很很很有意义，不说了，去看视频了！
+解析表达文法(PEGs) 是一种新的用来描述适合自动生成高效解析器的文法的形式。我对使用 基于PEG生成器的解析器来代理在`Cython`中使用近30年的"pgen"解析生成器很有兴趣。这出现了一些有趣的问题。我还想出了一种可视化解析过程的简单方法，它有助于调试文法和解析机制，并且我将使用它去解释一般的`PEG`解析过程。
 
-#### [Griffin,一个每天预测数亿次的反欺诈风险](https://engineering.grab.com/griffin)
-这篇文章重点介绍了`Grab`的高性能风险规则引擎，它可以自动创建规则，用最少的工程师去检测欺诈活动。
-> 学习学习学习，风险相关，还是很抢手的~~什么抢手？你懂的！
+> 龟叔依然很忙~
 
-#### [《纽约时报》是如何试水推荐算法的](https://open.nytimes.com/how-the-new-york-times-is-experimenting-with-recommendation-algorithms-562f78624d26)
-在《纽约时报》，我们的部分网站和app使用了算法策略。我们使用它去筛选人工操作效率很低或者很难的内容。比如首页的《Smarter Living》或者个性化版的《你的周刊精选》中。个性化算法被用来辅助编辑判断的，去觉得什么故事主导我们的新闻报道。
-> 全民AI~~今天，你AI了吗！
+####  [不要使用 utcnow and utcfromtimestamp](https://blog.ganssle.io/articles/2019/11/utcnow.html) 
+关于`utcnow`和`utcfromtimestamp`的危险以及使用其替代品的好处的公共服务公告。
+> utc 的坑，国际化的Application不易呀~
 
-#### [使用python和OpenBC获取EEG数据，创建脑机接口](https://www.youtube.com/watch?v=Dgo7F-lpyYE)![img](https://gallery.mailchimp.com/e2e180baf855ac797ef407fc7/images/8def3887-e9e9-4a48-95e0-74045a6a23fc.png)
-学习如何在`Python`中读取脑电图数据的目的是创建一个脑机接口，希望做的事情，如控制游戏中的角色及更多!
-> 万能python :) python万能:)  
+####  [JWT 认证和 DjangoREST API](https://t.co/zT2Lxr3Us1) 
+基于 Token  的身份认证允许服务器和前端（无论是网络、本地移动设备还是其他设备）分离，并归属于不同的域名。`JSON Web Tokens(JWT)`是基于 token 的身份认证的一种常见实现方式，在这篇文章，我们将会用它在一个基于`Django REST`框架的notes应用中的一个API进行用户认证。
+> 熟悉的实践篇章
+
+####  [通过做5个游戏来学习 Python](https://www.youtube.com/watch?v=XGf2GcyHPhc) ![img](https://gallery.mailchimp.com/e2e180baf855ac797ef407fc7/images/8def3887-e9e9-4a48-95e0-74045a6a23fc.png)（6h43min）
+
+在这个面向初学者的完整教程中学习`Python`。这个课程使用的是以项目为基础的方法。我们一共收集了5个很好的`Python`游戏教程，所以你可以在构建5个游戏的同时学习`Python`。你如果是实践学习者，这个课程非常适合你！
+
+> 寓教于乐
 
 #### [Python range 指南：学习使用这个很有用的内置函数](https://www.dataquest.io/blog/python-range-tutorial/)
 在这篇详细的指南中，我们将通过几个栗子来带你了解`range`函数的工作原理，并探讨它的局限及解决办法。`range`对各种各样的`Python编程任务`来说都是很有用的，该指南最后将介绍以`range函数`在数据科学的应用的几个栗子。
 > 又一篇新手推荐~
 
-#### [用 Python 构建属于你的静态站点生成器](https://www.megacolorboy.com/posts/build-your-own-static-site-generator-using-python/)
-你想构建属于你自己的静态网站生成器（Static Site Generator）吗？在本文，你讲学习到如何使用`Python`构建你自己的静态网站生成器,创建一个博客并免费部署到`Netlify`
-> 双十一服务器优惠？不!有免费！
+####  [通过GitHub Actions，Poetry，Black和Pytest快速实现CI](https://t.co/GiXdUiDQrm)  
+为`Django`项目设置`Github Actions`
+> 部署上线一条龙~
 
-#### [无缝循环音乐](http://nolannicholson.com/looper.html)
-我写了`Python`脚本，它可以自动确定循环点，让你无缝永久循环`.mp3`文件。这意味着你现在可以重复听你喜欢的游戏音乐，永远！这听起来就像在游戏里！该篇文章对我为什么要做和如何做的给出了具体的解释。
-> 兴趣使人进步~主要就是利用傅里叶变换进行音频相似性检测~然后拼接音频（
-好了，不一本正经的胡说八道了，如果你也有如此需求！那么！go！）
+####  [通过 Python 理解 OpenGL](https://stackabuse.com/understanding-opengl-through-python/) 
+如何使用`Spectrograms和GANs`将爵士乐转换成古典乐
+> 不知道 MIKU 的音乐能不能转~
 
 
-#### [Python Array 的解释与可视化](https://blog.soshace.com/en/python/python-array-explained-and-visualized/)
-在本指南，我们将深入探讨`Python arrays`是如何工作的，已经它们的局限性和你如何最大化效率地使用它们。
+####  [Python Datetime 指南: 操作 Times, Dates 和 Time Spans](https://www.dataquest.io/blog/python-datetime-tutorial/)  
+在本数据科学教程中使用`datetime和calender`模块成为成为`Python`中的时间和日期的大师。
 
-> array 来了 dequeue 还会远吗！
+> 希望能操作虫洞！
 
-#### [如何用Python为Linux创建Keylogger](https://dotweak.com/2019/10/20/how-to-create-a-keylogger-for-linux-using-python-WmtRYVJ3Wm9xZmlwRkE1eWRCY05YZz09)
+####  [Python: 超出你想象的 typed](https://beepb00p.xyz/mypy-error-handling.html) 
 你想知道黑客是如何轻易地发现有价值的数据吗？他们的秘密和工具是什么？以及最重要的是我们如何防止我们的个人隐私不被偷窃？在这篇文章中，我们重点介绍`Keylogger`和如何用`Python`用一种简单的方式创建它。
 
 > 入门 `Hacker` ？记上小本本，键盘记录器，保护隐私！当然选择保护隐私！
