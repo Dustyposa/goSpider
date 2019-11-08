@@ -320,6 +320,32 @@ Exception: parse error
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 为了解释Python3.4中基于生成器实现的协程，我们将介绍生成器以及在它如何在`asyncio`中作为协程使用。相信你你阅读如我写书这般享受。在解释完基于生成器实现的协程之后，我们将异步网络爬虫中使用协程。
 
+## Python 生成器是如何工作的
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 在你掌握**Python**生成器之前，你需要去了解正常的**Python**函数如何工作的。正常情况下，当`Python`函数调用一个子例程(subroutine)时，子例程在函数返回或者抛出异常之前会保留控制权。之后将郭志全返回给调用者：
+
+```python
+>>> def foo():
+...     bar()
+...
+>>> def bar():
+...     pass
+```
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 标准的**Python**解释器使用**C**写的。执行**Python**函数的**C**函数被统称为`PyEval_EvalFrameEx`。它接收一`Python堆栈框架对象`并在框架上下文中计算`Python字节码`。下面是`foo`的字节码：
+
+```python
+>>> import dis
+>>> dis.dis(foo)
+  5           0 LOAD_GLOBAL              0 (bar)
+              2 CALL_FUNCTION            0
+              4 POP_TOP
+              6 LOAD_CONST               0 (None)
+              8 RETURN_VALUE
+```
+
+
+
 [^1]:  线程相关资源
 [^2]: Even calls to `send` can block, if the recipient is slow to acknowledge outstanding messages and the system's buffer of outgoing data is full
 [^3]: 原文作者之一
