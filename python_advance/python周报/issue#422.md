@@ -6,8 +6,7 @@
 
 ### 来自赞助商:
 使用 `Datadog` 监控你的python指标，日志，集群分析。使用`Datadog`的应用分析，可以深入任何纬度并且能找到你所需要的信息，来进行动态诊断和快速故障排除。[马上跟踪你的python应用吧！免费试用14天哦！](https://www.datadoghq.com/dg/apm/ts-python-tracing/?utm_source=Advertisement&utm_medium=Advertisement&utm_campaign=PythonWeekly-Tshirt)
-> 又来了。。。
->
+> 熟悉的面孔。
 ## 新闻
 ####  [Python 采用 12 个月的发布周期](https://pythonweekly.us2.list-manage.com/track/click?u=e2e180baf855ac797ef407fc7&id=fea677de77&e=57c131a127)
 > Python 升级固定了！
@@ -59,91 +58,45 @@
 
 > 希望能操作虫洞！
 
-####  [Python: 超出你想象的 typed](https://beepb00p.xyz/mypy-error-handling.html) 
-你想知道黑客是如何轻易地发现有价值的数据吗？他们的秘密和工具是什么？以及最重要的是我们如何防止我们的个人隐私不被偷窃？在这篇文章中，我们重点介绍`Keylogger`和如何用`Python`用一种简单的方式创建它。
+####  [Python: 超乎想象的 typed](https://beepb00p.xyz/mypy-error-handling.html) 
+`mypy`辅助错误处理，其他语言中的异常机制，模式匹配和类型差异的乐趣。
 
-> 入门 `Hacker` ？记上小本本，键盘记录器，保护隐私！当然选择保护隐私！
+> 何以解忧，唯有`mypy`
 
-#### [5分钟用Python制作一个品牌二维码](https://www.youtube.com/watch?v=WSLSRrhFD6U)![img](https://gallery.mailchimp.com/e2e180baf855ac797ef407fc7/images/8def3887-e9e9-4a48-95e0-74045a6a23fc.png)
-在该视频，我们会学习如何设计你自己的二维码，并把在你的名片，宣传资料或者你的在线社交媒体之中使用它。
+#### [为什么你应该使用 `python -m pip`](https://snarky.ca/why-you-should-use-python-m-pip/)
+该文章揭示了什么是`python -m pip`和你为什么在运行`pip`的时候应该使用它。
 
-> 视频真只有5分钟！并且只有一半时间在写代码！
+> 环境比较重要
 
-#### [深度学习内存使用和Pytorch优化技巧](https://medium.com/sicara/deep-learning-memory-usage-and-pytorch-optimization-tricks-e9cab0ead93)
+#### [基于Keras和深度学习的交通标志分类](https://www.pyimagesearch.com/2019/11/04/traffic-sign-classification-with-keras-and-deep-learning/)
 
-阐明了CUDA内存不足错误背后的原因，并举例说明如何在Pytorch中使用几行代码将内存占用减少80％。
+在本片指南，你讲学习到如何训练你自己的交通标志分类器/识别器，使用`Keras和深度学习`可以使其可以达到95%以上的准确率。
 
-> 内存内存还是内存~内存啊，你什么时候能不要钱！
+> 哪里不认识训练哪里！
 
-#### [异步Python指南：网页抓取之同步VS异步（能快10倍！）](https://www.youtube.com/watch?v=5tWIxBcvy10)![img](https://gallery.mailchimp.com/e2e180baf855ac797ef407fc7/images/8def3887-e9e9-4a48-95e0-74045a6a23fc.png) (10min)
-你是异步编程萌新吗？你已经看过了`python`基础资料，并在寻找能增加`python`知识和各种情况下的`python`经验的地方？那么你来对了地方！该指南以第一篇教程中学到的`Async Python`为基础，去编写一个同步和异步的网页爬虫。
+#### [我们如何发现并修复Python代码中的性能下降](https://blog.redash.io/how-we-spotted-and-fixed-a-performance-degradation-in-our-python-code/)
 
+> 实践出真理
 
-> [第一篇异步教程地址](https://www.youtube.com/watch?v=6kNzG0T44SI)  
-> 异步异步来啦！使用的是 3.7.4 最新的异步教学~~最新的哦！
+#### [用Python进行医疗保险欺诈检测](https://www.theseattledataguy.com/healthcare-fraud-detection-with-python/)
 
+> 人心叵测～
 
+#### [Python标准库中一些鲜为人知的地方](https://t.co/vbMM7hNrJG)
 
-#### [使用 Python 制定环球旅行计划？](https://t.co/OoSgXJWldi)
-如何使用`Python`中的`Basemap` 和 `Netwokx`包去制定你的环球旅程。
+> 骚操作finding！
 
-> 今天你 Python 了吗？
+#### [Hugging Face: TensorFlow 2.0使用10行代码实现最先进的nlp处理](https://blog.tensorflow.org/2019/11/hugging-face-state-of-art-natural.html)
 
+> 适合简单了解一下～
 
+#### [在 Python 中通过源码和行号找到定义](https://julien.danjou.info/finding-definitions-from-a-source-file-and-a-line-number-in-python/)
 
-#### [使用 Pandas 清理货币数据](https://pbpython.com/currency-cleanup.html) 
-这篇文章包含了几个使用`pandas`清除混乱的货币数据的小技巧，这样你就可以将数据转化为数字格式用来做进一步分析。
-> 货币数据清理，希望我也有很多的货币数据～
+> 文法分析，语法树～最近在看的
 
-#### [如何使用Python3 Django框架发送SMS消息](https://www.twilio.com/blog/broadcast-sms-text-messages-python-3-django)
+#### [你不需要迁移至 Python 3](https://switowski.com/blog/you-dont-have-to-migrate-to-python3)
 
-在本篇指南中我们会学习如何使用`Django`框架构建一个能发送多条 SMS 信息的`Python3 web 应用`
-
->  面向Django发送短信 
-
-#### [给Django后台管理增加图表](https://hodovi.ch/blog/adding-charts-django-admin/)
-
-`Django` 为 `db`管理提供了一套带有 CRUD 接口的开箱即用的功能管理UI。这解决了大多数的基本内容和用户管理系统的大部分需求。但是，它并没有可以显示概要或者历史数据的探索性视图，而这正是你想从后台管理仪表盘看到的。幸运的是，`Django`后台管理是可扩展的，只要经过一些小的调整，我们就可以为后台管理增加`Javascript 图表`接口。
-
-> 哪里不够加哪里。
-
-#### [跟踪App Engine 上的 Python 性能 BUG](https://www.evanjones.ca/app-engine-db-serialization.html)
-
-在本文中，我将讨论我们如何使用`traces 和 logging`去发现这个问题，之后用`Google`的代码作为猴子补丁去修复这个 BUG。
-
-> BUG修了吗～如何跟踪并查找BUG
-
-#### [更快的 ZIP 解压](https://tech.marksblogg.com/faster-zip-decompression-unzip-deflate-zlib-crc32-adler32-7zip-archiver.html)
-
-这篇文章介绍了作者能够找到的最快的解压ZIP文件的方法之路。
-
-> 硅谷？ 谷硅？Pied Piper？ Piper Pied？
-
-#### [使用 DNS-OVER-HTTPS 保护你的隐私: 介绍及Python实现](https://siujoeng-lau.com/2019/09/dns-over-https/#more-1016)
-
-> 保护隐私～从 Python 做起
-
-#### [如何使用 Docker 构建一个 Django 和 Gunicorn 应用](https://www.digitalocean.com/community/tutorials/how-to-build-a-django-and-gunicorn-application-with-docker)
-
-> Django 部署教学
-
-#### [让聊天机器人通过摄像头找出免费停车位的5条经验](https://medium.com/@alex.wauters/5-learnings-from-making-a-chatbot-count-free-parking-spots-through-cameras-f80a7af4f579)
-
-> 程序员的变懒之路～
-
-#### [一些在Python中你可以做但是不应该做的奇怪的操作](https://thoughts.willcipriano.com/weird-python-tricks/)
-
-> 一些底层接口
-
-#### [用 TensorFlow 2.0 创建 Keras 模型的 3 种方式](https://www.pyimagesearch.com/2019/10/28/3-ways-to-create-a-keras-model-with-tensorflow-2-0-sequential-functional-and-model-subclassing/)
-
-> 2.0教程来了，3.0还会远吗
-
-#### [Python混淆](https://gist.github.com/shakna-israel/03172c2c06e1f6622764541dc8b4246b)
-
-> 我被混淆了
-
-
+> 所以我是升还是不升呢？
 
 ## 书籍
 
