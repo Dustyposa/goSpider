@@ -98,41 +98,48 @@
 
 > 所以我是升还是不升呢？
 
-## 书籍
-
-[Python & OpenGL for Scientific Visualization](https://www.labri.fr/perso/nrougier/python-opengl/#python-opengl-for-scientific-visualization)
-
-该书的目标是让`Python`程序员上手`OpenGL`,提供了最新的`OpenGL`介绍及一系列基础和进阶的技术，以实现快速、可伸缩性和漂亮的科学可视化。
-
-
-
 
 
 ## 有趣的项目、工具和库
 
-#### [kitty](https://github.com/kovidgoyal/kitty)
+####  [Spleeter](https://github.com/deezer/spleeter)  
 
-一个跨平台，快速，全功能的基于`GPU`的终端模拟器。
+`Spleeter`是 `Deezer`的源分离库，有用`Python`使用`Tensorflow`编写的预训练模型。让训练一个源分离模型（ 假设已经有了一个隔离源的数据集 ）变得容易。并且提供了已经训练好的用于执行各种分离风格的最新模型。
 
-> 终端爱好者的胜利
+> 音轨分离！佳作。
+>
+> 内置3种分离模式。可以自由选择哦！
+>
+> 听不出自己声音的我估计是没戏了。
 
-#### [Auto-Tinder](https://github.com/joelbarmettlerUZH/auto-tinder)
-为你训练一个自动完成 tinder 的人工智能。
+####  [inbac](https://github.com/weclaw1/inbac) 
+`inbac`是一款交互式批量裁剪器，用于快速裁剪图像。
 
-> 自动 tinner，最为致命
+> 剪裁太慢？python来凑！
 
 
 
-#### [BrachioGraph](https://github.com/evildmp/BrachioGraph) 
+####  [trains-agent](https://github.com/allegroai/trains-agent) 
 
-BrachioGraph 是一个非常便宜（总材料花费：€14）的绘图仪，用很少的技能就能构建。
+它是一种零配置的“一劳永逸”执行代理，与trains-server结合使用可提供完整的AI集群解决方案。
 
-> 不想画画？ `Python` 来凑
+> AI服务也是需要Dev-ops的，为什么？因为都是集群了！
+>
+> 
+>
+> 
 
-#### [instaloader](https://github.com/instaloader/instaloader)
-从 `Instagram`下载图片（或者视频）及他们的标题以及元数据。[ColorPalette](https://github.com/rodartha/ColorPalette/)
+#### [python-gift-exchange](https://github.com/sethblack/python-gift-exchange) 
 
-####  [ColorPalette](https://github.com/rodartha/ColorPalette/)
+Python礼物交换选择器
+
+> 一个程序员被妻子逼迫的故事！
+>
+> 没办法，为什么自己这么强呢？（不是我！！！！！！）
+
+
+
+####   [jsonfield-schema](https://github.com/viewflow/jsonfield-schema) 
 
 从任何图片查找主色调。
 
