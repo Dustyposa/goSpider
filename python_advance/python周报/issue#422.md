@@ -141,65 +141,60 @@ Python礼物交换选择器
 
 ####   [jsonfield-schema](https://github.com/viewflow/jsonfield-schema) 
 
-从任何图片查找主色调。
+将Django JSONField数据公开为虚拟模型字段
 
-> 之前在 trending 看到过，百宝箱。
 
-#### [PySlowFast](https://github.com/facebookresearch/SlowFast)
-`PySlowFast` 是一个来自`FAIR`开源的视频理解代码库。它提供了最先进的视频分类模型，包括了论文`SlowFast Networks for Video Recognition ` 和 `Non-local Neural Networks.` 
 
-> 学术+工业？
+#### [lask-static-digest](https://github.com/nickjj/flask-static-digest)
+`Flask`扩展，通过`md5标记和gzipping`帮助你准备好生产的静态文件。
+
+> 静态一条龙
 >
-> 如图，看一看前沿的操作：
->
-> ![421ava_demo.gif](https://i.loli.net/2019/11/03/xgYCfMuZI6o5TGy.gif)
 
-#### [flask_api_example](https://github.com/apryor6/flask_api_example)
-大型`Flask API`项目的最佳实践演示。
 
-> 别犹豫了，你们要的来了！
 
-#### [PyPong](https://github.com/skamieniarz/pypong)
+#### [cvxpylayers](https://github.com/cvxgrp/cvxpylayers)
 
-用`Python`和`pyxel`实现的稍作修改的克隆版，经典的`Pong`游戏。
+cvxpylayers是一个Python库，用于使用CVXPY在PyTorch和TensorFlow中构造可微凸优化层。
 
-> 复古与回忆～
+## 最近更新
 
-#### [napari](https://github.com/napari/napari)
+#### [Python 3.5.9](https://www.python.org/downloads/release/python-359/)
 
-用`Python`实现的一个快速，可交互的多维图片查看器。
+#### [Django bugfix releases issued: 2.2.7, 2.1.14, and 1.11.26](https://www.djangoproject.com/weblog/2019/nov/04/django-bugfix-releases-227-2114-11126/)
 
-> 还在 alpha 阶段，还是一张图了解一下（什么不好用就造什么！）～
->
-> ![421screenshot-add-image.png](https://i.loli.net/2019/11/03/5J6xLwNAgrlV8KU.png)
->
-> 
 
-#### [WhatsApp_emoji_ranker](https://github.com/DerRiedi/WhatsApp_emoji_ranker)
-
-一个简单的程序，可以解析从`Whatsapp`导出的`.txt`文件，并且提取`emojis`并根据其频率生产条形图（使用的：`matplotlib`）
-
-> 一张图快速了解～
->
-> ![421emoji_hist.png](https://i.loli.net/2019/11/03/VSmNHwBW9ru8pOc.png)
->
-> 
 
 ## 活动和网络研讨会日程
 
-#### [PyCon Canada 2019](https://2019.pycon.ca/) 
+#### [CPython: from code to execution - New York](https://www.meetup.com/nycpython/events/265386351/)
 
-想让你自己沉迷于两天的精彩演讲、特别的主题演讲，不可思议的赞助商，以及其他兴趣相似的`Pythonista`吗？
+通过快速浏览cpython 3.9解释器源代码，我们将了解一些python代码如何从熟悉的人类可读语法到解释器产生字节码结果。
 
-想要了解更多？加入我们周一和周二（11月 18-19）的开发`sprints`，一个你和你的`Python`小伙伴可以在有趣的团队氛围中参与开源的个人项目的地方。
-
-> 心动不如心动！踏上 2019 的末班车～
+> 编译原理之美
 
 #### [Effortless REST W/ Flask - Charlotte, NC](https://www.meetup.com/PyDataCharlotte/events/265952190/)
 
-你是`Python`新手，并想自己构建一些很酷的东西吗？你想知道构建真实为生产环境准备的`API`需要什么吗？你对如何通过`API`实现你最新的想法有疑问吗？你想在45分钟实现吗？如果是的，这次的`talk`就是为你准备的！
+将有以下话题：
 
-> 教练！我想做`API`
+- 算法如何变得有偏见？
+- Python Severless 话题：使用Zappa无基础架构的web应用程序
+- Tensorflow 2.0 有什么新东西？
+- Python中最好的AI包
+
+> 种类依旧丰富～
+
+#### [Philadelphia Python Meetup November 2019 - Philadelphia, PA](https://www.meetup.com/phillypug/events/265657211/)
+
+Twitter的Developer Advocate-Jessica Garson将向我们展示她如何使用Python解决她在纽约的停车问题
+
+#### [Boulder Python Meetup November 2019 - Boulder, CO](https://www.meetup.com/BoulderPython/events/vcmckryzpbqb/)
+
+#### [PyLadies Totonto November Talk Night, Totonto ON](https://www.meetup.com/PyLadies-Toronto/events/265218106/)
+
+####[Edmonton Python Meetup November 2019 - Edmonton, AB](https://www.meetup.com/startupedmonton/events/dtflxjyzpbpb/)
+
+
 
 
 ## Posa：
@@ -214,7 +209,6 @@ Python礼物交换选择器
 ----- 分割线 -----
 > 如果你发现哪里翻译有误的话，请务与我联系！感谢！
 >
-> 
 
 
 
