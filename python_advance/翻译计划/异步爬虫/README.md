@@ -332,7 +332,7 @@ Exception: parse error
 ...     pass
 ```
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 标准的**Python**解释器使用**C**写的。执行**Python**函数的**C**函数被统称为`PyEval_EvalFrameEx`。它接收一`Python堆栈框架对象`并在框架上下文中计算`Python字节码`。下面是`foo`的字节码：
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 标准的**Python**解释器使用**C**写的。执行**Python**函数的**C**函数被统称为`PyEval_EvalFrameEx`。它接收一`Python栈帧对象`并在框架上下文中计算`Python字节码`。下面是`foo`的字节码：
 
 ```python
 >>> import dis
@@ -343,6 +343,115 @@ Exception: parse error
               6 LOAD_CONST               0 (None)
               8 RETURN_VALUE
 ```
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `foo`函数将`bar`加载到堆栈上，并调用它，然后从堆栈中弹出它的返回值，将`None`加载到堆栈上，最后返回`None`。
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 当`PyEval_EvalFrameEx`碰到`CALL_FUNCTION`字节码时，它会新建一个`Python 栈帧`并递归：也就是说，它用一个新的帧递归地调用`PyEval_EvalFrameEx`，该帧用来执行`bar`。
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 理解`Pthon栈帧`是堆内存分配这件事是极其重要的！`Python`解释器是一个普通的C程序，所以他的栈帧也是普通的栈帧。但是它操作的`Python栈帧`在堆上。出乎意料的是，这意味着一个`Python栈帧`可以比它的函数调用存在更久。要想看交互式的效果，在`bar`中保存当前帧：
+
+```python
+>>> import inspect
+>>> frame = None
+>>> def foo():
+...     bar()
+...
+>>> def bar():
+...     global frame
+...     frame = inspect.currentframe()
+...
+>>> foo()
+>>> # 帧正在执行 'bar' 的代码
+>>> frame.f_code.co_name
+'bar'
+>>> # 下一个帧指向的为'foo'
+>>> caller_frame = frame.f_back
+>>> caller_frame.f_code.co_name
+'foo'
+```
+
+
+
+![function-calls.png](https://i.loli.net/2019/11/13/siMN7VcqEPIfAuU.png)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Figure 5.1 - Function Calls 
+
+现在为`Python生成器`设置好了同样的阶段，使用相同的构建块——代码对象和栈帧——得到了很好的效果。
+
+这是一个生成器函数：
+
+```python
+>>> def gen_fn():
+... 	result = yield 1
+... 	print(f'result of yield: {result}')
+... 	result2 = yield 2
+... 	print(f'result of 2nd yield: {result2}')
+... 	return 'done'
+... 
+```
+
+当`Python`将`gen_fn`编译为字节码时，编译器看到`yield`声明就知道`gen_fn`是一个生成器函数，不是一个常规的函数。它会设置一个`flag`去记住这个事实：
+
+```python
+>>> # 生成器标志是 5比特位(bit position 5)
+>>> generator_bit = 1 << 5
+>>> bool(gen_fn.__code__co_flags & generator_bit)
+True
+```
+
+当你调用一个生成器函数时，`Python`看见生成器`flag`并不会真的运行这个函数。反而它会创建一个生成器：
+
+```python
+>>> gen = gen_fn()
+>>> type(gen)
+<class 'generator'>
+```
+
+`Python`生成器封装了一个栈帧和一个对某些代码的引用，`gen_fn`的主体:
+
+```python
+>>> gen.gi_code.co_name
+'gen_fn'
+```
+
+从对`gen_fn`的调用到所有的生成器都指向相同的代码。但是每个都有自己的栈帧。这个栈帧不在任何真实的栈上面，它在堆内存中等待被使用：
+
+![generator.png](https://i.loli.net/2019/11/13/lEUd6p8Doz4ZrSh.png)
+
+这个帧有一个“最后的指令”指针，就是它最近执行的指令。在刚开始的时候，最后的指令指针为`-1`，意味着生成器还没开始：
+
+```python
+>>> gen.gi_frame.f_lasti
+-1
+```
+
+当我们调用`send`的时候，生成器到达第一个`yield`并暂停。`send`的返回值是`1`，这是由`gen`通过`yield`表达式传递的：
+
+```python
+>>> gen.send(None)
+1
+```
+
+生成器指令指针现在是3字节码，部分通过编译的`Python`有56字节：
+
+```python
+>>> gen.gi_frame.f_lasti
+3
+>>> len(gen.gi_code.co_code)
+56
+```
+
+生成器可以在任何时候从任何函数复位(resumed)，因为它的栈帧并没有真正的存在栈上：它在堆上。它在调用层次结构中位置是不固定的，并且它不需要遵循常规函数执行时的先进后出的顺序。它是自由的，像自由漂浮的云。
+
+我们可以给生成器发送`hello`，它会成为`yield`表达式的结果，生成器继续运行只到它`yields 2`:
+
+```python
+>>> gen.send('hello')
+retult of yield: hello
+2
+```
+
+
 
 
 
