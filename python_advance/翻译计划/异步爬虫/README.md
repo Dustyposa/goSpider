@@ -458,6 +458,8 @@ retult of yield: hello
 {'result': 'hello'}
 ```
 
+从`gen_fn`创建的其他生成器有它们自己的栈帧和局部变量。
+
 
 
 
