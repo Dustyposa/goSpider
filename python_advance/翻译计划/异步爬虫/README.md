@@ -451,6 +451,13 @@ retult of yield: hello
 2
 ```
 
+它的栈帧现在有了局部变量`result`:
+
+```python
+>>> gen.gi_frame.f_locals
+{'result': 'hello'}
+```
+
 
 
 
