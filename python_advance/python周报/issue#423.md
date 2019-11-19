@@ -153,104 +153,117 @@ Register now for this hands-on code webinar with Dr. Mark Fenner - Data Scientis
 
 ####   [stylecloud](https://github.com/minimaxir/stylecloud) 
 
-`Spleeter`是 `Deezer`的源分离库，有用`Python`使用`Tensorflow`编写的预训练模型。让训练一个源分离模型（ 假设已经有了一个隔离源的数据集 ）变得容易。并且提供了已经训练好的用于执行各种分离风格的最新模型。
+Python包+命令行界面生成风格化的单词云，包括渐变和图标形状！
 
-> 音轨分离！佳作。
+> wordcloud 升级版~有词云需求可以看看，使用也很简单。
+
+####   [MMFashion](https://github.com/open-mmlab/mmfashion) 
+ 基于PyTorch的用于视觉时尚分析的开源工具箱 
+
+> 时尚分析谁来做！
 >
-> 内置3种分离模式。可以自由选择哦！
+> 来自香港中文大学的多媒体实验室开发的！
+
+
+
+####   [Fast-SRGAN](https://github.com/HasnainRaz/Fast-SRGAN) 
+
+一个快速深度学习模型，以30fps的速度将低分辨率的视频提升到高分辨率。
+
+> 重制神器呀！
 >
-> 听不出自己声音的我估计是没戏了。
+> 之前有一个 anime 4k升级，这个不限定于anime，可以 try one try。
 
-####  [inbac](https://github.com/weclaw1/inbac) 
-`inbac`是一款交互式批量裁剪器，用于快速裁剪图像。
+####  [conrad](https://github.com/vinayak-mehta/conrad) 
 
-> 剪裁太慢？python来凑！
+在终端上跟踪会议和聚会！ 
 
-
-
-####  [trains-agent](https://github.com/allegroai/trains-agent) 
-
-它是一种零配置的“一劳永逸”执行代理，与trains-server结合使用可提供完整的AI集群解决方案。
-
-> AI服务也是需要Dev-ops的，为什么？因为都是集群了！
+> 主要是查看订阅：  公开征集提案（CFP）的事件 
 >
-> 
->
-> 
-
-#### [python-gift-exchange](https://github.com/sethblack/python-gift-exchange) 
-
-Python礼物交换选择器
-
-> 一个程序员被妻子逼迫的故事！
->
-> 没办法，为什么自己这么强呢？（不是我！！！！！！）
+> 当然有需求可以改成自己需要的版本~爬虫部分可定制机。
 
 
 
-####   [jsonfield-schema](https://github.com/viewflow/jsonfield-schema) 
+####    [ScrapeGen](https://github.com/kadnan/ScrapeGen) 
 
-将Django JSONField数据公开为虚拟模型字段
+一个简单的`Python`工具，可以生成一个基于 `requests/bs4`的爬虫。
+
+> 原理很简单，可以参考一下设计思路~
 
 
 
-#### [lask-static-digest](https://github.com/nickjj/flask-static-digest)
-`Flask`扩展，通过`md5标记和gzipping`帮助你准备好生产的静态文件。
+####  [dovpanda](https://github.com/dovpanda-dev/dovpanda) 
+在分析环境中和`Pandas`叠加使用。
 
-> 静态一条龙
+> pandas辅助来了！
 >
 
+#### [PygameUI](https://github.com/kubapilch/PygameUI) 
 
+这是一个小的基础UI组件的实现，加速你的游戏项目构建。
 
-#### [cvxpylayers](https://github.com/cvxgrp/cvxpylayers)
+> 懒惰，使程序员变强！
 
-cvxpylayers是一个Python库，用于使用CVXPY在PyTorch和TensorFlow中构造可微凸优化层。
+####  [pwnagotchi-plugins-contrib](https://github.com/evilsocket/pwnagotchi-plugins-contrib)  
 
-## 最近更新
+ 用户贡献的`Pwnagotchi` 插件。
 
-#### [Python 3.5.9](https://www.python.org/downloads/release/python-359/)
-
-#### [Django bugfix releases issued: 2.2.7, 2.1.14, and 1.11.26](https://www.djangoproject.com/weblog/2019/nov/04/django-bugfix-releases-227-2114-11126/)
+> 谨慎使用。 
 
 
 
 ## 活动和网络研讨会日程
 
-#### [CPython: from code to execution - New York](https://www.meetup.com/nycpython/events/265386351/)
+####  [Four data-themed talks - Boston, MA](https://www.meetup.com/bostonpython/events/265373222/) 
 
-通过快速浏览cpython 3.9解释器源代码，我们将了解一些python代码如何从熟悉的人类可读语法到解释器产生字节码结果。
+将会有以下话题：
 
-> 编译原理之美
-
-#### [Effortless REST W/ Flask - Charlotte, NC](https://www.meetup.com/PyDataCharlotte/events/265952190/)
-
-将有以下话题：
-
-- 算法如何变得有偏见？
-- Python Severless 话题：使用Zappa无基础架构的web应用程序
-- Tensorflow 2.0 有什么新东西？
-- Python中最好的AI包
+- D-Tale
+- Twitter  情感分析
+- 在没有服务器的情况下，在网上提供深度学习模型。
+- 用自定义数据类型处理`DataFranes`以外的数据。
 
 > 种类依旧丰富～
 
-#### [Philadelphia Python Meetup November 2019 - Philadelphia, PA](https://www.meetup.com/phillypug/events/265657211/)
+####  [DC Python Meetup November 2019 - Arlington, VA](https://www.meetup.com/dcpython/events/265096630/) 
 
-Twitter的Developer Advocate-Jessica Garson将向我们展示她如何使用Python解决她在纽约的停车问题
+用 `AWS and Lambda`实现模型服务。
 
-#### [Boulder Python Meetup November 2019 - Boulder, CO](https://www.meetup.com/BoulderPython/events/vcmckryzpbqb/)
+> 咦，承接上面的 serverless？
 
-#### [PyLadies Totonto November Talk Night, Totonto ON](https://www.meetup.com/PyLadies-Toronto/events/265218106/)
+####  [Surviving without Python - Raleigh, NC](https://www.meetup.com/tripython/events/265549119/) 
 
-####[Edmonton Python Meetup November 2019 - Edmonton, AB](https://www.meetup.com/startupedmonton/events/dtflxjyzpbpb/)
+Python是如此受欢迎的语言是有原因的:它的原则很强大。然而，如果Python是“所有语言中第二好的语言”，那就意味着常常选择第一好的语言。噢,不!如果没有我们喜欢的语言，`Pythonistas`怎么能在一个项目或工作场所生存下来呢?
+
+> 我也这么想的！
+
+
+
+####  [PyHou Meetup November 2019 - Houston, TX](https://www.meetup.com/python-14/events/ndcfkryzpbzb/) 
+
+设计一个`Pythonic API`。
+
+ [PyData Montreal Meetup November 2019 - Montreal, QC](https://www.meetup.com/PyData-MTL/events/266258888/) 
+
+将会有以下话题：
+
+- 目标检测和定位的弱监督方法
+- 用scikit-image和Dash进行交互式图像处理
+
+> 看来Dash还是很受欢迎的。
+
+####  [Interpretable Neural Networks for Text Classification - Chicago, IL](https://www.meetup.com/PyDataChi/events/266300442/) 
+
+将会讨论全局和局部两者可解释性的不同之处；这些概念在文本分类中意味着什么；如何使用显著性和遮挡这两种特殊的局部可解释性方法来打开神经网络的黑盒子。我们也会降到多层注意力网络，一个利用文本分类的神经网络模型，具有注意力形式的内置局部可解释性。
+
+####  [LjPyMeetup November 2019 - Ljubljana, Slovenia](https://www.meetup.com/Ljubljana-Python-Group/events/265920194/) 
 
 
 
 
 ## Posa：
-> ❤️ Happy Pythonic ;-(Posa私人无责任播报)
-#### [测测你的python数据类型掌握了吗！](https://realpython.com/quizzes/python-data-types/viewer/)
-
-一个测试~哎，有点难，可以试试，8道题，3分钟差不多。是时候展现自己真正的实力了。
+> ❤️ Happy Pythonic ;-(Posa私人无责任播报)  
+残念，暂无。:(
 
 
 
