@@ -460,7 +460,19 @@ retult of yield: hello
 
 从`gen_fn`创建的其他生成器有它们自己的栈帧和局部变量。
 
+我们可以再次调用`send`，生成器继续运行直到遇到第二个`yield`，在抛出一个特殊的`StopIteration`错误后结束掉。
 
+```python
+>>> gen.send('goodbye')
+result of 2nd yield: goodbye
+Traceback (most recent call last):
+  File "<input>", line 1, in <module>
+StopIteration: done
+```
+
+这个异常有一个值，就是作为生成器返回的值：字符串"done".
+
+## 用生成器构建协程
 
 
 
