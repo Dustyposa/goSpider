@@ -474,7 +474,7 @@ StopIteration: done
 
 ## 用生成器构建协程
 
-
+因此，一个生成器可以暂停，用一个值恢复并且有一个返回值。
 
 [^1]:  线程相关资源
 [^2]: Even calls to `send` can block, if the recipient is slow to acknowledge outstanding messages and the system's buffer of outgoing data is full
