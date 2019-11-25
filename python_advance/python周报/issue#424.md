@@ -14,7 +14,7 @@
 ## 新闻
 ####    [PyCon US 2020开放注册！](https://pycon.blogspot.com/2019/11/registration-for-pycon-us-2020-is-open.html) 
 
-`PyCon`将于2020年4月14日-23日在宾夕法尼亚州匹兹堡举行。早鸟票价格：公司-$550,个人-$350，学生-$100。在卖出800张票之后，将会变为正常的价格。正常价格：公司-$700，个人-$400，学生-$125。
+`PyCon`将于2020年4月14日-23日在宾夕法尼亚州匹兹堡举行。早鸟票价格：公司`$550`,个人`$350`，学生`$100`。在卖出800张票之后，将会变为正常的价格。正常价格：公司 `$700`，个人`$400`，学生`$125。`
 
 > `PyCon2020`要来了！等待你的加入~
 >
@@ -22,34 +22,32 @@
 
 ####   [给NumPy和OpenBLAS的新拨款！!](https://labs.quansight.org/blog/2019/11/numpy-openblas-CZI-grant/) 
 
- 陈和扎克伯格基金会公国 向`NumPy and OpenBLAS`捐赠了一笔`$195,000`的款项。
+ 陈和扎克伯格基金会通过自家重要的开源软件(`EOSS`) 向`NumPy and OpenBLAS`捐赠了一笔`$195,000`的款项。所有的`$195,000`都将捐赠给`Numpy`的财务赞助商`NumFOCUS`。这笔捐款，其中`$55,000`将会用于`OpenBLAS`的工作，剩余的`$140,000`用于`Numpy`。
 
-> 心动不如心动！
->
-> 官方出手，最为致命。希望能解决这个令人头痛的问题！
->
-> 不过话说回来，现在`poetry、pyflow`好像比较火。
+> Numpy power up！
 
-####  [Jupyter 社区研讨会: 2020年1-8月征集提案  2020年1-8月征集提案 ](https://blog.jupyter.org/jupyter-community-workshops-call-for-proposals-for-jan-aug-2020-710f687e30f4)  
+#### [Python Software Foundation Fellow Members for Q3 2019](https://pyfound.blogspot.com/2019/11/python-software-foundation-fellow.html)
 
-Jupyter 社区研讨会将会聚集一些Jupyter社区成员和核心贡献者小组，以进行有影响力的战略性工作，并就重点主题进行社区讨论。 我们希望这一轮有资助的活动将在2020年8月之前举行。 
+> 会员公布～
 
-> 为社区做贡献，也是一件很有自豪感的事。
+#### [Python Software Foundation Fellow Members for Q3 2019](https://pyfound.blogspot.com/2019/11/python-software-foundation-fellow.html)
+
+
 
 ## 文章、教程与话题
-####   [MicroPython  温暖我的家](https://www.youtube.com/watch?v=P5nOGKVLIYo)  ![img](https://gallery.mailchimp.com/e2e180baf855ac797ef407fc7/images/8def3887-e9e9-4a48-95e0-74045a6a23fc.png)(42 min)
+####   [Python 指南: Zip Files - 创建和解压 Zip 文档](https://www.youtube.com/watch?v=z0gguhEmWiY) ![img](https://gallery.mailchimp.com/e2e180baf855ac797ef407fc7/images/8def3887-e9e9-4a48-95e0-74045a6a23fc.png)(27 min)
 
-2018年，我从美国搬到了爱尔兰，尽管有配备联网功能的暖气控制器，但是我租的房子还是非常冷。在这个视频中，我想告诉你我是如何“debugged”这个问题并且我在之后是如何使用几个运行`MicroPython`的微型控制器来改善供暖的，所有这些操作都无需对我不拥有的房屋进行任何修改。
+在本视频，我们讲学习如何创建和解压`Zip文档`。我们将从使用`zipfile`模块开始，然后我们将知道如何使用`shutil`模块达到同样的效果。我们将学习如何使用单文件和文件夹做到这一点，以及如何使用`gzip`。
 
-> 哪里不爽，动手用`Python`改哪里！So,cool!
+> zip get！
 
-####   [Python中Dijkstra最短路径算法](https://t.co/QnBi3m7S1Z) 
-从GPS导航到网络链路路由，Dijkstra的算法在一些最被视为理所当然的现代服务中大放异彩。利用一些基本的数据结构，让我们了解它是做什么的，它是如何实现目标的，然后如何在`Python`中实现（从最简单到良好的运行~）。
-> 熟悉的算法来了！
+####   [使用Python, Flask and Twilio 搭建 WhatsApp机器人](https://www.twilio.com/blog/build-a-whatsapp-chatbot-with-python-flask-and-twilio)
+这篇教程向你展示了使用`Python 针对 WhatsApp 的Twilio API 和 Flask框架`构建`WhatsApp机器人`是多么简单。
+> 站在巨人的肩膀上！
 
-####   [理解卷积神经网络:制作手写数字计算器](https://www.youtube.com/watch?v=eyKwPyOqMg4)  ![img](https://gallery.mailchimp.com/e2e180baf855ac797ef407fc7/images/8def3887-e9e9-4a48-95e0-74045a6a23fc.png)（22min）
+####   [Hacking Neural Networks: 一个简短的介绍](https://github.com/Kayzaks/HackingNeuralNetworks/blob/master/Article.pdf) 
 
-在本视频，我使用卷积神经网络——在用`Python`基于`Tensorflow和Keras`编写的——去制作了一个手写数字计算器。在此过程中，我深入研究了卷积神经网络是如何工作的。
+这是一个简短的介绍，
 
 > 识别不够，计算来凑。
 
