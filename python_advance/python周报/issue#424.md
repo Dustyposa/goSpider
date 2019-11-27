@@ -47,27 +47,29 @@
 
 ####   [Hacking Neural Networks: 一个简短的介绍](https://github.com/Kayzaks/HackingNeuralNetworks/blob/master/Article.pdf) 
 
-这是一个简短的介绍，
+这是一个简短的介绍，将神经网络作为进攻方式（bug 搜索，shell代码混淆，等等）以及在自然情况下充分利用神经网络进行挖掘（信息提取，恶意软件注入，后门，等等）
 
-> 识别不够，计算来凑。
+> 攻守兼备。
 
-####  [如何使用Django REST框架开发APIS](https://djangostars.com/blog/rest-apis-django-development/) 
-Mastering the basics means mastering the craft. 一步一步教你如何成功构建API。
-> 似曾相识~？
+####   [Tkinter教程 - 在Python教程中创建图形化用户界面](https://www.youtube.com/watch?v=YXPyB4XeYLA) ![img](https://gallery.mailchimp.com/e2e180baf855ac797ef407fc7/images/8def3887-e9e9-4a48-95e0-74045a6a23fc.png) (5h37min)
+在这门面向初学者的完整课程中学习`Tkinter`。`Tkinter`是用`Python`最快最简单的创建图形化用户界面的方式。`Python` 已经自带`Tkinter`了，所以没什么可以安装的了！
+> 代码给别人看不懂？给个GUI自己调！
 
-####   [Jupyter Notebooks 最佳实践: 使用虚拟环境](https://zainrizvi.io/blog/jupyter-notebooks-best-practices-use-virtual-environments/) 
-将Python社区公认的最佳实践应用到你的`Jupyter Notebooks`中。你可以为`Jupyter Lab`增加虚拟环境，给每个`notebook`建立专用的虚拟环境。本篇文章详尽地解释了你如何在`Google Cloud's AI Platform Notebooks`上为你个人的`notebooks`增加虚拟环境。
-> 云上环境管理也是很重要的。
+####    [用 Keras and Deep Learning 识别火灾和抽烟的识别](https://www.pyimagesearch.com/2019/11/18/fire-and-smoke-detection-with-keras-and-deep-learning/) 
+在本篇教程，你将学习到如何使用`计算机视觉，OpenCV and Keras深度学习库`识别火灾和抽烟。
+> 快速发现，智能调度消防车辆，现代社会必备呀！
+>
+> 但是防患于未然更重要！
 
-####   [Django基于视图的权限管理](https://t.co/POY5bshIPf) 
-这篇文章解释（使用一个很简单的例子）了我们如何使用`Django和Django REST Framework`实现了一个基于视图的权限管理系统，并试着解释我们为什么选择这样做。
-> 权限api，get！
+####    [我如何使用 scikit-learn 进行编码分类特征?](https://www.youtube.com/watch?v=irHhDMbw3xo) ![img](https://gallery.mailchimp.com/e2e180baf855ac797ef407fc7/images/8def3887-e9e9-4a48-95e0-74045a6a23fc.png) 
+在这个视频，你将学习到如何使用 `OneHotEncoder and ColumnTransformer`去编码你的分类特征，并且一步准备好你的分类矩阵。你也将学习到如何使用`Pipeline`实现这个步骤，这样你就能交叉验证你的模型的同时进行预处理。最后，你会知道你为什么处理你的数据集应该使用`scikit-learn(而不是pandas)`。
+> 提高处理效率~
 
 
-####   [使用Elasticsearch & fscrawler构建一个基础搜索引擎](https://t.co/Q0Raies7D4) 
-这篇文章展示了如何使用`fscrawler,Elasticsearch,Python和Flask`在你本机上运行一个快速并dirty（没找到合适的词，，）的搜索引擎。
+####    [使用SSH的非传统安全异步RESTful api](https://tryexceptpass.org/article/secure-asynchronous-apis-using-ssh/) 
+如何在`Python`中使用`Korv and AsyncSSH` 构建通过`SSH 会话`监听`TCP sockets`的安全的异步`APIs`。
 
-> 想到什么做什么~快速提升办公效率
+> 这个有点好玩，会话监听。
 
 ####   [剖析Python: 了解你的代码资源占用情况的一份介绍](https://www.youtube.com/watch?v=MgBgMyYROTE) ![img](https://gallery.mailchimp.com/e2e180baf855ac797ef407fc7/images/8def3887-e9e9-4a48-95e0-74045a6a23fc.png)(22min)
 发现你代码中的性能瓶颈并不是一直都很简单。这篇指南将会给你介绍可用于代码分析和度量程序优化效果的工具。
