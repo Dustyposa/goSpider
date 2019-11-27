@@ -71,77 +71,69 @@
 
 > 这个有点好玩，会话监听。
 
-####   [剖析Python: 了解你的代码资源占用情况的一份介绍](https://www.youtube.com/watch?v=MgBgMyYROTE) ![img](https://gallery.mailchimp.com/e2e180baf855ac797ef407fc7/images/8def3887-e9e9-4a48-95e0-74045a6a23fc.png)(22min)
-发现你代码中的性能瓶颈并不是一直都很简单。这篇指南将会给你介绍可用于代码分析和度量程序优化效果的工具。
+####   [NumPy终极入门指南](https://t.co/uKASoSGlqd) 
 
-> 性能分析，进阶必备！
+`Numpy`入门所需要的一切！
 
-####  [网上研讨会-提升预测准确性:调整超参数和管道](https://www.brighttalk.com/webcast/17563/377927?utm_source=python-weekly&utm_medium=sponsored&utm_campaign=377927) 
-Register now for this hands-on code webinar with Dr. Mark Fenner - Data Scientist and Book Author of Machine Learning with Python for Everyone - and Domino Data Lab. 
+所有你需要
 
-> 来自赞助商~有名人参与的网络研讨会。
+> 常见数据分析库教程都有了吧～
 
-####  [用Django 部署机器学习模型](https://www.deploymachinelearning.com/) 
+####  [Python List 指南: Lists, Loops, and More!](https://www.dataquest.io/blog/python-list-tutorial/)
+用这个`Python list`教程掌握列表吧！分析`app store`数据，并学习如何使用循环自动重复执行任务。
 
-该教程提供了几个如何用`REST API`构建你的ML系统代码示例。
+> 熟悉的知识点，新鲜的场景～
 
-> 机器学习部署来了！快全覆盖了！
+####  [用 DTrace and cProfile 进行 Django 性能分析](https://wiedi.frubar.net/blog/2019/11/18/django-performance/)
 
-####  [使用Python的矩阵分解技术概述](https://t.co/ZziDy4xCm7) 
+官方文档中有一章介绍了性能和优化。在这篇文章，我想在官方文档的基础上，展示一些工具和我使用的方法去减少页面加载的时间。
 
-用于在线推荐系统引擎的集中不同类型的矩阵分解技术和缩放机制。
+> 优化进阶～
 
-> 推荐系统与矩阵分解~
+####  [如何将awk脚本移植到Python](https://opensource.com/article/19/11/awk-to-python)
+
+将awk脚本移植到Python更重要的是关于代码风格而不是代码翻译。
+
+> 哪里不好用转哪里！
+
+####  [手机上的Jupyter (或者任何地方, really)](https://thekhan314.github.io/jupyter_on_your_phone_or_anywhere_really)
+
+想想你日常生活中浪费掉的所有的`downtime`.在地铁上的那个小时，在车管所的那个下午，上班时服务器宕机的20分钟时候，你在等着IT部门让一切恢复正常。如果你使用那些时间做一些数据科学相关的工作不好吗？让我们开始设置`Jupyter`远程服务器吧！
+
+> 糟了，这是心动的感觉！
+
+####  [从神经网络中提取知识来建立更小更快的模型](https://blog.floydhub.com/knowledge-distillation/)
+
+这篇文章讨论了`GPT-2 and BERT`模型，以及使用知识提炼使用比他们老师使用的更少的参数创建精度更高的模型。
+
+
+
+> 长江后浪推前浪～
+
+####  [Python 3 的基础数据类型： Booleans](https://www.fullstackpython.com/blog/python-basic-data-types-booleans.html)
+
+学习在你的`Python 3`代码中使用布尔（True and False)值.
+
+
+
+####  [在 Glitch.com 上部署 Flask 应用](https://www.youtube.com/watch?v=95y1N6MFCNs) ![img](https://gallery.mailchimp.com/e2e180baf855ac797ef407fc7/images/8def3887-e9e9-4a48-95e0-74045a6a23fc.png)（15min）
+
+在该视频中学习如何在`glitch`上部署`Flask`应用。
+
+> 新鲜的部署～
 >
-> 不过最近 Attention 比较流行。
 
-####  [用Flask处理表单的端到端指南](https://t.co/UmPtJnyQZh) 
+####  [如何在树莓派上运行 TensorFlow Lite进行目标检测](https://www.youtube.com/watch?v=aimSGOAUI8Y) ![img](https://gallery.mailchimp.com/e2e180baf855ac797ef407fc7/images/8def3887-e9e9-4a48-95e0-74045a6a23fc.png)（10min）
 
-学习如何使用`Flask-WTForms`在`Flask`中创建表单逻辑和模版。
+`TensorFlow Lite是一个轻量级机器学习模型的框架，它非常适合于像树莓派这样的低功耗设备。本视频展示了如何在树莓派上设置`TensorFlow Lite`去运行目标检测模型，以便在实时网络摄像头流，视频或者图片中进行定位和识别。
 
-> 全套教程应该都有了
-
-####  [我的Python开发环境，2020版](https://jacobian.org/2019/nov/11/python-environment-2020/)  
-
- Jacob Kaplan-Moss 解释他的`Python `环境设置. 
-
-> 环境有困扰？可以瞅一瞅。
-
-####  [用Keras and Deep Learning发现自然灾害](https://www.pyimagesearch.com/2019/11/11/detecting-natural-disasters-with-keras-and-deep-learning/) 
-
-在本教程，你将学习到如何使用`Keras,CV and 深度学习`自动发现自然灾害（地震、洪水、山火、旋风/飓风）超过95%的准确率。
-
-> 科技造福人类。
-
-####  [11个新Python web frameworks](https://deepsource.io/blog/new-python-web-frameworks/) 
-
-在你的下一个网站项目中试试新的血液吧~
-
-> 框架不要怕~文档在手，天下我有。
+> 硬件需要玩起来！
 >
-> 看了一下大部分都脸熟，最近打算玩玩`fastapi`
+> 丰富自家全靠它！
 
-####  [不被阻挡的艺术](https://t.co/Cur6Zc94Ja) 
+####  [Python中多语言的影响](https://8thlight.com/blog/mike-knepper/2019/11/05/polyglot-influence-in-python.html)
 
-我如何使用Selenium和Python抓取Facebook和Tiktok。
-
-> 数据抓取方面感觉国外有点慢~？
-
-#### [ 我们如何构建Bytebase —第一部分:使用网络套接字实时聊天 ](https://t.co/FbfkPpcheR) 
-
-这是我们关于我们如何构建`Bytebase`系列文章中的第一篇。本系列改编于我们在圣地亚哥举行的 2019 US DjangoCon 大会上介绍的Django实时聊天教程，我们也根据需求增加了主题。
-
-> 追追追！很明显很有趣！
-
-####  [用Keras实现人脸检测和识别](https://www.sitepoint.com/keras-face-detection-recognition/) 
-
-本教程展示了如何在`Keras`中使用`MTCNN模型`检测图片中的人脸，以及如何使用`VGGFace2算法`提取人脸特征并在不同图片中匹配他们。
-
-> 升级的人脸识别项目~
-
-####  [Contract-Driven开发](https://articles.life4web.ru/python/contracts/) 
-
-> 契约驱动~微服务大展拳脚？
+> 取其精华
 
 #### [通过使用Python自动执行SSH和SCP任务来节省时间](https://t.co/hZy1K6g8Jq)  
 
