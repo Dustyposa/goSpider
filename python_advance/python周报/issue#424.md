@@ -135,124 +135,131 @@
 
 > 取其精华
 
-#### [通过使用Python自动执行SSH和SCP任务来节省时间](https://t.co/hZy1K6g8Jq)  
+####  [Python / Pandas & BigQuery in 7 minutes](https://t.co/LA56fosPqp) 
 
-> SSH,SCP  自動達成する 
+> 7min knowledge
 
-#### [Python中的惰性和流](https://jjmalina.github.io/posts/laziness-and-streams-pt-2/) 
+####  [如何使用 Python 从 Wikipedia 制作你自己的 Wiki](https://jwork.org/home/node/69) 
 
-####  [在GCP上用Python创建一个Slack应用](https://lethain.com//creating-slack-app-python/) 
+####   [Django REST Framework Permissions in Depth](https://nezhar.com/blog/django-rest-framework-permissions-in-depth/) 
 
-#### [“Parsing” in Python](https://asthasr.github.io/posts/parsing-in-python/) 
+> 深入权限管理
+
+####  [如何使用机器学习过滤推特](https://t.co/qXuSIZDoSY) 
+
+> ML全场景攻略 Point！
 
 ## 有趣的项目、工具和库
 
-####   [stylecloud](https://github.com/minimaxir/stylecloud) 
+#### [Quay](https://github.com/quay/quay)
 
-Python包+命令行界面生成风格化的单词云，包括渐变和图标形状！
+构建，存储和分发你的应用和容器。
 
-> wordcloud 升级版~有词云需求可以看看，使用也很简单。
+> 部署新利器？
 
-####   [MMFashion](https://github.com/open-mmlab/mmfashion) 
- 基于PyTorch的用于视觉时尚分析的开源工具箱 
+#### [Deepdrive](https://github.com/deepdrive/deepdrive) 
 
-> 时尚分析谁来做！
->
-> 来自香港中文大学的多媒体实验室开发的！
+无人驾驶端到端模拟。
 
+> 人人可用！只是配置要求比较苛刻~
 
+#### [great_expectations](https://github.com/great-expectations/great_expectations)
 
-####   [Fast-SRGAN](https://github.com/HasnainRaz/Fast-SRGAN) 
+`Great Expectations`是一个分析，验证和记录你的数据的工具，用于维持质量的同时提升团队的沟通效率。
 
-一个快速深度学习模型，以30fps的速度将低分辨率的视频提升到高分辨率。
+> 数据工程也需要管理~
 
-> 重制神器呀！
->
-> 之前有一个 anime 4k升级，这个不限定于anime，可以 try one try。
+#### [meshio](https://github.com/nschloe/meshio) 
 
-####  [conrad](https://github.com/vinayak-mehta/conrad) 
+有多种网格格式可用于表示非结构化网格。 `meshio`可以读取和写入多种格式，并在它们之间进行平滑转换。
 
-在终端上跟踪会议和聚会！ 
+> 数据平滑处理
 
-> 主要是查看订阅：  公开征集提案（CFP）的事件 
->
-> 当然有需求可以改成自己需要的版本~爬虫部分可定制机。
+#### [Clusterman](https://github.com/Yelp/clusterman) 
+`Clusterman（集群管理器）`是用于`Mesos和Kubernetes`集群的自动扩展引擎。 支持查看指标并可以启动或终止计算以满足您的工作负载需求，类似于官方的`Kubernetes Cluster Autoscaler`
 
+> 用起来顺手才是最终目的！
 
+#### [jwt_tool](https://github.com/ticarpi/jwt_tool)
 
-####    [ScrapeGen](https://github.com/kadnan/ScrapeGen) 
+一个用于测试，伪造和破解 JWT的工具。
 
-一个简单的`Python`工具，可以生成一个基于 `requests/bs4`的爬虫。
+> 知己知彼
 
-> 原理很简单，可以参考一下设计思路~
+#### [mail-sanitizer](https://github.com/BharatKalluri/mail-sanitizer)
 
+一个清楚你的`email`的客户端工具。
 
+> 清洁你我他
 
-####  [dovpanda](https://github.com/dovpanda-dev/dovpanda) 
-在分析环境中和`Pandas`叠加使用。
+#### [OpenNRE](https://github.com/thunlp/OpenNRE)
 
-> pandas辅助来了！
->
+一个用于神经网络关系提取(NRE)的开源包。
 
-#### [PygameUI](https://github.com/kubapilch/PygameUI) 
+> 来自国内的小伙伴们的 NLP 包。
 
-这是一个小的基础UI组件的实现，加速你的游戏项目构建。
+#### [ytmdl](https://github.com/deepjyoti30/ytmdl)
 
-> 懒惰，使程序员变强！
-
-####  [pwnagotchi-plugins-contrib](https://github.com/evilsocket/pwnagotchi-plugins-contrib)  
-
- 用户贡献的`Pwnagotchi` 插件。
-
-> 谨慎使用。 
+一个简单的脚本，用于从`YouTube`获取`mp3`格式的歌曲，以及来自`iTunes`的所有标签。
 
 
+
+#### [ADTK](https://github.com/arundo/adtk)
+
+用于在时间序列中进行无监督异常检测的Python工具包。
+
+
+
+#### [kaolin](https://github.com/NVIDIAGameWorks/kaolin/)
+用于加速`3D`深度学习研究的`PyTorch`库。
+
+> 解决 Python 痛点？
+
+#### [rsh](https://github.com/mzfr/rsh)
+`rsh`是一个纯粹用`Python`编写的工具，可以方便地为`linux`和`windows`生成反向shell命令。
+
+#### [flask-dashboard-modular-admin](https://github.com/app-generator/flask-dashboard-modular-admin)
+
+在`ModularAdmin`仪表盘设计之上，以`Flask Web`框架编码的开放源代码管理仪表盘。
+
+> 带仪表盘的后台！
+
+#### [Pandera](https://www.pyopensci.org/blog/pandera-python-pandas-dataframe-validation)
+`Pandas` 的统计数据验证工具包。
+
+## 要闻
+
+#### [Python in Visual Studio Code – November 2019 Release](https://devblogs.microsoft.com/python/python-in-visual-studio-code-november-2019-release/) 
+
+在这个版本中，我们主要关注产品质量。我们总共解决了60个问题，其中39个是bug修复。不过，我们也很高兴提供一些令人愉快的功能，比如:
+
+- 使用`Python`服务器时增加`quick fix`
+- Altair 画图支持
+- Notebook Editor 中增加行号
+
+> 快上新版本！
+
+#### [Django 3.0 release candidate 1](https://www.djangoproject.com/weblog/2019/nov/18/django-30-release-candidate-1-released/) 
+
+> 发布时间逐渐逼近
 
 ## 活动和网络研讨会日程
 
-####  [Four data-themed talks - Boston, MA](https://www.meetup.com/bostonpython/events/265373222/) 
+####   [Basics of Natural Language Processing in Python - London, UK](https://www.meetup.com/LondonPython/events/265990284/) 
 
-将会有以下话题：
+多亏了Python社区，自然语言处理从未如此简单!我们将看看NLP的工具，并比较它们的不同用途，包括一些有趣的生成的写作例子!我们也将介绍一些关于语言和跨语言分析的算法。
 
-- D-Tale
-- Twitter  情感分析
-- 在没有服务器的情况下，在网上提供深度学习模型。
-- 用自定义数据类型处理`DataFranes`以外的数据。
+> NLP泛场景应用~
 
-> 种类依旧丰富～
+####   [IndyPy Bytes: Making AI More Accessible to the Non-Developer - Indianapolis, IN](https://www.meetup.com/indypy/events/lbdfpqyzpbjc/) 
 
-####  [DC Python Meetup November 2019 - Arlington, VA](https://www.meetup.com/dcpython/events/265096630/) 
+`Python`中有许多可用的AI库，但它们是为程序员设计的。我们已经在`Python`中构建了一些工具来降低那些现有库的进入门槛。我们及早发现常见的错误，使评估学习者的表现更容易，并可视化的学习者行为和基础数据更容易获得。我们将讨论这些决策背后的驱动因素，并通过一个简单的示例介绍如何在现成的数据集上使用此工具。
 
-用 `AWS and Lambda`实现模型服务。
+> 门槛肯定会越来越低~毕竟当作工具用！
 
-> 咦，承接上面的 serverless？
+#### [Build an ML Product - 4 Mistakes to Avoid - Vancouver, BC](https://www.meetup.com/vanpydata/events/266419423/)
 
-####  [Surviving without Python - Raleigh, NC](https://www.meetup.com/tripython/events/265549119/) 
-
-Python是如此受欢迎的语言是有原因的:它的原则很强大。然而，如果Python是“所有语言中第二好的语言”，那就意味着常常选择第一好的语言。噢,不!如果没有我们喜欢的语言，`Pythonistas`怎么能在一个项目或工作场所生存下来呢?
-
-> 我也这么想的！
-
-
-
-####  [PyHou Meetup November 2019 - Houston, TX](https://www.meetup.com/python-14/events/ndcfkryzpbzb/) 
-
-设计一个`Pythonic API`。
-
- [PyData Montreal Meetup November 2019 - Montreal, QC](https://www.meetup.com/PyData-MTL/events/266258888/) 
-
-将会有以下话题：
-
-- 目标检测和定位的弱监督方法
-- 用scikit-image和Dash进行交互式图像处理
-
-> 看来Dash还是很受欢迎的。
-
-####  [Interpretable Neural Networks for Text Classification - Chicago, IL](https://www.meetup.com/PyDataChi/events/266300442/) 
-
-将会讨论全局和局部两者可解释性的不同之处；这些概念在文本分类中意味着什么；如何使用显著性和遮挡这两种特殊的局部可解释性方法来打开神经网络的黑盒子。我们也会降到多层注意力网络，一个利用文本分类的神经网络模型，具有注意力形式的内置局部可解释性。
-
-####  [LjPyMeetup November 2019 - Ljubljana, Slovenia](https://www.meetup.com/Ljubljana-Python-Group/events/265920194/) 
+#### [Austria Python Meetup November 2019 - Vienna, Austria](https://www.meetup.com/PYUGAT/events/266412585/)  
 
 
 
