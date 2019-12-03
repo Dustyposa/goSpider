@@ -31,15 +31,26 @@ Vettery是一个招聘网站，它改变了人们应聘或者雇佣的方式。�
 
 #### [使用GNES和Tensorflow 2.0进行大规模的视频语义搜索](https://hanxiao.io/2019/11/22/Video-Semantic-Search-in-Large-Scale-using-GNES-and-TF-2-0/)
 
-GNES is an open-source cloud-native semantic search solution based on deep neural network. This post shows you how to use the latest GNES Flow API and Tensorflow 2.0 to build a video semantic search system. 
+`GNES`是一个基于深度神经网络的开源云原生语义搜索解决方案。这篇文章展示了你如何使用最新的`GENS Flow Api and Tensorflow 2.0`去构建一个视频语义搜索系统。
 
-[How to document Python code with Sphinx](https://opensource.com/article/19/11/document-python-sphinx)
-Documentation is best as part of the development process. Sphinx, along with Tox, makes it easy to write and beautiful to look at.
+> 视频搜索，下一步会是什么？
 
-[The Mind at Work: Guido van Rossum on how Python makes thinking in code easier](https://blog.dropbox.com/topics/work-culture/-the-mind-at-work--guido-van-rossum-on-how-python-makes-thinking)
-A conversation with the creator of the world’s most popular programming language on removing brain friction for better work.
+#### [如何使用Sphinx给Python代码增加文档](https://opensource.com/article/19/11/document-python-sphinx)
 
-[How To Calculate Customer Retention Rate — A Practical Approach](https://t.co/rfbtcmouyn) 
+最好将文档作为开发过程的一部分。`Sphinx和Tox`一起使用，能让文档编写更顺畅并且更美观！
+
+> 何以解项目，唯有项目文档。
+
+#### [工作思路: Guido van Rossum 谈论Python让思考代码变得更简单](https://blog.dropbox.com/topics/work-culture/-the-mind-at-work--guido-van-rossum-on-how-python-makes-thinking)
+
+与世界上最流行的编程语言创建者进行关于减轻大脑消耗从而更好地工作的对话。
+
+> coding fun is important!
+
+#### [如何计算用户留存率 — 一个使用的方法](https://t.co/rfbtcmouyn) 
+
+留存率可以说是新的市场财富，但是它的计算并不总是很容易。
+
 Retention is arguably the new marketing gold, but it’s not always easy to calculate it. With this simple Python script, that will change!
 
 [Tips for Selecting Columns in a DataFrame](https://pbpython.com/selecting-columns.html)
