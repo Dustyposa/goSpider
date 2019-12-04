@@ -79,81 +79,99 @@ A glimpse into the technology used in driver-less cars.
 
 ## 有趣的项目、工具和库
 
-#### [Quay](https://github.com/quay/quay)
+#### [Flan Scan](https://github.com/cloudflare/flan) 
 
-构建，存储和分发你的应用和容器。
+`Flan Scan `是一个轻量级的网络漏洞扫描器。使用`Flan Scan`，你可以轻松地发现你网络的开放端口，验证服务及其版本，并且获得影响网络相关的`CVE`列表。
 
-> 部署新利器？
+> 安全治理，人人有责！
 
-#### [Deepdrive](https://github.com/deepdrive/deepdrive) 
+#### [geo-heatmap](https://github.com/luka1199/geo-heatmap)
 
-无人驾驶端到端模拟。
+用`Google位置数据`生成一个可交互的地理热力图。
 
-> 人人可用！只是配置要求比较苛刻~
+> 制作炫酷数据图的好助手～值得学习
 
-#### [great_expectations](https://github.com/great-expectations/great_expectations)
+[NBoost](https://github.com/koursaros-ai/nboost) 
 
-`Great Expectations`是一个分析，验证和记录你的数据的工具，用于维持质量的同时提升团队的沟通效率。
+`NBoost`是一个可扩展的搜索引擎增强平台，可用于开发和部署最新的模型以提高搜索质量。
 
-> 数据工程也需要管理~
+> NB！
 
-#### [meshio](https://github.com/nschloe/meshio) 
+#### [baikal](https://github.com/alegonz/baikal)
 
-有多种网格格式可用于表示非结构化网格。 `meshio`可以读取和写入多种格式，并在它们之间进行平滑转换。
+一个创建复杂的`scikit-learn`管道的基于图的函数`API`
 
-> 数据平滑处理
+> 生态越来越多～懒是第一生产力
 
-#### [Clusterman](https://github.com/Yelp/clusterman) 
-`Clusterman（集群管理器）`是用于`Mesos和Kubernetes`集群的自动扩展引擎。 支持查看指标并可以启动或终止计算以满足您的工作负载需求，类似于官方的`Kubernetes Cluster Autoscaler`
+#### [Relé](https://github.com/mercadona/rele/) 
 
-> 用起来顺手才是最终目的！
+Relé使与谷歌`PubSub`的集成变得简单明了了。
 
-#### [jwt_tool](https://github.com/ticarpi/jwt_tool)
-
-一个用于测试，伪造和破解 JWT的工具。
-
-> 知己知彼
-
-#### [mail-sanitizer](https://github.com/BharatKalluri/mail-sanitizer)
-
-一个清楚你的`email`的客户端工具。
-
-> 清洁你我他
-
-#### [OpenNRE](https://github.com/thunlp/OpenNRE)
-
-一个用于神经网络关系提取(NRE)的开源包。
-
-> 来自国内的小伙伴们的 NLP 包。
-
-#### [ytmdl](https://github.com/deepjyoti30/ytmdl)
-
-一个简单的脚本，用于从`YouTube`获取`mp3`格式的歌曲，以及来自`iTunes`的所有标签。
+> 致力于造出更好用的轮子～～
+>
+> 好多客户端都是起于这样
 
 
 
-#### [ADTK](https://github.com/arundo/adtk)
+#### [wemake-python-styleguide](https://github.com/wemake-services/wemake-python-styleguide)
 
-用于在时间序列中进行无监督异常检测的Python工具包。
+最严格和最苛刻的`Python`检测工具。
+
+> 叫板 mypy？
+
+#### [Chepy](https://github.com/securisec/chepy) 
+
+`Chepy`是一个`Python`库，有一个方便的客户端可用来实现`CyberChef`的一些功能。
+
+> 看吧！cli 出现！
+
+#### [PupDB](https://github.com/tuxmonk/pupdb) 
+
+用`Python`编写的基于文件的`key-value`数据库。
+
+> sqlite ???
+
+#### [attendance-automation](https://github.com/hardeepnarang10/attendance-automation)
+
+基于二维码的考勤监控及自动化。具有动态身份认证（密钥生成）及验证功能。
+
+> 创意无限～动手就行
+>
+> 何以致命，唯有考勤
+
+#### [Corsy](https://github.com/s0md3v/Corsy)
+
+`Corsy`是一个轻量级程序，它扫描`CORS`实现中所有已知的错误配置。
+
+> 肯定会出现一个集成的扫描工具！
+
+#### [3d-ken-burns](https://github.com/sniklaus/3d-ken-burns)
+
+使用`Pytouch`从单个图像实现`3D Ken Burns`效果。
+
+> 论文+代码～
+
+#### [parliament](https://github.com/duo-labs/parliament) 
+
+`parliament` is an AWS IAM linting library.
+
+#### [Qiling](https://github.com/qilingframework/qiling) 
+
+`Qiling`是一个高级的二进制仿真框架。
+
+> 看名字！！！ 麒麟！
+
+#### [NNgen](https://github.com/NNgen/nngen)
+
+一个用于深度神经网络的可完全定制硬件合成编译器。
 
 
 
-#### [kaolin](https://github.com/NVIDIAGameWorks/kaolin/)
-用于加速`3D`深度学习研究的`PyTorch`库。
+#### [Appelpy](https://github.com/mfarragher/appelpy)
 
-> 解决 Python 痛点？
+`Appelpy`是`Python 的 Applied Econometrics 库`。它试着在拥有简单的语法（例如： Stata）软实力和使用`Python`面向对象编程作为数据建模工作流的一部分的硬实力之间构建一座桥梁。
 
-#### [rsh](https://github.com/mzfr/rsh)
-`rsh`是一个纯粹用`Python`编写的工具，可以方便地为`linux`和`windows`生成反向shell命令。
 
-#### [flask-dashboard-modular-admin](https://github.com/app-generator/flask-dashboard-modular-admin)
-
-在`ModularAdmin`仪表盘设计之上，以`Flask Web`框架编码的开放源代码管理仪表盘。
-
-> 带仪表盘的后台！
-
-#### [Pandera](https://www.pyopensci.org/blog/pandera-python-pandas-dataframe-validation)
-`Pandas` 的统计数据验证工具包。
 
 ## 要闻
 
