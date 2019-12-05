@@ -49,17 +49,28 @@ Vettery是一个招聘网站，它改变了人们应聘或者雇佣的方式。�
 
 #### [如何计算用户留存率 — 一个使用的方法](https://t.co/rfbtcmouyn) 
 
-留存率可以说是新的市场财富，但是它的计算并不总是很容易。
+留存率可以说是新的市场财富，但是它的计算并不总是很容易。但是有了这个简单的`Python`脚本，那么一切都不一样了！
 
-Retention is arguably the new marketing gold, but it’s not always easy to calculate it. With this simple Python script, that will change!
+> 计算力 get！
 
-[Tips for Selecting Columns in a DataFrame](https://pbpython.com/selecting-columns.html)
-This article will discuss several ways that the pandas iloc function can be used to select columns of data.
+#### [在 DataFrame 中选择列数据的技巧](https://pbpython.com/selecting-columns.html)
 
-[How to Create a Seaborn Boxplot](https://www.sharpsightlabs.com/blog/seaborn-boxplot/) 
-This tutorial will show you how to create a Seaborn boxplot. It will explain the syntax and show you step-by-step examples of how to create box plots with Seaborn.
+这篇文章将会介绍几种使用`pandas iloc 函数的`选择列数据的技巧。
 
-[Increasing Kaggle Revenue: Analyzing user data to recommend the best new product](https://t.co/gQcM3Yipqs)
+> pandas 进阶，熟记 api 是真理。
+>
+> 新手和老手真不一样！（你所不知道的骚操作。。）
+
+#### [如何创建 Seaborn 箱体图](https://www.sharpsightlabs.com/blog/seaborn-boxplot/) 
+
+这篇教程中向你展示了如何创建一个`Seaborn 箱体图`。将会进行语法解释，以及向你展示几个有步骤的用`Seaborn`创建箱体图的例子。
+
+> 越来越简单才是真理~
+
+#### [增加 Kaggle 收益: 分析用户数据来推荐最合适的新产品](https://t.co/gQcM3Yipqs)
+
+在这个项目中，我们将为一个在线的专业数据科学社区-`Kaggle`推荐增加收益的建议。我们将分析一份`Kaggle 用户调查`，试着去了解
+
 In this project, we will create recommendations for increasing revenue at Kaggle, an online community for data science professionals. We will analyze a Kaggle customer survey, attempting to learn if there are any indicators of potential revenue growth for the company.
 
 [Using Convolutional Neural Networks to Classify Street Signs](https://t.co/JtfOJ5BTsU)
