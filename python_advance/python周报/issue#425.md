@@ -69,24 +69,34 @@ Vettery是一个招聘网站，它改变了人们应聘或者雇佣的方式。�
 
 #### [增加 Kaggle 收益: 分析用户数据来推荐最合适的新产品](https://t.co/gQcM3Yipqs)
 
-在这个项目中，我们将为一个在线的专业数据科学社区-`Kaggle`推荐增加收益的建议。我们将分析一份`Kaggle 用户调查`，试着去了解
+在这个项目中，我们将为一个在线的专业数据科学社区-`Kaggle`推荐增加收益的建议。我们将分析一份`Kaggle 用户调查`，试着去了解公司是否有潜在的收益增长的点。
 
-In this project, we will create recommendations for increasing revenue at Kaggle, an online community for data science professionals. We will analyze a Kaggle customer survey, attempting to learn if there are any indicators of potential revenue growth for the company.
+> 可以参照思路，扩大业务！
 
-[Using Convolutional Neural Networks to Classify Street Signs](https://t.co/JtfOJ5BTsU)
-A glimpse into the technology used in driver-less cars.
+#### [利用卷积神经网络对街道标志进行分类](https://t.co/JtfOJ5BTsU)
+一窥无人驾驶汽车使用的技术。
 
-[Type Hints for Busy Python Programmers](https://inventwithpython.com/blog/2019/11/24/type-hints-for-busy-python-programmers/)
 
-[Why does Python have a colon?](https://articles.life4web.ru/python/colon/)
 
-[Build A (Full-Featured) LinkedIn Bot With Python](https://www.youtube.com/watch?v=_GcEkRzjjGI) ![img](https://gallery.mailchimp.com/e2e180baf855ac797ef407fc7/images/8def3887-e9e9-4a48-95e0-74045a6a23fc.png)
+#### [忙碌的Python程序员也要了解的 Type Hints](https://inventwithpython.com/blog/2019/11/24/type-hints-for-busy-python-programmers/)
 
-[How to use Pandas to access databases](https://medium.com/jbennetcodes/how-to-use-pandas-to-access-databases-e4e74e6a329e)
+> 快快来上车！鼎力推荐！
 
-[PyCon Africa 2019 Videos](https://www.youtube.com/playlist?list=PLxhxnAekZnZB5VA-4Twr7daw5PPuEJ3WM) ![img](https://gallery.mailchimp.com/e2e180baf855ac797ef407fc7/images/8def3887-e9e9-4a48-95e0-74045a6a23fc.png)
+#### [为什么Python中有冒号?](https://articles.life4web.ru/python/colon/)
 
-[Ten years and nearly ten million users: my experience being a solo maintainer of open-source software in academia](http://www.pgbovine.net/python-tutor-ten-years.htm)
+> emm，这是一个问题
+
+#### [用Python制作一个全能的领英机器人](https://www.youtube.com/watch?v=_GcEkRzjjGI) ![img](https://gallery.mailchimp.com/e2e180baf855ac797ef407fc7/images/8def3887-e9e9-4a48-95e0-74045a6a23fc.png)（15min）
+
+#### [如何使用 Pandas 访问数据库](https://medium.com/jbennetcodes/how-to-use-pandas-to-access-databases-e4e74e6a329e)
+
+> engine?
+
+#### [PyCon Africa 2019 Videos](https://www.youtube.com/playlist?list=PLxhxnAekZnZB5VA-4Twr7daw5PPuEJ3WM) (20个视频)![img](https://gallery.mailchimp.com/e2e180baf855ac797ef407fc7/images/8def3887-e9e9-4a48-95e0-74045a6a23fc.png)
+
+#### [十年和近一千万用户:我在学术界做开源软件个人维护者的经历](http://www.pgbovine.net/python-tutor-ten-years.htm)
+
+> 大佬的感悟
 
 ## 有趣的项目、工具和库
 
@@ -184,46 +194,37 @@ Relé使与谷歌`PubSub`的集成变得简单明了了。
 
 
 
-## 要闻
 
-#### [Python in Visual Studio Code – November 2019 Release](https://devblogs.microsoft.com/python/python-in-visual-studio-code-november-2019-release/) 
-
-在这个版本中，我们主要关注产品质量。我们总共解决了60个问题，其中39个是bug修复。不过，我们也很高兴提供一些令人愉快的功能，比如:
-
-- 使用`Python`服务器时增加`quick fix`
-- Altair 画图支持
-- Notebook Editor 中增加行号
-
-> 快上新版本！
-
-#### [Django 3.0 release candidate 1](https://www.djangoproject.com/weblog/2019/nov/18/django-30-release-candidate-1-released/) 
-
-> 发布时间逐渐逼近
 
 ## 活动和网络研讨会日程
 
-####   [Basics of Natural Language Processing in Python - London, UK](https://www.meetup.com/LondonPython/events/265990284/) 
+####   [What Happens When Your Data Aren’t Numbers? - Ann Arbor, MI](https://www.meetup.com/PyData-Ann-Arbor/events/263072002/)
 
-多亏了Python社区，自然语言处理从未如此简单!我们将看看NLP的工具，并比较它们的不同用途，包括一些有趣的生成的写作例子!我们也将介绍一些关于语言和跨语言分析的算法。
+许多研究员和分析师大量的工作处理的数据都是文本或者稀疏结构的文本和图像。许多教程，练习和包假设数据都是很纯净的，或者忽略了为了数据分析准备此类数据需要的转换。本话题将会重点讲解这种数据的转化，展示在教程中如果没有纯净的数据将会发生什么，以及了解这些数据项目需求的建议。
 
-> NLP泛场景应用~
 
-####   [IndyPy Bytes: Making AI More Accessible to the Non-Developer - Indianapolis, IN](https://www.meetup.com/indypy/events/lbdfpqyzpbjc/) 
 
-`Python`中有许多可用的AI库，但它们是为程序员设计的。我们已经在`Python`中构建了一些工具来降低那些现有库的进入门槛。我们及早发现常见的错误，使评估学习者的表现更容易，并可视化的学习者行为和基础数据更容易获得。我们将讨论这些决策背后的驱动因素，并通过一个简单的示例介绍如何在现成的数据集上使用此工具。
+####   [Invoke: How to be a @task Master - Charlotte, NC](https://www.meetup.com/PyDataCharlotte/events/266291371/)
 
-> 门槛肯定会越来越低~毕竟当作工具用！
+在这里，我们将了解`Invoke`，一个帮助我们使我们的工具更加容易使用和管理的`Python`库。我们将从你现在就可以使用的简单技巧开始，一直到更高级的使用`Invoke`帮助管理员从有很多应用的`mono-repo`进行构建和部署。
 
-#### [Build an ML Product - 4 Mistakes to Avoid - Vancouver, BC](https://www.meetup.com/vanpydata/events/266419423/)
 
-#### [Austria Python Meetup November 2019 - Vienna, Austria](https://www.meetup.com/PYUGAT/events/266412585/)  
+
+#### [DFW Pythoneers December 2019 Meetup - Plano, TX](https://www.meetup.com/dfwpython/events/sbnhmqyzqbhb/)
+
+#### [DerbyPy Meetup December 2019 - Louisville, KY](https://www.meetup.com/derbypy/events/jgtjnpyzqbjc/)
 
 
 
 
 ## Posa：
 > ❤️ Happy Pythonic ;-(Posa私人无责任播报)  
-残念，暂无。:(
+
+Django 3.0来啦！
+
+[戳这里](https://docs.djangoproject.com/en/3.0/)
+
+
 
 ----- 分割线 -----
 > 如果你发现哪里翻译有误的话，请务与我联系！感谢！
@@ -232,7 +233,7 @@ Relé使与谷歌`PubSub`的集成变得简单明了了。
 
 
 
-- 首发: [pythonista-weekly~蠎周刊 ~汇集全球蠎事儿 ;-)](http://weekly.pychina.org/python-weekly/pyw-424.html)
-- 改进: [issue-424.md](https://github.com/PyChina/weekly/blob/master/content/python-weekly/issue#424.md)
+- 首发: [pythonista-weekly~蠎周刊 ~汇集全球蠎事儿 ;-)](http://weekly.pychina.org/python-weekly/pyw-425.html)
+- 改进: [issue-425.md](https://github.com/PyChina/weekly/blob/master/content/python-weekly/issue#425.md)
 
 
