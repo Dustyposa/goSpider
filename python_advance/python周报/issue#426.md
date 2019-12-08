@@ -1,5 +1,5 @@
 Title: pythonista-weekly : Pyw 426
-Date: 2019-11-27 15:16
+Date: 2019-12-08 15:16
 Tags: Weekly,pythonweekly,Zh 
 Slug: pyw-426
 
@@ -13,207 +13,244 @@ Slug: pyw-426
 使用 `Datadog` 监控你的python指标，日志，集群分析。使用`Datadog`的应用分析，可以深入任何纬度并且能找到你所需要的信息，来进行动态诊断和快速故障排除。[马上跟踪你的python应用吧！免费试用14天哦！](https://www.datadoghq.com/dg/apm/ts-python-tracing/?utm_source=Advertisement&utm_medium=Advertisement&utm_campaign=PythonWeekly-Tshirt)
 > 是 select 还是 epoll 呢 
 
+## 新闻
+
+#### [Mozilla and Chan Zuckerberg Initiative 赞助 pip](https://pyfound.blogspot.com/2019/12/moss-czi-support-pip.html)
+
+`Python 软件基金会`将在 2020 年获得 `$407,000 USD`来支持`pip`的开发工作。这种基础性，转换型的工作将使`Python`开发者和用户能专注于他们在制作或者使用的工具，而不是解决依赖冲突。具体来说，`CZI and Mozilla`正在资助用户体验，交流/宣传和测试的工作（包括开发完备的测试基础设施）以及核心功能的开发和审查。
+
+> 官方出手，资金提升，pip 稳了吗！
+
+#### [两个恶意的Python库被发现正在窃取SSH和GPG密钥](https://www.zdnet.com/article/two-malicious-python-libraries-removed-from-pypi/)
+
+`Python 安全团队`从`PyPI(Python包索引)`中移除了两个木马库，这些库北发现会从受感染者的项目中获取`SSH 和 GPG`密钥。这两个库是被同一个开发者创建，并且模仿了其他的更流行的库——用了一个叫做 `typosquatting`的技术来注册名字相似的名字。第一个叫做`python3-dateutil`，模仿了一个流行的`dateutil`库。第二个名字叫`jeIlyfish(第一个 L 是 I)，模仿了`jellyfish`库。
+
+> `Python`太收欢迎？
+
 
 ## 文章、教程与话题
-####    [使用 OpenCV and Deep Learning 实现人类活动识别](https://www.pyimagesearch.com/2019/11/25/human-activity-recognition-with-opencv-and-deep-learning/)
+#### [端到端机器学习: 从数据收集到部署](https://ahmedbesbes.com/end-to-end-ml.html)
 
-在本篇文章，你将学习到如何用`OpenCV and Deep Learning`实现人类活动识别（Human Activity Recognition）。我们的人类活动识别模型可以识别超过400种活动，准确率达 78.4-94.5% (取决于任务类别)。
+在这篇文章，我们将通过一些必要的步骤去构建和部署一个机器学习应用。这将从数据收集开始再到部署，你将看到的全貌，是令人兴奋并且有趣的。
 
-> CV 教程新系列？
+> ML 部署 get
 
-#### [数据科学家是如何买一辆车的](https://t.co/5WLEKTE2z9)
+#### [用 Qiskit 进行量子计算机编程](https://www.youtube.com/watch?v=aPCZcv-5qfA) ![img](https://gallery.mailchimp.com/e2e180baf855ac797ef407fc7/images/8def3887-e9e9-4a48-95e0-74045a6a23fc.png)（48min）
 
-我如何使用数据科学能力为家庭购置新车找到最划算的方式。
+量子计算机编程实用型介绍，使用`IBM`的免费的云量子计算机和`Qiskit`.
 
-> 改变生活第一步，就是 python 数据路！
-
-
-#### [使用GNES和Tensorflow 2.0进行大规模的视频语义搜索](https://hanxiao.io/2019/11/22/Video-Semantic-Search-in-Large-Scale-using-GNES-and-TF-2-0/)
-
-`GNES`是一个基于深度神经网络的开源云原生语义搜索解决方案。这篇文章展示了你如何使用最新的`GENS Flow Api and Tensorflow 2.0`去构建一个视频语义搜索系统。
-
-> 视频搜索，下一步会是什么？
-
-#### [如何使用Sphinx给Python代码增加文档](https://opensource.com/article/19/11/document-python-sphinx)
-
-最好将文档作为开发过程的一部分。`Sphinx和Tox`一起使用，能让文档编写更顺畅并且更美观！
-
-> 何以解项目，唯有项目文档。
-
-#### [工作思路: Guido van Rossum 谈论Python让思考代码变得更简单](https://blog.dropbox.com/topics/work-culture/-the-mind-at-work--guido-van-rossum-on-how-python-makes-thinking)
-
-与世界上最流行的编程语言创建者进行关于减轻大脑消耗从而更好地工作的对话。
-
-> coding fun is important!
-
-#### [如何计算用户留存率 — 一个使用的方法](https://t.co/rfbtcmouyn) 
-
-留存率可以说是新的市场财富，但是它的计算并不总是很容易。但是有了这个简单的`Python`脚本，那么一切都不一样了！
-
-> 计算力 get！
-
-#### [在 DataFrame 中选择列数据的技巧](https://pbpython.com/selecting-columns.html)
-
-这篇文章将会介绍几种使用`pandas iloc 函数的`选择列数据的技巧。
-
-> pandas 进阶，熟记 api 是真理。
+> 尝鲜
 >
-> 新手和老手真不一样！（你所不知道的骚操作。。）
+> 最近经常出现在 python thrending 中
 
-#### [如何创建 Seaborn 箱体图](https://www.sharpsightlabs.com/blog/seaborn-boxplot/) 
+#### [框架模式](https://blog.startifact.com/posts/framework-patterns.html)
+配置一个框架有很多方法。每个方法都有自己的优缺点。这篇文章描述了一些框架配置模式，并提供了一些简单的例子和折中的方案。
 
-这篇教程中向你展示了如何创建一个`Seaborn 箱体图`。将会进行语法解释，以及向你展示几个有步骤的用`Seaborn`创建箱体图的例子。
+> 太过自由也会让人比较难
 
-> 越来越简单才是真理~
+#### [用法Python 和 Facebook Prophet做预测](https://t.co/RnFPZKiaWf) 
 
-#### [增加 Kaggle 收益: 分析用户数据来推荐最合适的新产品](https://t.co/gQcM3Yipqs)
-
-在这个项目中，我们将为一个在线的专业数据科学社区-`Kaggle`推荐增加收益的建议。我们将分析一份`Kaggle 用户调查`，试着去了解公司是否有潜在的收益增长的点。
-
-> 可以参照思路，扩大业务！
-
-#### [利用卷积神经网络对街道标志进行分类](https://t.co/JtfOJ5BTsU)
-一窥无人驾驶汽车使用的技术。
+如何使用领域知识去调整和优化`Prophet`,让你的预测更可控。
 
 
 
-#### [忙碌的Python程序员也要了解的 Type Hints](https://inventwithpython.com/blog/2019/11/24/type-hints-for-busy-python-programmers/)
+#### [Django 3.0有什么新特性](https://www.youtube.com/watch?v=_BBNVFirvTY) ![img](https://gallery.mailchimp.com/e2e180baf855ac797ef407fc7/images/8def3887-e9e9-4a48-95e0-74045a6a23fc.png)（5min）
 
-> 快快来上车！鼎力推荐！
+`Django`刚刚发布了他们的下一个主要版本`django 3.0`。这对你有什么影响？什么是`ASGI`?让我们讨论一下。
 
-#### [为什么Python中有冒号?](https://articles.life4web.ru/python/colon/)
+> 异步来啦！
 
-> emm，这是一个问题
+#### [高效的Python](https://strangemachines.io/articles/performant-python)
 
-#### [用Python制作一个全能的领英机器人](https://www.youtube.com/watch?v=_GcEkRzjjGI) ![img](https://gallery.mailchimp.com/e2e180baf855ac797ef407fc7/images/8def3887-e9e9-4a48-95e0-74045a6a23fc.png)（15min）
+看一看如何用简单的方式编写高效的`Python`代码，以及每个改进有多少效果。
 
-#### [如何使用 Pandas 访问数据库](https://medium.com/jbennetcodes/how-to-use-pandas-to-access-databases-e4e74e6a329e)
+> 刚优化了 pandas 索引方式代码的我留下了不学无术泪水。
 
-> engine?
+#### [OpenCV 车辆检测, 追踪和速度估算](https://www.pyimagesearch.com/2019/12/02/opencv-vehicle-detection-tracking-and-speed-estimation/)
+在这篇教程中，你将学习如何使用`OpenCV和深度学习`在视频流中进行车辆检测，并追踪他们并且利用速度估测去检测移动车辆的`MPH/KPH`。
 
-#### [PyCon Africa 2019 Videos](https://www.youtube.com/playlist?list=PLxhxnAekZnZB5VA-4Twr7daw5PPuEJ3WM) (20个视频)![img](https://gallery.mailchimp.com/e2e180baf855ac797ef407fc7/images/8def3887-e9e9-4a48-95e0-74045a6a23fc.png)
+> 这个很刺激的样子。
 
-#### [十年和近一千万用户:我在学术界做开源软件个人维护者的经历](http://www.pgbovine.net/python-tutor-ten-years.htm)
+#### [使用 Python创建一个全能的 Indeed Bot ](https://www.youtube.com/watch?v=jp0eiGn4jto) ![img](https://gallery.mailchimp.com/e2e180baf855ac797ef407fc7/images/8def3887-e9e9-4a48-95e0-74045a6a23fc.png)（25min）
+使用 Python创建一个全能的 Indeed Bot。
 
-> 大佬的感悟
+> 都越来越喜欢机器人了。
+
+#### [Excel vs Python: 如何执行常见数据分析任务](https://www.dataquest.io/blog/excel-vs-python/)
+
+`Excel and Python`的不同之处是什么？在这篇文章中，我们将通过观察在两个平台执行基准任务来进行比较。
+
+> 问我选什么？
+>
+> 这不是很明显吗！成年人，当然两个都要！
+
+#### [在Visual Studio Code使用 Python](https://channel9.msdn.com/Shows/Visual-Studio-Toolbox/Getting-Started-with-Python-in-Visual-Studio-Code) ![img](https://gallery.mailchimp.com/e2e180baf855ac797ef407fc7/images/8def3887-e9e9-4a48-95e0-74045a6a23fc.png)(32min)
+
+在这一集，`Tyreke White`为我们展示了如何使用`Visual Studio Code`开始`Python`开发。他讲解了你需要安装什么并且如何配置你的环境，也分享了如何对你的`Python代码debug`的小技巧。
+
+> VSC 还是比较省内存的。
+
+#### [给长时间运行的 Jupyter Notebook Cells 加上通知](http://www.blog.pythonlibrary.org/2019/12/04/adding-notifications-to-long-running-jupyter-notebook-cells/)
+
+如果你使用`Jupyter Notebook`去运行长时间运行的进程，例如：机器学习的训练，然后你可能想知道什么时候`cell`运行结束了。这里有一个叫做`jupyter-notify`的简洁的浏览器插件你可以使用，帮助解决这个问题。当`cell`执行结束时，你的浏览器会发出一个弹窗信息通知你。
+
+> 痛点解决！
+
+#### [词袋模型的简单解释](https://victorzhou.com/blog/bag-of-words/)
+
+一个快速，简单的关于词袋模型的介绍，以及你如何在`Python`中实现。
+
+
+
+#### [Python 字节码: 一个介绍教程](https://www.youtube.com/watch?v=mE0oR9NQefw) ![img](https://gallery.mailchimp.com/e2e180baf855ac797ef407fc7/images/8def3887-e9e9-4a48-95e0-74045a6a23fc.png)（12min）
+
+这是开始深入了解`Cpython`内部实现原理（实际上`Python`参考实现)的好方法。不要让你之前的误解或者让你知道的一些知识阻碍你。如果你想学习更多关于`Python`的知识，那么这 10 分钟是值得的。
+
+> 不要被已知知识束缚。
+
+#### [如何用Python分析笔记本电脑上的100 GB数据](https://t.co/52y7IjNSqm)
+
+了解如何使用`Python`中的`Vaex`开源数据框架探索，可视化和分析 100GB 的表格数据。
+
+> 躲不过的大量数据。
+
+#### 使用Elasticsearch，Logstash，Kibana（ELK）+ Filebeat进行Django集中式日志记录t](https://binaroid.com/blog/django-centralised-logging-using-elasticsearch-logstash-kibana-elk-filebeat)
+
+在这篇教程，我们将学习如何从我们的`Django`应用中把应用日志放到`Elasticsearch`存储，并且能够在`Kibana`web工具中以可读的方式展示。本文的主要目的是使用另一种工具`Elastic - Filebeat`在`Django`服务和`ELK堆栈 (Elasticsearch, Kibana, Logstash) `建立一个连接。我们也会简要的介绍之前的步骤，例如日志记录的背后的原因，在`Django`中配置日志以及安装`ELK stack`。
+
+> 推推推！
+
+#### [使用Python构建Windows快捷方式](https://pbpython.com/windows-shortcut.html)
+
+使用`Python`去构建一个`Windows`快捷方式来运行`conda`环境。
+
+[如何在AWS Elastic Beanstalk上部署Django Channels 2.x](https://t.co/HiZSXhJMYP)
+
+[nbdev: 万事皆用 Jupyter Notebooks ](https://www.fast.ai/2019/12/02/nbdev/)
+
+> Jupyter 称霸天下？
+
+[我们如何使用Elasticsearch & PostgreSQL 功能组织Django APIs](https://t.co/qBVSBuB0jA)
+
+[PyCon Sweden Videos](https://www.youtube.com/playlist?list=PLQYPYhKQVTvetDJZFGY8RfYlPBLQmbt-T) ![img](https://gallery.mailchimp.com/e2e180baf855ac797ef407fc7/images/8def3887-e9e9-4a48-95e0-74045a6a23fc.png)
+
+[降低 Pandas 使用内存  #2: 有损压缩](https://pythonspeed.com/articles/pandas-reduce-memory-lossy/)
 
 ## 有趣的项目、工具和库
 
-#### [Flan Scan](https://github.com/cloudflare/flan) 
+#### [Metaflow](https://metaflow.org/) 
+由`Netfilx`开发，用于`real-life`的数据科学框架。`Metaflow`让构建和管理`real-life`数据科学项目变得更快和简单。
 
-`Flan Scan `是一个轻量级的网络漏洞扫描器。使用`Flan Scan`，你可以轻松地发现你网络的开放端口，验证服务及其版本，并且获得影响网络相关的`CVE`列表。
 
-> 安全治理，人人有责！
 
-#### [geo-heatmap](https://github.com/luka1199/geo-heatmap)
+#### [TensorBoard.dev](https://tensorboard.dev/)
+一份管理 `TensorBoard` 的经验，可以让你上传和分享 ML 实验结果给任何人。
 
-用`Google位置数据`生成一个可交互的地理热力图。
+> 数据方面项目的功能也越来越强了
 
-> 制作炫酷数据图的好助手～值得学习
+#### [Assembly](https://mardix.github.io/assembly/) 
+一个基于`Flask`的` Pythonic` 的面向对象的`Web框架`。  
 
-[NBoost](https://github.com/koursaros-ai/nboost) 
+#### [emoji_trends](https://github.com/enric1994/emoji_trends)
 
-`NBoost`是一个可扩展的搜索引擎增强平台，可用于开发和部署最新的模型以提高搜索质量。
+`emoji` 在推特上的使用。
 
-> NB！
-
-#### [baikal](https://github.com/alegonz/baikal)
-
-一个创建复杂的`scikit-learn`管道的基于图的函数`API`
-
-> 生态越来越多～懒是第一生产力
-
-#### [Relé](https://github.com/mercadona/rele/) 
-
-Relé使与谷歌`PubSub`的集成变得简单明了了。
-
-> 致力于造出更好用的轮子～～
+> 关于表情符号的趋势
 >
-> 好多客户端都是起于这样
+> 商机！？
 
+#### [Lightbus](https://github.com/adamcharnock/lightbus/) 
 
+`Lightbus`允许你的后台进程通信，运行后台任何并且公开内部`APIs`.尽管最终可能会增加对其他平台的支持，但目前`Lightbus`使用`Redis`作为其基础传输。
 
-#### [wemake-python-styleguide](https://github.com/wemake-services/wemake-python-styleguide)
+> 异步时间框架 37+
 
-最严格和最苛刻的`Python`检测工具。
+#### [cusignal](https://github.com/rapidsai/cusignal)
+`cuSignal GPU`使用`CuPy（GPU加速的NumPy）`和自定义的`Numba CUDA`内核来加速流行的`SciPy Signal`库。
 
-> 叫板 mypy？
+> 还是速度重要！
 
-#### [Chepy](https://github.com/securisec/chepy) 
+#### [tlaplus_jupyter](https://github.com/kelvich/tlaplus_jupyter)
+适用于TLA⁺和Pluscal规范语言的Jupyter内核。
 
-`Chepy`是一个`Python`库，有一个方便的客户端可用来实现`CyberChef`的一些功能。
+> 大佬们喜欢的混合语法！
 
-> 看吧！cli 出现！
+#### [emacs-application-framework](https://github.com/manateelazycat/emacs-application-framework)
+`Emacs Application Framework (EAF) `是一个应用框架，可以将`GNU Emacs`扩展到一个全新的功能强大的`GUI PyQt`应用程序领域。
 
-#### [PupDB](https://github.com/tuxmonk/pupdb) 
+> 亚古兽超进化！
 
-用`Python`编写的基于文件的`key-value`数据库。
+#### [friendly-traceback](https://github.com/aroberge/friendly-traceback)
 
-> sqlite ???
+针对Python初学者:用更容易理解、可翻译成各种语言的东西代替标准回溯。
 
-#### [attendance-automation](https://github.com/hardeepnarang10/attendance-automation)
+> 更友好的回溯，有错误原因及更正方法，初学者可以 have a try。
 
-基于二维码的考勤监控及自动化。具有动态身份认证（密钥生成）及验证功能。
+#### [django-skinny-deploy](https://github.com/viewflow/django-skinny-deploy)
 
-> 创意无限～动手就行
+简单，单文件即可将Django部署到Ubuntu主机。
+
+> ！！部署福音？
+
+[Pytasking](https://github.com/TokenChingy/pytasking)
+一个简单的`Python 3.5+`多任务库。
+
+[MinerClub](https://github.com/0Hughman0/MinerClub)
+
+一个`Webapp`，用于自动管理仅`Minecraft`成员和朋友的服务器。
+
+[Whatsapp-Net](https://github.com/OfirKP/Whatsapp-Net)
+
+从`WhatsApp groups `数据生成连接的网络图。
+
+[pytexexam](https://github.com/vungocbinh2009/pytexexam)
+
+一个简单的`Python`包，用于创建和输出考试内容。
+
+## **New Releases**
+
+#### [Django 3.0](https://www.djangoproject.com/weblog/2019/dec/02/django-3-released/)
+发行说明详细介绍了许多新功能，但其中一些要点是：
+
+- `Django 3.0`通过支持作为一个`ASGI`应用运行，`Django`也打开了完全支持异步的新的篇章。
+
+- `Django`现在正式支持`MariaDB 10.1`及更高版本。
+- 自定义枚举类型`TextChoices、IntegerChoices和Choices`现在可以作为定义模型字段选择的一种方式使用。
+
+> 终终终于来了！
 >
-> 何以致命，唯有考勤
-
-#### [Corsy](https://github.com/s0md3v/Corsy)
-
-`Corsy`是一个轻量级程序，它扫描`CORS`实现中所有已知的错误配置。
-
-> 肯定会出现一个集成的扫描工具！
-
-#### [3d-ken-burns](https://github.com/sniklaus/3d-ken-burns)
-
-使用`Pytouch`从单个图像实现`3D Ken Burns`效果。
-
-> 论文+代码～
-
-#### [parliament](https://github.com/duo-labs/parliament) 
-
-`parliament` is an AWS IAM linting library.
-
-#### [Qiling](https://github.com/qilingframework/qiling) 
-
-`Qiling`是一个高级的二进制仿真框架。
-
-> 看名字！！！ 麒麟！
-
-#### [NNgen](https://github.com/NNgen/nngen)
-
-一个用于深度神经网络的可完全定制硬件合成编译器。
-
-
-
-#### [Appelpy](https://github.com/mfarragher/appelpy)
-
-`Appelpy`是`Python 的 Applied Econometrics 库`。它试着在拥有简单的语法（例如： Stata）软实力和使用`Python`面向对象编程作为数据建模工作流的一部分的硬实力之间构建一座桥梁。
-
-
-
-
+> 它带着异步来了！
 
 ## 活动和网络研讨会日程
 
-####   [What Happens When Your Data Aren’t Numbers? - Ann Arbor, MI](https://www.meetup.com/PyData-Ann-Arbor/events/263072002/)
+#### [PyLadies/PyData Year End Talk Night - Toronto, ON](https://www.meetup.com/pydatato/events/266595041/)
+将会有以下的话题：
 
-许多研究员和分析师大量的工作处理的数据都是文本或者稀疏结构的文本和图像。许多教程，练习和包假设数据都是很纯净的，或者忽略了为了数据分析准备此类数据需要的转换。本话题将会重点讲解这种数据的转化，展示在教程中如果没有纯净的数据将会发生什么，以及了解这些数据项目需求的建议。
-
-
-
-####   [Invoke: How to be a @task Master - Charlotte, NC](https://www.meetup.com/PyDataCharlotte/events/266291371/)
-
-在这里，我们将了解`Invoke`，一个帮助我们使我们的工具更加容易使用和管理的`Python`库。我们将从你现在就可以使用的简单技巧开始，一直到更高级的使用`Invoke`帮助管理员从有很多应用的`mono-repo`进行构建和部署。
+- 在`AWS`中设置简单的`Python`服务器
+- 用`Python`再写一个编程语言
+- 用`Altair`实现数据可视化
 
 
+#### [Austin Python Meetup December 2019 - Austin, TX](https://www.meetup.com/austinpython/events/lgrbmqyzqbpb/)
+将会有以下的话题：
 
-#### [DFW Pythoneers December 2019 Meetup - Plano, TX](https://www.meetup.com/dfwpython/events/sbnhmqyzqbhb/)
+-  Go For Pythonistas
+- ` Python`切片对象
 
-#### [DerbyPy Meetup December 2019 - Louisville, KY](https://www.meetup.com/derbypy/events/jgtjnpyzqbjc/)
+
+#### [PyMNtos Python Presentation Night #79 - Minneapolis, MN](https://www.meetup.com/PyMNtos-Twin-Cities-Python-User-Group/events/266893889/)
+将会有以下的话题：
+
+- 先分析住房
+- 用`Python and gRPC`构建微服务
+- 使用`Python`从放射学报告中提取临床发现的`NLP`方法
 
 
+[Boulder Python Meetup December 2019 - Boulder, CO](https://www.meetup.com/BoulderPython/events/vcmckryzqbnb/)
+
+[Cleveland Python Meetup December 2019 - Cleveland , OH](https://www.meetup.com/Cleveland-Area-Python-Interest-Group/events/wrwphqyzqbmb/)
+
+[PyAtl Meetup December 2019 - Atlanta, GA](https://www.meetup.com/python-atlanta/events/xzzgcryzqbqb/)
 
 
 ## Posa：
@@ -226,6 +263,7 @@ Django 3.0来啦！
 
 
 ----- 分割线 -----
+
 > 如果你发现哪里翻译有误的话，请务与我联系！感谢！
 >
 
