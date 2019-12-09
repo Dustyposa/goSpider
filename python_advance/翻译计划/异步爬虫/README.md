@@ -474,7 +474,80 @@ StopIteration: done
 
 ## 用生成器构建协程
 
-因此，一个生成器可以暂停，用一个值可以恢复并且有一个返回值。
+因此，一个生成器可以暂停，用一个值可以恢复并且有一个返回值。这听起来很好的原始方法去构建一个异步编程模型，并且不需要复杂(`spaghetti`)的回调！我们想去构建一个`"coroutine"`:一个可以和其他的例程在程序中协同调度的例程。我们的协程将是`Python`标准库`"asynico"`库中的那些协程的简化版本。跟`asyncio`中的一样，我们将使用`generators,futures,and 'yield from'语法`。
+
+首先，我们需要一种方式来表示协程正在等待的一些`futrue`结果。一个精简版:
+
+```python
+class Future:
+    def __init__(self):
+        self.result = None
+        self._callbacks = []
+    
+    def add_done_callback(self, fn: Callable) -> None:
+        self._callbacks.append(fn)
+    
+    def set_result(self, result) -> None:
+        self.result = result
+        for fn in self._callbacks:
+            fn(self)
+        
+```
+
+一个`future`刚开始是`pending`状态。通过调用`set_result`[^11]变为`"resolved"`状态。
+
+让我们调整我们的`fetcher`，使用`futures and coroutines`.我们用回调编写`fetch`。
+
+```python
+class Fetcher:
+    def fetch(self) -> None:
+        self.sock = socket.socket()
+        self.sock.setblocking(False)
+        try:
+            self.sock.connect(("xkcd.com", 80))
+        except BlockingIOError:
+            pass
+        selector.register(
+            self.sock.fileno(),
+            EVENT_WRITE,
+            self.connected
+        )
+        
+    def connected(self, key, mask) -> None:
+        print('connected!')
+        # And so on....
+```
+
+
+
+`fetch`方法开始连接一个`socket`,然后注册回调，`connected`,当`socket`准备好后回调会被执行。现在我们可将这两倍结合到一个协程中：
+
+```python
+def fetch(self) -> None:
+    sock = socket.socket()
+    sock.setblocking(False)
+    try:
+        sock.connect(('xkcd.com', 80))
+    except BlockingIOError:
+        pass
+    f = Future()
+    def on_connected():
+        f.set_result(None)
+    selector.register(
+        sock.fileno(),
+        EVENT_WRITE,
+        on_connected
+    )
+    yield f
+    socket.unregister(sock.fileno())
+    print('connected')
+```
+
+现在,`fetch`是一个生成器函数，并不是常规的函数，因为它包含了`yield`语句。我们创建了一个`pending`状态的`future`,然后`yield`它去暂停`fetch`直到`socket`准备好。内部函数`on_connected`将会`resolves future`。
+
+但是当`future resolves`时，怎么恢复生成器呢？我们需要一个协程掌舵者(`driver`).让我们叫它`task`:
+
+
 
 [^1]:  线程相关资源
 [^2]: Even calls to `send` can block, if the recipient is slow to acknowledge outstanding messages and the system's buffer of outgoing data is full
@@ -488,3 +561,8 @@ StopIteration: done
 [^9]: The `@asyncio.coroutine` decorator is not magical. In fact, if it decorates a generator function and the `PYTHONASYNCIODEBUG` environment variable is not set, the decorator does practically nothing. It just sets an attribute, `_is_coroutine`, for the convenience of other parts of the framework. It is possible to use asyncio with bare generators not decorated with `@asyncio.coroutine` at all.[↩](http://aosabook.org/en/500L/a-web-crawler-with-asyncio-coroutines.html#fnref7)
 [^ 10]:  Python 3.5's built-in coroutines are described in [PEP 492](https://www.python.org/dev/peps/pep-0492/), "Coroutines with async and await syntax."[↩](http://aosabook.org/en/500L/a-web-crawler-with-asyncio-coroutines.html#fnref8) 
 
+[^ 11]: This future has many deficiencies. For example, once this future is resolved, a coroutine that yields it should resume immediately instead of pausing, but with our code it does not. See asyncio's Future class for a complete implementation.[↩](http://aosabook.org/en/500L/a-web-crawler-with-asyncio-coroutines.html#fnref9)
+
+
+
+[^11]: 
