@@ -547,7 +547,32 @@ def fetch(self) -> None:
 
 但是当`future resolves`时，怎么恢复生成器呢？我们需要一个协程掌舵者(`driver`).让我们叫它`task`:
 
+```python
+class Task:
+    def __init__(self, coro):
+        self.coro = coro
+        f = Future()
+        f.set_result(None)
+        self.step(f)
 
+    def step(self, future):
+        try:
+            next_future = self.coro.send(future.result)
+        except StopIteration:
+            return
+
+        next_future.add_dpone_callback(future.result)
+
+
+# 开始抓取 http://xkcd.com/353
+fetcher = Fetcher('/353/')
+Task(fetcher.fetch())
+
+loop()
+
+```
+
+`taak`通过发送`None`给`fetch`生成器来启动它。然后`fetch`开始运行直到`yields`一个`future`,
 
 [^1]:  线程相关资源
 [^2]: Even calls to `send` can block, if the recipient is slow to acknowledge outstanding messages and the system's buffer of outgoing data is full
