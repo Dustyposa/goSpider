@@ -574,7 +574,17 @@ loop()
 
 ```
 
-`taak`通过发送`None`给`fetch`生成器来启动它。然后`fetch`开始运行直到`yields`一个`future`,
+`taak`通过发送`None`给`fetch`生成器来启动它。然后`fetch`开始运行直到`yields`一个`future`,它回被`task`被当作`next_future`捕获。当`socket`建立连接成功后，事件循环会运行回调函数`on_connected`，来释放`future`，`future`将会调用`step`,从而恢复`fetch`。
+
+## 用`yield from`代理协程
+
+一旦`socket`建立连接成功，我们就发送`HTTP GET`请求并读取服务器的响应。这些步骤不需要分散在回调函数之间；我们将它们放到同一生成器函数中：
+
+```python
+
+```
+
+
 
 [^1]:  线程相关资源
 [^2]: Even calls to `send` can block, if the recipient is slow to acknowledge outstanding messages and the system's buffer of outgoing data is full
