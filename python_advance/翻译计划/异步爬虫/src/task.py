@@ -1,4 +1,8 @@
 import socket
+from typing import Callable
+from selectors import DefaultSelector, EVENT_WRITE
+
+selector = DefaultSelector()  # 创建选择器对象
 
 
 class Future:
@@ -22,13 +26,13 @@ class Task:
         f.set_result(None)
         self.step(f)
 
-    def step(self, future):
+    def step(self, future: Future) -> None:
         try:
             next_future = self.coro.send(future.result)
         except StopIteration:
             return
 
-        next_future.add_dpone_callback(future.result)
+        next_future.add_done_callback(self.step)
 
 
 class Fetcher:
@@ -38,10 +42,10 @@ class Fetcher:
         self.sock = None
 
     def fetch(self) -> None:
-        sock = socket.socket()
-        sock.setblocking(False)
+        self.sock = socket.socket()
+        self.sock.setblocking(False)
         try:
-            sock.connect(('xkcd.com', 80))
+            self.sock.connect(('baidu.com', 80))
         except BlockingIOError:
             pass
         f = Future()
@@ -50,13 +54,12 @@ class Fetcher:
             f.set_result(None)
 
         selector.register(
-            sock.fileno(),
+            self.sock.fileno(),
             EVENT_WRITE,
             on_connected
         )
         yield f
-        socket.unregister(sock.fileno())
-        print('connected')
+        selector.unregister(self.sock.fileno())
 
 
 stoped = False
@@ -70,8 +73,9 @@ def loop() -> None:
             callback()
 
 
-# 开始抓取 http://xkcd.com/353
-fetcher = Fetcher('/353/')
-Task(fetcher.fetch())
+if __name__ == '__main__':
+    # 开始抓取 http://xkcd.com/353
+    fetcher = Fetcher('/353/')
+    Task(fetcher.fetch())
 
-loop()
+    loop()

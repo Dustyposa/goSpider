@@ -56,11 +56,11 @@ def fetch(url: str) -> None:
 
 ```python
 sock = socket.socket()  # 创建套接字对象
-sock.setbloking(False)  # 设置成非阻塞
+sock.setblocking(False)  # 设置成非阻塞
 try:
 	sock.connect(("xkcd.com", 80))
 except BlockingIOError:
-  	pass
+    pass
 ```
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 令人厌烦的是，即使工作正常，非阻塞套接字也会抛出连接异常。这个异常是复制了底层C语言函数的扰人行为，它将`errno`设置成`EINPROGRESS`告诉你（连接）已经开始了。
@@ -524,23 +524,25 @@ class Fetcher:
 
 ```python
 def fetch(self) -> None:
-    sock = socket.socket()
-    sock.setblocking(False)
+    self.sock = socket.socket()
+    self.sock.setblocking(False)
     try:
-        sock.connect(('xkcd.com', 80))
+        self.sock.connect(('baidu.com', 80))
     except BlockingIOError:
         pass
     f = Future()
+    
     def on_connected():
         f.set_result(None)
+        
     selector.register(
-        sock.fileno(),
+        self.sock.fileno(),
         EVENT_WRITE,
         on_connected
     )
     yield f
-    socket.unregister(sock.fileno())
-    print('connected')
+    
+    selector.unregister(self.sock.fileno())
 ```
 
 现在,`fetch`是一个生成器函数，并不是常规的函数，因为它包含了`yield`语句。我们创建了一个`pending`状态的`future`,然后`yield`它去暂停`fetch`直到`socket`准备好。内部函数`on_connected`将会`resolves future`。
@@ -555,13 +557,13 @@ class Task:
         f.set_result(None)
         self.step(f)
 
-    def step(self, future):
+    def step(self, future: Future) -> None:
         try:
             next_future = self.coro.send(future.result)
         except StopIteration:
             return
 
-        next_future.add_dpone_callback(future.result)
+        next_future.add_done_callback(self.step)
 
 
 # 开始抓取 http://xkcd.com/353
