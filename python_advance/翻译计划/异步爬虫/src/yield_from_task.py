@@ -1,8 +1,10 @@
 import socket
-from typing import Callable
+from typing import Callable, Generator
 from selectors import DefaultSelector, EVENT_WRITE, EVENT_READ
 
 selector = DefaultSelector()  # 创建选择器对象
+
+stoped = False
 
 
 class Future:
@@ -41,11 +43,11 @@ class Fetcher:
         self.url = url
         self.sock = None
 
-    def fetch(self) -> None:
+    def fetch(self) -> Generator:
         self.sock = socket.socket()
         self.sock.setblocking(False)
         try:
-            self.sock.connect(('httpbin.org', 80))
+            self.sock.connect(('localhost', 80))
         except BlockingIOError:
             pass
         f = Future()
@@ -77,12 +79,10 @@ class Fetcher:
                 EVENT_READ,
                 on_readable
             )
-
             chunk = yield f
-            print('chunk:', chunk)
             selector.unregister(self.sock.fileno())
             if chunk:
-                print('data get')
+                print('收到数据')
                 self.response += chunk
             else:
                 # 响应读取完成
@@ -90,15 +90,18 @@ class Fetcher:
         print('response:', self.response)
 
 
-stoped = False
-
-
 def loop() -> None:
     while not stoped:
-        events = selector.select()
-        for event_key, event_mask in events:
-            callback = event_key.data
-            callback()
+        try:
+            events = selector.select()
+        except OSError:
+            # 当 select 中没有东西时，len == 0， 这里会报错
+            print(len(selector.get_map().items()) == 0)
+            break
+        else:
+            for event_key, event_mask in events:
+                callback = event_key.data
+                callback()
 
 
 if __name__ == '__main__':

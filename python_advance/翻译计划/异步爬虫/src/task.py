@@ -1,5 +1,5 @@
 import socket
-from typing import Callable
+from typing import Callable, Generator
 from selectors import DefaultSelector, EVENT_WRITE
 
 selector = DefaultSelector()  # 创建选择器对象
@@ -41,7 +41,7 @@ class Fetcher:
         self.url = url
         self.sock = None
 
-    def fetch(self) -> None:
+    def fetch(self) -> Generator:
         self.sock = socket.socket()
         self.sock.setblocking(False)
         try:

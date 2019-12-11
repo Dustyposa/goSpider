@@ -523,7 +523,7 @@ class Fetcher:
 `fetch`方法开始连接一个`socket`,然后注册回调，`connected`,当`socket`准备好后回调会被执行。现在我们可将这两倍结合到一个协程中：
 
 ```python
-def fetch(self) -> None:
+def fetch(self) -> Generator:
     self.sock = socket.socket()
     self.sock.setblocking(False)
     try:
@@ -581,7 +581,86 @@ loop()
 一旦`socket`建立连接成功，我们就发送`HTTP GET`请求并读取服务器的响应。这些步骤不需要分散在回调函数之间；我们将它们放到同一生成器函数中：
 
 ```python
+    def fetch(self) -> Generator:
+        # ... 连接逻辑同上，然后：
+        self.sock.send(request.encode('ascii'))
 
+        while True:
+            f = Future()
+
+            def on_readable():
+                f.set_result(self.sock.recv(4096))
+
+            selector.register(
+                self.sock.fileno(),
+                EVENT_READ,
+                on_readable
+            )
+
+            chunk = yield f
+            selector.unregister(self.sock.fileno())
+            if chunk:
+                self.response += chunk
+            else:
+                # 响应读取完成
+                break
+```
+
+>  *译者注： 这里网络状况问题比较多，建议配合译者的响应代码文件食用，尽量测试客户端连接本地服务器，不然结果会有一些不尽人意。*
+
+这段代码，会从`socket`中读取整个信息，通常看起来很有用。我们如何把它从`fetch`中分解成一个子例程呢？现在`Python 3`有名的`yield from`登场了。它把一个生成器委托给了另一个。
+
+为了了解如何操作，让我们回到一个简单的生成器例子:
+
+```python
+>>> def gen_fn():
+...     result = yield 1
+...     print(f'result of yield: {result}')
+...     result2 = yield 2
+...     print(f'result of 2nd yield: {result2}')
+...     return 'done'
+... 
+```
+
+为了从另一个生成器中调用这个生成器，用`yield from`进行委托。
+
+```python
+>>> # 生成器函数
+>>> def caller_fn():
+...     gen = gen_fn()
+...     rv = yield from gen
+...     print(f'return value of yield-from: {rv}')
+...     
+>>> # 从生成器函数生成一个生成器
+>>> caller = caller_fn()
+```
+
+`caller`生成器的行为和`gen`相似，生成器委托给了：
+
+```python
+>>> caller.send(None)
+1
+>>> caller.gi_frame.f_lasti
+15
+>>> caller.send('hello')
+result of yield: hello
+2
+>>> caller.gi_frame.f_lasti  # 未增加
+15
+>>> caller.send('goodbye')
+result of 2nd yield: goodbye
+return value of yield-from: done
+Traceback (most recent call last):
+  File "<input>", line 1, in <module>
+StopIteration
+```
+
+当`caller yields from gen`时，`caller`没有增加*(指针)*[^12]。请注意，即使内部的生成器`gen`从一个`yield`语句运行到下一个`yield`语句，它的指针也保持在 15，即声明`yield from`的位置。从外部`caller`的角度来看，我们不能够判断它`yield`的值来自`caller`还是来自它委托的生成器。从内部的`gen`来看，我们不能判断发送的值是来自`caller`或者来自它的外部。`yield from`语句是一个流畅的通道，在`gen`结束之前，值通过它出入`gen`。
+
+一个协程可以用`yield from`将工作委托给一个子协程，并接收子协程工作的结果。需要注意的是，在上面的代码中，`caller`打印了`"return value of yield-from: done"`。当`gen`执行完成时，它返回的值成为了`caller`中 `yield from` 语句产生的值：
+
+```python
+	rv = yield from gen
 ```
 
 
@@ -600,6 +679,4 @@ loop()
 
 [^ 11]: This future has many deficiencies. For example, once this future is resolved, a coroutine that yields it should resume immediately instead of pausing, but with our code it does not. See asyncio's Future class for a complete implementation.[↩](http://aosabook.org/en/500L/a-web-crawler-with-asyncio-coroutines.html#fnref9)
 
-
-
-[^11]: 
+[^12]: In fact, this is exactly how "yield from" works in CPython. A function increments its instruction pointer before executing each statement. But after the outer generator executes "yield from", it subtracts 1 from its instruction pointer to keep itself pinned at the "yield from" statement. Then it yields to *its* caller. The cycle repeats until the inner generator throws `StopIteration`, at which point the outer generator finally allows itself to advance to the next instruction.[↩](http://aosabook.org/en/500L/a-web-crawler-with-asyncio-coroutines.html#fnref10)

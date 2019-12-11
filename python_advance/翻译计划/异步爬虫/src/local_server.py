@@ -23,7 +23,7 @@ def read(conn, mask):
 
 
 sock = socket.socket()
-sock.bind(('', 1234))
+sock.bind(('', 80))
 sock.listen(100)
 sock.setblocking(False)
 sel.register(sock, selectors.EVENT_READ, accept)
