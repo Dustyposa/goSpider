@@ -663,6 +663,48 @@ StopIteration
 	rv = yield from gen
 ```
 
+之前，在我们批评基于回调的异步编程的时候，我们最突出的抱怨是关于`"stack ripping"`的：当一个回调抛出一个异常时，堆栈追踪通常是无用的。它仅仅展示了时间循环正在运行回调，而不是*原因*。那么协程怎么样？
+
+```python
+>>> def gen_fn():
+...     raise Exception('my error')
+>>> caller = caller_fn()
+>>> caller.send(None)
+Traceback (most recent call last):
+  File "<input>", line 1, in <module>
+  File "<input>", line 3, in caller_fn
+  File "<input>", line 2, in gen_fn
+Exception: my error
+```
+
+这就有用多了！堆栈追踪展示了当异常抛出时，`caller_fn`正在委托`gen_fn`。更令人欣慰的是，我们可以把对子协程的调用封装在异常处理中，这和普通的子例程相同：
+
+```python
+>>> def gen_fn():
+...     yield 1
+...     raise Exception('uh oh')
+...
+>>> def caller_fn():
+...     try:
+...         yield from gen_fn()
+...     except Exception as exc:
+...         print(f'caught {exc}')
+...
+>>> caller = caller_fn()
+>>> caller.send(None)
+1
+>>> caller.send('hello')
+caught uh oh
+```
+
+所以，就像常规的子例程一样，我们分解一下子协程程的逻辑。让我们从我们的`fetcher`中分解一些有用的子协程。我们写一个`read`写成来接收一个`chunk`:
+
+```python
+
+```
+
+
+
 
 
 [^1]:  线程相关资源
