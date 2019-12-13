@@ -700,8 +700,60 @@ caught uh oh
 所以，就像常规的子例程一样，我们分解一下子协程程的逻辑。让我们从我们的`fetcher`中分解一些有用的子协程。我们写一个`read`写成来接收一个`chunk`:
 
 ```python
+def read(sock: socket.socket):
+    f = Future()
 
+    def on_readable():
+        f.set_result(sock.recv(4096))
+
+    selector.register(
+        sock.fileno(),
+        EVENT_READ,
+        on_readable
+    )
+    chunk = yield f  # 读一个chunk
+    selector.unregister(sock.fileno())
+    return chunk
 ```
+
+我们在`read`的基础上构建一个`read_all`协程，用于接收整个消息：
+
+```python
+def read_all(sock: socket.socket):
+    response = []
+    # 读取所有消息
+    chunk = yield from read(sock)
+    while chunk:
+        response.append(chunk)
+        chunk = yield from read(sock)
+
+    return b''.join(response)
+```
+
+如果你以正确的方式换角度看的话，`yield from`语句就会消失，并且这些语句看起来和常规的函数一样，会阻塞`I/O`。但实际上，`read`和`read_all`都是协程。`yield from read`会暂停 `read_all`直到所有的`I/O`完成。当`reda_all`暂停时，`asyncio`的事件循环会执行其他的工作并等待(awiat)其他的`I/O`事件；一旦事件就绪，`read_all`就会在下一个循环中恢复并获得`read`的结果。
+
+在堆栈的根*(此处指 __main__ 的全局空间)*，`fecth`调用`read_all`:
+
+```python
+class Fetcher:
+    def fetch(self) -> Generator:
+        # ... 连接逻辑同上，然后：
+        self.sock.send(request.encode('ascii'))
+        self.response = yield from read_all(self.sock)
+```
+
+令人惊喜的是，`Task`类不需要做任何修改。它和以前一样，驱动外部的`fetch`协程就行：
+
+```python
+Task(fetcher.fetch())
+loop()
+```
+
+当然`read` yield 一个`future` 时，`task`通过`yield from`语句的通道接收它，就像`future`是直接从`fetch`中产生*(yielded)*的一样。当循环释放一个`future`时，`task`把结果发送到了`fetch`，并且通过`read`直接把值接收了，就像`task`直接在驱动`read`:
+
+![figure_yield](http://aosabook.org/en/500L/crawler-images/yield-from.png)
+
+​																				Figure 5.3 - Yield From  
 
 
 

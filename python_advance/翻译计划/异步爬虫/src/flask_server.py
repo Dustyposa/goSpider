@@ -22,4 +22,4 @@ def error_404_handing(error):
 
 
 if __name__ == '__main__':
-    app.run(host=80)
+    app.run(port=80)
