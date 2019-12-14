@@ -18,15 +18,19 @@ Vettery是一个招聘网站，它改变了人们应聘或者雇佣的方式。�
 
 ## 新闻
 
-[OpenMined and PyTorch partner to launch fellowship funding for privacy-preserving ML community](https://pytorch.org/blog/openmined-and-pytorch-launch-fellowship-funding-for-privacy-preserving-ml/)
-The PyTorch team has invested $250,000 to support OpenMined in furthering the development and proliferation of privacy-preserving ML and there are three different opportunities for you to participate in the project’s development. Each of these fellowships furthers our shared mission to lower the barrier-to-entry for privacy-preserving ML and to create a more privacy-preserving world.
+[OpenMined和PyTorch合作启动为保护隐私的ML社区提供研究资金](https://pytorch.org/blog/openmined-and-pytorch-launch-fellowship-funding-for-privacy-preserving-ml/)
 
-> `Python`太收欢迎？
+`Ptouch团队`已经投资了`$250,000`美元，用于支持`OpenMined`进一步开发和扩展`privacy-preserving ML`，并且你也可以通过三种不同的方式来加入项目的开发。每一笔资金都让我们离我们的使命更进一步，既降低保护隐私的`ML`的门槛，创建一个更加保护隐私的世界。
+
+> `Pytorch`先下一城？
 
 
 ## 文章、教程与话题
-[Bootstrapping Understanding: An Introduction to Reverse Engineering](http://www.muppetlabs.com/~breadbox/txt/bure.html) 
-Reverse engineering an unfamiliar data file could be described as the bootstrapping of understanding. In many ways the process resembles the scientific method, only applied to human-made, abstract objects instead of the natural world. You begin by gathering data, and then you use that information to put forth one or more hypotheses. You test the hypotheses, and use the outcome of those tests to refine them. Repeat as needed. Developing skills in reverse engineering is largely a matter of practice. Through an accumulation of experiences, you build up an intuition of where to investigate first, what patterns to look for, and what tools to keep handy. This post walks through the process of reverse-engineering some data files from an old computer game, in order to show you a little bit of how it's done.
+[引导的理解：逆向工程导论](http://www.muppetlabs.com/~breadbox/txt/bure.html) 
+
+逆向工程一个陌生的数据可以被描述为`bootstrapping of understanding`。在很多方面，这个过程类似一个科学方法，值用于人造的，抽象的物体，而不是自然世界中的。你首先收集数据，然后利用这些信息提出一个或者多个假设。你测试这些假设，并使用测试结果来完善你的假设。根据需要进行重复操作。逆向工程的开发技能很多部分都来自于实践。通过累积经验，你可以建立起一种直觉，首先从哪里开始调查，寻找什么样的模式，什么样的工具更方便，这篇文章通过逆向一些旧的电脑游戏中的数据文件，来向你展示如何整个过程是如何完成的。
+
+> 攻守兼备。
 
 [Python Tips and Trick, You Haven't Already Seen](https://martinheinz.dev/blog/1)
 There are plenty of articles written about lots of cool features in Python such as variable unpacking, partial functions, enumerating iterables, but there is much more to talk about when it comes to Python, so here I will try to show some of the features I know and use, that I haven't yet seen mentioned elsewhere.
@@ -134,7 +138,7 @@ There will be following talks
 
 [Optimized human learning - London, UK](https://www.meetup.com/LondonPython/events/266632570/)
 Spaced repetition, the testing of knowledge over a period of time, is one of the most important tools we know of in the science of learning. Modern technology, in the form of spaced repetition software like Anki, promise to take this to the next level by offering personalized learning schedules for each individual learner — but often underdeliver. In this talk, Jacob Puthipiroj walks through an implementation of spaced repetition scheduling via machine learning, the first of its kind in a commercially available software.
- 
+
 [Lightning Talks @ NYC PyLadies - New York, NY](https://www.meetup.com/NYC-PyLadies/events/266971268/)
 
 [PyHou Meetup December 2019 - Houston, TX](https://www.meetup.com/python-14/events/ndcfkryzqbwb/)
@@ -142,7 +146,7 @@ Spaced repetition, the testing of knowledge over a period of time, is one of the
 [San Diego Python Meetup December 2019 - San Diego, CA](https://www.meetup.com/pythonsd/events/zgtnxqyzqbjc/)
 
 [LjPyMeetup December 2019 - Ljubljana, Slovenia](https://www.meetup.com/Ljubljana-Python-Group/events/266738849/)
- 
+
 
 
 ## Posa：
