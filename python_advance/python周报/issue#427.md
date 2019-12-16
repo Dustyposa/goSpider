@@ -37,41 +37,62 @@ There are plenty of articles written about lots of cool features in Python such 
 
 - [Part 2](https://martinheinz.dev/blog/4) - Here comes another round of Python features that you hopefully haven't seen yet.
 
+[数据科学家如何购买延长保修服务](https://t.co/fAlah4XP5q) 
+深入研究“延长保修”的数学原理。
 
-[How a Data Scientist Buys Extended Warranties](https://t.co/fAlah4XP5q) 
-A Deep-Dive look at the Math of “Extended Warranties”
+> 凡事都得算一下！
 
-[Controlling Text Generation with Plug and Play Language Models](https://eng.uber.com/pplm/)
-Uber AI's Plug and Play Language Model gives NLP practitioners the flexibility to plug simple attribute models into a large, unconditional language model.
+[用即插即用的语言模型控制文本生成](https://eng.uber.com/pplm/)
 
-[A comprehensive guide to OCR with Tesseract, OpenCV and Python](https://nanonets.com/blog/ocr-with-tesseract/)
-A comprehensive tutorial on getting started with Tesseract and OpenCV for OCR in Python: preprocessing, deep learning OCR, text extraction and limitations.
+Uber AI 的即插即用语言模型让NLP从业者可以更灵活的讲简单的属性模型接入一个更大的，无条件的语言模型中。
 
-[15 Insights for Managing Data Science Teams](https://hubs.ly/H0m6Zt90)
-A collection of insights and recommendations to help data and analytics leaders overcome the challenges of hiring and managing data science teams. This Gartner report is provided by Domino Data Lab. SPONSOR
+> 模型趋势？变形金刚！
 
-[Plotnine: Grammar of Graphics for Python](https://www.datascienceworkshops.com/blog/plotnine-grammar-of-graphics-for-python)
-A translation of the visualisation chapters from “R for Data Science” to Python using Plotnine and Pandas.
+[一个使用`Tesseract、OpenCV and Python` 的全方位指南](https://nanonets.com/blog/ocr-with-tesseract/)
 
-[Writing a Python ORM for Redis](https://www.agiliq.com/blog/2019/11/writing-an-orm-for-redis/)
-An elegant way to store instances in Redis.
+一份使用`Tesseract and OpenCV`的`Python OCR`入门指南：预处理，`OCR`深度学习，文本扩展和限制。
 
-[Django 3.0 Full Course For Beginners](https://www.youtube.com/watch?v=6ManltU_8iU) ![img](https://gallery.mailchimp.com/e2e180baf855ac797ef407fc7/images/8def3887-e9e9-4a48-95e0-74045a6a23fc.png)
+> 成熟的 CV， 上！
 
-[Doing Python Configuration Right](https://whalesalad.com/blog/doing-python-configuration-right)
+[管理数据科学团队的15个见解](https://hubs.ly/H0m6Zt90)
+
+一些帮助数据和分析leader克服雇佣挑战和管理数据科学团队的见解和建议的。这份`Gartner`报道由`Domino Data Lab`提供。*（赞助商）*
+
+
+
+[Plotnine: Python图形语法](https://www.datascienceworkshops.com/blog/plotnine-grammar-of-graphics-for-python)
+
+使用`Plotnine and Pandas`将"R for Data Science"的可视化章节翻译成`Python`。
+
+> 来自数据科学的骚操作。
+
+[为 Redis 编写一个 Python ORM](https://www.agiliq.com/blog/2019/11/writing-an-orm-for-redis/)
+一种在Redis中存储实例的优雅方法。
+
+> 优雅很重要！
+
+[Django 3.0 初学者完整教程](https://www.youtube.com/watch?v=6ManltU_8iU) ![img](https://gallery.mailchimp.com/e2e180baf855ac797ef407fc7/images/8def3887-e9e9-4a48-95e0-74045a6a23fc.png)（4h18min）
+
+> 千呼万唤使出来。
+
+[正确地配置Python](https://whalesalad.com/blog/doing-python-configuration-right)
 
 [North Bay Python 2019 Videos](https://www.youtube.com/playlist?list=PLaeNpBNgqQWvxnFU4PYGLOJ82IvuePAyT) ![img](https://gallery.mailchimp.com/e2e180baf855ac797ef407fc7/images/8def3887-e9e9-4a48-95e0-74045a6a23fc.png)
 
-[shrynk - Using Machine Learning to learn how to Compress](https://vks.ai/2019-12-05-shrynk-using-machine-learning-to-learn-how-to-compress)
+[shrynk - 使用机器学习学习如何压缩](https://vks.ai/2019-12-05-shrynk-using-machine-learning-to-learn-how-to-compress)
 
-[Monads aren't as hard as you think](https://bytes.yingw787.com/posts/2019/12/06/monads/) 
+> 希望能压出 Pied Piper
+
+[Monads没有你想象中那么难](https://bytes.yingw787.com/posts/2019/12/06/monads/) 
 
 
 
 ## 有趣的项目、工具和库
 
-
 [AI Dungeon 2](https://github.com/AIDungeon/AIDungeon)
+
+
+
 AI Dungeon 2 is a completely AI generated text adventure built with OpenAI's largest GPT-2 model. It's a first of it's kind game that allows you to enter and will react to any action you can imagine.
 
 [Mario: Shell pipes in Python](https://github.com/python-mario/mario)
