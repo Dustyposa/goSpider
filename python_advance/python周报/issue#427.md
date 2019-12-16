@@ -34,11 +34,11 @@ Vettery是一个招聘网站，它改变了人们应聘或者雇佣的方式。�
 
 [你没见过的 Python 技巧和骚操作, ](https://martinheinz.dev/blog/1)
 
-关于`Python`许多很酷的功能的文章有很多，例如变量解包，
+关于`Python`许多很酷的功能的文章有很多，例如变量解包，偏函数，枚举迭代，但是当提到`Python`时，还有很多可以讨论的。因此，在这里我将演示一些我知道并使用的一些功能，这些功能我还没有在其他地方看到过。
 
-There are plenty of articles written about lots of cool features in Python such as variable unpacking, partial functions, enumerating iterables, but there is much more to talk about when it comes to Python, so here I will try to show some of the features I know and use, that I haven't yet seen mentioned elsewhere.
+- [Part 2](https://martinheinz.dev/blog/4) - 这里是另一组`Python`特性，希望您还没有见过。
 
-- [Part 2](https://martinheinz.dev/blog/4) - Here comes another round of Python features that you hopefully haven't seen yet.
+> 压箱底的骚操作。
 
 [数据科学家如何购买延长保修服务](https://t.co/fAlah4XP5q) 
 深入研究“延长保修”的数学原理。
@@ -94,56 +94,84 @@ Uber AI 的即插即用语言模型让NLP从业者可以更灵活的讲简单的
 
 [AI Dungeon 2](https://github.com/AIDungeon/AIDungeon)
 
+`AI Dungeon 2`是一个完全由`OpenAI最大的GPT-2模型`构建的`AI`生成的文字冒险游戏。这是同类游戏中的第一个，它允许你输入并对任何你能想象的动作作出反应。
 
-
-AI Dungeon 2 is a completely AI generated text adventure built with OpenAI's largest GPT-2 model. It's a first of it's kind game that allows you to enter and will react to any action you can imagine.
+> Colab 能直接玩哦！
 
 [Mario: Shell pipes in Python](https://github.com/python-mario/mario)
-Have you ever wanted to use Python functions directly in your Unix shell? Mario can read and write csv, json, and yaml; traverse trees, and even do xpath queries. Plus, it supports async commands right out of the box. Build your own commands with a simple configuration file, and install plugins for even more!
+
+你曾经想过直接在你的`Unix shell`种直接使用`Python函数`？`Mario`可以读写`csv,json and yaml`;遍历树，甚至进行`xpath`查询。另外，它还支持开箱即用的`async`命令。用一个简单的配置文件构建你自己的命令，并安装更多的插件吧！
+
+> 随处可用`Python`的时代？
 
 [Informer](https://github.com/paulpierre/informer) 
-A Telegram Mass Surveillance Bot in Python.
+
+一个用`Python`编写的`Telegram Mass Surveillance`机器人。
+
+> 做数据分析用的～
 
 [awspx](https://github.com/FSecureLABS/awspx)
-A graph-based tool for visualizing effective access and resource relationships in AWS environments.
+
+一个用于可视化`AWS`环境中的有效访问和资源关系的基于图的工具。
+
+> AWS很强啊
 
 [Pixcryption](https://github.com/M4cs/pixcryption)
-Pixcryption's goal is to offer a new form of steganography/encryption through imagery. It uses a random seeded UUID to generate a user_key which matches RGB perfect values to match to unicode characters. These are stored in a user_key.png file which is used to encrypt and decrypt messages.
+
+`Pixcryption`的目标是通过图像提供一种的新型的隐写术/加密方式*(steganography/encryption)*.它使用一个随机种子的`UUID`去生成一个`user_key`，它匹配`RGB`的完美值来匹配`unicode 字符`。这些都存住在一个用于加密解密消息的`user_key.png`文件中。
+
+> 像素加密之后会是什么！视频加密？语音加密？
 
 [PyFlow](https://github.com/wonderworks-software/PyFlow) 
-Visual scripting framework for Python.
+
+用于`Python`的可视化脚本框架。
 
 [pydeps](https://github.com/thebjorn/pydeps)
-Python module dependency visualization.
+
+`Python`模块依赖可视化。
+
+> 可视化全家桶！达成！
 
 [video-to-pose3D](https://github.com/zh-plus/video-to-pose3D)
-Convert video to 3D pose in one-key.
+
+一键实现视频转3d姿势。
 
 [omnibot](https://github.com/lyft/omnibot)
-A Slack proxy, and Slack bot framework. 
+Slack代理和Slack bot框架。
 
 [GoCheese](http://gocheese.cypherpunks.ru/) 
-A Python private package repository and caching proxy.
+
+一个`Python`私有软件包存储库和缓存代理。
+
+> 搭建私人仓库可以看看。
 
 [Horology](https://github.com/mjmikulski/horology)
-Conveniently measures time of your for-loops, contexts and functions.
+方便地测量你的for循环、上下文和函数的时间。
 
 [Maze-Generator](https://github.com/Perseus-Perry/Maze-Generator)
-A script that generates randomized mazes/labrynths. Invented by accident.
+
+一个用于生成随机迷宫的脚本。（偶然间发明的。）
+
+> 可恶的偶然！
 
 [SparkTorch](https://github.com/dmmiller612/sparktorch)
-Train and run Pytorch models on Apache Spark.
+
+在`Apache Spark`上训练和运行`Pytorch`模型。
+
+> 针对性。。
 
 [django_vue_generator](https://github.com/pawnhearts/django_vue_generator)
-Generates vue frontend structure for django rest framework projects. Generates forms(validated with vuelidate) for your serializers and viewsets and methods to call api via vue-resource.
+
+为`django rest 框架项目`生成`vue`前端结构。为你的序列化器和视图集以及通过`vue-resource`调用`api`的方法生成表单(通过`vuelidate`进行验证)。
+
+
 
 [PyTorch Elastic](https://github.com/pytorch/elastic)
-PyTorch Elastic (torchelastic) is a framework that enables distributed training jobs to be executed in a fault tolerant and elastic manner. 
+
+PyTorch Elastic（torchelastic）是一个框架，使分布式训练任务能够以容错和弹性的方式执行。
 
 [blender-tools](https://github.com/EmbarkStudios/blender-tools)
-A Blender add-on containing workflow tools for game development.
-
-
+一个Blender加载项，其中包含用于游戏开发的工作流工具。
 
 ## **New Releases**
 
@@ -154,14 +182,16 @@ A Blender add-on containing workflow tools for game development.
 ## 活动和网络研讨会日程
 
 [Presentation Night @ Boston Python Meetup - Cambridge, MA](https://www.meetup.com/bostonpython/events/265925678/)
-There will be following talks 
+将会有以下的话题：
 
-- Python Optimization Options
-- Extending Python with Rust
+- Python优化选项
+- 用Rust扩展Python
+
+> pyflow?
 
 
 [Optimized human learning - London, UK](https://www.meetup.com/LondonPython/events/266632570/)
-Spaced repetition, the testing of knowledge over a period of time, is one of the most important tools we know of in the science of learning. Modern technology, in the form of spaced repetition software like Anki, promise to take this to the next level by offering personalized learning schedules for each individual learner — but often underdeliver. In this talk, Jacob Puthipiroj walks through an implementation of spaced repetition scheduling via machine learning, the first of its kind in a commercially available software.
+间隔性重复，即在一段时间内测试知识，是我们所知道的学习科学中最重要的工具之一。现代科技，以`Anki`等间隔重复记忆软件的形式，承诺通过为每个学习者提供个性化的学习时间表，将这一技术提升到一个新的水平——但往往效果不理想。在这次演讲中，`Jacob Puthipiroj`将通过机器学习来实现间隔重复调度，这在商用软件中尚属首次。
 
 [Lightning Talks @ NYC PyLadies - New York, NY](https://www.meetup.com/NYC-PyLadies/events/266971268/)
 
