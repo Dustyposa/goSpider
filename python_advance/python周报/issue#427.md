@@ -32,7 +32,10 @@ Vettery是一个招聘网站，它改变了人们应聘或者雇佣的方式。�
 
 > 攻守兼备。
 
-[Python Tips and Trick, You Haven't Already Seen](https://martinheinz.dev/blog/1)
+[你没见过的 Python 技巧和骚操作, ](https://martinheinz.dev/blog/1)
+
+关于`Python`许多很酷的功能的文章有很多，例如变量解包，
+
 There are plenty of articles written about lots of cool features in Python such as variable unpacking, partial functions, enumerating iterables, but there is much more to talk about when it comes to Python, so here I will try to show some of the features I know and use, that I haven't yet seen mentioned elsewhere.
 
 - [Part 2](https://martinheinz.dev/blog/4) - Here comes another round of Python features that you hopefully haven't seen yet.
