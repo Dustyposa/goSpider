@@ -755,7 +755,35 @@ loop()
 
 ​																				Figure 5.3 - Yield From  
 
+为了完善我们的协程实现，我们改进了一个标记：当它等待一个`future`时，我们的代码使用的`yield`，当它委托给一个子协程时，使用的`yield from`。如果我们在协程暂停时使用`yield from`，效果会更好。那么洗成就不需要关注它等待的东西是什么类型。
 
+我们利用了`Python`中生成器和迭代器的深度对应关系。对于调用者来说，推进的生成器和推进的迭代器都是一样的。所以我们让我们的`Future`类通过一个特殊的方法实现可迭代：
+
+```PYTHON
+    # Future 类的方法
+    def __iter__(self):
+        # 告诉 Task 在这里继续
+        yield self
+        return self.result
+```
+
+`future`的`__iter__`方法是一个`yields future 自身`的协程。现在当我们像这样替换代码时:
+
+```python
+# f is a Future.
+yield f
+```
+
+...用这样的代码进行替换：
+
+```python
+# f is a Future.
+yield from f
+```
+
+...结果是一样的！驱动器`Task`调用`send`收到`future`,并且当`future`结束时，它会将新的结果发送回协程。
+
+到处都使用`yield from`的好处是什么？为什么比用`yield`等待`future`以及用`yield`委托给子协程好？好的原因是因为现在，一个方法可以自由的改变实现而不影响调用者：它可以是一个常规的函数，返回一个`future`然后将会`resolve`一个值，或者它也可以是一个协程，包含了`yield from`语句并`returns`一个值。在这两种情况下，调用者都只需要`yield from`去等待结果。
 
 
 
