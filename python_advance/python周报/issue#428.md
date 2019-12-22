@@ -56,9 +56,11 @@ Vettery是一个招聘网站，它改变了人们应聘或者雇佣的方式。�
 
 **[劫持(hijacking)Django 默认的'Through' Tables](https://typenil.com/hijacking-default-django-through-tables/)**
 
-去年有几次我遇到了需要向一个`Django`多对多关系中添加一些元数据。默认情况下，没有明确的模型可以添加字段，
+去年有几次我遇到了需要向一个`Django`多对多关系中添加一些元数据。默认情况下，没有明确的模型可以添加字段，但是如果你在开发一个灵活的项目-在默认的`through`表中存在一些数据，你并不想丢失这些数据。所以，如果你不想创建一个新的表并迁移数据该怎么解决呢？让我们劫持一个！
 
-A few times in the last year, I’ve run into the need to add some metadata to a Django many-to-many relationship. By default, there’s no explicit model to add fields to, but - if you’re working on an active project - you probably have existing data in the default ‘through’ table that you don’t want to lose. So what are you to do if you don’t want to have to create a completely new table and migrate the data over? Let’s hijack the existing one.
+> 不够打补丁。
+
+
 
 [Why do people Love the Powerful Python Newsletter?](https://powerfulpython.com/newsletter/?utm_source=pythonweekly&utm_medium=newsletter&utm_campaign=2019-12-19)
 "Thanks for the awesome newsletter! I look forward to your emails." "Python needs tougher treatment than what's out there. Keep going, don’t ever stop." For Intermediate Python. Subscribe free now. SPONSOR
