@@ -62,151 +62,138 @@ Vettery是一个招聘网站，它改变了人们应聘或者雇佣的方式。�
 
 
 
-[Why do people Love the Powerful Python Newsletter?](https://powerfulpython.com/newsletter/?utm_source=pythonweekly&utm_medium=newsletter&utm_campaign=2019-12-19)
-"Thanks for the awesome newsletter! I look forward to your emails." "Python needs tougher treatment than what's out there. Keep going, don’t ever stop." For Intermediate Python. Subscribe free now. SPONSOR
+**[为什么人们喜欢这个强大的Python新闻邮件?](https://powerfulpython.com/newsletter/?utm_source=pythonweekly&utm_medium=newsletter&utm_campaign=2019-12-19)**
 
-[How I saved Christmas with the Travelling Salesman Problem](https://t.co/LGeDuqINzt) 
-A nice visualization of the Santa’s optimal trip.
+"非常感谢精彩的新闻邮件！我期待着你的邮件。"“Python needs tougher treatment than what's out there. Keep going, don’t ever stop.“针对中级的`Python`。现在就免费订阅吧！SPONSOR
 
-[Build a CRUD application using Vue and Django](https://codesource.io/build-a-crud-application-vue-and-django/)
-This tutorial shows you how to build an API with Django REST Framework and a SPA with Vue.js.
 
-[Easy web scraping with Scrapy](https://www.scrapingbee.com/blog/web-scraping-with-scrapy/)
-Scrapy is the most popular Python web scraping framework. In this tutorial we will see how to scrape an E-commerce website with Scrapy from scratch.
 
-[CPython Segfault in 5 lines of code](https://gist.github.com/coolreader18/6dbe0be2ae2192e90e1a809f1624c694)
+**[我如何用旅行推销员问题拯救圣诞节](https://t.co/LGeDuqINzt)** 
+圣诞老人最佳行程的可视化。
 
-[A Tiny Python Exception Oddity](https://aroberge.blogspot.com/2019/12/a-tiny-python-exception-oddity.html)
+> 圣诞老人选择路线的最优解。
 
-[Finding Natural Breaks in Data with the Fisher-Jenks Algorithm](https://pbpython.com/natural-breaks.html)
+**[用Vue和Django构建一个CRUD应用](https://codesource.io/build-a-crud-application-vue-and-django/)**
 
-[Using pyenv to manage your Python interpreters](https://www.marc-richter.info/using-pyenv-to-manage-your-python-interpreters/)
+这篇教程向你展示了如何用`Django REST Framework`构建一个`API`并用`Vue.js`构建一个`SPA`。
 
-[Experiments in Constraint-based Graphic Design](https://www.anishathalye.com/2019/12/12/constraint-based-graphic-design/)
+> 熟悉的CRUD
 
-[Reducing NumPy memory usage with lossless compression](https://pythonspeed.com/articles/numpy-memory-footprint/)
+**[使用Scrapy轻松抓取网页](https://www.scrapingbee.com/blog/web-scraping-with-scrapy/)**
+
+`Scrapy`是`Python`中最受欢迎的爬虫框架。在本篇教程中，我们将会看到如何用`Scrapy`从`scratch`中抓取一个电商网站。
+
+> 久违的爬虫教程。
+
+[让CPython出现段错误的5行代码 ](https://gist.github.com/coolreader18/6dbe0be2ae2192e90e1a809f1624c694)
+
+> 太过自由？
+
+[一个极小的 Python Exception 怪事](https://aroberge.blogspot.com/2019/12/a-tiny-python-exception-oddity.html)
+
+> 版本的一致性不，还是比较让人困扰的。
+
+[用Fisher-Jenks算法查找数据的自然断点](https://pbpython.com/natural-breaks.html)
+
+[使用pyenv管理你的Python解释器](https://www.marc-richter.info/using-pyenv-to-manage-your-python-interpreters/)
+
+[基于约束的图形设计实验](https://www.anishathalye.com/2019/12/12/constraint-based-graphic-design/)
+
+[通过无损压缩减少NumPy内存的使用](https://pythonspeed.com/articles/numpy-memory-footprint/)
 
 
 
 ## 有趣的项目、工具和库
 
-[AI Dungeon 2](https://github.com/AIDungeon/AIDungeon)
 
-`AI Dungeon 2`是一个完全由`OpenAI最大的GPT-2模型`构建的`AI`生成的文字冒险游戏。这是同类游戏中的第一个，它允许你输入并对任何你能想象的动作作出反应。
+**[Batea](https://github.com/delvelabs/batea)**
+基于上下文检测的网络设备排名框架。
 
-> Colab 能直接玩哦！
+**[BMW InnovationLab](https://github.com/BMW-InnovationLab)**
 
-[Mario: Shell pipes in Python](https://github.com/python-mario/mario)
+宝马已宣布发布其用于生产的人工智能算法，供任何感兴趣的人使用。
 
-你曾经想过直接在你的`Unix shell`种直接使用`Python函数`？`Mario`可以读写`csv,json and yaml`;遍历树，甚至进行`xpath`查询。另外，它还支持开箱即用的`async`命令。用一个简单的配置文件构建你自己的命令，并安装更多的插件吧！
+> 宝马！原来还有这种操作。
 
-> 随处可用`Python`的时代？
+**[coding-problems](https://github.com/MTrajK/coding-problems)**
 
-[Informer](https://github.com/paulpierre/informer) 
-
-一个用`Python`编写的`Telegram Mass Surveillance`机器人。
-
-> 做数据分析用的～
-
-[awspx](https://github.com/FSecureLABS/awspx)
-
-一个用于可视化`AWS`环境中的有效访问和资源关系的基于图的工具。
-
-> AWS很强啊
-
-[Pixcryption](https://github.com/M4cs/pixcryption)
-
-`Pixcryption`的目标是通过图像提供一种的新型的隐写术/加密方式*(steganography/encryption)*.它使用一个随机种子的`UUID`去生成一个`user_key`，它匹配`RGB`的完美值来匹配`unicode 字符`。这些都存住在一个用于加密解密消息的`user_key.png`文件中。
-
-> 像素加密之后会是什么！视频加密？语音加密？
-
-[PyFlow](https://github.com/wonderworks-software/PyFlow) 
-
-用于`Python`的可视化脚本框架。
-
-[pydeps](https://github.com/thebjorn/pydeps)
-
-`Python`模块依赖可视化。
-
-> 可视化全家桶！达成！
-
-[video-to-pose3D](https://github.com/zh-plus/video-to-pose3D)
-
-一键实现视频转3d姿势。
-
-[omnibot](https://github.com/lyft/omnibot)
-Slack代理和Slack bot框架。
-
-[GoCheese](http://gocheese.cypherpunks.ru/) 
-
-一个`Python`私有软件包存储库和缓存代理。
-
-> 搭建私人仓库可以看看。
-
-[Horology](https://github.com/mjmikulski/horology)
-方便地测量你的for循环、上下文和函数的时间。
-
-[Maze-Generator](https://github.com/Perseus-Perry/Maze-Generator)
-
-一个用于生成随机迷宫的脚本。（偶然间发明的。）
-
-> 可恶的偶然！
-
-[SparkTorch](https://github.com/dmmiller612/sparktorch)
-
-在`Apache Spark`上训练和运行`Pytorch`模型。
-
-> 针对性。。
-
-[django_vue_generator](https://github.com/pawnhearts/django_vue_generator)
-
-为`django rest 框架项目`生成`vue`前端结构。为你的序列化器和视图集以及通过`vue-resource`调用`api`的方法生成表单(通过`vuelidate`进行验证)。
+各种各样的编程/算法问题的解答，并有很多有用的资源用来学习算法和数据结构。
 
 
 
-[PyTorch Elastic](https://github.com/pytorch/elastic)
+**[NVDashboard](https://github.com/rapidsai/jupyterlab-nvdashboard)**
 
-PyTorch Elastic（torchelastic）是一个框架，使分布式训练任务能够以容错和弹性的方式执行。
+用于显示GPU使用情况的一个`JupyterLab插件`。
 
-[blender-tools](https://github.com/EmbarkStudios/blender-tools)
-一个Blender加载项，其中包含用于游戏开发的工作流工具。
+> GPU 监听中。
 
-## **New Releases**
+**[PrettyErrors](https://github.com/onelivesleft/PrettyErrors/)**
 
-[Python 3.8.1rc1](https://pythoninsider.blogspot.com/2019/12/python-381rc1-is-now-available-for.html)
+美化`Python`错误输出，让其更清晰。
+
+> 的确美多了。
+
+**[ward](https://github.com/darrenburns/ward)**
+
+一个现代的Python测试框架，旨在帮助你发现并修复缺陷。
+
+> 待观察。
+
+**[YouTube-Report](https://github.com/A3M4/YouTube-Report)**
+
+生成你的个人`YouTube`报告。
+
+
+
+**[attack_range](https://github.com/splunk/attack_range)**
+
+一个允许您创建易受攻击的本地或云环境的工具，以模拟针对的攻击并将数据收集到`Splunk`中。
+
+> 自攻自守
+
+**[twcloud](https://github.com/minimaxir/twcloud)**
+Python 包 + CLI 来生成Twitter推特词云图。 
+
+> 实战开启？
+
+**[CuteUID](https://github.com/alexdredmon/cuteuid)**
+
+生成可爱的`uid`，即在外观上与`uuid`相似的唯一标识符(ish)。
+
+> 见名知意，看了一下，相当可爱。。
+
+**[ogb](https://github.com/snap-stanford/ogb)**
+
+`Pytouch`中图机器学习的开源基准测试库。
+
+
+
+**[Andriller](https://github.com/den4uk/andriller)** 
+带有智能手机取证工具集合的软件实用程序。它从安卓设备上执行只读、法医学声音、无损采集。
+
+> 扩展业务面!
+
+**[Neuraxle](https://github.com/Neuraxio/Neuraxle)**
+`Neuraxle`是一个机器学习(ML)库，用于构建整洁的管道，提供正确的抽象来简化您的ML应用程序的研究、开发和部署。
+
+## 最近更新
+
+[Django security releases issued: 3.0.1, 2.2.9, and 1.11.27](https://www.djangoproject.com/weblog/2019/dec/18/security-releases/)
+
+[Poetry 1.0.0](https://python-poetry.org/blog/announcing-poetry-1-0-0.html)
+
+> 它它它来了！管理工具一把手？
 
 
 
 ## 活动和网络研讨会日程
 
-[Presentation Night @ Boston Python Meetup - Cambridge, MA](https://www.meetup.com/bostonpython/events/265925678/)
-将会有以下的话题：
-
-- Python优化选项
-- 用Rust扩展Python
-
-> pyflow?
-
-
-[Optimized human learning - London, UK](https://www.meetup.com/LondonPython/events/266632570/)
-间隔性重复，即在一段时间内测试知识，是我们所知道的学习科学中最重要的工具之一。现代科技，以`Anki`等间隔重复记忆软件的形式，承诺通过为每个学习者提供个性化的学习时间表，将这一技术提升到一个新的水平——但往往效果不理想。在这次演讲中，`Jacob Puthipiroj`将通过机器学习来实现间隔重复调度，这在商用软件中尚属首次。
-
-[Lightning Talks @ NYC PyLadies - New York, NY](https://www.meetup.com/NYC-PyLadies/events/266971268/)
-
-[PyHou Meetup December 2019 - Houston, TX](https://www.meetup.com/python-14/events/ndcfkryzqbwb/)
-
-[San Diego Python Meetup December 2019 - San Diego, CA](https://www.meetup.com/pythonsd/events/zgtnxqyzqbjc/)
-
-[LjPyMeetup December 2019 - Ljubljana, Slovenia](https://www.meetup.com/Ljubljana-Python-Group/events/266738849/)
-
-
+Nai
 
 ## Posa：
 > ❤️ Happy Pythonic ;-(Posa私人无责任播报)  
 
-Django 3.0来啦！
 
-[戳这里](https://docs.djangoproject.com/en/3.0/)
 
 
 
