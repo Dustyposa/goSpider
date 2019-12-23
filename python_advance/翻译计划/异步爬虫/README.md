@@ -785,6 +785,39 @@ yield from f
 
 到处都使用`yield from`的好处是什么？为什么比用`yield`等待`future`以及用`yield`委托给子协程好？好的原因是因为现在，一个方法可以自由的改变实现而不影响调用者：它可以是一个常规的函数，返回一个`future`然后将会`resolve`一个值，或者它也可以是一个协程，包含了`yield from`语句并`returns`一个值。在这两种情况下，调用者都只需要`yield from`去等待结果。
 
+读者们，我们已经愉快的完成了对在`asyncio`中协程的阐述。我们探究了生成器的机制，并勾画实现了`futures and tasks`。我们概述了异步是如何取得这两方面的最佳效果的:并发I/O比线程更有效，比回调更清晰。当然，真正的`asyncio`是比我们简述版复杂的多的。真正的框架实现了零拷贝`I/O`,平衡调度，异常处理和大量的其他功能。
+
+对于一个`asyncio`用户来说，用协程编程比你在这里看到的简单多。在上面的代码中，我们从基本原理开始实现协程，所以你看到了回调，`tasks and futures`。甚至你看见了非阻塞的`socket`和`select`调用。但是当需要用`asyncio`构建应用的时候，这些都不会出现在你的代码里。如我们所承诺的，你现在可以轻松抓取一个`URL`：
+
+```python
+    @asyncio.coroutine
+        def fetch(self, url):
+            response = yield from self.session.get(url)
+            body = yield from response.read()
+```
+
+满足于此，我们回到了最初的任务:使用`asyncio`编写一个异步`web`爬虫。
+
+
+
+## 整合协程
+
+我们首先描述了我们希望爬虫如何工作。现在，是时候去用`asyncio 协程`实现它了。
+
+我们的爬虫将抓取第一个页面，解析它的链接，并把它们加入一个队列。之后，它会散布在整个网站上，并发抓取页面。但是为了限制客户端和服务器的负载，我们希望有一些最大运行数量的`works`，而不是无限多。当一个`worker`抓取到一个页面，它应该立即从队列中`pull`下一个链接。我们将会经历一段没有足够的工作去做的时期，所以一些`workers`必须暂停。但是当一个`worker`点击一个有很多新链接的页面时，队列会突然增加，并且任何暂停的`workers`都应该苏醒并开始工作。最后，一旦`work`结束，我们的程序必须退出。
+
+想象一下，如果这些`workers`是线程们。我们怎样才能表达这个爬虫算法？我们需要使用一个`Python`标准库中的同步队列[^13]。每当一个`item`放入队列，队列就会增加`"tasks"`的计数。工作线程在完成一个`item`工作后调用`task_done`。主线程将会阻塞在`Queue.join`直到每个放到队列中`item`被`task_done`调用匹配，然后退出。
+
+协程与`asyncio`队列使用完全相同的模式！ 首先我们导入它：
+
+```python
+try:
+    from asyncio import JoinableQueue as Queue
+except ImportError:
+    # 在 Python 3.5，asyncio.JoinableQueue 并入到了 Queue
+    from asyncio import Queue
+```
+
 
 
 [^1]:  线程相关资源
@@ -802,3 +835,5 @@ yield from f
 [^ 11]: This future has many deficiencies. For example, once this future is resolved, a coroutine that yields it should resume immediately instead of pausing, but with our code it does not. See asyncio's Future class for a complete implementation.[↩](http://aosabook.org/en/500L/a-web-crawler-with-asyncio-coroutines.html#fnref9)
 
 [^12]: In fact, this is exactly how "yield from" works in CPython. A function increments its instruction pointer before executing each statement. But after the outer generator executes "yield from", it subtracts 1 from its instruction pointer to keep itself pinned at the "yield from" statement. Then it yields to *its* caller. The cycle repeats until the inner generator throws `StopIteration`, at which point the outer generator finally allows itself to advance to the next instruction.[↩](http://aosabook.org/en/500L/a-web-crawler-with-asyncio-coroutines.html#fnref10)
+[^ 13]:https://docs.python.org/3/library/queue.html[↩](http://aosabook.org/en/500L/a-web-crawler-with-asyncio-coroutines.html#fnref11)
+

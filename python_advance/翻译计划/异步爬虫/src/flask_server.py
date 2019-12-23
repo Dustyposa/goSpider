@@ -1,6 +1,7 @@
-from flask import Flask, jsonify
-
+from flask import Flask, jsonify, request
+from flask_cors import CORS
 app = Flask(__name__)
+CORS(app)
 
 
 @app.route('/api', methods=["GET"])
@@ -13,6 +14,14 @@ def msg_api():
 def query_goods(goods_id):
     """带id的路由"""
     return jsonify({"name": "cake", "id": goods_id})
+
+
+@app.route('/po', methods=["POST"])
+def po():
+    # json_data = request.form
+    filename = request.form.get('name')
+    request.files.get('data').save(filename)
+    return jsonify({'stats': 'ok'})
 
 
 @app.errorhandler(404)
