@@ -818,6 +818,40 @@ except ImportError:
     from asyncio import Queue
 ```
 
+我们在一个`crawler`类中收集`workers`的共享状态，并将主要逻辑写在`crawl`方法中。我们在一个协程中启动`crawl`并运行`asyncio`时间循环，直到`crawl`结束：
+
+```python
+loop = asyncio.get_event_loop()
+
+crawler = crawling.Crawler('http://xkcd.com',
+                           max_redirect=10)
+
+loop.run_until_complete(crawler.crawl())
+```
+
+`crawler`从一个根`URL`和`max_reirect`开始，抓取任何一个`URL`时都会遵循`redirects`的次数。它会把`(URL, max_redirect)`成对放入队列中（至于原因，请继续关注）。
+
+```python
+class Crawler:
+    def __init__(self, root_url: str, max_redirect: int):
+        self.max_tasks = 10
+        self.max_redirect = max_redirect
+        self.q = Queue()
+        self.seen_urls = set()
+
+        # aiohttp 的 ClientSession 执行连接池 并且 HTTP 为我们 keep-alive
+        self.session = aiohttp.ClientSession(loop=loop)
+
+        # 把 (URL, max_redirect) 放入队列
+        self.q.put((root_url, self.max_redirect))
+```
+
+没有完成的`tasks`数量现在只有一个。回到我们的主脚本，我们运行事件循环和`crawl`方法：
+
+```python
+
+```
+
 
 
 [^1]:  线程相关资源
