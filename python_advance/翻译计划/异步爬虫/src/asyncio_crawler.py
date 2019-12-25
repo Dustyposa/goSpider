@@ -21,6 +21,17 @@ class Crawler:
         # 把 (URL, max_redirect) 放入队列
         self.q.put((root_url, self.max_redirect))
 
+    @asyncio.coroutine
+    def crawl(self):
+        """运行 crawler 直到所有的工作完成"""
+        wokers = [asyncio.Task(self.work())
+                  for _ in range(self.max_tasks)]
+
+        # 当所有任务完成，退出
+        yield from self.q.join()
+        for w in wokers:
+            w.cancel()
+
 
 crawler = crawling.Crawler('http://xkcd.com',
                            max_redirect=10)

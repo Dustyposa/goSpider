@@ -849,8 +849,25 @@ class Crawler:
 没有完成的`tasks`数量现在只有一个。回到我们的主脚本，我们运行事件循环和`crawl`方法：
 
 ```python
-
+loop.run_until_complete(crawler.crawl())
 ```
+
+`crawl`协程让`workers`开始工作。看起来像一个主线程：它阻塞在`join`直到所有的任务结束，而`workers`在后台运行。
+
+```python
+    @asyncio.coroutine
+    def crawl(self):
+        """运行 crawler 直到所有的工作完成"""
+        wokers = [asyncio.Task(self.work())
+                  for _ in range(self.max_tasks)]
+
+        # 当所有任务完成，退出
+        yield from self.q.join()
+        for w in wokers:
+            w.cancel()
+```
+
+
 
 
 
