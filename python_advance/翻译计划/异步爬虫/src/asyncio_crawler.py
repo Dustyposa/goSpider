@@ -32,6 +32,30 @@ class Crawler:
         for w in wokers:
             w.cancel()
 
+class Task:
+    def __init__(self, coro):
+        self.coro = coro
+        f = Future()
+        f.set_result(None)
+        self.step(f)
+
+    def step(self, future: Future) -> None:
+        try:
+            next_future = self.coro.send(future.result)
+        except CancelledError:
+            self.cancelled = True
+            return
+        except StopIteration:
+            return
+
+        next_future.add_done_callback(self.step)
+
+    def cancel(self):
+        self.coro.throw(CancelledError)
+
+    def __str__(self):
+        return self.__class__.__name__
+
 
 crawler = crawling.Crawler('http://xkcd.com',
                            max_redirect=10)

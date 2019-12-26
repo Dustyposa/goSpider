@@ -867,6 +867,62 @@ loop.run_until_complete(crawler.crawl())
             w.cancel()
 ```
 
+如果我们的`workers`是线程，我们可能并不希望他们在同一时刻开始。为了在确定需要其他线程之前避免创建昂贵的线程，线程池通常需要按需增长。但是协程很廉价，所以我们简单的在开始设置最大数目即可。
+
+值得注意的是我们如何关闭`crawler`的。当`join`的`future`释放时*（resolve）*，`worker`的任务还存在但是已经暂停了：它们等着更多的`URLs`但是还没有到来。所以，主协程在退出之前取消掉它们。否则，当`Python`解释器关闭并调用所有对象的析构函数时，正在运行的任务会提示到：
+
+```
+ERROR:asyncio:Task was destroyed but it is pending!
+```
+
+那么我们如何`cancel`工作？生成器有一个特性我们还没有给你展示过。你可以从外面向生成器里面抛出一个异常。
+
+```python
+>>> gen = gen_fn()
+>>> gen.send(None)  # 和往常一样启动生成器。
+1
+>>> gen.throw(Exception('error'))
+Traceback (most recent call last):
+  File "<input>", line 3, in <module>
+  File "<input>", line 2, in gen_fn
+Exception: error
+```
+
+生成器由`throw`恢复，但是它现在引出了一个异常。如果没有代码在生成器的调用栈中捕获异常，该异常会冒泡回到栈顶。所以去取消一个`task`的协程：
+
+```python
+  # Task 类的方法  
+  def cancel(self):
+        self.coro.throw(CancelledError)
+     
+```
+
+不论生成器在哪里暂停，在某个`yield from`语句，它都会恢复并抛出一个异常。我们在`task`的`step`方法中处理该取消：
+
+```python
+  # Task 类的方法  
+  def step(self, future: Future) -> None:
+        try:
+            next_future = self.coro.send(future.result)
+        except CancelledError:
+            self.cancelled = True
+            return 
+        except StopIteration:
+            return
+
+        next_future.add_done_callback(self.step)
+```
+
+
+
+
+
+
+
+
+
+
+
 
 
 
