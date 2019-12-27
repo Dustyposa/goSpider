@@ -32,6 +32,16 @@ class Crawler:
         for w in wokers:
             w.cancel()
 
+    @asyncio.coroutine
+    def work(self):
+        while True:
+            url, max_redirect = yield from self.q.get()
+
+            # 下载页面并向 self.q 中增加新链接
+            yield from self.fetch(url, max_redirect)
+            self.q.task_done()
+
+
 class Task:
     def __init__(self, coro):
         self.coro = coro

@@ -913,9 +913,31 @@ Exception: error
         next_future.add_done_callback(self.step)
 ```
 
+现在`task`知道它被取消了，所以当它被摧毁时，它不会对看不到光芒而愤怒。
+
+一旦`crawl`已经取消了`workers`，它会退出。事件循环看见协程结束了*（之后我们再看）*，它也会退出。
+
+```
+loop.run_untill_complete(crawler.crawl())
+```
 
 
 
+`crawl`方法包含了所有我们主协程必须做的事。从队列中获取`URLs`，抓取和解析新链接是`worker`协程做的事情。每个`worker`都会独立的运行`work`协程：
+
+```python
+    @asyncio.coroutine
+    def work(self):
+        while True:
+            url, max_redirect = yield from self.q.get()
+
+            # 下载页面并向 self.q 中增加新链接
+            yield from self.fetch(url, max_redirect)
+            self.q.task_done()
+
+```
+
+`Python`看见代码中包含`yield from`语句，将其编译成生成器函数。所以在`crawl`中，
 
 
 
