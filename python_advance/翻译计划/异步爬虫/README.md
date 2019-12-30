@@ -918,10 +918,8 @@ Exception: error
 一旦`crawl`已经取消了`workers`，它会退出。事件循环看见协程结束了*（之后我们再看）*，它也会退出。
 
 ```
-loop.run_untill_complete(crawler.crawl())
+loop.run_until_complete(crawler.crawl())
 ```
-
-
 
 `crawl`方法包含了所有我们主协程必须做的事。从队列中获取`URLs`，抓取和解析新链接是`worker`协程做的事情。每个`worker`都会独立的运行`work`协程：
 
@@ -937,9 +935,41 @@ loop.run_untill_complete(crawler.crawl())
 
 ```
 
-`Python`看见代码中包含`yield from`语句，将其编译成生成器函数。所以在`crawl`中，
+`Python`发现代码中包含`yield from`语句，将其编译成生成器函数。所以在`crawl`中，当主协程调用`self.work`10次，它不会真正的执行函数：它仅仅创建了10个引用这段代码的生成器对象。它会封装每个`Task`.`Task`每次收到生成`yields`的`future`，当`future resolves`时，就会通过调用每个带有`future`结果的`send`来驱动该生成器。因为每个生成器都有它们自己的栈帧，它们运行独立，有隔离的局部变量及程序计数器。
 
+`worker`通过队列和伙伴们协调。等待新的`URL`:
 
+```python
+    url, max_redirect = yield from self.q.get()
+```
+
+队列的`get`方法本身就是一个协程：在有人放一个`item`到队列中之前都是暂停的，之后就会恢复并返回`item`。
+
+顺便说一句，当主协程取消它时，这个地方就是在`crawl`的最后被暂停的位置。以协程的角度来看，当`yield from`引出一个`CancelledError`异常时，最后一次循环就结束了。
+
+当一个`worker`抓取一个页面时，解析链接并向队列中放入新的链接，之后调用`task_done`并递减计数器。最终，一个`worker`抓取一个其`URLs`已被全部抓取的页面，并且队列中也没有剩余的`work`。因此，`workers`调用`task_done`计数器递减至0。在这之后正在等待队列的`join`方法的`crwal`将不再暂停并结束运行。
+
+我们答应了解释为什么放入队列的`items`为什么是一对，就像：
+
+```python
+# 去抓取的 URL， 剩余重定向的次数
+('http://xkcd.com/353', 10)
+```
+
+新的`URLs`有10次重定向次数。获取这个特定的`URL`将导致重定向到一个后面带有斜杠的新位置。我们递减保留的重定向数目，并将下一个地址放入队列中：
+
+```python
+# 末尾有斜杠的 URL, 剩余9次重定向
+('http://xkcd.com/353/', 9)
+```
+
+我们使用的`aiohttp`包默认的会遵循重定向并给我们最后的响应。但是，我们告诉它不要这样做，在`crawler`中处理重定向，所以这样就可以合并指向相同位置的重定向地址：如果是我们抓取过这个`URL`，它会在`self.seen_urls`中并且我们也从不同的入口点开始了：
+
+![Redirects](http://aosabook.org/en/500L/crawler-images/redirects.png)
+
+​																				*Figure 5.4 - Redirects*
+
+`crawler`抓取`"foo"`并看到了它重定向到`"baz"`，所以它将`"baz"`加进队列和`seen_urls`。
 
 
 

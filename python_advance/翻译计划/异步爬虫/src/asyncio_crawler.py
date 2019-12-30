@@ -1,9 +1,10 @@
 try:
-    from asyncio import JoinableQueue as Queue
+    from asyncio import JoinableQueue as Queue, CancelledError
 except ImportError:
     # 在 Python 3.5，asyncio.JoinableQueue 并入到了 Queue
-    from asyncio import Queue
+    from asyncio import Queue, CancelledError
 import asyncio
+import aiohttp
 
 loop = asyncio.get_event_loop()
 
