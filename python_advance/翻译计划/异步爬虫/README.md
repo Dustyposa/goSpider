@@ -969,7 +969,9 @@ loop.run_until_complete(crawler.crawl())
 
 ​																				*Figure 5.4 - Redirects*
 
-`crawler`抓取`"foo"`并看到了它重定向到`"baz"`，所以它将`"baz"`加进队列和`seen_urls`。
+`crawler`抓取`"foo"`并看到了它重定向到`"baz"`，所以它将`"baz"`加进队列和`seen_urls`。如果下个页面抓取的是同样会重定向到`"baz"`的`"bar"`，`fetcher`不会再将`"baz"`入队。如果响应是一个页面，而不是重定向，`fetch`会解析页面的链接并将新的链接放入队列。
+
+
 
 
 

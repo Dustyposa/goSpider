@@ -4,6 +4,7 @@ except ImportError:
     # 在 Python 3.5，asyncio.JoinableQueue 并入到了 Queue
     from asyncio import Queue, CancelledError
 import asyncio
+
 import aiohttp
 
 loop = asyncio.get_event_loop()
@@ -41,6 +42,36 @@ class Crawler:
             # 下载页面并向 self.q 中增加新链接
             yield from self.fetch(url, max_redirect)
             self.q.task_done()
+
+    @asyncio.coroutine
+    def fetch(self, url: str, max_redirect: int):
+        # 我们自己处理 redirects
+        response = yield from self.session.get(
+            url, allow_redirects=False
+        )
+
+        try:
+            if is_redirect(response):
+                if max_redirect > 0:
+                    next_url = response.headers['location']
+                    if next_url in self.seen_urls:
+                        # 我们已经下载过这个路径
+                        return
+
+                # 记录我们已经看过这条连接
+                self.seen_urls.add(next_url)
+
+                # 跟进重定向，重定向次数减一
+                self.q.put_nowait((next_url, max_redirect - 1))
+            else:
+                links = yield from self.parse_links(response)
+                # python集合逻辑
+                for link in links.dirrerence(self.seen_urls):
+                    self.q.put_nowait((link, self.max_redirect))
+                self.seen_urls.update(links)
+        finally:
+            # 返回连接池
+            yield from response.release()
 
 
 class Task:
