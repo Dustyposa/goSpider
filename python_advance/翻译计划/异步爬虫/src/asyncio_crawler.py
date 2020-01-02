@@ -87,7 +87,10 @@ class Task:
         except CancelledError:
             self.cancelled = True
             return
-        except StopIteration:
+        except StopIteration as exc:
+
+            # Task 用 coro's 返回值 resolves 自己
+            self.set_result(exc.value)
             return
 
         next_future.add_done_callback(self.step)

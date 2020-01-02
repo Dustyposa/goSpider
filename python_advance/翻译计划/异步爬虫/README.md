@@ -971,13 +971,162 @@ loop.run_until_complete(crawler.crawl())
 
 `crawler`抓取`"foo"`并看到了它重定向到`"baz"`，所以它将`"baz"`加进队列和`seen_urls`。如果下个页面抓取的是同样会重定向到`"baz"`的`"bar"`，`fetcher`不会再将`"baz"`入队。如果响应是一个页面，而不是重定向，`fetch`会解析页面的链接并将新的链接放入队列。
 
+```python
+    @asyncio.coroutine
+    def fetch(self, url: str, max_redirect: int):
+        # 我们自己处理 redirects
+        response = yield from self.session.get(
+            url, allow_redirects=False
+        )
+
+        try:
+            if is_redirect(response):
+                if max_redirect > 0:
+                    next_url = response.headers['location']
+                    if next_url in self.seen_urls:
+                        # 我们已经下载过这个路径
+                        return
+
+                # 记录我们已经看过这条连接
+                self.seen_urls.add(next_url)
+
+                # 跟进重定向，重定向次数减一
+                self.q.put_nowait((next_url, max_redirect - 1))
+            else:
+                links = yield from self.parse_links(response)
+                # python集合逻辑
+                for link in links.dirrerence(self.seen_urls):
+                    self.q.put_nowait((link, self.max_redirect))
+                self.seen_urls.update(links)
+        finally:
+            # 返回连接池
+            yield from response.release()
+```
+
+如果这是多线程的代码，则竞争条件会很糟糕。比如说，`woker`检查一个链接是否在`seen_urls`中时，如果不在，`worker`将会把链接放入队列并加入`seen_urls`。如果在两次操作中间被打断，然后另一个`worker`可能从一个不同的页面解析到同样的链接，也需要检查它不是不是不在`seen_urls`中，并且也需要把它加入队列。那么现在同样的链接将会在队列中出现两次，导致（最好的情况下）重复工作和错误的统计信息。
+
+然而，一个协程只会在有`yield from`语句时容易中断。这就是一个关键区别，使得协程代码比多线程代码更不容易出现竞争：多线程代码必须利用锁来显示的进入临界部分，否则它是可以中断的。一个`Python`协程默认情况下是不可中断的，只有当它显式的`yields`时才会放弃控制。
+
+我们不再需要一个像我们基于回调的程序中的`fetcher`类。该`class`是一个缺少回调的解决办法：当在等待`I/O`时他们需要一些位置来存储状态，因为它们的局部变量是不会在回调之间保留。但是`fetch`协程可以与常规函数一样在局部变量中保存状态，所以这里不再需要一个`class`。
+
+当`fetch`处理完`server`的响应时，它会返回给调用方`work`。`work`方法调用队列的`task_done`方法，然后从队列中获取到下一个要被抓取的`URL`。
+
+当`fetch`放入一个新的链接到队列时，它会增加未完成的`tasks`的数量，并使在等待`q.join`的主协程暂停。但是，如果没有未抓取过的链接，该链接就是队列中的最后一个链接，在`work`调用`task_done`之后，未完成的`tasks`的数量将会降为0。该事件将会不再暂停`join`，主协程完成。
+
+协调`workers`和主协程的队列代码就像这样[^14]：
+
+```python
+import asyncio
 
 
+class Queue:
+    def __init__(self):
+        self._join_future = Future()
+        self._unfinished_tasks = 0
+        # ... 其他的初始条件
+
+    def put_nowait(self, item):
+        self._unfinished_tasks += 1
+        # ... 保存 item
+
+    def task_done(self):
+        self._unfinished_tasks -= 1
+        if self._unfinished_tasks == 0:
+            self._join_future.set_result(None)
+
+    @asyncio.coroutine
+    def join(self):
+        if self._unfinished_tasks > 0:
+            yield from self._join_future
+
+```
+
+主协程`crawl`，`yields from` `join`。所有当最后一个`worker`将减少未完成的`tasks`的数量减少至`0`的时候，就标志着`crawl`恢复并结束。
+
+旅程快结束了。我们的程序以调用`crawl`开始：
+
+```
+loop.run_until_complete(self.crawler.crawl())
+```
+
+程序怎么结束的呢？因为`crawl`是一个生成器函数，调用之后返回一个生成器。为了驱动生成器，`asyncio`封装了一个`task`:
+
+```python
+class EventLoop:
+    def run_until_complete(self, coro):
+        """运行直到生成器结束"""
+        task = Task(coro)
+        task.task_done_callback(stop_callback)
+        try:
+            self.run_forever()
+        except StopError：
+            pass
 
 
+class StopError(BaseException):
+    """抛出停止事件循环"""
 
 
+def stop_callback(future):
+    raise StopError
 
+```
+
+当`task`结束，它会引发作为循环使用的作为正常结束的信号`StopError`。
+
+但是这是什么？`task`有一个叫做`add_done_callback`的方法和`result`？你可能会认为`task`就像`future`。你的直觉是对的。我们必须承认一个我们向你隐藏的`Task类`的细节：`task`就是`future`。
+
+```python
+class Task(Future):
+    """封装在 Future 的协程"""
+```
+
+正常情况下，一个`future`被某些其他调用自己的`set_result resolves`。但是当协程停止时，`task resolves`*自己*。请记住，在我们直接对`Python生成器的`探索中，当一个生成器`return`时，它会引发一个特殊的`StopIteration`异常：
+
+```python
+    def step(self, future: Future) -> None:
+        try:
+            next_future = self.coro.send(future.result)
+        except CancelledError:
+            self.cancelled = True
+            return
+        except StopIteration as exc:
+
+            # Task 用 coro's 返回值 resolves 自己 
+            self.set_result(exc.value)
+            return
+
+        next_future.add_done_callback(self.step)
+```
+
+所以当事件循环调用`task.add_done_callback(stop_callback)`时，它就准备被`task`停止。这里再一次的`run_until_complete`：
+
+```python
+    def run_until_complete(self, coro):
+        """运行直到生成器结束"""
+        task = Task(coro)
+        task.task_done_callback(stop_callback)
+        try:
+            self.run_forever()
+        except StopError:
+            pass
+```
+
+当`task`捕获到`StopIteration`并`resolves`自己，回调在循环中引发`StopError`。循环停止，调用堆栈退回到`run_until_complete`。 我们的程序结束了。
+
+## 结论
+
+现代程序越来越经常受`I / O`约束，而不是受`CPU`约束。对于这样的程序，`Python`线程在这些领域是很糟糕的：全局解释锁阻止了它们真实地执行并行计算，并且抢占式切换让它们容易发生竞争。异步通常是正确的选择。但是随着基于回调的异步代码增长，它往往会变成一团糟。协程是一个不错的选择。它们自然地将异常处理和堆栈跟踪纳入子程序。
+
+如果我们眯着眼并模糊的看`yield from`语句，协程看起来就像传统的阻塞`I/O`线程。甚至我们可以用多线程编程中的经典模式来协调协程。无需重复造轮子。因此，与回调相比，协程对于多线程编程经验丰富的程序员来说是一种更有吸引力的习惯用法。
+
+但是当我们睁开眼并聚焦到`yield from`语句时，我们可以看到，当协程放弃控制权并允许其他代码运行时，它们会标记一个点。不同于线程，协程展示了我们的代码在哪里可以被打断哪里不能被打断。`Glyph Lefkowitz`在他富有启发性的文章《Unyielding》中写道，“线程使局部推理变得困难，局部推理也许是软件开发中最重要的事情。”然而，显示的`yilding`使"通过检查例程本身而不是检查整个系统来理解例程的行为（原因与正确性）"变得可能。
+
+本章是在`Python`和异步技术的复兴中撰写的。基于生成器的协程(你刚刚了解了它的设计)，在`Python3.4`的`asyncio`模块中，于`2014年3月发布`。在`2015年的9月`，`Python 3.5`发布了语言本身内置的协程。这些原生的协程使用新的语法`"async def"`声明，并替代了`"yield from"`，它们使用了心得`"await"`关键词来委托以协程或者等待`Future`。
+
+尽管有很多改进，但核心思想仍然没变。`Python`的新的原生的协程在语法上不同于生成器但是工作方式非常相似；实际上，它们在`Python`解释器中共享实现。`Task,Future和事件循环`在`asyncio`将会继续保持规则。
+
+现在你知道了`asyncio`是如何工作的，你很大可能会忘记细节。机械被塞在一个精巧的接口后面。但是你对基本原理的掌握使你能够在现代异步环境中正确而有效地编写代码。
 
 
 
@@ -998,3 +1147,4 @@ loop.run_until_complete(crawler.crawl())
 [^12]: In fact, this is exactly how "yield from" works in CPython. A function increments its instruction pointer before executing each statement. But after the outer generator executes "yield from", it subtracts 1 from its instruction pointer to keep itself pinned at the "yield from" statement. Then it yields to *its* caller. The cycle repeats until the inner generator throws `StopIteration`, at which point the outer generator finally allows itself to advance to the next instruction.[↩](http://aosabook.org/en/500L/a-web-crawler-with-asyncio-coroutines.html#fnref10)
 [^ 13]:https://docs.python.org/3/library/queue.html[↩](http://aosabook.org/en/500L/a-web-crawler-with-asyncio-coroutines.html#fnref11)
 
+[^ 14]:The actual `asyncio.Queue` implementation uses an `asyncio.Event` in place of the Future shown here. The difference is an Event can be reset, whereas a Future cannot transition from resolved back to pending.[↩](#fnref14)
