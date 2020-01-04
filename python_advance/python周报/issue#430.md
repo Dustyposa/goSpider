@@ -47,27 +47,41 @@ Vettery是一个招聘网站，它改变了人们应聘或者雇佣的方式。�
 
 **[用 Jupyter 开发机器人](https://t.co/xe5GAgWia4)**
 
-这篇文章展示了在`Jupyter`生态系统中去构建高级的格式
+这篇文章展示了在`Jupyter`生态系统使用`Voilá`在`Jupyter Notebooks`和独立的网络应用中构建高级的可视化，以及如何部署这些`app`到`robotics cloud`中。
 
-This post shows the available tools in the Jupyter ecosystem to build advanced visualizations in Jupyter Notebooks and standalone web apps using Voilá, and how to deploy those apps to the robotics cloud.
+> Jupyter 抢占开发？
+>
+> Not easy.
 
-[Creating a Moon Animation Using NASA Images and Python](https://nicholasfarrow.com/Creating-a-Moon-Animation-Using-NASA-Images-and-Python/)
-Here’s how we can create a video of the moon in just a few lines of python code!
+**[使用 NASA 图片和 Python 制作一个月亮动画](https://nicholasfarrow.com/Creating-a-Moon-Animation-Using-NASA-Images-and-Python/)**
 
-[Automating an Insider Selling Dashboard with Python & Tableau | Part 2: Collecting Live Stock Data](https://www.youtube.com/watch?v=kEVXjrt3LfA) ![img](https://gallery.mailchimp.com/e2e180baf855ac797ef407fc7/images/8def3887-e9e9-4a48-95e0-74045a6a23fc.png)
-In this part, we're using pandas datareader to collect real-time stock data for our insider trades dashboard. There are lots of good nuggets in here like using Pandas to calculate moving averages and to read html. 
+这里是我们可以如何仅仅使用几行`Python`代码创作一个月亮视频。
 
-[Python Dictionaries 101: A Detailed Visual Introduction](https://www.freecodecamp.org/news/python-dictionaries-detailed-visual-introduction/)
+> 代表月亮...
 
-[I'm not feeling the async pressure](https://lucumr.pocoo.org/2020/1/1/async-pressure/)
+**[使用Python & Tableau实现内部销售仪表板自动化|第2部分:收集实时库存数据](https://www.youtube.com/watch?v=kEVXjrt3LfA)** ![img](https://gallery.mailchimp.com/e2e180baf855ac797ef407fc7/images/8def3887-e9e9-4a48-95e0-74045a6a23fc.png)*（36min）*
 
-[Word raking with tf-idf and Python](https://igor.mp/blog/2019/12/31/tfidf-python.html)
+在这一部分，我们使用`pandas`数据读取器来位我们的内部交易仪表板收集实时的库存数据。这里有很多有用的东西，比如使用`pandas`来计算移动平均线和读取`html`。
+
+> pandas 进阶之路
+>
+> 不过实战记忆效率高，不亏！
+
+[Python字典101: 详细的可视化介绍](https://www.freecodecamp.org/news/python-dictionaries-detailed-visual-introduction/)
+
+> 异常详细！
+
+[我没有感觉到异步压力](https://lucumr.pocoo.org/2020/1/1/async-pressure/)
+
+> 我也希望没有压力。
+
+[用tf-idf和Python进行单词搜索](https://igor.mp/blog/2019/12/31/tfidf-python.html)
 
 [Label smoothing with Keras, TensorFlow, and Deep Learning](https://www.pyimagesearch.com/2019/12/30/label-smoothing-with-keras-tensorflow-and-deep-learning/)
 
 [Meditations on the Zen of Python](https://orbifold.xyz/zen-of-python.html)
 
-[How to use Pandas get_dummies to Create Dummy Variables in Python](https://www.marsja.se/how-to-use-pandas-get_dummies-to-create-dummy-variables-in-python)https://stackabuse.com/working-with-redis-in-python-with-django/)
+[如何在Python中使用Pandas的get_dummies 去创建虚拟变量](https://www.marsja.se/how-to-use-pandas-get_dummies-to-create-dummy-variables-in-python)
 
 ## 有趣的项目、工具和库
 
