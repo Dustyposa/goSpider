@@ -17,23 +17,38 @@ Vettery是一个招聘网站，它改变了人们应聘或者雇佣的方式。�
 ## 文章、教程与话题
 [Making Python Programs Blazingly Fast](https://martinheinz.dev/blog/13)
 
-`Python`厌恶者总是说他们不想使用`Python`的理由之一就是太慢了。是的，对于特定的程序（无论使用何种编程语言），快或者慢都是非常依赖编写它的开发者自身的呃技能和能力
+`Python`厌恶者总是说他们不想使用`Python`的理由之一就是太慢了。是的，对于特定的程序（无论使用何种编程语言），快或者慢都是非常依赖编写它的开发者自身编写优秀和快速代码和的技能和能力。所以，让我们证明某些人的错误观点并让他们看看我们可以如何提升我们的`Python`程序的性能，让它变得飞快！
 
-Python haters always say, that one of reasons they don't want to use it, is that it's slow. Well, whether specific program - regardless of programming language used - is fast or slow is very much dependant on developer who wrote it and their skill and ability to write optimized and fast programs. So, let's prove some people wrong and let's see how we can improve performance of our Python programs and make them really fast!
+> 性能提升第一弹！
 
-[Numba makes Python 1000x faster!](https://www.youtube.com/watch?v=x58W9A2lnQc) ![img](https://gallery.mailchimp.com/e2e180baf855ac797ef407fc7/images/8def3887-e9e9-4a48-95e0-74045a6a23fc.png)
-In this video I introduce the absolute minimum you need to know about Numba which is a just in time compiler for a subset of Python and Numpy. The first half of the video is dedicated to a basic intro and to highlighting a number of very common mistakes people make when using Numba. The remaining video presents a real world-ish simulation problem, shows up to a 1000x acceleration with Numba in both single and multithreaded cases, and concludes with a "reading list" for learning more about Numba.
+**[Numba makes Python 1000x faster!](https://www.youtube.com/watch?v=x58W9A2lnQc)** ![img](https://gallery.mailchimp.com/e2e180baf855ac797ef407fc7/images/8def3887-e9e9-4a48-95e0-74045a6a23fc.png)*(20min)*
 
-[How to use Flask with gevent (uWSGI and Gunicorn editions)](https://iximiuz.com/en/posts/flask-gevent-tutorial)
-Create asynchronous Flask application and run it with uWSGI or Gunicorn behind Nginx reverse proxy.
+在此视频中，我介绍了你需要了解的有关`Numba`的绝对最低要求，`Numba`是针对`Python`和`Numpy`子集的即时编译器。前半段的视频是一些基本介绍和强调了一些人们使用`Numba`时经常犯的错误。视频的剩余部分呈现了一个真实世界的模拟问题，在单和多线程的情况下使用`Numba`速度提升都达1000倍以上，最后以一个能够学习更多关于`Numba`知识的`"阅读清单"`结束。
 
-[Introduction to ASGI: Emergence of an Async Python Web Ecosystem](https://florimond.dev/blog/articles/2019/08/introduction-to-asgi-async-python-web/)
-There's a lot of exciting stuff happening in the Python web development ecosystem right now — one of the main drivers of this endeavour is ASGI, the Asynchronous Standard Gateway Interface. This post is targeted at people interested in recent trends of Python web development. It takes you on a guided tour about what ASGI is and what it means for modern Python web development.
+> 第二弹！
 
-[Develop an Intuition for Severely Skewed Class Distributions](https://machinelearningmastery.com/how-to-develop-an-intuition-skewed-class-distributions/)
-An imbalanced classification problem is a problem that involves predicting a class label where the distribution of class labels in the training dataset is not equal. Differences in the class distribution for an imbalanced classification problem will influence the choice of data preparation and modeling algorithms. Therefore it is critical that practitioners develop an intuition for the implications for different class distributions. In this tutorial, you will discover how to develop a practical intuition for imbalanced and highly skewed class distributions.
+**[如何一起使用 gevent(uWSGI 和 Gunicorn版本) 和 Flask](https://iximiuz.com/en/posts/flask-gevent-tutorial)**
 
-[Robot development with Jupyter](https://t.co/xe5GAgWia4)
+创建一个异步的`Flask`应用并在反向代理`Nginx`之后用`uWSGI 或者 Gunicorn`运行它。
+
+> `Flask` 异步之旅。
+
+**[ASGI介绍: 异步Python Web生态系统的出现](https://florimond.dev/blog/articles/2019/08/introduction-to-asgi-async-python-web/)**
+
+现在在`Python web`开发生态系统中有一些激动人心的事情在发生——这项工作的主要驱动力之一是异步标准网关接口`ASGI`。这篇文章面向的对`Python`网络开发的最新趋势感兴趣的人。将会用导航带着你了解什么是`ASGI`，对现代的`Python web`开发意味着什么？
+
+> 一浪高过一浪。
+
+**[为严重倾斜的类别分布培养直觉](https://machinelearningmastery.com/how-to-develop-an-intuition-skewed-class-distributions/)**
+
+不平衡分类问题涉及到预测一个类标签，其中类标签在训练数据集中的分布是不相等的。不平衡分类问题中类分布的差异会影响数据准备和建模算法的选择。因此，对于不同的类分布的含义，实践者开发一种直觉是至关重要的。在本教程中，您将了解如何为不平衡和高度倾斜的类分布开发实践直觉。
+
+> 经验的传授？
+
+**[用 Jupyter 开发机器人](https://t.co/xe5GAgWia4)**
+
+这篇文章展示了在`Jupyter`生态系统中去构建高级的格式
+
 This post shows the available tools in the Jupyter ecosystem to build advanced visualizations in Jupyter Notebooks and standalone web apps using Voilá, and how to deploy those apps to the robotics cloud.
 
 [Creating a Moon Animation Using NASA Images and Python](https://nicholasfarrow.com/Creating-a-Moon-Animation-Using-NASA-Images-and-Python/)
