@@ -81,77 +81,92 @@ Vettery是一个招聘网站，它改变了人们应聘或者雇佣的方式。�
 
 [将代码从完全异步的Node.js移植到多线程Python](https://t.co/YytjAeBzrz)
 
-[Django REST Framework Full Course For Beginners](https://www.youtube.com/watch?v=B38aDwUpcFc) ![img](https://gallery.mailchimp.com/e2e180baf855ac797ef407fc7/images/8def3887-e9e9-4a48-95e0-74045a6a23fc.png)*(2h22min)*
+[初学者的Django REST Framework 全教程](https://www.youtube.com/watch?v=B38aDwUpcFc) ![img](https://gallery.mailchimp.com/e2e180baf855ac797ef407fc7/images/8def3887-e9e9-4a48-95e0-74045a6a23fc.png)*(2h22min)*
 
 [A Python Packaging Carol](https://www.b-list.org/weblog/2020/jan/05/packaging/)
 
-[Counting Queries: Basic Performance Testing in Django](https://www.vinta.com.br/blog/2020/counting-queries-basic-performance-testing-in-django/)https://www.marsja.se/how-to-use-pandas-get_dummies-to-create-dummy-variables-in-python)
+[查询计数:Django中的基本性能测试](https://www.vinta.com.br/blog/2020/counting-queries-basic-performance-testing-in-django/)
 
 ## 书籍
 
-[Slither Into Python](https://www.slitherintopython.com/)
-Slither into Python is an introduction to the Python programming language for complete beginners. No prior programming experience or computer science background is necessary. This book is free to read online! 
+**[Slither Into Python](https://www.slitherintopython.com/)**
+`Slither into Python`是`Python`编程语言的入门教程，适合初学者。不需要有编程经验或计算机科学背景。这本书可以免费在线阅读!
 
-
+> 终于有书拉！
 
 ## 有趣的项目、工具和库
 
+**[auto-cpufreq](https://github.com/AdnanHodzic/auto-cpufreq)**
+
+用于`Linux`的自动`CPU`加速&优化。
+
+> 增加计算机寿命
+
+**[JobFunnel](https://github.com/PaulMcInnis/JobFunnel)**
+
+抓取工作网站的工具，还可以筛选和查看工作列表。
+
+> 看来外国也有这个需求！
+
+**[ThePassiveInvestor](https://github.com/JerBouma/ThePassiveInvestor)**
+
+被动投资者
+
+> 投资决策工具！
+
+**[mPyPl](http://soshnikov.com/mPyPl/)** 
+
+`mPyPl`是一个简化`Python`中所有数据处理任务的库, 通过引入功能管道概念。
+
+**[efficientdet](https://github.com/signatrix/efficientdet)**
+
+`EfficientDet`：可扩展和高效的对象检测实现。
+
+**[py-roughviz](https://github.com/charlesdong1991/py-roughviz)**
+
+`Python`实现的`JavaScript`库`RoughViz`来创建交互式图表。
+
+> JS不够Python来凑！
+
+**[flask-file-upload](https://github.com/joegasewicz/Flask-File-Upload)**
+
+用于`Flask`的简单的文件上传。
 
 
 
-[auto-cpufreq](https://github.com/AdnanHodzic/auto-cpufreq)
-Automatic CPU speed & power optimizer for Linux.
+**[keras-ocr](https://github.com/faustomorales/keras-ocr)**
 
-[JobFunnel](https://github.com/PaulMcInnis/JobFunnel)
-Tool for scraping job websites, and filtering and reviewing the job listings.
+一个封装了灵活的`CRAFT`文本识别器版本和`Keras CRNN`识别库。
 
-[ThePassiveInvestor](https://github.com/JerBouma/ThePassiveInvestor)
-Passive Investing for the Average Joe.
+**[Cachew](https://github.com/karlicoss/cachew)**
+类型提示支持的持久缓存/序列化。
 
-[mPyPl](http://soshnikov.com/mPyPl/) 
-mPyPl is a library that simplifies all data-processing tasks in Python, by introducing a functional pipeline concept.
-
-[efficientdet](https://github.com/signatrix/efficientdet)
-EfficientDet: Scalable and Efficient Object Detection implementation.
-
-[py-roughviz](https://github.com/charlesdong1991/py-roughviz)
-The Python implementation of JavaScript Library RoughViz to create interactive sketchy charts.
-
-[flask-file-upload](https://github.com/joegasewicz/Flask-File-Upload)
-Easy file uploads for Flask.
-
-[keras-ocr](https://github.com/faustomorales/keras-ocr)
-A packaged and flexible version of the CRAFT text detector and Keras CRNN recognition model.
-
-[Cachew](https://github.com/karlicoss/cachew)
-Persistent cache/serialization powered by type hints.
-
-[karateclub](https://github.com/benedekrozemberczki/karateclub)
-A general purpose community detection and network embedding library for research built on NetworkX.
+**[karateclub](https://github.com/benedekrozemberczki/karateclub)**
+一个通用的社区检测和网络嵌入库，用于`NetworkX`上的研究。
 
 ## 更新
 
 [Python in Visual Studio Code – January 2020 Release](https://devblogs.microsoft.com/python/python-in-visual-studio-code-january-2020-release/)
-In this release we addressed 59 issues, including: 
 
-- Kernel selection in Jupyter Notebooks  
-- Performance improvements in the Jupyter Notebook editor
-- Auto-activation of environments in the terminal on load 
-- Fixes to rebuilding ctags on save and on start 
+在最近更新的版本中修复了59个`issues`，包括：
 
+- Jupyter Notebooks  Kernel 的选择
+- Jupyter Notebook 编辑器的性能提升
+- 终端负载环境的自动激活
+- 修复了在保存和启动时重建ctags的问题
 
 [Django bugfix release: 3.0.2](https://www.djangoproject.com/weblog/2020/jan/02/django-bugfix-release-302/)
 
 ## 活动和网络研讨会日程
 
 [Cleveland Python Meetup January 2020 - Cleveland , OH](https://www.meetup.com/Cleveland-Area-Python-Interest-Group/events/wrwphqybccbrb/)
-There will be a talk, Gathering Insights from Audio Data.
+将有一个演讲，从音频数据收集见解。
 
 [PyData Triangle January 2020 Meetup - Morrisville, NC](https://www.meetup.com/PyData-Triangle/events/267006605/)
-There will be following talks
+将会有以下的话题：
 
 - Computational Graphs
-- Is Spark still relevant? Multi-node CPU and single-node GPU workloads with Spark, Dask and RAPIDS
+- Spark还有意义吗? 多节点CPU和单节点GPU工作负载与Spark, Dask和RAPIDS
 
 
 [Edmonton Python Meetup January 2020 - Edmonton, AB](https://www.meetup.com/startupedmonton/events/dtflxjybccbrb/)
