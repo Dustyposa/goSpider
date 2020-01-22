@@ -16,44 +16,64 @@ Slug: pyw-432
 
 ## 文章、教程与话题
 
-[Mercurial's Journey to and Reflections on Python 3](https://gregoryszorc.com/blog/2020/01/13/mercurial's-journey-to-and-reflections-on-python-3/)
-Mercurial 5.2 was released on November 5, 2019. It is the first version of Mercurial that supports Python 3. This milestone comes nearly 11 years after Python 3.0 was first released on December 3, 2008. This post is logically divided into two sections: a mostly factual recount of Mercurial's Python 3 porting effort and a more opinionated commentary of the transition to Python 3 and the Python language ecosystem as a whole. 
+**[Mercurial's Journey to and Reflections on Python 3](https://gregoryszorc.com/blog/2020/01/13/mercurial's-journey-to-and-reflections-on-python-3/)**
 
-[Managing Python Environments](https://www.pluralsight.com/tech-blog/managing-python-environments/)
-If you're not careful, your Python environment can quickly become a disaster.  We'll walk through the available tools to be more (code) environmentally friendly and establish some (highly opinionated) preferences for setting up Python.
+`Mercurial 5.2`于 2019年9月5日发布。他是第一个支持`Python3`的`Mercurial`版本。这是`Python 3`在2008年12月3日首次发布11年后的一个里程碑。这篇文章主要分为两个部分：对`Mercurial`的`Python 3`移植工作进行了大部分事实的叙述，并对向`Python 3`和整个`Python`语言生态系统的过渡提出了更为自主的评论。
 
-[Passing a function as an argument to another function in Python](https://treyhunner.com/2020/01/passing-functions-as-arguments/)
-One of the more hair-raising facts we learn in my introductory Python trainings is that you can pass functions into other functions. You can pass functions around because in Python, functions are objects. You likely don’t need to know about this in your first week of using Python, but as you dive deeper into Python you’ll find that it can be quite convenient to understand how to pass a function into another function. This is part 1 of what I expect to be a series on the various properties of “function objects”. This article focuses on what a new Python programmer should know and appreciate about the object-nature of Python’s functions.
+> 大大项目迁移要点！
 
-[Easy Visual Question Answering](https://victorzhou.com/blog/easy-vqa/)
-A gentle introduction to Visual Question Answering (VQA) using neural networks.
+**[管理Python环境](https://www.pluralsight.com/tech-blog/managing-python-environments/)**
 
-[Ultimate Setup for Your Next Python Project](https://martinheinz.dev/blog/14)
-Whether you are working on some machine learning/AI stuff, building web apps in Flask or just writing some quick Python script, it's always useful to have some template for your project that satisfies all your needs, namely: predefined directory structure, all necessary config files like pytest.ini or requirements.txt, Testing, linting and static code analysis setup, CI/CD tooling, Dockerization of your app and on top of that automation with Makefile. So, here I bring you exactly that in this "Ultimate" all-purpose setup for your Python projects.
+如果你不关心，你的`Python`环境很快即可能变成了灾难。我们将通过一些可以使用的工具让`code`环境变得更加友好，并建立一些（备受好评的）设置Python的偏好设置。
 
-[From Browser To Django](https://www.mattlayman.com/understand-django/browser-to-django/)
-Django helps you build websites in Python. How does it work? In this series, we'll explore Django from top to bottom to show you how to build the website you've wanted. We'll start from the beginning with the browser.
 
-[Django 3 Tutorial & CRUD Example with MySQL and Bootstrap](https://www.ahmedbouchefra.com/blog/django-3-tutorial-and-crud-example-with-mysql-and-bootstrap/)
-Django 3 is released with full async support! In this tutorial, we’ll see by example how to create a CRUD application from scratch and step by step. We’ll see how to configure a MySQL database, enable the admin interface, and create the django views.
 
-[The Eurotrip Planner- Part 1](https://shreyasgokhale.com/tech-blog/eurotrip-planner-part-1)
-A Python script to help you find your ideal EuroTrip.
+**[将函数作为参数传递给Python中的另一个函数](https://treyhunner.com/2020/01/passing-functions-as-arguments/)**
+
+在我的`Python`入门培训中，我们获得了更多启发，其中之一就是你可以将函数传递给其他函数。 你可以传递函数，因为在`Python`中，函数是对象。 使用Python的第一周，你可能不需要了解这一点，但是当深入研究`Python`时，你会发现，了解如何将一个函数传递给另一个函数会非常方便。 这是我希望成为“功能对象”的各种属性的系列文章的第1部分。 本文重点介绍了新的`Python`程序员应该了解和欣赏的`Python`函数的对象性质。
+
+> 熟悉的回调
+
+**[简单的视觉问答](https://victorzhou.com/blog/easy-vqa/)**
+
+使用神经网络的视觉问题解答（VQA）的简要介绍。
+
+> 快速CV走一波
+
+**[下一个Python项目的终极设置](https://martinheinz.dev/blog/14)**
+无论你是从事某些机器学习/人工智能方面的工作，还是在`Flask`中构建`Web`应用程序，或者只是编写一些快速的`Python`脚本，为你的项目准备一些满足你所有需求的模板总是很有用的，即：预定义的目录结构，所有必需的配置 `pytest.ini`或`requirements.txt`等文件，测试，整理和静态代码分析设置，`CI / CD`工具，应用程序的`Docker`化以及使用`Makefile`实现自动化的基础上。 因此，在这里，我为你的`Python`项目提供了“终极”通用设置，为你带来了真实的信息。
+
+> 你的项目要来一个全套吗！
+
+**[从浏览器到Django](https://www.mattlayman.com/understand-django/browser-to-django/)**
+`Django`可帮助你使用Python构建网站。 它是如何工作的？ 在本系列中，我们将从上至下探索Django，以向你展示如何构建所需的网站。 我们将从浏览器开始。
+
+> 更合理！使用地及用途！
+
+**[带有MySQL和Bootstrap的Django 3教程和CRUD示例](https://www.ahmedbouchefra.com/blog/django-3-tutorial-and-crud-example-with-mysql-and-bootstrap/)**
+
+`Django 3`已发布，具有完全异步支持！ 在本教程中，我们将通过示例逐步演示如何创建`CRUD`应用程序。 我们将了解如何配置`MySQL`数据库，启用管理界面以及创建`Django`视图。
+
+
+
+**[The Eurotrip Planner- Part 1](https://shreyasgokhale.com/tech-blog/eurotrip-planner-part-1)**
+
+一个可以帮助你找到理想的`EuroTrip`的`Python`脚本。
 
 - [The Eurotrip Planner- Part 2](https://shreyasgokhale.com/tech-blog/eurotrip-planner-part-2)
 
-[从监狱到Python我学到了什么](https://opensource.com/article/20/1/prison-to-python)
+**[从监狱到Python我学到了什么](https://opensource.com/article/20/1/prison-to-python)**
 开源编程如何在入狱后提供机会。
 
 > 真 从XX到YY系列！
 
-[Redis Server-Assisted Client-Side Caching in Python](https://engineering.redislabs.com/posts/redis-assisted-client-side-caching-in-python/)
+[Redis服务器辅助的Python客户端缓存](https://engineering.redislabs.com/posts/redis-assisted-client-side-caching-in-python/)
 
-[Guide: Optimizing Python Code with ctypes](https://samuelstevens.me/writing/optimizing-python-code-with-ctypes)
+[指南：使用ctypes优化Python代码](https://samuelstevens.me/writing/optimizing-python-code-with-ctypes)
 
-[How python implements super long integers?](https://arpitbhayani.me/blogs/super-long-integers)
+[Python如何实现超长整数](https://arpitbhayani.me/blogs/super-long-integers)
 
-[How to Build GraphQL APIs for Text Analytics in Python](https://atheros.ai/blog/how-to-build-graphql-api-for-text-analytics-in-python)
+[如何在Python中为文本分析构建GraphQL API](https://atheros.ai/blog/how-to-build-graphql-api-for-text-analytics-in-python)
 
 
 
