@@ -22,29 +22,50 @@ Vettery是一个招聘网站，它改变了人们应聘或者雇佣的方式。�
 
 `eBay`科技博客最近的一篇文章介绍了名为`Krylov`的`Unified`人工智能平台。
 
-[Real-Time Object Detection in 10 Lines of Python Code on Jetson Nano](https://www.youtube.com/watch?v=bcM5AQSAzUY) ![img](https://gallery.mailchimp.com/e2e180baf855ac797ef407fc7/images/8def3887-e9e9-4a48-95e0-74045a6a23fc.png)
-In this tutorial, you’ll learn how to setup your NVIDIA Jetson Nano, run several object detection examples and code your own real-time object detection program in Python from a live camera feed.  Several DNN models are supported, including SSD-Mobilenet and SSD-Inception, which are pre-trained on the 90-class MS COCO dataset and can detect a variety of objects.  
+**[Jetson Nano上10行Python代码实现实时对象检测](https://www.youtube.com/watch?v=bcM5AQSAzUY)** ![img](https://gallery.mailchimp.com/e2e180baf855ac797ef407fc7/images/8def3887-e9e9-4a48-95e0-74045a6a23fc.png)
 
-[Interactive Coronavirus Spreading Map in Python](https://www.geodose.com/2020/02/tracking-coronavirus-python-map.html)
-This post shows how to create a simple application to track the Coronavirus spreading using Python. At this end of this tutorial we will get a html page that shows a map with infected locations, including a slider to track the virus spreading based on date.
+在本片教程中，你将学习到如何设置你的`NVIDIA Jetson Nano`，运行几个对象识别的例子并用`Python`从在线的相机流中编码你自己的实时对象识别程序。有几个`DNN`模型是被支持的，包括`SSD-Mobilenet and SSD-Inception`，都是在`90-class MS COCO`数据集上做了与训练，可以识别各种各样的模型。
 
-[Reflecting on our Python 2 to 3 Project](https://www.rover.com/blog/engineering/post/reflecting-on-our-python-2-to-3-project/)
-A follow up to a previous post we wrote in the midst of our Python 2 to 3 project, describing our strategy and rollout plan. Now that we’ve fully rolled out to Python 3 (as of early September), we wanted to talk about how our production deployment went and reflect a little on the project.
+> 就差一个`Jetson Nano`了！
 
-[SciPy 1.0: fundamental algorithms for scientific computing in Python](https://www.nature.com/articles/s41592-019-0686-2)
-SciPy is an open-source scientific computing library for the Python programming language. Since its initial release in 2001, SciPy has become a de facto standard for leveraging scientific algorithms in Python, with over 600 unique code contributors, thousands of dependent packages, over 100,000 dependent repositories and millions of downloads per year. In this work, we provide an overview of the capabilities and development practices of SciPy 1.0 and highlight some recent technical developments.
+**[Python中交互式冠状病毒传播图](https://www.geodose.com/2020/02/tracking-coronavirus-python-map.html)**
 
-[Applying mypy to real world projects](http://calpaterson.com/mypy-hints.html)
-I think static typing can be very oversold. All the same, mypy offers quite a lot of benefits for how minimally invasive it is. Here are some ideas, in rough order of importance, for how to add typing to an existing Python project.
+这篇文章展示了如何用`Python`创建一个简单的应用用于追踪`Coronavirus`的扩散。在教程的最后，我们将得到一个展示了感染位置的地图的`html`页面，并带有基于时间追踪病毒传播的可以拖动的滑块。
 
-[Helping IT Govern the AI/ML Ecosystem](https://hubs.ly/H0mGnnr0)
-Learn how Dell and Domino created a refreshingly simple approach to help companies get their data science teams and the technologies they need up and running faster, with an easy path to scale. SPONSOR
+> 实时要点。
 
-[Creating an Online Chat App w/ Python!](https://www.youtube.com/watch?v=i824zN0DGIo) ![img](https://gallery.mailchimp.com/e2e180baf855ac797ef407fc7/images/8def3887-e9e9-4a48-95e0-74045a6a23fc.png)
-In this coding live stream I'll be creating an online chat application! The goal will be to create a basic front end with flask and handle communication and messaging through a python socket server.
+**[反思我们项目的从Python 2 到 3](https://www.rover.com/blog/engineering/post/reflecting-on-our-python-2-to-3-project/)**
 
-[How to use OpenCV’s “dnn” module with NVIDIA GPUs, CUDA, and cuDNN](https://www.pyimagesearch.com/2020/02/03/how-to-use-opencvs-dnn-module-with-nvidia-gpus-cuda-and-cudnn/)
-In this tutorial, you will learn how to use OpenCV’s “Deep Neural Network” (DNN) module with NVIDIA GPUs, CUDA, and cuDNN for 211-1549% faster inference.
+这是之前我们在我们的`Python 2 to 3`项目的后续，写了关于我们战略及展示计划。现在我们完全的迁移到了`Python3`（截止9月初），我们想谈论一下我们的生产部署进展如何，以及项目的一些反思。
+
+
+
+**[SciPy 1.0:Python中科学计算的基础算法](https://www.nature.com/articles/s41592-019-0686-2)**
+
+`SciPy`是`Python编程语言的`一个开源的科学计算库。自2001年首次发布以来，`SciPy`已经成为在`Python`中利用科学算法的事实上的标准，每年有超过600个独特的代码贡献者、数千个相关包、超过100,000个相关存储库和数百万次下载。在这项工作中，我们概述了`SciPy 1.0`的功能和开发实践，并介绍了一些最近的技术发展。
+
+> 何以计算，`Scipy`来看。
+
+**[将mypy应用到现实项目中](http://calpaterson.com/mypy-hints.html)**
+
+我认为静态类型可能被夸大了。尽管如此，`mypy`在微创性方面提供了很多好处。下面是一些关于如何向现有`Python`项目中添加类型的想法，按重要性排序。
+
+[帮助IT管理AI/ML生态系统](https://hubs.ly/H0mGnnr0)
+了解戴尔和`Domino`如何创建了一种令人耳目一新的简单方法来帮助公司获得他们需要的数据科学团队和技术，并以一种易于扩展的方式更快地运行。SPONSOR
+
+
+
+**[创建一个在线聊天App w/ Python!](https://www.youtube.com/watch?v=i824zN0DGIo)** ![img](https://gallery.mailchimp.com/e2e180baf855ac797ef407fc7/images/8def3887-e9e9-4a48-95e0-74045a6a23fc.png)
+
+在这个编码直播视频中，我将会创建一个在线的聊天应用。目标是使用`flask`创建一个基本的前端，并通过`python socket`服务器处理通信和消息传递。
+
+> 快速掌握通信操作～
+
+**[如何将OpenCV的“ dnn”模块与NVIDIA GPU，CUDA和cuDNN结合使用](https://www.pyimagesearch.com/2020/02/03/how-to-use-opencvs-dnn-module-with-nvidia-gpus-cuda-and-cudnn/)**
+
+在这篇导航中，你讲学习到如何将`OpenCV`的`"Deep Neural Network"(DNN)模型`和`NVIDIA GPUs, CUDA,and cuDNN`结合使用加快211-1549％的推理速度。
+
+
 
 [Random Forests (and Extremely) in Python with scikit-learn](https://www.marsja.se/random-forests-and-extremely-in-python-with-scikit-learn/)
 In this post, you will learn by example how to do two popular machine learning techniques called random forest and extremely random forests.
