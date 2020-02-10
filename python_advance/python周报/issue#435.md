@@ -11,7 +11,7 @@ Slug: pyw-435
 
 **来自赞助商（PS：原文的赞助商）:**  
 [python开发者都需要的Vettery](https://www.vettery.com/tech?utm_source=newsletter&utm_medium=pythonweekly&utm_term=tech&utm_content=grouped&utm_campaign=ad-77579)  
-Vettery是一个招聘网站，它改变了人们应聘或者雇佣的方式。准备好换工作地方了吗？免费制作简历，你的薪资你说了算，现在就和顶级雇主的HR联系吧！https://www.datadoghq.com/dg/apm/ts-python-error-tracking/?utm_source=Advertisement&utm_medium=Advertisement&utm_campaign=PythonWeekly-ErrorTshirt)
+Vettery是一个招聘网站，它改变了人们应聘或者雇佣的方式。准备好换工作地方了吗？免费制作简历，你的薪资你说了算，现在就和顶级雇主的HR联系吧！
 
 
 
@@ -67,118 +67,166 @@ Vettery是一个招聘网站，它改变了人们应聘或者雇佣的方式。�
 
 
 
-[Random Forests (and Extremely) in Python with scikit-learn](https://www.marsja.se/random-forests-and-extremely-in-python-with-scikit-learn/)
-In this post, you will learn by example how to do two popular machine learning techniques called random forest and extremely random forests.
+**[Python 和 scikit-learn 中的 随机森林 (and 极限)](https://www.marsja.se/random-forests-and-extremely-in-python-with-scikit-learn/)**
 
-[Common Issues Using Celery (And Other Task Queues)](https://adamj.eu/tech/2020/02/03/common-celery-issues-on-django-projects/)
+在这篇文章，你将通过例子学习如何做两个人气的机器学习技术，叫做随机森林和极限随机树。
 
-[The place of the 'is' syntax in Python](https://utcc.utoronto.ca/~cks/space/blog/python/IsSyntaxPlace)
 
-[Typed functional Dependency Injection in Python](https://sobolevn.me/2020/02/typed-functional-dependency-injection)
 
-[How I’m testing in 2020](https://www.b-list.org/weblog/2020/feb/03/how-im-testing-2020/)
+**[使用Celery（和其他任务队列）的常见问题)](https://adamj.eu/tech/2020/02/03/common-celery-issues-on-django-projects/)**
+
+> 集合加速查找。
+
+[“is”语法在Python中的位置](https://utcc.utoronto.ca/~cks/space/blog/python/IsSyntaxPlace)
+
+[Python中的类型函数依赖注入](https://sobolevn.me/2020/02/typed-functional-dependency-injection)
+
+[我在2020是如何测试的](https://www.b-list.org/weblog/2020/feb/03/how-im-testing-2020/)
 
 [The Parallelism Blues: when faster code is slower](https://pythonspeed.com/articles/parallelism-slower/) 
 
 ## 有趣的项目、工具和库
 
-[vardbg](https://github.com/CCExtractor/vardbg)
-A simple Python debugger and profiler that generates animated visualizations of program flow, useful for algorithm learning.
+**[vardbg](https://github.com/CCExtractor/vardbg)**
 
-[Sovereign](https://github.com/sovereign/sovereign) 
-A set of Ansible playbooks to build and maintain your own private cloud: email, calendar, contacts, file sync, IRC bouncer, VPN, and more.
+一个简单的`Python调试和分析工具`，生成可视动画的程序流，对算法学习有用。
 
-[Chaos](https://github.com/jonnyhyman/Chaos)
-Visualizations connecting chaos theory, fractals, and the logistic map!
+**[Sovereign](https://github.com/sovereign/sovereign)**
 
-[httpcore](https://github.com/encode/httpcore)
-The HTTP Core package provides a minimal low-level HTTP client, which does one thing only. Sending HTTP requests.
+ 一套构建和维护你私人云的`Ansible`使用手册：`email,日历,联系人,文件同步, IRC bouncer, VPN 及其他。`
 
-[Thinc](https://github.com/explosion/thinc)
-A refreshing functional take on deep learning, compatible with your favorite libraries.
+> 套件在手，走遍天下我不怕。
 
-[Cronyo](https://github.com/cronyo/cronyo)
-The missing cron CLI for AWS Cloudwatch and Lambda.
+**[Chaos](https://github.com/jonnyhyman/Chaos)**
 
-[CausalNex](https://github.com/quantumblacklabs/causalnex)
-A Python library that helps data scientists to infer causation rather than observing correlation.
+连接混沌理论、分形和逻辑图的可视化！
 
-[inlinec](https://github.com/georgek42/inlinec)
-Effortlessly write inline C functions in Python.
+> rbq，rbq
 
-[MLOpsPython](https://github.com/microsoft/MLOpsPython)
-MLOps using Azure ML Services and Azure DevOps.
+**[httpcore](https://github.com/encode/httpcore)**
 
-[urlbuster](https://github.com/cytopia/urlbuster)
-Powerful mutable web directory fuzzer to bruteforce existing and/or hidden files or directories.
+`HTTP`核心包提供了一个最小的低级`HTTP`客户端，它只做一件事。发送`HTTP`请求。
 
-[riskquant](https://github.com/Netflix-Skunkworks/riskquant)
-A library to assist in quantifying risk.
 
-[muCLIar](https://github.com/aayush1205/muCLIar)
-YouTube automator bringing you your music right on your CLI.
 
-[action-hero](https://github.com/kadimisetty/action-hero)
-Make powerful CLIs with argparse actions that pack a punch!
+**[Thinc](https://github.com/explosion/thinc)**
 
-[Opnieuw](https://github.com/channable/opnieuw)
-A simple and intuitive retrying library for Python.
+一个令人耳目一新的深度学习功能，兼容你最喜欢的库。
 
-[Minibatch](https://github.com/omegaml/minibatch) 
-Python stream processing for humans.
+
+
+**[Cronyo](https://github.com/cronyo/cronyo)**
+
+缺失的AWS Cloudwatch和Lambda的cron CLI。
+
+
+
+**[CausalNex](https://github.com/quantumblacklabs/causalnex)**
+
+一个`Python库`，帮助数据科学家推断因果关系，而不是观察相关性。
+
+
+
+**[inlinec](https://github.com/georgek42/inlinec)**
+
+毫不费力地用`Python`编写内联`C`函数。
+
+> 速度不够，马上来凑。
+
+**[MLOpsPython](https://github.com/microsoft/MLOpsPython)**
+
+`MLOps`使用`Azure ML Services and Azure DevOps.`
+
+
+
+**[urlbuster](https://github.com/cytopia/urlbuster)**
+
+强大的可变`Web`目录模糊器，可暴力破解现有和/或隐藏的文件或目录。
+
+
+
+**[riskquant](https://github.com/Netflix-Skunkworks/riskquant)**
+
+一个有助于量化风险的库。
+
+
+
+**[muCLIar](https://github.com/aayush1205/muCLIar)**
+
+`YouTube`自动机可在`CLI`上带来音乐。
+
+
+
+**[action-hero](https://github.com/kadimisetty/action-hero)**
+
+通过`argparse`操作创建功能强大的`CLI`，让你大吃一惊！
+
+> 已吃两斤
+
+**[Opnieuw](https://github.com/channable/opnieuw)**
+
+一个简单直观的`Python`重试库。
+
+
+
+**[Minibatch](https://github.com/omegaml/minibatch)** 
+
+为人类设计的`Python`流处理。
 
 ## 最近更新
 
-[Django security releases issued: 3.0.3, 2.2.10, and 1.11.28](https://www.djangoproject.com/weblog/2020/feb/03/security-releases/)
+**[Django security releases issued: 3.0.3, 2.2.10, and 1.11.28](https://www.djangoproject.com/weblog/2020/feb/03/security-releases/)**
+
+> Django 继续更
 
 ## 活动和网络研讨会日程
 
 
 [San Francisco Python Meetup February 2020 - San Francisco, CA](https://www.meetup.com/sfpython/events/267676771/)
-There will be following talks
+将会有以下的话题：
 
-- Removing Unfair Bias in Machine Learning 
-- In-Database Machine Learning w PostgreSQL
-- Enabling Fastai Multi-GPU/DDP Training in Jupyter Notebook 
-- Python's best AI package 
-- Discovering Hypothesis
+- 消除机器学习中的不公平偏见
+- `PostgreSQL`中的数据库内机器学习
+- 在`Jupyter Notebook`中启用`Fastai Multi-GPU/DDP`训练 
+- `Python` 最好的 AI package 
+- 发现假说
 
 
 [Boulder Python Meetup February 2020 - Boulder, CO](https://www.meetup.com/BoulderPython/events/lfhwmrybcdbpb/)
-There will be following talks
+将会有以下的话题：
 
-- Asyncio: a first-class concurrency library for IO-limited tasks in Python3
-- Introduction to Luigi
-- Communicating with a Python GraphQL API from Typescript
+- Asyncio: `Python3`中面向`IO`受限任务的一流并发库
+- `Luigi`的介绍
+- 通过`Typescript` 和一个 `Python GraphQL API`通信
 
 
 [Austin Python Meetup February 2020 - Austin, TX](https://www.meetup.com/austinpython/events/lgrbmqybcdbqb/)
-There will be following talks
+将会有以下的话题：
 
-- Model Deployment 
-- Kubeflow Update
+- 模型部署
 
+- `Kubeflow` 更新
 
 [Cleveland Python Meetup February 2020 - Cleveland , OH](https://www.meetup.com/Cleveland-Area-Python-Interest-Group/events/wrwphqybcdbnb/)
-There will be following talks
+将会有以下的话题：
 
-- Distribute your Python app on Mac + Windows + Linux with PyInstaller
-- Python Smart Home Scripting with Home Assistant
+- 用`PyInstaller`在`Mac + Windows + Linux` 上发布你的`Python app`
+- 用`Home Assistant`制作`Python Smart Home Scripting`
 
 
 [IndyPy Mixer: Machine Learning & AI - Indianapolis, IN](https://www.meetup.com/indypy/events/bxqbmqybcdbpb/)
-There will be following talks
+将会有以下的话题：
 
-- Leverage Classifiers with Machine Learning and AI
-- Get all your (IoT) Ducks in a Row with AWS Greengrass
+- 利用机器学习和人工智能的分类器
+- 使用`AWS Greengrass`在一个`Row`获取你所有的`(IoT) Ducks`
 
 
 [PyMNtos Python Presentation Night #81 - Minneapolis, MN](https://www.meetup.com/PyMNtos-Twin-Cities-Python-User-Group/events/266907224/)
-There will be following talks
+将会有以下的话题：
 
-- Using python for purchasing a house
-- Analyzing Tweets with NLP 
-- Go for Pythonistas
+- 使用`Python`买房子
+- 用 `NLP`分析`Tweets` 
+- 为了`Pythonistas`
 
 
 [Edmonton Python Meetup February 2020 - Edmonton, AB](https://www.meetup.com/startupedmonton/events/dtflxjybcdbnb/)
@@ -187,7 +235,7 @@ There will be following talks
 
 > ❤️ Happy Pythonic ;-(Posa私人无责任播报)  
 
-新年快乐，中国加油。
+
 
 
 
