@@ -114,7 +114,7 @@ Slug: pyw-426
 
 > 躲不过的大量数据。
 
-#### 使用Elasticsearch，Logstash，Kibana（ELK）+ Filebeat进行Django集中式日志记录t](https://binaroid.com/blog/django-centralised-logging-using-elasticsearch-logstash-kibana-elk-filebeat)
+#### [使用Elasticsearch，Logstash，Kibana（ELK）+ Filebeat进行Django集中式日志记录t](https://binaroid.com/blog/django-centralised-logging-using-elasticsearch-logstash-kibana-elk-filebeat)
 
 在这篇教程，我们将学习如何从我们的`Django`应用中把应用日志放到`Elasticsearch`存储，并且能够在`Kibana`web工具中以可读的方式展示。本文的主要目的是使用另一种工具`Elastic - Filebeat`在`Django`服务和`ELK堆栈 (Elasticsearch, Kibana, Logstash) `建立一个连接。我们也会简要的介绍之前的步骤，例如日志记录的背后的原因，在`Django`中配置日志以及安装`ELK stack`。
 
