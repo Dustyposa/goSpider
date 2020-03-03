@@ -19,6 +19,9 @@ PS2: 如果你现在有需要我们提前加入的内容也可以提前说哦.
   + [爬虫和网络..待补完](./spider_story/first_day.md)
 - tools  # 爬虫工具，让你事半功倍
   + [requests](./tools/requests)
+  
+- small_project
+    - [从视频中提取音频](./small_projects/音视频分离)
 - common_question  # 用来收集常见问题及爬虫技巧
 - net_knowledge  # 详尽的网络知识
 - front_knowledge  # 前端知识，提升网页分析速度，spider进阶必备
