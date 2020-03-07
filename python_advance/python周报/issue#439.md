@@ -9,161 +9,131 @@ Slug: pyw-439
 >原文: [https://mailchi.mp/pythonweekly/python-weekly-issue-439](https://mailchi.mp/pythonweekly/python-weekly-issue-439)  
 >翻译：Dustyposa
 
-**来自赞助商（PS：原文的赞助商）:**
-
-使用 `Datadog` 监控你的python指标，日志，集群分析。使用`Datadog`的应用分析，可以深入任何纬度并且能找到你所需要的信息，来进行动态诊断和快速故障排除。[马上跟踪你的python应用吧！免费试用14天哦！](https://www.datadoghq.com/dg/apm/python-troubleshooting/?utm_source=Advertisement&utm_medium=Advertisement&utm_campaign=PythonWeekly-Troubleshooting)
+**来自赞助商（PS：原文的赞助商）:**  
+[python开发者都需要的Vettery](https://www.vettery.com/tech?utm_source=newsletter&utm_medium=pythonweekly&utm_term=tech&utm_content=grouped&utm_campaign=ad-77579)  
+Vettery是一个招聘网站，它改变了人们应聘或者雇佣的方式。准备好换工作地方了吗？免费制作简历，你的薪资你说了算，现在就和顶级雇主的HR联系吧！
 
 ### 文章、教程与话题
 
-**[如何用 Python and Django 创建一个 YouTube 的克隆](https://www.education-ecosystem.com/andreybu/RaWGm-how-to-create-a-youtube-clone-in-python-and-django/9b4Kz-youtube_webapp/) ![img](https://gallery.mailchimp.com/e2e180baf855ac797ef407fc7/images/8def3887-e9e9-4a48-95e0-74045a6a23fc.png)(about 5 h)**
+[TensorFlow 2.0 Complete Course - Python Neural Networks for Beginners](https://www.youtube.com/watch?v=tPYj3fFJGjk) ![img](https://gallery.mailchimp.com/e2e180baf855ac797ef407fc7/images/8def3887-e9e9-4a48-95e0-74045a6a23fc.png)
+Learn how to use TensorFlow 2.0 in this full tutorial course for beginners. This course is designed for Python programmers looking to enhance their knowledge and skills in machine learning and artificial intelligence. 
 
-这篇教程介绍了如何用`Python`创建一个`YouTube.com web app`克隆，将会引导你完成构建一个最小化`www.youtube.com`的所有过程。我们将聚焦于构建一个最小化的`app`,但是可以根据你的需要进行扩展。
+[Coding Trees in Python](https://www.youtube.com/watch?v=7tCNu4CnjVc) ![img](https://gallery.mailchimp.com/e2e180baf855ac797ef407fc7/images/8def3887-e9e9-4a48-95e0-74045a6a23fc.png)
+For Mathematics, trees are more useful than strings. Professor Thorsten Altenkirch takes us through a functional approach to coding them in Python.
 
-> Django - part 1
+[How to Get More YouTube Views with Machine Learning techniques](https://t.co/kkR3puNEn8) 
+In this post, we apply machine learning algorithms on YouTube data, to make recommendations on how to get more views. We will include the end-to-end process of Scraping the YouTube data, Using NLP on the video titles, Feature engineering, Building predictive decision trees And more.
 
-**[Django 提速手册: 创建一个更快的 Django app ](https://openfolder.sh/django-faster-speed-tutorial)**
+[Anomaly Detection Using Isolation Forest in Python](https://blog.paperspace.com/anomaly-detection-isolation-forest/)
+From bank fraud to preventative machine maintenance, anomaly detection is an incredibly useful and common application of machine learning. The isolation forest algorithm is a simple yet powerful choice to accomplish this task. In this article we'll cover: An Introduction to Anomaly Detection, Use Cases of Anomaly Detection, What Is Isolation Forest?, Using Isolation Forest for Anomaly Detection and Implementation in Python.
 
-在创建几个`Django app`的过程中，我学到了一些关于速度优化的东西。在这个过程中的某些地方，无论是前端或者后端，都没有很好的文档。所以我决定尽量收集一些我知道的在这篇文章中。
+[Deploy Django - From Zero to Hero](https://www.youtube.com/playlist?list=PLlM3i4cwc8zBRQOGXuLrCLNfpVOuVLuwZ) ![img](https://gallery.mailchimp.com/e2e180baf855ac797ef407fc7/images/8def3887-e9e9-4a48-95e0-74045a6a23fc.png)
+A series of Django lessons which describe how to deploy a django application in great detail.
 
+[Implementing Naive Bayes in Python](https://sidsite.com/posts/implementing-naive-bayes-in-python/)
+This post shows how to implement a Naive Bayes machine learning classifier in Python; starting with a basic implementation, and then improving it.
 
+[How to write good quality Python code with GitHub Actions](https://t.co/6DXxfk9bpf)
+This post shares with you how you can set up GitHub Actions workflows in your Python project to make sure that the code you write is elegant, aligned with all best practices and it’s well tested.
 
-> Django - part 2
+[Automating Every Aspect of Your Python Project](https://martinheinz.dev/blog/17)
+Every project - regardless of whether you are working on web app, some data science or AI - can benefit from well configured CI/CD, Docker images that are both debuggable in development and optimized for production environment or few extra code quality tools, like CodeClimate or SonarCloud. All these are things we will go over in this article and we will see how those can be added to your Python project!
 
-**[个性化你的python提示](https://arpitbhayani.me/blogs/python-prompts)**
+[Saving My Mom's Pictures](https://www.twilio.com/blog/building-backup-whatsapp-chatbot-python-flask-twilio)
+Building a Backup WhatsApp Chatbot With Python, Flask, Dropbox and Twilio.
 
-个性化是我们所有人都喜欢的。在这篇文章中，我们发现了我们可以个性化定制`Python`解释器的提示。
+[Advanced usage of Python requests - timeouts, retries, hooks](https://hodovi.ch/blog/advanced-usage-python-requests-timeouts-retries-hooks/)
 
-> IPython独家秘籍
+[Relating Natural Language Aptitude to Individual Differences in Learning Programming Languages](https://www.nature.com/articles/s41598-020-60661-8)
 
-**[从硬盘中读取NumPy 数组: mmap() vs. Zarr/HDF5](https://pythonspeed.com/articles/mmap-vs-zarr-hdf5/)**
+[Python time-zone handling](https://lwn.net/SubscriberLink/813691/d82c2954286d2750/)
 
-如果你的`NumPy array`太大了而不能一次性都丢到内存里，你可以分块处理：隐式或者显式的每次从硬盘中只加载一块。不管怎样，你需要将数组存到硬盘中。针对这种特殊的情形，有两种常见的方式可以采用。每种方式都有不同的优缺点，所以在这篇文章中，我将解释每种存储系统是如何工作的，以及你什么时候可能需要使用它们。特别的是，我将重点关注为运行你的计算而优化的数据格式，而不一定是为了与他人共享。
+[How to Make Django Redirect WWW to Your Bare Domain](https://adamj.eu/tech/2020/03/02/how-to-make-django-redirect-www-to-your-bare-domain/)
 
-> 数据存储要素。
+[One impact of the dropping of Python 2 from Linux distributions](https://utcc.utoronto.ca/~cks/space/blog/python/Python2DroppingImpact)
 
-**[如何在 pandas 中合并 DataFrames?](https://www.youtube.com/watch?v=iYWKfUOtGaw) ![img](https://gallery.mailchimp.com/e2e180baf855ac797ef407fc7/images/8def3887-e9e9-4a48-95e0-74045a6a23fc.png)(22 min)**
+[15 things you should know about Dictionaries in Python](https://t.co/QM3X05fduP) 
 
-如果你想把多个数据集连合到一个`pandas DataFrame`中，你就需要使用`"merge"`功能。在这个视频中，你将确切了解合并操作期间发生了什么，以及如何使用四种不同类型的联接。在视频的最后，你将对于合并你自己的`DataFrames`得心应手。
-
-> 选择困难症的解法吗！
-
-[2020 Gartner Magic Quadrant for Data Science and Machine Learning Platforms](https://hubs.ly/H0n2-j60)
-The 2020 Gartner Magic Quadrant for Data Science and Machine Learning Platforms is now available, and Domino is named a Visionary. Read the full analysis of Domino and other vendors in the report. SPONSOR
-
-**[在Visual Studio代码中开始使用Jupyter Notebook 工作](https://t.co/Iz4sjQ71r2)** 
-
-`VS Code`现在通过`Python`插件提供了对`Jupyter Notebook`的本地支持。这里有一个简单的例子来概述它的主要功能。
-
-> 来势汹汹的 VSC
-
-**[Python 数据清洗: 终极指南 (2020)](https://t.co/jX0OKuB3qu)**
-
-清洁什么和如何清洁的技巧。
-
-
-
-**[Conditional coverage](https://sobolevn.me/2020/02/conditional-coverage)**
-
-有时，你的代码必须根据外部环境采取不同的路径。确保你的`coverage`流畅运行。
-
-
-
-[如何禁止Django 的自动命名迁移](https://adamj.eu/tech/2020/02/24/how-to-disallow-auto-named-django-migrations/)
-
-[卷积网络的音高检测](https://0xfe.blogspot.com/2020/02/pitch-detection-with-convolutional.html)
-
-[使用Rich实现更好的Python回溯](https://www.willmcgugan.com/blog/tech/post/better-python-tracebacks-with-rich/)
-
-> 话不多说，来张图：
->
-> ![image.png](https://i.loli.net/2020/02/29/dwM5xo8cZ2fbgIW.png)
->
-> 提取关键字版本。
-
-[让我们构建一个简单的解释器。第18部分:执行过程调用](https://ruslanspivak.com/lsbasi-part18/)
-
-> 原理层，还是很有趣。
-
-[深度学习和PyTorch的手语识别](https://theaisummer.com/Sign-Language-Recognition-with-PyTorch/)
-
-[Python in Production](https://hynek.me/articles/python-in-production/)
-
-> 快来看看！
-
-[Pro-Tip – A Tip About DRF Permissions](https://www.revsys.com/tidbits/tip-about-drf-permissions/)
-
-[如何使用pytest和Black欺骗单元测试](https://simonwillison.net/2020/Feb/11/cheating-at-unit-tests-pytest-black)
-
-
-
-
+[Totally ordered enums in Python with ordered_enum](https://blog.yossarian.net/2020/03/02/Totally-ordered-enums-in-python-with-ordered_enum) 
 
 ### 有趣的项目、工具和库
 
-**[PostHog](https://github.com/PostHog/posthog)** 
+[keyboard_listener](https://github.com/dibsonthis/keyboard_listener)
+Keyboard Listener is a module that allows you to create custom hotkeys (combinations) or custom keywords and bind them to custom functions in Python
 
-`PostHog`是开源产品分析，专为开发人员打造。自动收集您网站或应用程序上的每个事件，无需向第三方发送数据。只需点击一下鼠标，就可以在你自己的基础架构上进行部署，并且可以完全访问底层数据。
+[FuzzBench](https://github.com/google/fuzzbench) 
+FuzzBench is a free service that evaluates fuzzers on a wide variety of real-world benchmarks, at Google scale. The goal of FuzzBench is to make it painless to rigorously evaluate fuzzing research and make fuzzing research easier for the community to adopt.
 
-> 摆脱第三方指日可待！？
+[nfstream](https://github.com/aouinizied/nfstream)
+A flexible network data analysis framework.
 
-**[Dispatch](https://github.com/Netflix/dispatch)**
+[py_cui](https://github.com/jwlodek/py_cui)
+A python library for intuitively creating CUI/TUI interfaces with widgets, inspired by gocui. 
 
-所有你今天要管理的临时事件，以及需要做的其他时间，甚至更多。
+[deadlinks](https://github.com/butuzov/deadlinks)
+Health checks for your documentation links.
 
-> trending 今日常见
->
-> 调度新助手。
+[django-schema-graph](https://github.com/meshy/django-schema-graph)
+Django-schema-graph makes a colourful diagram out of your Django models. The diagram is interactive, and makes it easy to toggle models and apps on/off at will.
 
-**[Newscatcher](https://github.com/kotartemiy/newscatcher)**
-以编程方式从（几乎）任何网站收集标准化新闻。
+[TextBrewer](https://github.com/airaria/TextBrewer) 
+A PyTorch-based knowledge distillation toolkit for natural language processing.
 
-> 一个没有感情的新闻抓取机
+[pytask-io](https://github.com/joegasewicz/pytask-io)
+An Asyncio based task queue that is designed to be super easy the use!
 
-**[vectorbt](https://github.com/polakowo/vectorbt)**
+[PuzzleLib](https://github.com/puzzlelib/PuzzleLib)
+PuzzleLib is a high level Deep Learning framework with CPU (Intel/AMD) and GPU (NVIDIA/AMD) support.
 
-`Python`库，用于大规模回测和分析交易策略。
+[Katana](https://github.com/JohnHammond/katana)
+Automatic CTF Challenge Solver in Python3.
 
+[Scrapy-GUI](https://github.com/further-reading/scrapy-gui)
+A simple, Qt-Webengine powered web browser with built in functionality for testing scrapy spider code.
 
+[CircleD](https://github.com/Rylu12/CircleD)
+Software that can both auto or manually detect circles/spherical objects in images and provides the diameter distribution (D10, D50, D90).
 
-**[AdelaiDet](https://github.com/aim-uofa/adet)**
+### 最近更新
 
-`AdelaiDet`是一个开源工具箱，用于执行多个实例级检测和识别任务。
+[Django security releases issued: 3.0.4, 2.2.11, and 1.11.29](https://www.djangoproject.com/weblog/2020/mar/04/security-releases/)
 
-**[Updog](https://github.com/sc0tfree/updog)** 
+### 活动和网络研讨会日程
 
-`Updog`替代了`Python`的`SimpleHTTPServer`。 它允许通过`HTTP / S`进行上传和下载，可以设置临时`SSL`证书并使用`http`基本身份验证。
+[San Francisco Python Meetup March 2020 - San Francisco, CA](https://www.meetup.com/sfpython/events/xkwxvqybcfbpb/)
+There will be following talks
 
-> More pythonic
-
-**[glitch-this](https://github.com/TotallyNotChase/glitch-this)**
-将静态图像毛刺化为毛刺图像和GIF！
-
-> 风格突变！
->
-> ![glitched2.gif](https://i.loli.net/2020/02/29/lVFjaR6KbponrJO.gif)
->
-> 
-
-**[Broadcaster](https://github.com/encode/broadcaster)**
-
-`Broadcaster`通过在许多不同的后端服务上提供简单的广播`API`来帮助您开发实时流功能。
-
-> 0.2的测试版本中，不过很有意思。
->
-> 当然，基于 startlette，看来 startlette 备受瞩目。
->
-> 另外，作者在找会CI的小伙伴创建 Action 有兴趣就 突突突！
-
-**[text-script](https://github.com/GeorgeCiesinski/text-script)**
-在后台运行的应用程序，它将文本快捷方式替换为预先保存的文本块。
-
-**[batch-copy](https://github.com/dibsonthis/batch-copy)**
-允许用户一次复制/粘贴多个内容的工具。
-
-**[face2data](https://github.com/rodrigobressan/face2data)**
-在不到一秒钟的时间内从人脸提取有意义的信息。 由`Keras`和`Flask`提供支持。
+- PyTest: The Awesome Parts
+- Level Up Your Python Code Reviews
+- Understanding Binary search
+- Being committed to GitHub
+- Deploying Python 3 to the Homes of Children Everywhere (on macOS)
 
 
+[Austin Python Meetup March 2020 - Austin, TX](https://www.meetup.com/austinpython/events/lgrbmqybcfbpb/)
+There will be following talks
+
+- Using the asyncio library in Python 3
+- A Pythonic guide to SOLID Design Principles
+
+
+[PyMNtos Python Presentation Night #82 - Minneapolis, MN](https://www.meetup.com/PyMNtos-Twin-Cities-Python-User-Group/events/267977020/)
+There will be following talks
+
+- Big Data Genomic Project Seeks Python Packaging Help
+- Crop placement using linear programming optimization with Pyomo
+- Converting images to text using the Google Cloud Vision API
+
+
+[PyAtl Meetup March 2020 - Atlanta, GA](https://www.meetup.com/python-atlanta/events/xzzgcrybcfbqb/)
+Candid Partners will be presenting on how they use Kafka and cloud computing to automate data and governance processes for clients.
+
+[IndyPy Mixer March 2020 - Fishers, IN](https://www.meetup.com/indypy/events/hwstlrybcfbnb/)
+IBM will present a workshop on Bias in Machine Learning (and how to remove it!).
+
+[Boulder Python Meetup March 2020 - Boulder, CO](https://www.meetup.com/BoulderPython/events/lfhwmrybcfbnb/)
+
+[Edmonton Python Meetup March 2020 - Edmonton, AB](https://www.meetup.com/startupedmonton/events/dtflxjybcfbmb/)
 
 Posa：
 
