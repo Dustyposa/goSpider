@@ -2,7 +2,6 @@ import os
 import sys
 import time
 
-
 def run(select_data: str) -> None:
     if select_data == "a":
         print("程序休眠1s")
