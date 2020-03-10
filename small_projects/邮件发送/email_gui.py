@@ -9,7 +9,7 @@ layout = [[sg.Text('请输入用户名和密码:'), sg.Text(size=(15, 1), key='-
           [sg.Text('用户名:', size=(14, 1)), sg.Input(key=user_input_key)],
           [sg.Text('密码:', size=(14, 1)), sg.Input(key=pwd_input_key)],
           [sg.Text('发送的邮箱文件:', size=(14, 1)), sg.FileBrowse("浏览", size=(8, 1))],
-          [sg.Button('确认'), sg.Button('Exit')]]
+          [sg.Button('确认'), sg.Button('退出')]]
 window = sg.Window('邮件发送', layout)
 while True:
     event, values = window.read()
