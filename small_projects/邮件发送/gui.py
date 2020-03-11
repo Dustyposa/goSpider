@@ -1,20 +1,15 @@
 import PySimpleGUI as sg
 
-sg.theme('BluePurple')
+sg.theme('Light Blue 2')
 
-layout = [[sg.Text('Your typed chars appear here:'), sg.Text(size=(15, 1), key='-OUTPUT-')],
-          [sg.Input(key='-IN-')],
-          [sg.Button('Show'), sg.Button('Exit')]]
+layout = [[sg.Text('Enter 2 files to comare')],
+          [sg.Text('File 1', size=(8, 1)), sg.Input(), sg.FileBrowse()],
+          [sg.Text('File 2', size=(8, 1)), sg.Input(), sg.FileBrowse()],
+          [sg.Submit(), sg.Cancel()]]
 
-window = sg.Window('Pattern 2B', layout)
+window = sg.Window('File Compare', layout)
 
-while True:  # Event Loop
-    event, values = window.read()
-    print(event, values)
-    if event in (None, 'Exit'):
-        break
-    if event == 'Show':
-        # Update the "output" text element to be the value of "input" element
-        window['-OUTPUT-'].update(values['-IN-'])
-
+event, values = window.read()
 window.close()
+print(f'You clicked {event}')
+print(f'You chose filenames {values[0]} and {values[1]}')

@@ -1,5 +1,5 @@
 from typing import List
-
+from itertools import filterfalse
 import yagmail
 
 
@@ -10,7 +10,7 @@ def send_emails(
         send_list: List[str]
 ) -> None:
     yag = yagmail.SMTP(user=user, password=pwd, host='smtp.163.com')
-    yag.send(send_list, contents)
+    yag.send(to=send_list, contents=list(filterfalse(bool, contents)))
 
 
 if __name__ == '__main__':

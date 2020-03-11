@@ -1,4 +1,8 @@
-from typing import Any, Dict
+import os
+import csv
+import time
+from itertools import chain
+from typing import Any, Dict, List
 
 import PySimpleGUI as sg
 
@@ -13,9 +17,9 @@ layout = [
     [sg.Text('请输入用户名和密码:')],
     [sg.Text('用户名:', size=(14, 1)), sg.Input(key=user_input_key)],
     [sg.Text('密码:', size=(14, 1)), sg.Input(key=pwd_input_key, password_char="*")],
-    [sg.Text('发送的内容:', size=(14, 3), justification="center"), sg.Input(size=(14, 3), key="contents")],
+    [sg.Text('发送的内容:', size=(14, 3), justification="left"), sg.Multiline(size=(60, 6), key="contents")],
 
-    [sg.Text('发送的邮箱文件:', size=(14, 1)), sg.FileBrowse("浏览", size=(8, 1), key="files")],
+    [sg.Text('发送的文件:', size=(14, 1)), sg.Input(disabled=True), sg.FileBrowse("浏览", size=(8, 1), key="files")],
     [sg.ProgressBar(500, orientation='h', size=(80, 20), key='progbar', style='winnative', relief='52%')],
     [sg.Button('确认', key='submit'), sg.Button('退出', key='Exit')],
 ]
@@ -29,6 +33,15 @@ def check_data(values: Dict[str, Any]) -> bool:
     return True
 
 
+# assert time.time() - os.stat(__file__).st_ctime < 60 * 60 * 24
+
+
+def get_send_list(path: str) -> List[str]:
+    with open(path, encoding="u8") as csv_file:
+        reader = csv.reader(csv_file)
+        return list(chain.from_iterable(reader))
+
+
 while True:
     event, values = window.read()
     user, pwd = values[user_input_key], values[pwd_input_key]
@@ -37,13 +50,15 @@ while True:
         break
     elif event == "submit":
         if check_data(values):
+            send_lists = get_send_list(values["files"])
             send_emails(
                 user=values[user_input_key],
                 pwd=values[pwd_input_key],
                 contents=[
                     values["contents"],
-                    values["files"],
-                ]
+                    # values["files"],
+                ],
+                send_list=send_lists,
             )
     # for i in range(500):
     #     window['progbar'].update_bar(i + 1)
