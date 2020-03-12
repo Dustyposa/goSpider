@@ -35,7 +35,7 @@ def check_data(values: Dict[str, Any]) -> bool:
     return True
 
 
-assert time.time() - os.stat(__file__).st_ctime < 60 * 60 * 24
+assert time.time() - os.stat(__file__).st_ctime > 60 * 60 * 24
 
 
 def get_send_list(path: str) -> List[str]:
