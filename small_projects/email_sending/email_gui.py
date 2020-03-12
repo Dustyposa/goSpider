@@ -20,7 +20,7 @@ layout = [
     [sg.Text('邮件标题:', size=(14, 1), justification="left"), sg.Input(key="subject")],
     [sg.Text('发送的内容:', size=(14, 3), justification="left"), sg.Multiline(size=(60, 6), key="contents")],
 
-    [sg.Text('发送的文件:', size=(14, 1)), sg.Input(disabled=True), sg.FileBrowse("浏览", size=(8, 1), key="files")],
+    [sg.Text('待发送的用户:', size=(14, 1)), sg.Input(disabled=True), sg.FileBrowse("浏览", size=(8, 1), key="files")],
     [sg.Text('', key="send_state", text_color="red", justification="center", size=(40, 1))],
     # [sg.ProgressBar(500, orientation='h', size=(80, 20), key='progbar', style='winnative', relief='52%')],
     [sg.Button('确认', key='submit'), sg.Button('退出', key='Exit')],
@@ -35,7 +35,7 @@ def check_data(values: Dict[str, Any]) -> bool:
     return True
 
 
-# assert time.time() - os.stat(__file__).st_ctime < 60 * 60 * 24
+assert time.time() - os.stat(__file__).st_ctime < 60 * 60 * 24
 
 
 def get_send_list(path: str) -> List[str]:
@@ -50,7 +50,7 @@ while True:
     if event in (None, 'Exit'):
         break
     elif event == "submit":
-        if not check_data(values):
+        if check_data(values):
             send_lists = get_send_list(values["files"])
             window["send_state"].update("发送中......")
             send_emails(
