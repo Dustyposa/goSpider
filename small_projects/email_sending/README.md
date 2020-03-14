@@ -25,3 +25,16 @@ python -m pip install pyinstaller
     + [PySimpleGUI](https://pysimplegui.readthedocs.io/) —— GUI
     + [sched](https://docs.python.org/zh-cn/3/library/sched.html?highlight=sched) —— 调度模块（标准库）
     + [dotenv](https://github.com/theskumar/python-dotenv) —— 环境变量加载
+- 文件格式说明
+    + 发件方邮箱文件(xx.csv)  
+    ```
+    user1,pwd2
+  user2,pwd2
+  ```
+  + 收件方邮箱文件(xx.csv)
+  ```
+  email_address1
+  email_address2
+  email_address3
+  email_address4
+  ```
