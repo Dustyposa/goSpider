@@ -1,4 +1,4 @@
-6import os
+import os
 import csv
 import sched
 import sys
