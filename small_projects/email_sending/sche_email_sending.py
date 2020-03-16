@@ -4,7 +4,7 @@ import sched
 import sys
 import time
 from dataclasses import dataclass
-from itertools import chain
+from itertools import chain, repeat
 from typing import Any, Dict, List, Sequence, Iterator, Iterable
 
 import PySimpleGUI as sg
@@ -41,7 +41,9 @@ def split_sequence(a: Sequence[Any], n: int):
 def pack_send_email_and_user(email_path: str, user_path: str) -> Iterator:
     user_lists = get_user_list(user_path)
     email_lists = get_send_list(email_path)
-    return zip(user_lists, split_sequence(email_lists, len(user_lists)))
+    split_size = len(email_lists) // len(user_lists)
+    email_split_data = split_sequence(email_lists, split_size)
+    return zip(repeat(user_lists, split_size), email_split_data)
 
 
 def is_schedule(ty) -> bool:
@@ -87,14 +89,15 @@ if __name__ == '__main__':
                 def create_email_task_by_time(seconds: int, iter_: Iterable):
                     scheduler = sched.scheduler(time.time)
                     for index, user_and_email in enumerate(iter_, 0):
-                        user_m, emails = user_and_email
-                        scheduler.enter(index * seconds, 1, action=send_emails, kwargs={
-                            "user": user_m.user,
-                            "pwd": user_m.pwd,
-                            "contents": [values["contents"]],
-                            "send_list": emails,
-                            "subject": values["subject"]
-                        })
+                        users_m, emails = user_and_email
+                        for user_m, email in zip(users_m, emails):
+                            scheduler.enter(index * seconds, 1, action=send_emails, kwargs={
+                                "user": user_m.user,
+                                "pwd": user_m.pwd,
+                                "contents": [values["contents"]],
+                                "send_list": email,
+                                "subject": values["subject"]
+                            })
                     return scheduler
 
 
@@ -107,13 +110,13 @@ if __name__ == '__main__':
                     )
                 )
                 task_length = len(sch.queue)
-                window["send_state"].update("发送完毕")
             else:
                 window["send_state"].update("请补充数据")
         if is_schedule(sch):
             latest_sec = sch.run(False)
             complete_task = task_length - len(sch.queue)
-            window["send_state"].update(f"第 {complete_task + 1}/{task_length} 任务进行中, 新任务将在{latest_sec//60}分钟后进行")
+            if latest_sec:
+                window["send_state"].update(f"第 {complete_task}/{task_length} 任务进行中, 新任务将在{latest_sec//60}分{latest_sec%60}s后进行")
             if sch.empty():
                 window["send_state"].update("所有任务已经完成")
                 sch = complete_task = None

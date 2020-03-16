@@ -1,3 +1,6 @@
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 from typing import List
 import yagmail
 
@@ -9,7 +12,12 @@ def send_emails(
         send_list: List[str],
         subject: str
 ) -> None:
-    yag = yagmail.SMTP(user=user, password=pwd, host='smtp.163.com')
+    if "vip" in user and "163" in user:
+        host = "smtp.vip.163.com"
+    else:
+        host = f"smtp.{user.split('@')[1]}"
+
+    yag = yagmail.SMTP(user=user, password=pwd, host=host)
     yag.send(to=send_list, subject=subject, contents=list(filter(bool, contents)))
 
 
