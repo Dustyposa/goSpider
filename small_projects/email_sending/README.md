@@ -8,8 +8,8 @@ python -m pip install pyinstaller
 ```
 #### issue
 - unicode_error
-  + `chcp 65001`
-文件打包 + GUI
+  + `chcp 65001`  
+
 - Authentication error
   + 检查第三方邮箱 smtp 接口是否开启
   + check the third part is enabled your account's `smtp server`

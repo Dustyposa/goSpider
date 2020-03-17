@@ -98,8 +98,9 @@ if __name__ == '__main__':
                     content.extend(values["attachment"].split(";"))
                     for index, user_and_email in enumerate(iter_, 0):
                         users_m, emails = user_and_email
-                        for user_m, email in zip(users_m, emails):
-                            scheduler.enter(index * seconds, 1, action=send_emails, kwargs={
+                        for prio, tmp_data in enumerate(zip(users_m, emails), 1):
+                            user_m, email = tmp_data
+                            scheduler.enter(index * seconds, priority=prio, action=send_emails, kwargs={
                                 "user": user_m.user,
                                 "pwd": user_m.pwd,
                                 "contents": content,
