@@ -1,6 +1,3 @@
-import smtplib
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
 from typing import List
 import yagmail
 
@@ -19,6 +16,9 @@ def send_emails(
 
     yag = yagmail.SMTP(user=user, password=pwd, host=host)
     yag.send(to=send_list, subject=subject, contents=list(filter(bool, contents)))
+    for email_address in send_list:
+        with open("sended.txt", "a") as fp:
+            fp.write(email_address + "\n")
 
 
 if __name__ == '__main__':
@@ -32,9 +32,13 @@ if __name__ == '__main__':
     # 邮箱正文
     contents = [
         '这是一封正常邮件，需要测试',
+        '这是一封正常邮件，需要测试1',
+        '这是一封正常邮件，需要测试2',
+        '这是一封正常邮件，需要测试3',
+        '这是一封正常邮件，需要测试4',
         'You can find an audio file attached.',
-        # yagmail.inline("./Snipaste_2020-03-09_23-25-23.png"),
-        "./Snipaste_2020-03-09_23-25-23.png",
+        yagmail.inline("Snipaste_2020-03-16_16-44-15.png"),
+        # "./Snipaste_2020-03-09_23-25-23.png",
     ]
 
     # 发送邮件
