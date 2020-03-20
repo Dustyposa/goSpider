@@ -1,12 +1,12 @@
-Title: pythonista-weekly : Pyw 440
+Title: pythonista-weekly : Pyw 441
 Date: 2020-03-20 12:03
 Tags: Weekly,pythonweekly,Zh 
-Slug: pyw-440
+Slug: pyw-441
 
-### 欢迎阅读《pythonista周刊》第440期。Let us start!
+### 欢迎阅读《pythonista周刊》第441期。Let us start!
 
 
->原文: [https://mailchi.mp/pythonweekly/python-weekly-issue-440](https://mailchi.mp/pythonweekly/python-weekly-issue-440)  
+>原文: [https://mailchi.mp/pythonweekly/python-weekly-issue-441](https://mailchi.mp/pythonweekly/python-weekly-issue-441)  
 >翻译：Dustyposa
 
 **来自赞助商（PS：原文的赞助商）:**
@@ -16,111 +16,80 @@ Vettery是一个招聘网站，它改变了人们应聘或者雇佣的方式。�
 ### 文章、教程与话题
 
 
-**[使用Django 检查约束百分比字段的总和](https://adamj.eu/tech/2020/03/10/django-check-constraints-sum-percentage-fields/)**
-之前，我曾介绍过使用Django的CheckConstraint类来确保将带有选择项的字段限制为仅有效值。 这是另一个用例，基于我开发的应用程序。 它使用检查约束来确保代表百分比的一组字段总和为100。
+[Write Unbreakable Python](https://jessewarden.com/2020/03/write-unbreakable-python.html)
+In this article, I’ll show you how to write Python with no runtime exceptions. This’ll get you partway to writing code that never breaks and mostly does what it’s supposed to do. We’ll do this by learning how to apply functional programming to Python.
 
-**[Python 101: 学习Lists](https://www.blog.pythonlibrary.org/2020/03/10/python-101-learning-about-lists/)**
+[Detecting COVID-19 in X-ray images with Keras, TensorFlow, and Deep Learning](https://www.pyimagesearch.com/2020/03/16/detecting-covid-19-in-x-ray-images-with-keras-tensorflow-and-deep-learning/)
+In this tutorial, you will learn how to automatically detect COVID-19 in a hand-created X-ray image dataset using Keras, TensorFlow, and Deep Learning.
 
-`Lists`是`Python`编程语言的基本数据类型。列表是一个可变序列，通常是同类型的结合。可变意味着你可以在创建一个列表之后进行改变。你也会经常看到列表中包含另外的列表。这些被称为嵌套列表。你还会看到包含各种其他数据类型的列表，例如字典、元组或对象。让我们来看看你如何创建一个列表！
+[A Guide to ASGI in Django 3.0 and its Performance](https://arunrocks.com/a-guide-to-asgi-in-django-30-and-its-performance/)
+A simple guide to Django 3.0 and ASGI with performance implications told with quirky illustrations.
 
-**[Python for JavaScript Developers](https://www.valentinog.com/blog/python-for-js/)**
-为`JavaScript`开发人员提供的`Python`搭便车指南。
+[How to use Jupyter Notebooks in 2020 (Part 2: Ecosystem growth)](https://ljvmiranda921.github.io/notebook/2020/03/16/jupyter-notebooks-in-2020-part-2/)
+This is the second of a three-part blog post on the Jupyter Notebook ecosystem. Here, I’ll discuss various tools that I use alongside Notebooks, and how I incorporate them in my day-to-day work.
 
-> 知识迁移
+[From PyTorch to JAX](https://sjmielke.com/jax-purify.htm)
+Towards neural net frameworks that purify stateful code.
 
-**[以一种Performance Friendly的方式掌握 SQLAlchemy Relationships](https://blog.theodo.com/2020/03/sqlalchemy-relationship-performance/)**
+[How to use deep learning for data extraction from financial documents](https://nanonets.com/blog/ocr-financial-documents/)
+Financial Institutions require a ton of man power to do simple tasks like data entry. This not only consumes resources, but also is a bottleneck for following processes. Modern techniques like deep learning to perform OCR can help automate the process.
 
-让我们看看如何在SQLAlchemy关系上使用不同的加载技术来提高应用程序性能。
+[Human Programming Interface](https://beepb00p.xyz/hpi.html)
+My life in a Python package.
 
-> 关系调优第一步。
->
-> 不过表的设计也很重要。
+[Introduction to SQLAlchemy ORM for Django Developers](https://apirobot.me/posts/introduction-to-sqlalchemy-orm-for-django-developers)
+This article shows the main differences between Django ORM and SQLAlchemy with examples of how to do something in Django and how to do the same in SQLAlchemy. 
 
-**[使用Python、Flask、Twilio和EasyPost构建发货通知服务](https://www.twilio.com/blog/build-shipment-notification-service-python-flask-twilio-easypost)**
+[Get started using treq to make async calls in Python](https://opensource.com/article/20/3/treq-python)
+A beginner's guide to asynchronous API calls with Python's Twisted package.
 
-随着电子商务变得越来越主流，企业现在直接向消费者发货的数量比以往任何时候都多。消费者在网上购买商品后，便想知道订单在履行过程中的位置以及何时到达，这正是`Twilio`和`EasyPost`派上用场的地方。在本教程中，你将看到使用`EasyPost API` 跟踪货物的移动是多么容易，并通过`Twilio SMS API`和`Python`的`Flask`框架以编程方式通知个人。
+[The Troublesome Active Record Pattern](http://calpaterson.com/activerecord.html)
+How inappropriate data access patterns massively slow down programs and how the same problems arise with RESTful APIs.
 
-> 就差 `Twilio` and `EasyPost`了
+[Facial Recognition on Video with Python](https://www.youtube.com/watch?v=PdkPI92KSIs) ![img](https://gallery.mailchimp.com/e2e180baf855ac797ef407fc7/images/8def3887-e9e9-4a48-95e0-74045a6a23fc.png)
 
-**[Using Pytesseract To Convert Images Into A HTML Site](https://pythonweekly.us2.list-manage.com/track/click?u=e2e180baf855ac797ef407fc7&id=7268f218a5&e=57c131a127)**
+[Interactive Coronavirus Map With Jupyter Notebook](https://mfreeborn.github.io/blog/2020/03/15/interactive-coronavirus-map-with-jupyter-notebook)
 
-用`Google Tesseract`将图片转为文字，然后用`Python`将其转换为静态网站。
+[AI Learns To Play Super Mario Bros Using A Genetic Algorithm And Neural Network](https://chrispresso.github.io/AI_Learns_To_Play_SMB_Using_GA_And_NN)
 
-> 这是一个生意！网站生成器！
+[Use Pathlib in Your Django Settings File](https://adamj.eu/tech/2020/03/16/use-pathlib-in-your-django-project/)
 
+[New governance model for the Django project](https://www.djangoproject.com/weblog/2020/mar/12/governance/)
 
+[How hard is it to guide test case generators with branch coverage feedback?](https://engineering.backtrace.io/posts/2020-03-11-how-hard-is-it-to-guide-test-case-generators-with-branch-coverage-feedback/)
 
-**[Zillow API](https://www.youtube.com/playlist?list=PLT8WeU5lHsiRgqUP0R63wCuwL_CgWNc7W) ![img](https://gallery.mailchimp.com/e2e180baf855ac797ef407fc7/images/8def3887-e9e9-4a48-95e0-74045a6a23fc.png)(55min)**
+[Speed up your Data Analysis with Python’s Datatable package](https://t.co/bun2UyXRdg) 
 
-一系列视频向你展示了如何在`Python`中使用`Zillow API`。
+[HTTP Desync Attacks with Python and AWS](https://t.co/PxEIP3sLAU)
 
-**[Post-Mortem Python Plotting](https://andyljones.com/posts/post-mortem-plotting.html)**
-修复了几个`bug` *after* 他们造成了崩溃。
+[Rolling your own encryption](https://www.gkbrk.com/2020/03/encryption/)
 
-> Jupyter出错后也能debug！
-
-**[Grad-CAM: 使用Keras、TensorFlow和Deep Learning可视化类激活映射](https://www.pyimagesearch.com/2020/03/09/grad-cam-visualize-class-activation-maps-with-keras-tensorflow-and-deep-learning/)**
-
-在这篇教程中，你将学习到如何用一个被叫做`Grad-CAM`的算法来可视化类激活映射(CAM)用于`debugging`深度神经网络。之后我们将使用`Kearas and TensorFlow`实现`Grad-CAM`。
-
-**[基于类的视图的心智模型](https://djangodeconstructed.com/2020/01/03/mental-models-for-class-based-views/)**
-
-在这篇文章中，我们将介绍Django使用的基于类的视图的基类。你将了解基于类的视图是如何工作的，以及它们与基于功能的视图的区别。
-
-> 类视图的管理及实现方式
->
-> 学习基础设计之路。
-
-[在2020如何使用Jupyter Notebooks (Part 1: 数据科学前景)](https://ljvmiranda921.github.io/notebook/2020/03/06/jupyter-notebooks-in-2020/)
-
-这是关于`Jupyter Notebook`三篇博客文章中的第一篇。在这里，我将讨论数据科学的前景，以及推动我们的工具发展的力量。
-
-
-
-[用Python and face_recognition 实现人脸识别](https://www.youtube.com/watch?v=535acCxjHCI) ![img](https://gallery.mailchimp.com/e2e180baf855ac797ef407fc7/images/8def3887-e9e9-4a48-95e0-74045a6a23fc.png)(31min)
-
-[用树莓派 and Python 给你的植物浇水](https://blog.alanconstantino.com/articles/water-your-plant-using-a-raspberry-pi-and-python.html)
-
-> 等一个给猫喂食！
-
-[我们必须谈谈Python，Gunicorn，Gevent的问题](https://rachelbythebay.com/w/2020/03/07/costly/)
-
-[了解 Pandas 如何提升你的 Django效率](https://blog.urbanpiper.com/how-knowing-pandas-can-boost-your-django-efficiency/)
+[How Django Uses Metaclasses For Data Modelling](https://t.co/jg2l7NdoPN)
 
 ### 有趣的项目、工具和库
 
-**[covid-19-analysis](https://github.com/AaronWard/covid-19-analysis)**
-`Python`的冠状病毒报告生成。
+[Symmetric](https://github.com/daleal/symmetric)
+A powerful yet lean wrapper over Flask to massively speed up API creations and enable super fast module-to-API transformations.
 
-**[dangerzone](https://github.com/firstlookmedia/dangerzone)**
-将有潜在危险的PDF文件、办公文档或图像转换成安全的PDF。
+[Tweet-Locator](https://github.com/JuanBenitez97/Tweet-Locator)
+Tweet locator using Python, Flask and Twitter API.
 
-**[coronavirus-tracker-api](https://github.com/ExpDev07/coronavirus-tracker-api)**
-用于追踪全球冠状病毒(2019-nCoV)暴发的简单、快速(< 200ms) API。它是用`Python`使用`Flask`框架编写的。
+[Colossus](https://github.com/vitorfs/colossus)
+Self-hosted email marketing solution. Compatible with any SMTP email service.
 
-**[PypTeX](https://github.com/sloisel/pyptex)**
-`PypTeX`是`LaTeX`的`Python`预处理器。它允许在`LaTeX`模板文件中嵌入`Python`代码片段。
+[generative_art](https://github.com/aaronpenne/generative_art)
+A collection of my generative artwork, mostly with Processing in Python mode.
 
-> 论文福音
+[PandasVault](https://github.com/firmai/pandasvault) 
+Advanced Pandas Vault — Utilities, Functions and Snippets.
 
-**[ELECTRA](https://github.com/google-research/electra)**
-训练文本编码器作为鉴别器，而不是生成器。
+[DeepRobust](https://github.com/DSE-MSU/DeepRobust/)
+A pytorch adversarial library for attack and defense methods on images and graphs.
 
-**[Python-Markdown](https://github.com/Python-Markdown/markdown)**
-`John Gruber`的`Markdown`的`Python`实现，带有扩展支持。
+[pytest-monitor](https://github.com/CFMTech/pytest-monitor)
+Pytest plugin for analyzing resource usage during test sessions.
 
-**[GUI_maker](https://github.com/max-dotpy/GUI_maker)**
-向初学者介绍`Tkinter`的应用程序。
 
-> GUI教程！交互更强！
-
-**[concrete-datastore](https://github.com/netsach/concrete-datastore)**
-`concrete-datastore`是一种基于`web`框架`Django`的高度通用的`HTTP REST`数据存储。它主要用作单页`web`应用程序`(SPA)`的`HTTP`数据库服务器。
-
-**[pyxelate](https://github.com/sedthh/pyxelate)**
-将图像降采样为像素图像的`Python`类。
-
-> 像素风生成器！
 
 
 
@@ -142,7 +111,7 @@ Posa：
 
 
 
-- 首发: [pythonista-weekly~蠎周刊 ~汇集全球蠎事儿 ;-)](http://weekly.pychina.org/python-weekly/pyw-440.html)
-- 改进: [issue-440.md](https://github.com/PyChina/weekly/blob/master/content/python-weekly/issue%23440.md)
+- 首发: [pythonista-weekly~蠎周刊 ~汇集全球蠎事儿 ;-)](http://weekly.pychina.org/python-weekly/pyw-441.html)
+- 改进: [issue-441.md](https://github.com/PyChina/weekly/blob/master/content/python-weekly/issue%23441.md)
 
 
