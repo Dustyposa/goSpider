@@ -16,9 +16,13 @@ def send_emails(
 
     yag = yagmail.SMTP(user=user, password=pwd, host=host)
     yag.send(to=send_list, subject=subject, contents=list(filter(bool, contents)))
-    for email_address in send_list:
+    if isinstance(send_list, list):
+        for email_address in send_list:
+            with open("sended.txt", "a") as fp:
+                fp.write(email_address + "\n")
+    else:
         with open("sended.txt", "a") as fp:
-            fp.write(email_address + "\n")
+            fp.write(send_list + "\n")
 
 
 if __name__ == '__main__':
