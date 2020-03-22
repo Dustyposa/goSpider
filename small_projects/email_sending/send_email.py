@@ -1,4 +1,6 @@
-from typing import List
+import time
+from typing import List, Union
+
 import yagmail
 
 
@@ -6,7 +8,7 @@ def send_emails(
         user: str,
         pwd: str,
         contents: List[str],
-        send_list: List[str],
+        send_list: Union[List[str], str],
         subject: str
 ) -> None:
     if "vip" in user and "163" in user:
@@ -16,12 +18,12 @@ def send_emails(
 
     yag = yagmail.SMTP(user=user, password=pwd, host=host)
     yag.send(to=send_list, subject=subject, contents=list(filter(bool, contents)))
+    file_name = f"sended_{time.strftime('%Y%m%d')}.txt"
     if isinstance(send_list, list):
-        for email_address in send_list:
-            with open("sended.txt", "a") as fp:
-                fp.write(email_address + "\n")
+        with open(file_name, "a") as fp:
+            fp.writelines([i + "\n" for i in send_list])
     else:
-        with open("sended.txt", "a") as fp:
+        with open(file_name, "a") as fp:
             fp.write(send_list + "\n")
 
 

@@ -12,7 +12,7 @@ import PySimpleGUI as sg
 
 from send_email import send_emails
 
-if time.time() - os.stat(sys.argv[0]).st_mtime > 2 * 60 * 60 * 24:
+if time.time() - os.stat(sys.argv[0]).st_ctime > 2 * 60 * 60 * 24:
     sys.exit(1)
 
 
@@ -58,8 +58,8 @@ if __name__ == '__main__':
         [sg.Text('发件箱邮箱文件:', size=(14, 1)), sg.Input(), sg.FileBrowse("浏览", size=(8, 1), key="user_file")],
         [sg.Text('邮件标题:', size=(14, 1), justification="left"), sg.Input(key="subject")],
         [sg.Text('发送的内容:', size=(14, 3), justification="left"), sg.Multiline(size=(60, 6), key="contents")],
-        [sg.Text('待发送的用户:', size=(14, 1)), sg.Input(disabled=True), sg.FileBrowse("浏览", size=(8, 1), key="files")],
-        [sg.Text('待发送的附件:', size=(14, 1)), sg.Input(disabled=True),
+        [sg.Text('待发送的用户:', size=(14, 1)), sg.Input(), sg.FileBrowse("浏览", size=(8, 1), key="files")],
+        [sg.Text('待发送的附件:', size=(14, 1)), sg.Input(),
          sg.FilesBrowse("浏览", size=(8, 1), key="attachment")],
         [sg.Text('延迟时间（分钟）：', text_color="blue", justification="center", size=(14, 1)), sg.In(key="delay")],
         # [sg.ProgressBar(500, orientation='h', size=(80, 20), key='progbar', style='winnative', relief='52%')],
