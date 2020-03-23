@@ -15,16 +15,19 @@ def send_emails(
         host = "smtp.vip.163.com"
     else:
         host = f"smtp.{user.split('@')[1]}"
-
-    yag = yagmail.SMTP(user=user, password=pwd, host=host)
-    yag.send(to=send_list, subject=subject, contents=list(filter(bool, contents)))
-    file_name = f"sended_{time.strftime('%Y%m%d')}.txt"
-    if isinstance(send_list, list):
-        with open(file_name, "a") as fp:
-            fp.writelines([i + "\n" for i in send_list])
+    try:
+        yag = yagmail.SMTP(user=user, password=pwd, host=host)
+        yag.send(to=send_list, subject=subject, contents=list(filter(bool, contents)))
+    except Exception:
+        file_name = f"send_fail_{user}_{time.strftime('%Y%m%d')}.txt"
     else:
+        file_name = f"sended_{time.strftime('%Y%m%d')}.txt"
+    finally:
         with open(file_name, "a") as fp:
-            fp.write(send_list + "\n")
+            if isinstance(send_list, list):
+                fp.writelines([i + "\n" for i in send_list])
+            else:
+                fp.write(send_list + "\n")
 
 
 if __name__ == '__main__':

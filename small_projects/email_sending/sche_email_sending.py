@@ -12,8 +12,6 @@ import PySimpleGUI as sg
 
 from send_email import send_emails
 
-if time.time() - os.stat(sys.argv[0]).st_ctime > 2 * 60 * 60 * 24:
-    sys.exit(1)
 
 
 @dataclass
@@ -62,7 +60,6 @@ if __name__ == '__main__':
         [sg.Text('待发送的附件:', size=(14, 1)), sg.Input(),
          sg.FilesBrowse("浏览", size=(8, 1), key="attachment")],
         [sg.Text('延迟时间（分钟）：', text_color="blue", justification="center", size=(14, 1)), sg.In(key="delay")],
-        # [sg.ProgressBar(500, orientation='h', size=(80, 20), key='progbar', style='winnative', relief='52%')],
         [sg.Button('确认', key='submit'), sg.Button('退出', key='Exit')],
         [sg.Text('没有任务正在进行', key="send_state", text_color="red", justification="left", size=(80, 1))],
 

@@ -17,6 +17,7 @@ def get_length(filename) -> float:
 mp4_path = "."
 outputs_dir_name = "outputs"
 
+
 def main() -> None:
     Path(mp4_path / outputs_dir_name).mkdir(exist_ok=True)  # 创建输出文件夹
     for file in Path(mp4_path).glob("*.mp4"):
@@ -27,7 +28,7 @@ def cut_video(file_name: str):
     video_path = file_name
     tmp = Path(file_name)
     output_path = (tmp.parent / outputs_dir_name).joinpath(tmp.stem + "{}").with_suffix(".mp4").absolute().__str__()
-    cut_time = 3  # unit s
+    cut_time = 12  # unit s
     total_duration = get_length(file_name) - 20
     splice_time = 10 * 60  # 分割时间
     index = 1
