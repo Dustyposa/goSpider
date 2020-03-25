@@ -1,7 +1,5 @@
-import os
 import csv
 import sched
-import sys
 import time
 from dataclasses import dataclass
 from itertools import chain, repeat
@@ -11,7 +9,6 @@ from typing import Any, Dict, List, Sequence, Iterator, Iterable
 import PySimpleGUI as sg
 
 from send_email import send_emails
-
 
 
 @dataclass
