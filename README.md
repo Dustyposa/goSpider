@@ -31,6 +31,7 @@ PS2: 如果你现在有需要我们提前加入的内容也可以提前说哦.
 - [python周报](./python_advance/python周报)  
 - [文章翻译](./python_advance/翻译计划)
     - [异步爬虫及原理](./python_advance/翻译计划/异步爬虫)--[[相关代码](./python_advance/翻译计划/异步爬虫/src)]
+    - [iterators,generators,coroutines](./python_advance/翻译计划/Python101/iterators,generators,coroutines.md)
 
 近期文章更新计划：     
  + [ ] [在python脚本中运行python脚本（ing...）](./python_advance/在python脚本中运行脚本的几种方法)  
