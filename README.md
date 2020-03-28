@@ -34,6 +34,7 @@ PS2: 如果你现在有需要我们提前加入的内容也可以提前说哦.
     - [iterators,generators,coroutines](./python_advance/翻译计划/Python101/iterators,generators,coroutines)
 
 近期文章更新计划：     
+ + [ ] [tdqm的使用]()
  + [ ] [在python脚本中运行python脚本（ing...）](./python_advance/在python脚本中运行脚本的几种方法)  
 + [ ] [使用sentry搭建日志管理平台]()  
 + [ ] [`how do i` 源码阅读]()  
