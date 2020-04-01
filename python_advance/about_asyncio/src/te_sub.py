@@ -4,15 +4,15 @@ import asyncio
 async def async_readline(proc: asyncio.subprocess.Process):
     while proc.returncode is None and not proc.stdout.at_eof():
         out = await proc.stdout.read(1024)
-        out = await proc.stdout.readline()
+        # out = await proc.stdout.readline()
         print(F"OUT:{out}")
     print(f"return code:{proc.returncode}")
 
 
 async def async_in(proc: asyncio.subprocess.Process):
     while proc.returncode is None:
-        await asyncio.sleep(1)
-        proc.stdin.write("321".encode("u8"))
+        await asyncio.sleep(1)  # 人为阻塞
+        proc.stdin.write("321\n".encode("u8"))
 
 
 async def main():
