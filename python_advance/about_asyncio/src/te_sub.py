@@ -3,10 +3,8 @@ import asyncio
 
 async def async_readline(proc: asyncio.subprocess.Process):
     while proc.returncode is None and not proc.stdout.at_eof():
-        out = await proc.stdout.read(1024)
-        # out = await proc.stdout.readline()
+        out = await proc.stdout.readline()
         print(F"OUT:{out}")
-    print(f"return code:{proc.returncode}")
 
 
 async def async_in(proc: asyncio.subprocess.Process):
@@ -21,11 +19,14 @@ async def main():
         stdout=asyncio.subprocess.PIPE,
         stdin=asyncio.subprocess.PIPE,
         stderr=asyncio.subprocess.PIPE,
+        env={
+            "PYTHONUNBUFFERED": '1',
+        }
     )
-    print(f"return code: {proc.returncode}")
+    # print(f"return code: {proc.returncode}")
     tasks = [
         asyncio.create_task(async_readline(proc)),
-        asyncio.create_task(async_in(proc)),
+        # asyncio.create_task(async_in(proc)),
     ]
     done, pending = await asyncio.wait(
         tasks,
@@ -34,11 +35,11 @@ async def main():
     )
     [i.cancel() for i in pending]
     print(f"done: {[i.result() for i in done]}")
-    print(f"pending: {pending}")
-    print(proc.returncode)
+    # print(f"pending: {pending}")
+    # print(proc.returncode)
     # proc.kill()
 
-    proc.terminate()
+    # proc.terminate()
     # await proc.wait()
     print(await proc.communicate())
 
