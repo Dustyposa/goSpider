@@ -90,17 +90,19 @@ if __name__ == '__main__':
                     content = [values["contents"]]
                     subj = values["subject"]
                     content.extend(values["attachment"].split(";"))
+                    cnt = 0
                     for index, user_and_email in enumerate(iter_, 0):
                         users_m, emails = user_and_email
                         for prio, tmp_data in enumerate(zip(users_m, emails), 1):
                             user_m, email = tmp_data
-                            scheduler.enter(index * seconds, priority=prio, action=send_emails, kwargs={
+                            scheduler.enter(cnt * seconds, priority=prio, action=send_emails, kwargs={
                                 "user": user_m.user,
                                 "pwd": user_m.pwd,
                                 "contents": content,
                                 "send_list": email,
                                 "subject": subj
                             })
+                            cnt += 1
                     return scheduler
 
 

@@ -11,6 +11,7 @@ async def async_in(proc: asyncio.subprocess.Process):
     while proc.returncode is None:
         await asyncio.sleep(1)  # 人为阻塞
         proc.stdin.write("321\n".encode("u8"))
+        proc.stdin.is_closing()
 
 
 async def main():
