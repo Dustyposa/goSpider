@@ -11,7 +11,6 @@ async def async_in(proc: asyncio.subprocess.Process):
     while proc.returncode is None:
         await asyncio.sleep(1)  # 人为阻塞
         proc.stdin.write("321\n".encode("u8"))
-        proc.stdin.is_closing()
 
 
 async def main():
@@ -25,17 +24,27 @@ async def main():
         }
     )
     # print(f"return code: {proc.returncode}")
+    # tasks = [
+    #     asyncio.create_task(async_readline(proc)),
+    #     asyncio.create_task(async_in(proc)),
+    # ]
     tasks = [
-        asyncio.create_task(async_readline(proc)),
-        # asyncio.create_task(async_in(proc)),
+        async_readline(proc),
+        async_in(proc),
     ]
     done, pending = await asyncio.wait(
         tasks,
         timeout=4,
         return_when=asyncio.FIRST_COMPLETED
     )
-    [i.cancel() for i in pending]
-    print(f"done: {[i.result() for i in done]}")
+    print(f"0000: {[i.cancelled() for i in pending]}")
+
+    print(f"len: {len(done)}, len2: {len(pending)}")
+    print(f"done1111: {[i.result() for i in done]}")
+
+    [(i.cancel(), print(type(i))) for i in pending]
+    # await asyncio.wait(pending)
+    print(f"done222: {[i.cancelled() for i in pending]}")
     # print(f"pending: {pending}")
     # print(proc.returncode)
     # proc.kill()
