@@ -3,6 +3,8 @@ import asyncio
 
 async def async_readline(proc: asyncio.subprocess.Process):
     while proc.returncode is None and not proc.stdout.at_eof():
+        s = proc.stdin.get_extra_info("pipe")
+        print(f"ssss: {s}")
         out = await proc.stdout.readline()
         print(F"OUT:{out}")
 
@@ -10,7 +12,7 @@ async def async_readline(proc: asyncio.subprocess.Process):
 async def async_in(proc: asyncio.subprocess.Process):
     while proc.returncode is None:
         await asyncio.sleep(1)  # 人为阻塞
-        proc.stdin.write("321\n".encode("u8"))
+        # proc.stdin.write("321\n".encode("u8"))
 
 
 async def main():
@@ -34,7 +36,7 @@ async def main():
     ]
     done, pending = await asyncio.wait(
         tasks,
-        timeout=4,
+        timeout=30,
         return_when=asyncio.FIRST_COMPLETED
     )
     print(f"0000: {[i.cancelled() for i in pending]}")
