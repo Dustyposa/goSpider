@@ -17,7 +17,12 @@ Slug: pyw-445
 ### 新鲜事
 
 [PyCon US 2020 Online](https://us.pycon.org/2020/online/)
-PyCon US 2020 has launched online. For the next 4 weeks we will be posting online content for you to enjoy.
+
+`PyCon US 2020` 已经在线上进行了。未来 4 周，我们将在网上发布内容，供大家观看。
+
+> Bilibili 也有同步搬运哦
+>
+> 
 
 ### 文章、教程与话题
 
