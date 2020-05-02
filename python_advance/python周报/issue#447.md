@@ -16,13 +16,13 @@ Vettery是一个招聘网站，它改变了人们应聘或者雇佣的方式。�
 
 ### 新鲜事
 
-[Collecting questions for a Steering Council Q&A](https://discuss.python.org/t/collecting-questions-for-a-steering-council-q-a/4010)
-As part of PyCon US 2020, they are planning to record a Q&A with the Steering Council. If you have any questions, be sure to submit them.
+[为 Steering Council Q&A 收集问题](https://discuss.python.org/t/collecting-questions-for-a-steering-council-q-a/4010)
+作为 `PyCon US 2020` 的一部分，他们计划与 `Steering Council` 进行 `Q&A` 记录。如果你有任何问题，请务必提交它们。
 
 ### 文章、教程与话题
 
 
-[How does a TCP Reset Attack work?](https://robertheaton.com/2020/04/27/how-does-a-tcp-reset-attack-work/)
+[TCP Reset Attack 是如何做的？](https://robertheaton.com/2020/04/27/how-does-a-tcp-reset-attack-work/)
 A TCP reset attack is executed using a single packet of data, no more than a few bytes in size. A spoofed TCP segment, crafted and sent by an attacker, tricks two victims into abandoning a TCP connection, interrupting possibly vital communications between them. In this post we’re going to: Learn the basics of the TCP protocol, Learn how the attack works and Execute the attack against ourselves using a simple Python script.
 
 [More Python for Beginners](https://www.youtube.com/playlist?list=PLlrxD0HtieHiXd-nEby-TMCoUNwhbLUnj) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)
