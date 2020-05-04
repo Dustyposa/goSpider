@@ -23,25 +23,25 @@ Vettery是一个招聘网站，它改变了人们应聘或者雇佣的方式。�
 
 
 [TCP Reset Attack 是如何做的？](https://robertheaton.com/2020/04/27/how-does-a-tcp-reset-attack-work/)
-A TCP reset attack is executed using a single packet of data, no more than a few bytes in size. A spoofed TCP segment, crafted and sent by an attacker, tricks two victims into abandoning a TCP connection, interrupting possibly vital communications between them. In this post we’re going to: Learn the basics of the TCP protocol, Learn how the attack works and Execute the attack against ourselves using a simple Python script.
+`TCP` 重置攻击是使用不超过几字节大小的单个数据包进行的。一个由攻击者精心制作并发送的欺骗 `TCP` 段，欺骗两个受害者放弃 `TCP` 连接，中断了它们之间可能重要的通信。在这篇文章中：将学习到 `TCP` 协议的基础知识，学习攻击原理，并使用一个简单的 `Python` 脚本来攻击我们自己。
 
 [More Python for Beginners](https://www.youtube.com/playlist?list=PLlrxD0HtieHiXd-nEby-TMCoUNwhbLUnj) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)
-Another Python tutorial series by Microsoft.
+来自 `Microsoft` 的另一种 `Python` 教程。
 
-[Writing Python inside your Rust code — Part 2](https://blog.m-ou.se/writing-python-inside-rust-2/)
-In this part, we’ll extend our python!{}-macro to be able to seamlessly use Rust variables in the Python code within. We explore a few options, and implement two alternatives.
+[在 `Rust` 代码中编写 Python 代码 — Part 2](https://blog.m-ou.se/writing-python-inside-rust-2/)
+在这章中，我们将扩展我们的 `python!{}-macro` ，让其能够在 `Python` 代码中无缝使用 `Rust` 变量。我们构思了几种方式，并实现了两种。
 
 [Hacking Together an E-ink Dashboard](https://healeycodes.com/hacking-together-an-e-ink-dashboard/)
-A prototype Raspberry Pi dashboard to save me talking to my smart assistant.
+一个树莓派仪表盘原型，省得我和智能助手说话。
 
-[Talko: An End-to-End Chat Application](https://t.co/WLdF2Cmcnr)
-How to build a complete chat app without any libraries or frameworks
+[Talko: 一个端到端的聊天应用](https://t.co/WLdF2Cmcnr)
+如何不用任何库或者框架构建一个完整的聊天应用。
 
-[New Features in Python 3.9 You Should Know About](https://martinheinz.dev/blog/21) 
-Python 3.9 Beta is coming soon, so it’s time to explore some of its upcoming features like new dict operators, new functools and more.
+[Python 3.9 中你应该知道的新特性](https://martinheinz.dev/blog/21) 
+`Python 3.9 Beat` 就将发布了，所以是时候来看看将要推出的功能了，比如新的字典操作，新的 `functools` 以及其他～
 
-[Best Practices for Working with Configuration in Python Applications](https://tech.preferred.jp/en/blog/working-with-configuration-in-python/)
-Most computer applications can be configured to behave a certain way, be it via command line flags, environment variables, or configuration files. For you as a software developer, dealing with configuration comes with challenges such as parsing untrusted input, validating it, and accessing it on all layers of your program. Using Python as an example, this post shares some best practices to help you handle configuration safely and effectively.
+[在 Python 应用中配置使用的最佳实践](https://tech.preferred.jp/en/blog/working-with-configuration-in-python/)
+许多计算机应用可以被配置成某种的行为方式，不论是通过命令行标志，环境变量或者是配置文件。对你来说，作为一个软件开发者，处理并配置会遇到一些挑战，比如解析不可信的输入，验证输入以及在程序的各层中访问它。用 `Python` 作为一个例子，这篇文章分享了一些最佳实践，来帮助你安全并高效的处理配置。
 
 [Simple Django deployment: a guide](https://mattsegal.dev/simple-django-deployment.html)
 How to deploy Django in many small steps.
