@@ -43,68 +43,69 @@ Vettery是一个招聘网站，它改变了人们应聘或者雇佣的方式。�
 [在 Python 应用中配置使用的最佳实践](https://tech.preferred.jp/en/blog/working-with-configuration-in-python/)
 许多计算机应用可以被配置成某种的行为方式，不论是通过命令行标志，环境变量或者是配置文件。对你来说，作为一个软件开发者，处理并配置会遇到一些挑战，比如解析不可信的输入，验证输入以及在程序的各层中访问它。用 `Python` 作为一个例子，这篇文章分享了一些最佳实践，来帮助你安全并高效的处理配置。
 
-[Simple Django deployment: a guide](https://mattsegal.dev/simple-django-deployment.html)
-How to deploy Django in many small steps.
+[简易 Django 部署 : 指南](https://mattsegal.dev/simple-django-deployment.html)
+如何用很多小步骤部署 `Django`。
 
-[How To Create a URL Shortener with Django and GraphQL](https://www.digitalocean.com/community/tutorials/how-to-create-a-url-shortener-with-django-and-graphql)
-In this tutorial you will create a backend for a URL shortener—a service that takes any URL and generates a shorter, more readable version—while diving into GraphQL concepts, like queries and mutations, and tools, like the GraphiQL interface.
+[如何用 Django and GraphQL 创建一个 URL 缩短器](https://www.digitalocean.com/community/tutorials/how-to-create-a-url-shortener-with-django-and-graphql)
+在这篇指南中，你将创建一个 `URL 缩短器` 的后台 —— 可以将接受任何 `URL` 并生成一个更短的 `URL` 的服务，更加可读的版本 —— 同时介绍了一些 `GraphQL` 的概念，例如 `queries and mutations`，以及工具，例如 `GraphiQL` 接口。
 
-[Deep Neural Network from Scratch in Python](https://www.youtube.com/watch?v=b_w4eEiogaE) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)
-Making sure a flexible neural network architecture API isn't too difficult. However, we need to be careful about the layer of abstraction we put in place in order to facilitate the work of the user who want to simply fit and predict. Here we make use of the following three concept: Network, Layer and Neuron. These three components will be composed together to make a fully connected feedforward neural network neural network.
+[Python 中从零开始的深度神经网络](https://www.youtube.com/watch?v=b_w4eEiogaE) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)
+确保一个灵活的神经网络架构 `API` 并不太难。但是，我们需要注意的是，为了方便用户的工作，我们要把抽象的层层设为简单的拟合和预测。这里我们利用以下三个概念。网络、层和神经元。这三个部分将共同组成一个完全连接的前馈神经网络神经网络。
 
-[Use Google Sheets, S3, and Python to Build a Website Quickly](https://t.co/kvkzPGbkeV)
-A survival guide for non-web developers.
+[使用 Google Sheets, S3, and Python 来快速构建一个网站](https://t.co/kvkzPGbkeV)
+非 `web` 开发者的生存指南。
 
-[Generators, Iterables, Iterators in Python: When and Where](https://www.pythonforthelab.com/blog/generators-iterables-iterators-python-when-and-where/)
-Learn how to extend your code to make it easy to loop through the elements of your classes or to generate data on the fly.
+[Generators, Iterables, Iterators in Python: 何时何处](https://www.pythonforthelab.com/blog/generators-iterables-iterators-python-when-and-where/)
+学习如何扩展你的代码，使你的代码能够很容易地在类的元素中循环，或者快速生成数据。
 
-[GraphQL Tutorial with Django (Python) and Excel](https://www.youtube.com/watch?v=nPQE5B51DQ8) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)
-In this Django, Excel and GraphQL Tutorial  learn how to build a GraphQL Client and Server with Django and import excel data. We will code everything from scratch.
 
-[41 Questions to Test your Knowledge of Python Strings](https://t.co/HkQ4FbffhD)
-How to crush algorithm questions by mastering string fundamentals.
+[GraphQL Tutorial with Django (Python) and Excel](https://www.youtube.com/watch?v=nPQE5B51DQ8) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)（37min）
+在这个 `Django，Excel and GraphQL` 指南中学习如何用 `Django` 构建一个 `GraphQL 客户端和服务器` 并支持 `excel` 数据。我们将会从零开始搭建所有东西。
 
-[Creating Interactive Views in Django](https://hackersandslackers.com/creating-django-views/) 
-Create interactive user experiences by writing Django views to handle dynamic content, submitting forms, and interacting with data.
+[41 问题，测试  Python Strings 知识](https://t.co/HkQ4FbffhD)
+如何通过掌握字符串基础知识来粉碎算法题。
 
-[Monitor Your Flask Web Application Automatically With Flask-Monitoring-Dashboard](https://t.co/mUQTNhMNaG)
-A tutorial on how to use and set up a simple Flask application that uses Flask-Monitoring-Dashboard to monitor the system. It will show how simple it is to get started to automatically monitor your web service and explain some of the features that Flask-Monitoring-Dashboard offers.
+[Django 中创建交互视图](https://hackersandslackers.com/creating-django-views/) 
+通过编写 `Django` 视图来处理动态内容、提交表单以及与数据交互，创建交互式用户体验。
 
-[Working with warnings in Python (Or: When is an exception not an exception?)](https://lerner.co.il/2020/04/27/working-with-warnings-in-python/)
-How are warnings different from Python exceptions? Learn how to send and filter warnings, and why you would want to do so.
+[用 Flask-Monitoring-Dashboard 自动监控你的Flask Web Application ](https://t.co/mUQTNhMNaG)
+一篇如何使用并设置一个简单的 `Flask` 应用，并使用 `Flask-Monitoring-Dashboard` 来监控这个系统。 它将展示自动监控您的网络服务是多么简单，并解释 `Flask-Monitoring-Dashboard` 提供的一些功能。
 
-[Building a Dashboard from Scratch in 30 Minutes!](https://www.youtube.com/watch?v=SnzwO4vEkJE) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)
-How to build Insider Selling Dashboard entirely from scratch in 30 minutes.
+[在 Python 中处理警告 (或者说: 什么时候异常不是异常？)](https://lerner.co.il/2020/04/27/working-with-warnings-in-python/)
+`Python` 的警告和异常有什么不同？学习如何发出以及过滤警告，另外为什么要这样做。
+
+[从零开始半小时构建一个仪表盘!](https://www.youtube.com/watch?v=SnzwO4vEkJE) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)
+如何完全从零开始在半小时内构件内部交易仪表盘。
 
 [PyTorch Distributed Training](https://leimao.github.io/blog/PyTorch-Distributed-Training/)
-This post presents a simple implementation of PyTorch distributed training on CIFAR-10 classification using DistributedDataParallel wrapped ResNet models. The usage of Docker container for distributed training and how to start distributed training using torch.distributed.launch would also be covered.
 
-[Create Your Own Diff-Tool Using Python](https://florian-dahlitz.de/blog/create-your-own-diff-tool-using-python)
-In this article you will learn how to create your own diff-tool using nothing but Python.
+本帖介绍了一个简单的 `PyTorch` 分布式训练在 `CIFAR-10` 分类上使用 `DistributedDataParallel` 包裹的 `ResNet` 模型的简单实现。此外，还将介绍 `Docker` 容器在分布式训练中的使用方法，以及如何使用 `torch.distributed.remotion` 启动分布式训练。
 
-[Coding a Python Stock Trading bot with Alpaca](https://www.youtube.com/watch?v=9R7pCh4yCm8) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)
+[用 Python 制作你自己的 Diff-Tool ](https://florian-dahlitz.de/blog/create-your-own-diff-tool-using-python)
+在这篇文章中，你会学习到如何只用 `Python` 创建你自己的 `diff-tool`。
 
-[Oops! Removing Secrets from Django Project in Docker](https://startcodingnow.com/removing-secrets-from-django-project-in-docker)
+[用 Alpaca 编一个 Python Stock Trading bot](https://www.youtube.com/watch?v=9R7pCh4yCm8) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)（20min）
+
+[Oops! 在 Docker 中删除 Django 项目中的隐私](https://startcodingnow.com/removing-secrets-from-django-project-in-docker)
 
 [Introducing django-gsheets, an easy way to sync to and from Google Sheets](https://labs.meanpug.com/sync-data-to-and-from-google-sheets-with-django-gsheets)
 
-[Jupyter Notebook Best Practices](https://levelup.gitconnected.com/jupyter-notebook-best-practices-fc326eb5cd22)
+[Jupyter Notebook 最佳实践](https://levelup.gitconnected.com/jupyter-notebook-best-practices-fc326eb5cd22)
 
 
 
 ### 书籍
 
 [Springer releases 50 Programming books for free](https://link.springer.com/search/page/1?facet-discipline="Computer+Science"&package=mat-covid19_textbooks&facet-language="En"&facet-content-type="Book")
-It includes books on Python, Machine Learning, Deep Learning, AI and more.
+它包括 `Python`、机器学习、深度学习、AI 等方面的书籍。
 
 ### 有趣的项目、工具和库
 
-
 [Shynet](https://github.com/milesmcc/shynet)
-Modern, privacy-friendly, and detailed web analytics that works without cookies or JS.
+现代，隐私友好及详细的网络分析，不需要 `cookies or JS` 就能工作。
 
 [Jina](https://github.com/jina-ai/jina) 
-Jina is the cloud-native neural search framework powered by state-of-the-art AI and deep learning.
+`Jina` 是由最先进的 AI 和深度学习驱动的云原生神经搜索框架。
 
 [pivotnacci](https://github.com/blackarrowsec/pivotnacci)
 A tool to make socks connections through HTTP agents.
