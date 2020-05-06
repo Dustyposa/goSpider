@@ -108,43 +108,56 @@ Vettery是一个招聘网站，它改变了人们应聘或者雇佣的方式。�
 `Jina` 是由最先进的 AI 和深度学习驱动的云原生神经搜索框架。
 
 [pivotnacci](https://github.com/blackarrowsec/pivotnacci)
-A tool to make socks connections through HTTP agents.
+
+通过 `HTTP` 代理进行 `socks` 连接的工具。
+
+
 
 [ESPnet](https://github.com/espnet/espnet)
 End-to-End Speech Processing Toolkit.
 
 [Printy](https://github.com/edraobdu/printy)
-Printy is lite and cross-platform library that extends the functionalities of the built-in functions print() and input(). Printy stands out for its simplicity and for being and easy to use library, it lets you colorize and apply some standard formats to your text with an intuitive and friendly API based on flags.
+
+`Printy` 是一个轻量级的跨平台库，它扩展了内置函数 `print()` 和 `input()` 的功能。`Printy` 以其简单、易用的特点而闻名，它可以让您通过一个直观友好的基于 `flags`的 `API` 为您的文本着色和应用一些标准格式。
 
 [RepoPeek](https://github.com/sameera-madushan/RepoPeek)
-Python script to get details about a repository just from your terminal before cloning it.
+
+在克隆一个存储库之前，通过 `Python` 脚本来获取关于存储库的详细信息。
 
 [shhh](https://github.com/smallwat3r/shhh)
-Keep secrets out of emails or chat logs, share them using secure links with passphrase and expiration dates.
+
+不要在电子邮件或聊天记录中泄露秘密，使用带有密码和到期日期的安全链接来分享。
 
 [drf-starter-template](https://github.com/nishantwrp/drf-starter-template)
-An easy to use project template for small projects using Django Rest Framework.
+
+一个简单易用的项目模板，用于使用 `Django Rest Framework` 的小型项目。
 
 [StockInsider](https://github.com/charlesdong1991/StockInsider)
-A Python tool to collect, analyze and visualize trading indicators for stocks.
+
+一个用来收集、分析以及可视化股票交易指标的 `Python` 工具。
 
 [gitland](https://github.com/programical/gitland)
-A multiplayer game controlled using GitHub.
+
+用 `GitHub` 控制的多人游戏。
 
 [django-sockpuppet](https://github.com/jonathan-s/django-sockpuppet)
-Build reactive applications with the django tooling you already know and love. 
+
+使用你已经熟悉和喜爱的django工具，构建反应式应用程序。
 
 [BentoML](https://github.com/bentoml/BentoML) 
-BentoML is an open-source platform for high-performance ML model serving.
+
+`BentoML` 是一个用于高性能 `ML` 模型服务的开源平台。
 
 [Taichi](https://github.com/taichi-dev/taichi) 
-Productive programming language for portable, high-performance, sparse & differentiable computing.
+
+面向可移植、高性能、稀疏和可区分计算的高效编程语言。
 
 [PyDP](https://github.com/OpenMined/PyDP) 
-PyDP is a Python wrapper for Google's Differential Privacy project. The library provides a set of e-differentially private algorithms, which can be used to produce aggregate statistics over numeric data sets containing private or sensitive information.
+
+`PyDP` 是 `Google's Differential Privacy` 项目的 `Python` 封装器。该库提供了一套 `e-differential private` 算法，可用于生成包含私有或敏感信息的数字数据集的聚合统计数据。
 
 [postgres_restorer](https://github.com/pyux/postgres_restorer)
-Simple tool for restoring database during integration tests.
+用于在集成测试期间恢复数据库的简单工具。
 
 ### 最近更新
 
@@ -153,7 +166,7 @@ Simple tool for restoring database during integration tests.
 ### 那些活动
 
 [Webinar: Learn Scraping with Python and Poshmark](https://my.demio.com/ref/jjUDGs9tqIYdFYiS)
-In this talk, we’ll learn how to use web scraping to extract information about Poshmark listings. Then, we’ll use Python libraries to analyze and visualize the data.
+在本次讲座中，我们将学习如何使用网页抓取来提取关于 `Poshmark` 列表的信息。然后，我们将使用 `Python` 库来分析和可视化数据。
 
 #### Posa：
 
