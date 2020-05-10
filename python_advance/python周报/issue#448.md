@@ -1,5 +1,5 @@
 Title: pythonista-weekly : Pyw 448
-Date: 2020-05-02 14:22
+Date: 2020-05-10 14:22
 Tags: Weekly,pythonweekly,Zh 
 Slug: pyw-448
 
@@ -10,167 +10,183 @@ Slug: pyw-448
 >翻译：Dustyposa
 
 **来自赞助商（PS：原文的赞助商）:**
-
-[python开发者都需要的Vettery](https://www.vettery.com/tech?utm_source=newsletter&utm_medium=pythonweekly&utm_term=tech&utm_content=grouped&utm_campaign=ad-77579)  
-Vettery是一个招聘网站，它改变了人们应聘或者雇佣的方式。准备好换工作地方了吗？免费制作简历，你的薪资你说了算，现在就和顶级雇主的HR联系吧！
+使用 `Datadog` 监控你的python指标，日志，集群分析。使用`Datadog`的应用分析，可以深入任何纬度并且能找到你所需要的信息，来进行动态诊断和快速故障排除。[来免费试用 14 天吧！](https://www.datadoghq.com/dg/apm/python-troubleshooting/?utm_source=Advertisement&utm_medium=Advertisement&utm_campaign=PythonWeekly-Troubleshooting)
 
 ### 新鲜事
 
-[为 Steering Council Q&A 收集问题](https://discuss.python.org/t/collecting-questions-for-a-steering-council-q-a/4010)
-作为 `PyCon US 2020` 的一部分，他们计划与 `Steering Council` 进行 `Q&A` 记录。如果你有任何问题，请务必提交它们。
+[Python 开发者调查 2019 结果公示](https://www.jetbrains.com/lp/python-developers-survey-2019/)
+来自 150 个国家的超过 24,000 名 `Python` 用户参加了今年 11 月的调查。在收集到的数据的帮助下，我们将结果进行展示，找到流行的趋势并创建一个 `Python` 开发档案。
+
 
 ### 文章、教程与话题
 
+[Machine Learning & Deep Learning Fundamentals](https://deeplizard.com/learn/playlist/PLZbbT5o_s2xq7LwI2y8_QtvuXZedL6tQU)
+本系列为初学者介绍了深度学习和神经网络的基本概念。除了这些概念，我们也会展示使用 `Keras` 在代码中实现了一些概念，一个用 `Python` 写的神经网络的 `API`。我们将学习关于人工神经网络的中 `layers（层）`、`activation functions（激活函数）`、`backpropagation（反向传播）`、`convolutional neural networks（CNNs）`、`data augmentation（数据增强）`、`transfer learning（迁移学习）`以及其他知识！
 
-[TCP Reset Attack 是如何做的？](https://robertheaton.com/2020/04/27/how-does-a-tcp-reset-attack-work/)
-`TCP` 重置攻击是使用不超过几字节大小的单个数据包进行的。一个由攻击者精心制作并发送的欺骗 `TCP` 段，欺骗两个受害者放弃 `TCP` 连接，中断了它们之间可能重要的通信。在这篇文章中：将学习到 `TCP` 协议的基础知识，学习攻击原理，并使用一个简单的 `Python` 脚本来攻击我们自己。
+[Calculating Streaks in Pandas](https://joshdevlin.com/blog/calculate-streaks-in-pandas/)
+这篇教程教你如何在 `pandas` 库中计算 `calculate streaks` 并使用 `Matplotlib` 进行可视化。使用的是 `NBA` 季后赛投篮数据。
 
-[More Python for Beginners](https://www.youtube.com/playlist?list=PLlrxD0HtieHiXd-nEby-TMCoUNwhbLUnj) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)
-来自 `Microsoft` 的另一种 `Python` 教程。
-
-[在 `Rust` 代码中编写 Python 代码 — Part 2](https://blog.m-ou.se/writing-python-inside-rust-2/)
-在这章中，我们将扩展我们的 `python!{}-macro` ，让其能够在 `Python` 代码中无缝使用 `Rust` 变量。我们构思了几种方式，并实现了两种。
-
-[Hacking Together an E-ink Dashboard](https://healeycodes.com/hacking-together-an-e-ink-dashboard/)
-一个树莓派仪表盘原型，省得我和智能助手说话。
-
-[Talko: 一个端到端的聊天应用](https://t.co/WLdF2Cmcnr)
-如何不用任何库或者框架构建一个完整的聊天应用。
-
-[Python 3.9 中你应该知道的新特性](https://martinheinz.dev/blog/21) 
-`Python 3.9 Beat` 就将发布了，所以是时候来看看将要推出的功能了，比如新的字典操作，新的 `functools` 以及其他～
-
-[在 Python 应用中配置使用的最佳实践](https://tech.preferred.jp/en/blog/working-with-configuration-in-python/)
-许多计算机应用可以被配置成某种的行为方式，不论是通过命令行标志，环境变量或者是配置文件。对你来说，作为一个软件开发者，处理并配置会遇到一些挑战，比如解析不可信的输入，验证输入以及在程序的各层中访问它。用 `Python` 作为一个例子，这篇文章分享了一些最佳实践，来帮助你安全并高效的处理配置。
-
-[简易 Django 部署 : 指南](https://mattsegal.dev/simple-django-deployment.html)
-如何用很多小步骤部署 `Django`。
-
-[如何用 Django and GraphQL 创建一个 URL 缩短器](https://www.digitalocean.com/community/tutorials/how-to-create-a-url-shortener-with-django-and-graphql)
-在这篇指南中，你将创建一个 `URL 缩短器` 的后台 —— 可以将接受任何 `URL` 并生成一个更短的 `URL` 的服务，更加可读的版本 —— 同时介绍了一些 `GraphQL` 的概念，例如 `queries and mutations`，以及工具，例如 `GraphiQL` 接口。
-
-[Python 中从零开始的深度神经网络](https://www.youtube.com/watch?v=b_w4eEiogaE) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)
-确保一个灵活的神经网络架构 `API` 并不太难。但是，我们需要注意的是，为了方便用户的工作，我们要把抽象的层层设为简单的拟合和预测。这里我们利用以下三个概念。网络、层和神经元。这三个部分将共同组成一个完全连接的前馈神经网络神经网络。
-
-[使用 Google Sheets, S3, and Python 来快速构建一个网站](https://t.co/kvkzPGbkeV)
-非 `web` 开发者的生存指南。
-
-[Generators, Iterables, Iterators in Python: 何时何处](https://www.pythonforthelab.com/blog/generators-iterables-iterators-python-when-and-where/)
-学习如何扩展你的代码，使你的代码能够很容易地在类的元素中循环，或者快速生成数据。
+[TLDR: 编写一个 Slack bot 来总结文章](https://blog.concurlabs.com/how-to-write-a-tldr-chat-bot-ec02d9e1649c) 
+使用顶尖 `NLP` 技术来更多更快的阅读新闻。这篇文章概述了如何将一个顶尖的机器学习模型集成到 `Slack bot` 来生成一份文章总结，并分享它们的 `URL` - `a.k.a "tldr"(太长，不要读)`
 
 
-[GraphQL Tutorial with Django (Python) and Excel](https://www.youtube.com/watch?v=nPQE5B51DQ8) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)（37min）
-在这个 `Django，Excel and GraphQL` 指南中学习如何用 `Django` 构建一个 `GraphQL 客户端和服务器` 并支持 `excel` 数据。我们将会从零开始搭建所有东西。
+[The future of Python](https://www.thoughtworks.com/podcasts/future-python) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/9a9a57d0-eb4b-47f8-8af4-55ba50e8c350.png)（33 min 27 sec）
+随着企业对机器学习的重视程度的提高，人们也看到了对 `Python` 的兴趣再次兴起。是什么让 `Python` 与其他语言不同？有什么特性让 `Python` 与众不同？`Python` 将往何处发展？在这一集中，我们的播客与来自 `ThoughtWorks` 巴西 `Luciano Ramalho` ---一位著名的 `Python` 书籍作者---聊了很多关于 `dunder` 方法、快速失败和即将出版的第二版 `Fluent Python` 的新书。
 
-[41 问题，测试  Python Strings 知识](https://t.co/HkQ4FbffhD)
-如何通过掌握字符串基础知识来粉碎算法题。
+[如何使用 Django and Stripe 创建一个 Subscription SaaS Application](https://www.saaspegasus.com/guides/django-stripe-integrate/)
+软件即服务(SaaS) 订阅服务是目前世界上发展最快的业务。每天，开发者和有抱负的企业家都在想构建一种新的订阅 `SaaS` 产品的代码。但是这些应用到底是什么样子的呢？这篇指南将覆盖所有使用 `Django and Stripe` 创建一个 `subscription SaaS business` 的技术细节。
 
-[Django 中创建交互视图](https://hackersandslackers.com/creating-django-views/) 
-通过编写 `Django` 视图来处理动态内容、提交表单以及与数据交互，创建交互式用户体验。
+[用 bash and Python 3 进行系统编程](https://github.com/kyclark/sysadminshow)
+系统管理员在命令行上花费大量的时间，所以他们想用命令行的语言来自动化完成任务?—？就像 `bash` or `Powershell`。虽然可以用这些语言编写很多游泳的程序，一个更高等级的语言比如 `Python` 可能是更好的选择，特别是考虑到 `Python` 程序可以在系统直接在 `bash（例如: LInux or Mac）` 以及 `Powershell（Window）`  上进行移植。作为一个练习，让我们编写一个 `head command` 的 `bash` 实现，然后我们将对比我们可以在 `Python` 中如何实现。
 
-[用 Flask-Monitoring-Dashboard 自动监控你的Flask Web Application ](https://t.co/mUQTNhMNaG)
-一篇如何使用并设置一个简单的 `Flask` 应用，并使用 `Flask-Monitoring-Dashboard` 来监控这个系统。 它将展示自动监控您的网络服务是多么简单，并解释 `Flask-Monitoring-Dashboard` 提供的一些功能。
+[RSVP for the ONLY Python Web Conference (Virtual) | June 17-19, 2020](https://pythonwebconference.com/) 
+Experts discuss hard web production problems. 40+ talks on Django, Plone, CI/CD, Containers, Serverless, REST APIs, microservices, etc. Join JetBrains and Six Feet Up to discuss what the future holds. SPONSOR
 
-[在 Python 中处理警告 (或者说: 什么时候异常不是异常？)](https://lerner.co.il/2020/04/27/working-with-warnings-in-python/)
-`Python` 的警告和异常有什么不同？学习如何发出以及过滤警告，另外为什么要这样做。
+[Solving Binary Puzzles using Python and Z3](https://ahf.me/articles/2020/05/01/solving-binary-puzzles-using-python-and-z3/)
+In this article, we will be looking into how we can build a computer program for solving arbitrary Binary Puzzles using the Python and the Z3 Theorem Prover.
 
-[从零开始半小时构建一个仪表盘!](https://www.youtube.com/watch?v=SnzwO4vEkJE) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)
-如何完全从零开始在半小时内构件内部交易仪表盘。
+[How to use Bamboolib for Data Wrangling in Data Science](https://www.youtube.com/watch?v=PyzMTgJ5dHY) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)
+This video shows you how to use the Bamboolib library for performing Data Wrangling in your Data Science projects. Instead of manually coding the Pandas syntax, we will still leverage the use of Pandas to do these tasks via a graphical user interface using Bamboolib.
 
-[PyTorch Distributed Training](https://leimao.github.io/blog/PyTorch-Distributed-Training/)
+[COVID-19: Face Mask Detector with OpenCV, Keras/TensorFlow, and Deep Learning](https://www.pyimagesearch.com/2020/05/04/covid-19-face-mask-detector-with-opencv-keras-tensorflow-and-deep-learning/)
+In this tutorial, you will learn how to train a COVID-19 face mask detector with OpenCV, Keras/TensorFlow, and Deep Learning.
 
-本帖介绍了一个简单的 `PyTorch` 分布式训练在 `CIFAR-10` 分类上使用 `DistributedDataParallel` 包裹的 `ResNet` 模型的简单实现。此外，还将介绍 `Docker` 容器在分布式训练中的使用方法，以及如何使用 `torch.distributed.remotion` 启动分布式训练。
+[Generating Melodies with LSTM Nets: Series Overview](https://www.youtube.com/watch?v=FLr0r-QhqH0) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)
+In this series, we'll be building a Long Short-Term Memory Network that's capable of generating melodies autonomously. In the process, we'll be learning about Keras, time-series data, and symbolic music representations.
 
-[用 Python 制作你自己的 Diff-Tool ](https://florian-dahlitz.de/blog/create-your-own-diff-tool-using-python)
-在这篇文章中，你会学习到如何只用 `Python` 创建你自己的 `diff-tool`。
+[Django Testing Cheat Sheet](https://www.valentinog.com/blog/testing-django/)
+A cheat-sheet of common testing patterns and best practices in Django applications.
 
-[用 Alpaca 编一个 Python Stock Trading bot](https://www.youtube.com/watch?v=9R7pCh4yCm8) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)（20min）
+[User Interaction With Forms](https://www.mattlayman.com/understand-django/user-interaction-forms/)
+In the previous Understand Django article, we saw how Django templates work to produce a user interface. That’s fine if you only need need to display a user interface, but what do you do if you need your site to interact with users? You use Django’s form system! In this article, we’ll focus on how to work with web forms using the Django form system.
 
-[Oops! 在 Docker 中删除 Django 项目中的隐私](https://startcodingnow.com/removing-secrets-from-django-project-in-docker)
+[How to download stocks fundamentals data with Python](http://theautomatic.net/2020/05/05/how-to-download-fundamentals-data-with-python/) 
+Learn how to download fundamentals data with Python using the yahoo_fin package, including P/E and P/S ratios, return on equity, and more.
 
-[Introducing django-gsheets, an easy way to sync to and from Google Sheets](https://labs.meanpug.com/sync-data-to-and-from-google-sheets-with-django-gsheets)
+[Building a SaaS using Django and Vue.js](https://www.youtube.com/playlist?list=PLpyspNLjzwBnGesxJOt_0r4xTWR80j7Y3) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)
+In this video series, learn how to build a SaaS from scratch. 
 
-[Jupyter Notebook 最佳实践](https://levelup.gitconnected.com/jupyter-notebook-best-practices-fc326eb5cd22)
+[Handle User Accounts & Authentication in Flask with Flask-Login](https://hackingandslacking.com/handle-user-accounts-authentication-in-flask-with-flask-login-944cc065b7f2)
+Create an interactive Flask application by supporting user accounts! Handle account creation, log-ins, walled content, and user-specific features.
 
+[Designing an energy arbitrage strategy with linear programming](https://www.steveklosterman.com/energy-arbitrage/)
+The goal of this post is to illustrate how the mathematical optimization technique of linear programming can be used to design an operating strategy for a grid-connected battery with a given set of operational constraints, under the assumption of known future prices. All of this will be done using real-world energy price data and open source tools in Python. 
 
+[Using Python to generate over 10,000 unique 8-bit lightsabers](https://procrastinatingdev.com/using-python-to-generate-over-10000-unique-8-bit-lightsabers/)
+Here's how you can use Python, Pillow and Tweepy to create your own 8-bit lightsaber art. 
 
-### 书籍
+[Exploring an Alternative to Jupyter Notebooks for Python Development](https://pbpython.com/notebook-alternative.html)
+The Jupyter notebook file format has some downsides that can be mitigated with Jupyter code cells and VS Code interactive python. This article will describe how to use these tools.
 
-[Springer releases 50 Programming books for free](https://link.springer.com/search/page/1?facet-discipline="Computer+Science"&package=mat-covid19_textbooks&facet-language="En"&facet-content-type="Book")
-它包括 `Python`、机器学习、深度学习、AI 等方面的书籍。
+[GeoHealth: Build-up and Architecture](https://towardsdatascience.com/geohealth-build-up-and-architecture-29f3b45e68fb)
+Or how to build a Python dashboard from scratch.
+
+[Introduction To Python's Functools Module](https://florian-dahlitz.de/blog/introduction-to-functools)
+Introducing the functools functions using real world examples.
+
+[Build Your Own ‘Google Translate’-Quality Machine Translation System](https://medium.com/@ageitgey/build-your-own-google-translate-quality-machine-translation-system-d7dc274bd476)
+
+[Changing / Rotating Django Secret Key without logging users out!](https://medium.com/@bayraktar.eralp/changing-rotating-django-secret-key-without-logging-users-out-804a29d3ea65)
+
+[Variations on the Death of Python 2](https://www.b-list.org/weblog/2020/may/05/python/)
+
+[53 Python Interview Questions and Answers](https://towardsdatascience.com/53-python-interview-questions-and-answers-91fa311eec3f)
 
 ### 有趣的项目、工具和库
 
-[Shynet](https://github.com/milesmcc/shynet)
-现代，隐私友好及详细的网络分析，不需要 `cookies or JS` 就能工作。
 
-[Jina](https://github.com/jina-ai/jina) 
-`Jina` 是由最先进的 AI 和深度学习驱动的云原生神经搜索框架。
+[FunctionTrace](https://functiontrace.com/)
+A graphical Python profiler that provides a clear view of your application's execution while being both low-overhead and easy to use.
 
-[pivotnacci](https://github.com/blackarrowsec/pivotnacci)
+[Airshare](https://github.com/KuroLabs/Airshare) 
+Airshare is a Python-based CLI tool and module that lets you transfer data between two machines in a local network, P2P, using Multicast-DNS. It also opens an HTTP gateway for other non-CLI external interfaces. It works completely offline! Built with aiohttp and zeroconf.
 
-通过 `HTTP` 代理进行 `socks` 连接的工具。
+[Potassium40](https://github.com/keithrozario/potassium40)
+An application level scanner build on parallel AWS Lambda Functions!
 
+[jukebox](https://github.com/openai/jukebox)
+A model that generates music with singing in the raw audio domain.
 
+[MlFinlab](https://github.com/hudson-and-thames/mlfinlab) 
+MlFinlab is a python package which helps portfolio managers and traders who want to leverage the power of machine learning by providing reproducible, interpretable, and easy to use tools.
 
-[ESPnet](https://github.com/espnet/espnet)
-End-to-End Speech Processing Toolkit.
+[Slackify](https://github.com/Ambro17/slackify)
+Lightweight framework to quickly develop modern Slack bots.
 
-[Printy](https://github.com/edraobdu/printy)
+[interrogate](https://interrogate.readthedocs.io/en/latest/)
+interrogate checks your code base for missing docstrings.
 
-`Printy` 是一个轻量级的跨平台库，它扩展了内置函数 `print()` 和 `input()` 的功能。`Printy` 以其简单、易用的特点而闻名，它可以让您通过一个直观友好的基于 `flags`的 `API` 为您的文本着色和应用一些标准格式。
+[AIIM](https://aiim.easyprogramming.net/) 
+Am I In (a) Meeting? Notify others when you're in a Zoom/Teams meeting.
 
-[RepoPeek](https://github.com/sameera-madushan/RepoPeek)
+[Scrabble](https://github.com/olumidesan/scrabble)
+A strictly multiplayer scrabble game made with React and Flask.
 
-在克隆一个存储库之前，通过 `Python` 脚本来获取关于存储库的详细信息。
+[GIMP-ML](https://github.com/kritiksoman/GIMP-ML)
+Set of Machine Learning Python plugins for GIMP.
 
-[shhh](https://github.com/smallwat3r/shhh)
+[Pydantic-SQLAlchemy](https://github.com/tiangolo/pydantic-sqlalchemy)
+Tools to generate Pydantic models from SQLAlchemy models.
 
-不要在电子邮件或聊天记录中泄露秘密，使用带有密码和到期日期的安全链接来分享。
+[kiss-headers](https://github.com/Ousret/kiss-headers)
+Python package for object oriented headers, http and imap. Parse headers to objects.
 
-[drf-starter-template](https://github.com/nishantwrp/drf-starter-template)
-
-一个简单易用的项目模板，用于使用 `Django Rest Framework` 的小型项目。
-
-[StockInsider](https://github.com/charlesdong1991/StockInsider)
-
-一个用来收集、分析以及可视化股票交易指标的 `Python` 工具。
-
-[gitland](https://github.com/programical/gitland)
-
-用 `GitHub` 控制的多人游戏。
-
-[django-sockpuppet](https://github.com/jonathan-s/django-sockpuppet)
-
-使用你已经熟悉和喜爱的django工具，构建反应式应用程序。
-
-[BentoML](https://github.com/bentoml/BentoML) 
-
-`BentoML` 是一个用于高性能 `ML` 模型服务的开源平台。
-
-[Taichi](https://github.com/taichi-dev/taichi) 
-
-面向可移植、高性能、稀疏和可区分计算的高效编程语言。
-
-[PyDP](https://github.com/OpenMined/PyDP) 
-
-`PyDP` 是 `Google's Differential Privacy` 项目的 `Python` 封装器。该库提供了一套 `e-differential private` 算法，可用于生成包含私有或敏感信息的数字数据集的聚合统计数据。
-
-[postgres_restorer](https://github.com/pyux/postgres_restorer)
-用于在集成测试期间恢复数据库的简单工具。
+[YouTube2Audio](https://github.com/irahorecka/YouTube2Audio)
+A desktop application to download YouTube videos as annotated MP3 or MP4 files
 
 ### 最近更新
 
-[Python 3.9.0a6](https://mail.python.org/archives/list/python-committers@python.org/message/JJWIXYICQHCEFCJCCXVSWTP5O67UVCQC/)
+
+
+[TensorFlow 2.2.0](https://github.com/tensorflow/tensorflow/releases/tag/v2.2.0)
+TensorFlow 2.2 discontinues support for Python 2. Coinciding with this change, new releases of TensorFlow's Docker images provide Python 3 exclusively. Because all images now use Python 3, Docker tags containing -py3 will no longer be provided and existing -py3 tags like latest-py3 will not be updated. Check the release notes for other features and improvements in this release.
+
+[Python 3.8.3rc1](https://www.python.org/downloads/release/python-383rc1/)
+
+[Django bugfix release: 3.0.6](https://www.djangoproject.com/weblog/2020/may/04/django-bugfix-release-306/)
+
 
 ### 那些活动
 
-[Webinar: Learn Scraping with Python and Poshmark](https://my.demio.com/ref/jjUDGs9tqIYdFYiS)
-在本次讲座中，我们将学习如何使用网页抓取来提取关于 `Poshmark` 列表的信息。然后，我们将使用 `Python` 库来分析和可视化数据。
+
+[Virtual: San Francisco Python Meetup May 2020](https://www.meetup.com/sfpython/events/xkwxvqybchbrb/)
+There will be following talks
+
+- How the Pants build system leverages Python 3 features
+- A webapp to manage a class of students in a computer lab
+- Open standards for machine learning model deployment
+- Building an Automated Trading Bot
+
+
+[Virtual: Austin Python Meetup May 2020](https://www.meetup.com/austinpython/events/lgrbmqybchbrb/)
+There will be following talks
+
+- Making Interactive Maps with Python using “Folium”
+- Hyperparameter tuning with hyperopt
+
+
+[Virtual: PyMNtos Python Presentation Night #84](https://www.meetup.com/PyMNtos-Twin-Cities-Python-User-Group/events/270187898/)
+There will be following talks
+
+- Setting up React as a front end with Python Flask
+- Python Design Patterns
+
+
+[Virtual: IndyPy Mixer: Basics of Python](https://www.meetup.com/indypy/events/hwstlrybchbqb/)
+There will be a talk, From Ideas to Applications : Clear Abstractions and Getting Started: What teaching application development has taught me.
+
+[Virtual: Logging in Python with Mike Driscoll](https://www.meetup.com/PyRVAUserGroup/events/kktcmrybchbrb/)
+For our May meeting, python author Mike Driscoll will give us an introduction to logging in python, including logging at different levels, using multiple handlers, formatting your logs, and more!
+
+[Virtual: Building your Data Science Career](https://www.meetup.com/PyData-MTL/events/270416417/)
+A panel discussion covering how to find your first DS job, what to expect from an interview for a DS position, growing in your DS role, what the field of Data Science will look like in a few years, etc.
+ 
 
 #### Posa：
 
 > ❤️ Happy Pythonic ;-(Posa私人无责任播报)  
+
+​	`fastapi` 文档汉化开始了！
 
 ----- 分割线 -----
 
