@@ -40,75 +40,98 @@ Slug: pyw-448
 系统管理员在命令行上花费大量的时间，所以他们想用命令行的语言来自动化完成任务?—？就像 `bash` or `Powershell`。虽然可以用这些语言编写很多游泳的程序，一个更高等级的语言比如 `Python` 可能是更好的选择，特别是考虑到 `Python` 程序可以在系统直接在 `bash（例如: LInux or Mac）` 以及 `Powershell（Window）`  上进行移植。作为一个练习，让我们编写一个 `head command` 的 `bash` 实现，然后我们将对比我们可以在 `Python` 中如何实现。
 
 [RSVP for the ONLY Python Web Conference (Virtual) | June 17-19, 2020](https://pythonwebconference.com/) 
+
 Experts discuss hard web production problems. 40+ talks on Django, Plone, CI/CD, Containers, Serverless, REST APIs, microservices, etc. Join JetBrains and Six Feet Up to discuss what the future holds. SPONSOR
 
-[Solving Binary Puzzles using Python and Z3](https://ahf.me/articles/2020/05/01/solving-binary-puzzles-using-python-and-z3/)
-In this article, we will be looking into how we can build a computer program for solving arbitrary Binary Puzzles using the Python and the Z3 Theorem Prover.
+[Python and Z3 解决 Binary Puzzles](https://ahf.me/articles/2020/05/01/solving-binary-puzzles-using-python-and-z3/)
 
-[How to use Bamboolib for Data Wrangling in Data Science](https://www.youtube.com/watch?v=PyzMTgJ5dHY) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)
-This video shows you how to use the Bamboolib library for performing Data Wrangling in your Data Science projects. Instead of manually coding the Pandas syntax, we will still leverage the use of Pandas to do these tasks via a graphical user interface using Bamboolib.
+在这篇文章中，我们将看一下我们可以如何使用 `Python and Z3 Theorem Prover` 制作一个计算机程序来解决随机的 `Binary Puzzles`。
 
-[COVID-19: Face Mask Detector with OpenCV, Keras/TensorFlow, and Deep Learning](https://www.pyimagesearch.com/2020/05/04/covid-19-face-mask-detector-with-opencv-keras-tensorflow-and-deep-learning/)
-In this tutorial, you will learn how to train a COVID-19 face mask detector with OpenCV, Keras/TensorFlow, and Deep Learning.
+[如何使用 Bamboolib 在 Data Science 中进行数据整理](https://www.youtube.com/watch?v=PyzMTgJ5dHY) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)（14min）
 
-[Generating Melodies with LSTM Nets: Series Overview](https://www.youtube.com/watch?v=FLr0r-QhqH0) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)
-In this series, we'll be building a Long Short-Term Memory Network that's capable of generating melodies autonomously. In the process, we'll be learning about Keras, time-series data, and symbolic music representations.
+这个视频向你展示了如何使用 `Bamboolib` 库在你的 `Data Science` 项目中完成数据整理。我们不需要手动编写 `Pandas` 语法，我们仍然会使用 `Bamboolib` 图形式用户界面来利用 `Pandas` 来完成这些任务。
+
+[COVID-19: 使用  OpenCV, Keras/TensorFlow, and Deep Learning进行口罩人脸识别](https://www.pyimagesearch.com/2020/05/04/covid-19-face-mask-detector-with-opencv-keras-tensorflow-and-deep-learning/)
+
+在这篇指南中，你讲学习到如何使用 `OpenCV、Keras/TensorFlow and Deep Learning` 训练一个 `COVID-19` 口罩人脸识别器。
+
+[Generating Melodies with LSTM Nets: Series Overview](https://www.youtube.com/watch?v=FLr0r-QhqH0) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)(16min)
+
+在这个系列，我们将会构建一个能够自动产生旋律的 `Long Short-Term Memory Network` 。在这个过程中，我们将学习 `Keras、时间序列数据以及 symbolic music representations` 。
 
 [Django Testing Cheat Sheet](https://www.valentinog.com/blog/testing-django/)
-A cheat-sheet of common testing patterns and best practices in Django applications.
 
-[User Interaction With Forms](https://www.mattlayman.com/understand-django/user-interaction-forms/)
-In the previous Understand Django article, we saw how Django templates work to produce a user interface. That’s fine if you only need need to display a user interface, but what do you do if you need your site to interact with users? You use Django’s form system! In this article, we’ll focus on how to work with web forms using the Django form system.
+`Django` 应用程序中常见测试模式和最佳实践的速查表。
 
-[How to download stocks fundamentals data with Python](http://theautomatic.net/2020/05/05/how-to-download-fundamentals-data-with-python/) 
-Learn how to download fundamentals data with Python using the yahoo_fin package, including P/E and P/S ratios, return on equity, and more.
+[用户和表单交互](https://www.mattlayman.com/understand-django/user-interaction-forms/)
 
-[Building a SaaS using Django and Vue.js](https://www.youtube.com/playlist?list=PLpyspNLjzwBnGesxJOt_0r4xTWR80j7Y3) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)
-In this video series, learn how to build a SaaS from scratch. 
+在之前的了解 `Django` 的文章中，我们看到了 `Django` 模版是如何生成一个用户界面的。如果你仅仅是仅需要展示一个用户界面，那是很棒的，但是你如果需要你的网站和用户交互，应该怎么办？使用 `Django` 的表单系统！在这篇文章中，我们将聚焦于如何使用 `Django表单系统` 来让 `web forms` 工作的。
 
-[Handle User Accounts & Authentication in Flask with Flask-Login](https://hackingandslacking.com/handle-user-accounts-authentication-in-flask-with-flask-login-944cc065b7f2)
-Create an interactive Flask application by supporting user accounts! Handle account creation, log-ins, walled content, and user-specific features.
+[如何用Python下载股票基本面数据？](http://theautomatic.net/2020/05/05/how-to-download-fundamentals-data-with-python/) 
 
-[Designing an energy arbitrage strategy with linear programming](https://www.steveklosterman.com/energy-arbitrage/)
-The goal of this post is to illustrate how the mathematical optimization technique of linear programming can be used to design an operating strategy for a grid-connected battery with a given set of operational constraints, under the assumption of known future prices. All of this will be done using real-world energy price data and open source tools in Python. 
+学习如何用 `yahoo_fin package` 在 `Python 中`去下载基本面数据，包括 `P/E and P/S` 比率，股票回报率及其他。
 
-[Using Python to generate over 10,000 unique 8-bit lightsabers](https://procrastinatingdev.com/using-python-to-generate-over-10000-unique-8-bit-lightsabers/)
-Here's how you can use Python, Pillow and Tweepy to create your own 8-bit lightsaber art. 
+[用 Django and Vue.js 构建 SaaS](https://www.youtube.com/playlist?list=PLpyspNLjzwBnGesxJOt_0r4xTWR80j7Y3) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)（25min）
 
-[Exploring an Alternative to Jupyter Notebooks for Python Development](https://pbpython.com/notebook-alternative.html)
-The Jupyter notebook file format has some downsides that can be mitigated with Jupyter code cells and VS Code interactive python. This article will describe how to use these tools.
+在本系列视频中，学习如何从零开始构建 `SaaS`。
+
+[在 Flask 中用 Flask-Login 处理用户账户以及用户认证](https://hackingandslacking.com/handle-user-accounts-authentication-in-flask-with-flask-login-944cc065b7f2)
+
+通过支持用户账户创建一个交互式 `Flask` 应用！处理账户创建，登录，限定内容和用户特色功能。
+
+[利用线性编程设计能源套利策略](https://www.steveklosterman.com/energy-arbitrage/)
+
+本帖的目标是说明如何利用线性编程的数学优化技术，在已知未来价格的假设下，在给定的运行约束条件下，设计一个并网电池的运行策略。所有这些都将使用现实世界的能源价格数据和 `Python` 中的开源工具来完成。
+
+[使用 Python 生成超过 10,000 个独特的 8 位光剑](https://procrastinatingdev.com/using-python-to-generate-over-10000-unique-8-bit-lightsabers/)
+以下是如何使用 `Python、Pillow` 和 `Tweepy` 来创建自己的 `8` 位光剑艺术。
+
+> 真 无限剑制
+
+[为 Python 开发探寻 Jupyter 笔记本的替代方案](https://pbpython.com/notebook-alternative.html)
+
+`Jupyter` 笔记本文件格式有一些缺点，可以通过 `Jupyter` 代码单元和 `VS` 代码交互 `Python` 来缓解。本文将描述如何使用这些工具。
 
 [GeoHealth: Build-up and Architecture](https://towardsdatascience.com/geohealth-build-up-and-architecture-29f3b45e68fb)
-Or how to build a Python dashboard from scratch.
+或者如何从头零始构建 `Python` 仪表板。
 
-[Introduction To Python's Functools Module](https://florian-dahlitz.de/blog/introduction-to-functools)
-Introducing the functools functions using real world examples.
+[Python 的函数工具模块简介](https://florian-dahlitz.de/blog/introduction-to-functools)
 
-[Build Your Own ‘Google Translate’-Quality Machine Translation System](https://medium.com/@ageitgey/build-your-own-google-translate-quality-machine-translation-system-d7dc274bd476)
+用实际例子介绍 `functools` 函数。
 
-[Changing / Rotating Django Secret Key without logging users out!](https://medium.com/@bayraktar.eralp/changing-rotating-django-secret-key-without-logging-users-out-804a29d3ea65)
+[建立你自己的“谷歌翻译”——高质量的机器翻译系统](https://medium.com/@ageitgey/build-your-own-google-translate-quality-machine-translation-system-d7dc274bd476)
+
+[在不注销用户的情况下更改/旋转 Django 密钥！](https://medium.com/@bayraktar.eralp/changing-rotating-django-secret-key-without-logging-users-out-804a29d3ea65)
 
 [Variations on the Death of Python 2](https://www.b-list.org/weblog/2020/may/05/python/)
 
-[53 Python Interview Questions and Answers](https://towardsdatascience.com/53-python-interview-questions-and-answers-91fa311eec3f)
+[53 个 Python 面试问题及答案](https://towardsdatascience.com/53-python-interview-questions-and-answers-91fa311eec3f)
 
 ### 有趣的项目、工具和库
 
-
 [FunctionTrace](https://functiontrace.com/)
-A graphical Python profiler that provides a clear view of your application's execution while being both low-overhead and easy to use.
+
+一个图形化的 `Python` 分析器，它提供了一个清晰的应用程序执行情况，同时低开销和易于使用。
+
+> 看起来相当美观
+>
+> ![image.png](https://i.loli.net/2020/05/11/53fBDdyGqRbFz89.png)
 
 [Airshare](https://github.com/KuroLabs/Airshare) 
-Airshare is a Python-based CLI tool and module that lets you transfer data between two machines in a local network, P2P, using Multicast-DNS. It also opens an HTTP gateway for other non-CLI external interfaces. It works completely offline! Built with aiohttp and zeroconf.
+
+`Airshare` 是一个基于 `Python` 的 `CLI` 工具和模块，让你在两台机器在一个局域网或者 `P2P` 之间传输数据，用的是 `Multicast-DNS`。它还可以为其他非 `CLI` 外部接口打开一个HTTP网关。它可以完全离线工作! 用 `aiohttp` 和 `zeroconf` 构建。
 
 [Potassium40](https://github.com/keithrozario/potassium40)
-An application level scanner build on parallel AWS Lambda Functions!
+
+一个基于并行的 `AWS Lambda` 函数的应用级扫描仪!
 
 [jukebox](https://github.com/openai/jukebox)
-A model that generates music with singing in the raw audio domain.
+
+一个在 `raw audio domain` 生成歌唱音乐的模型。
 
 [MlFinlab](https://github.com/hudson-and-thames/mlfinlab) 
-MlFinlab is a python package which helps portfolio managers and traders who want to leverage the power of machine learning by providing reproducible, interpretable, and easy to use tools.
+
+`MlFinlab ` 是一个 `Python` 包，通过提供可重现、可解释和易于使用的工具，帮助投资组合经理和交易员利用机器学习的力量。
 
 [Slackify](https://github.com/Ambro17/slackify)
 Lightweight framework to quickly develop modern Slack bots.
@@ -180,7 +203,7 @@ For our May meeting, python author Mike Driscoll will give us an introduction to
 
 [Virtual: Building your Data Science Career](https://www.meetup.com/PyData-MTL/events/270416417/)
 A panel discussion covering how to find your first DS job, what to expect from an interview for a DS position, growing in your DS role, what the field of Data Science will look like in a few years, etc.
- 
+
 
 #### Posa：
 
