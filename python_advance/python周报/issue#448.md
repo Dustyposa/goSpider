@@ -134,35 +134,35 @@ Experts discuss hard web production problems. 40+ talks on Django, Plone, CI/CD,
 `MlFinlab ` 是一个 `Python` 包，通过提供可重现、可解释和易于使用的工具，帮助投资组合经理和交易员利用机器学习的力量。
 
 [Slackify](https://github.com/Ambro17/slackify)
-Lightweight framework to quickly develop modern Slack bots.
+用于快速开发现代的 `Slack bots` 的轻量级框架。
 
 [interrogate](https://interrogate.readthedocs.io/en/latest/)
-interrogate checks your code base for missing docstrings.
+`interrogate` 检查你的代码库中是否有缺失的 `docstrings`。
 
 [AIIM](https://aiim.easyprogramming.net/) 
-Am I In (a) Meeting? Notify others when you're in a Zoom/Teams meeting.
+我有会议吗？当您参加 `Zoom/Teams` 会议时，通知其他人。
 
 [Scrabble](https://github.com/olumidesan/scrabble)
-A strictly multiplayer scrabble game made with React and Flask.
+一款严格意义上的多人拼写游戏，用 `React` 和 `Flask` 制作。
 
 [GIMP-ML](https://github.com/kritiksoman/GIMP-ML)
-Set of Machine Learning Python plugins for GIMP.
+一套用于 `GIMP` 的机器学习 `Python` 插件。
 
 [Pydantic-SQLAlchemy](https://github.com/tiangolo/pydantic-sqlalchemy)
-Tools to generate Pydantic models from SQLAlchemy models.
+从 `SQLAlchemy` 模型生成 `Pydantic` 模型的工具。
 
 [kiss-headers](https://github.com/Ousret/kiss-headers)
-Python package for object oriented headers, http and imap. Parse headers to objects.
+用于面向对象的头文件、`http`和 `imap` 的 `Python` 包。将头文件解析为对象。
 
 [YouTube2Audio](https://github.com/irahorecka/YouTube2Audio)
-A desktop application to download YouTube videos as annotated MP3 or MP4 files
+一个桌面应用程序，可将 `YouTube` 视频下载为 `YouTube` 或 `MP4` 文件。
 
 ### 最近更新
 
 
 
 [TensorFlow 2.2.0](https://github.com/tensorflow/tensorflow/releases/tag/v2.2.0)
-TensorFlow 2.2 discontinues support for Python 2. Coinciding with this change, new releases of TensorFlow's Docker images provide Python 3 exclusively. Because all images now use Python 3, Docker tags containing -py3 will no longer be provided and existing -py3 tags like latest-py3 will not be updated. Check the release notes for other features and improvements in this release.
+`TensorFlow 2.2` 停止了对 `Python 2` 的支持。与此变化相呼应的是，`TensorFlow` 的新发布的 `Docker` 镜像完全提供了 `Python 3`。由于所有镜像现在都使用 `Python 3`，所以包含 -py3 的 `Docker` 标记将不再提供，现有的 -py3 标记（如 latest-py3）将不会更新。请查看发布说明，了解这个版本中的其他功能和改进。
 
 [Python 3.8.3rc1](https://www.python.org/downloads/release/python-383rc1/)
 
@@ -173,43 +173,41 @@ TensorFlow 2.2 discontinues support for Python 2. Coinciding with this change, n
 
 
 [Virtual: San Francisco Python Meetup May 2020](https://www.meetup.com/sfpython/events/xkwxvqybchbrb/)
-There will be following talks
-
-- How the Pants build system leverages Python 3 features
-- A webapp to manage a class of students in a computer lab
-- Open standards for machine learning model deployment
-- Building an Automated Trading Bot
+将会有以下话题:
+- `Pants` 构建系统如何利用 `Python 3` 的特性
+- 一个在计算机实验室管理一个班级学生的Web应用程序
+- 机器学习模型部署的开放标准
+- 构建一个自动交易机器人
 
 
 [Virtual: Austin Python Meetup May 2020](https://www.meetup.com/austinpython/events/lgrbmqybchbrb/)
-There will be following talks
+将会有以下话题:
 
-- Making Interactive Maps with Python using “Folium”
-- Hyperparameter tuning with hyperopt
+- 利用 `Folium` 使用 `Python` 制作交互式地图
+- 使用超参数调优
 
 
 [Virtual: PyMNtos Python Presentation Night #84](https://www.meetup.com/PyMNtos-Twin-Cities-Python-User-Group/events/270187898/)
-There will be following talks
+将会有以下话题:
 
-- Setting up React as a front end with Python Flask
-- Python Design Patterns
+- 用 `Python Flask` 将 `React` 设置为前端
+- Python 设计模式
 
 
 [Virtual: IndyPy Mixer: Basics of Python](https://www.meetup.com/indypy/events/hwstlrybchbqb/)
-There will be a talk, From Ideas to Applications : Clear Abstractions and Getting Started: What teaching application development has taught me.
+将有一个讲座，从想法到应用。清晰抽象和入门。教学应用开发教会了我什么。
 
 [Virtual: Logging in Python with Mike Driscoll](https://www.meetup.com/PyRVAUserGroup/events/kktcmrybchbrb/)
-For our May meeting, python author Mike Driscoll will give us an introduction to logging in python, including logging at different levels, using multiple handlers, formatting your logs, and more!
+在我们5月的会议上，`Python` 作者 `Mike Driscoll` 将为我们介绍 `Python` 中的日志，包括不同级别的日志，使用多个处理程序，格式化你的日志等等。
 
 [Virtual: Building your Data Science Career](https://www.meetup.com/PyData-MTL/events/270416417/)
-A panel discussion covering how to find your first DS job, what to expect from an interview for a DS position, growing in your DS role, what the field of Data Science will look like in a few years, etc.
+小组讨论，内容包括如何找到你的第一份 `DS` 工作，对DS职位的面试有何期待，在 `DS` 角色中成长，几年后的数据科学领域会是什么样子等。
 
 
 #### Posa：
 
 > ❤️ Happy Pythonic ;-(Posa私人无责任播报)  
 
-​	`fastapi` 文档汉化开始了！
 
 ----- 分割线 -----
 
