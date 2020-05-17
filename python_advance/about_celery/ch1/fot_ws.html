@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <script src="Base64.js"></script>
+</head>
+<textarea id="code">
+import sys
+import time
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Fixing random state for reproducibility
+# np.random.seed(19680801)
+# time.sleep(1)
+# input("receive data:")
+
+# print(sys.path)
+# r = plt.get_backend()
+# print(r)
+
+print("你好世界")
+print("Afsafsafs2")
+print("Afsafsafs3")
+# time.sleep(4)
+input("请输入：")
+# input("input your msg")
+# input("receive data222222:")
+print("Afsafsafs4")
+print("Afsafsafs5")
+
+# time.sleep(3)
+
+print("agggggggggggggggggggeeeeeeeeeeeeeeeeeeeeeerrrrrrrrrrrrrrrr")
+# input("123")
+plt.rcdefaults()
+fig, ax = plt.subplots()
+
+# Example data
+people = ('Tom', 'Dick', 'Harry', 'Slim', 'Jim')
+y_pos = np.arange(len(people))
+performance = 3 + 10 * np.random.rand(len(people))
+error = np.random.rand(len(people))
+
+ax.barh(y_pos, performance, xerr=error, align='center')
+ax.set_yticks(y_pos)
+ax.set_yticklabels(people)
+ax.invert_yaxis()  # labels read top-to-bottom
+ax.set_xlabel('Performance')
+ax.set_title('How fast do you want to go today?')
+
+plt.show()
+# print(input("请输入1:"))
+# print(input("请输入2:"))
+
+</textarea>
+<button onclick="runCode()">运行代码</button>
+<pre id="log"></pre>
+
+<input id="inputData" type="text">
+<div id="img"></div>
+<script>
+    // helper function: log message to screen
+
+
+    function log(msg) {
+        document.getElementById('log').textContent += msg + '\n';
+    }
+
+    function show(msg) {
+        let imgElement = document.createElement("img");
+        imgElement.src = "data:image/png;base64," + msg;
+        document.getElementById("img").appendChild(imgElement);
+    }
+
+    function handleData(data) {
+        const json_data = JSON.parse(data);
+        if (json_data.dataType === 0) {
+            log(json_data.data)
+        } else if (json_data.dataType === 1) {
+            show(json_data.data)
+        }
+
+    }
+
+    function runCode() {
+
+        document.getElementById("inputData").removeEventListener("keyup", _listener, true);
+        document.getElementById("img").innerText = "";
+        document.getElementById("log").innerText = "";
+
+        // setup websocket with callbacks
+        // var ws = new WebSocket('ws://localhost:8000/3d/v1/wss_back');
+        // this.ws = new WebSocket('ws://212.64.77.17:31111/3d/v1/wss_back');
+        // this.ws = new WebSocket('wss://papi.dingdangcode.cn/3d/v1/wss_back/');
+        // this.ws = new WebSocket('ws://121.43.179.176:8101/3d/v1/wss_back');
+        this.ws = new WebSocket('ws://127.0.0.1:8000/ws');
+        // this.ws = new WebSocket('ws://121.43.179.176:8888/3d/v1/wss_back/');
+        let that = this;
+
+        function _listener(e) {
+            if ((e.keyCode || e.which) === 13) {
+                let answerSplit = e.target.value.split("\n");
+                const answer = answerSplit[0];
+                if (answer.length > 0) {
+
+                    that.ws.send(JSON.stringify({"type": 0, "data": answer}));
+                    document.getElementById("inputData").value = ""
+                }
+            }
+        }
+
+        // var ws = new WebSocket('ws://localhost:8000/ws');
+        document.getElementById("inputData").addEventListener('keyup', _listener, true);
+
+        this.ws.onopen = function () {
+            log('CONNECT');
+
+        };
+
+        this.ws.onclose = function () {
+            log('DISCONNECT');
+            ws.close()
+        };
+
+        this.ws.onmessage = function (event) {
+            // log('MESSAGE: ' + event.data);
+            handleData(event.data);
+
+        };
+
+    }
+</script>
