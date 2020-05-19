@@ -61,14 +61,13 @@ Experts discuss hard web production problems. 40+ talks on Django, Plone, CI/CD,
 
 [Python 中神经网络的介绍(你梭需要知道的东西)](https://www.youtube.com/watch?v=aBIGJeHRZLQ) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)（1h）
 
-在这段视频中，我们将从一些基础开始。我们看看我们为什么使用神经网络以及它们是如何工作的。
+在这段视频中，我们将从一些基础开始。我们看看我们为什么使用神经网络以及它们是如何工作的。我们做了一个网络结构的概述（输入层，隐藏层，输出层）。我们讨论了一下如何选择隐藏层和神经元的数量。我们还看了一下超参数，如批处理大小、学习率、优化器（`adam`）、激活函数（`relu、sigmoid、softmax`）和 `dropout`。
 
-In this video we start by walking through some of the basics. We look at why we use neural networks and how they function. We do an overview of network architecture (input layer, hidden layers, output layer). We talk a bit about how you choose how many hidden layers and neurons to have. We also look at hyperparameters like batch size, learning rate, optimizers (adam), activation functions (relu, sigmoid, softmax), and dropout.
 
-[Effortless Concurrency with Python's concurrent.futures](https://rednafi.github.io/digressions/python/2020/04/21/python-concurrent-futures.html)
-Running simple tasks concurrently with concurrent.futures.
+[使用Python的concurrent.futures实现无障碍并发。](https://rednafi.github.io/digressions/python/2020/04/21/python-concurrent-futures.html)
+用 `concurrent.futures` 并发运行简单任务。
 
-[How To Build a Neural Network to Translate Sign Language into English](https://www.digitalocean.com/community/tutorials/how-to-build-a-neural-network-to-translate-sign-language-into-english)
+[如何建立一个神经网络将手语翻译成英语](https://www.digitalocean.com/community/tutorials/how-to-build-a-neural-network-to-translate-sign-language-into-english)
 In this tutorial, you’ll use computer vision to build an American Sign Language translator for your webcam. As you work through the tutorial, you’ll use OpenCV, a computer-vision library, PyTorch to build a deep neural network, and onnx to export your neural network.
 
 [The Complete Python Course For Beginners](https://www.youtube.com/watch?v=sxTmJE4k0ho) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)
