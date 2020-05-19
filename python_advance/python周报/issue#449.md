@@ -18,40 +18,51 @@ Slug: pyw-449
 
 我们正在寻找志愿者来加入一个工作小组，参与 `Python` 从 `bugs.python.org` 迁移到 `GitHub`。我们希望确保这次迁移能代表社区的需求。
 
-[Announcing a New Framework for Designing Optimal Experiments with Pyro](https://eng.uber.com/oed-pyro-release/)
-Uber AI releases a new framework on top of Pyro that lets experimenters seamlessly automate optimal experimental design (OED) for quicker model iteration.
+[官宣一个用 Pyro 设计最佳实验的新框架](https://eng.uber.com/oed-pyro-release/)
+
+`Uber AI` 发布了一个在 `Pyro` 的基础上的新框架，可以让实验者无缝自动优化实验设计（OED），用于模型的快速迭代。
 
 ### 文章、教程与话题
 
+[通过在公共仓库中反编译 Python 字节码来查找机密信息](https://blog.jse.li/posts/pyc/)
 
-[Finding secrets by decompiling Python bytecode in public repositories](https://blog.jse.li/posts/pyc/)
-Cache rules everything around me. pyc files can contain secrets and should not be checked in to source control. Use the standard Python .gitignore.
+缓存控制这我周围的一切，`.pyc` 文件可能会包含一些机密信息，不应该将它签入源代码控制，使用标准的 `Python .giignore`。
 
-[The Elements of Python Style](https://github.com/amontalenti/elements-of-python-style)
-This document goes beyond PEP8 to cover the core of what I think of as great Python style. It goes beyond mere issues of syntax and module layout, and into areas of paradigm, organization, and architecture.
+[Python 风格要素](https://github.com/amontalenti/elements-of-python-style)
 
-[Using Patreon API and Pillow to Automate Image Creation](https://www.youtube.com/watch?v=RO6JxDOVwLQ) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)
-In this tutorial, we'll be learning how to use the Patreon API and the Pillow library to automate the creation of images. I'm specifically using this to add credits to the end of my videos to thank my supporters. This video will focus on Patreon supporters specifically, but in the next video, we will see how to use the YouTube API to do the same thing with YouTube Members. 
+这篇文档超越了 `PEP8`，涵盖了我认为优秀的 `Python` 风格的核心内容。它超越了仅仅是语法和模块布局的问题，而是涉及到了范式、组织和架构等领域。
 
-[Flask Debugging in VS Code with Hot-Reload](https://blog.theodo.com/2020/05/debug-flask-vscode/) 
-Learn how to set up the powerful VS Code debugger with hot-reload for your Dockerized Flask application.
+[使用 Patreon API 和 Pillow 来自动创建图片](https://www.youtube.com/watch?v=RO6JxDOVwLQ) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)（52min）
 
-[An Ethical Application of Computer Vision and Deep Learning](https://www.pyimagesearch.com/2020/05/11/an-ethical-application-of-computer-vision-and-deep-learning-identifying-child-soldiers-through-automatic-age-and-military-fatigue-detection/)
-In this tutorial, we will learn how to apply Computer Vision, Deep Learning, and OpenCV to identify potential child soldiers through automatic age detection and military fatigue recognition.
+在这篇教程中，我们将学习如何使用 `Patreon API` 和 `Pillow lib` 来自动创建图片。我特别用这个在我的视频末尾添加了致谢词来感谢我的支持者。这个视频将重点关注 `Patreon` 支持者，但是在下个视频，我们将看到用 `YouTube 会员` 如何使用 `YouTube API` 来做相同的事情。
 
-[Converting from PyTorch to PyTorch Lightning](https://www.youtube.com/watch?v=QHww1JH7IDU) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)
-In this video, William Falcon refactors a PyTorch VAE into PyTorch Lightning. As it's obvious in the video, this was an honest attempt at refactoring a new repository without having prior knowledge of it. Despite this, the full conversion took under 45 minutes.
+[在 VS Code 中带有热加载的 Flask 调试](https://blog.theodo.com/2020/05/debug-flask-vscode/) 
 
-[A hands-on introduction to static code analysis](https://deepsource.io/blog/introduction-static-code-analysis/)
-See common problems in code? Let's create an analyzer to detect them automatically.
+学习如何为你的 `Dockerized Flask 应用` 设置一个带有热加载的强大的 `VS Code` 调试器。
+
+[计算机视觉与深度学习的伦理应用](https://www.pyimagesearch.com/2020/05/11/an-ethical-application-of-computer-vision-and-deep-learning-identifying-child-soldiers-through-automatic-age-and-military-fatigue-detection/)
+
+在这篇教程中，我们将学习到如何通过自动年龄识别以及军人疲劳识别应用计算机视觉，深度学习以及 `OpenCV` 来识别潜在的儿童士官。
+
+[从 PyTorch 转到 PyTorch Lightning](https://www.youtube.com/watch?v=QHww1JH7IDU) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)（41min）
+
+在本视频，`William Falcon` 重构了一个 `PyTorch VAE` 到 `PyTorch Lightning`。从视频就能明显看出，这是在没有预先知识的情况下重构新的 `repository` 的真实尝试。尽管如此，整个转化用了不到 `45` 分钟。
+
+[静态代码分析的实践介绍](https://deepsource.io/blog/introduction-static-code-analysis/)
+
+看到代码中的常见问题了吗？让我们创建一个分析器来自动检测它们。
 
 [RSVP for the ONLY Python Web Conference (Virtual) | June 17-19, 2020](https://pythonwebconference.com/) 
 Experts discuss hard web production problems. 40+ talks on Django, Plone, CI/CD, Containers, Serverless, REST APIs, microservices, etc. Join JetBrains and Six Feet Up to discuss what the future holds. SPONSOR
 
-[Leverage the InnoDB architecture to optimize Django model design](https://t.co/GO1oixzPnO)
-What every developer should know about InnoDB.
+[利用 InnoDB 架构优化 Django 模型设计](https://t.co/GO1oixzPnO)
 
-[Introduction to Neural Networks in Python (what you need to know)](https://www.youtube.com/watch?v=aBIGJeHRZLQ) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)
+每个开发人员都应该了解 `InnoDB`。
+
+[Python 中神经网络的介绍(你梭需要知道的东西)](https://www.youtube.com/watch?v=aBIGJeHRZLQ) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)（1h）
+
+在这段视频中，我们将从一些基础开始。我们看看我们为什么使用神经网络以及它们是如何工作的。
+
 In this video we start by walking through some of the basics. We look at why we use neural networks and how they function. We do an overview of network architecture (input layer, hidden layers, output layer). We talk a bit about how you choose how many hidden layers and neurons to have. We also look at hyperparameters like batch size, learning rate, optimizers (adam), activation functions (relu, sigmoid, softmax), and dropout.
 
 [Effortless Concurrency with Python's concurrent.futures](https://rednafi.github.io/digressions/python/2020/04/21/python-concurrent-futures.html)
@@ -171,7 +182,7 @@ There will be a demo using mybinder. Mybinder allows you to take your jupyter no
 
 [Virtual: Oops! I’ve Just Spent the Entire AWS Budget](https://www.meetup.com/PyData-Edinburgh/events/270582907/)
 This talk charts the personal development of the speaker during development of a dashboard application for a holiday company. It includes key decisions (and mistakes) and obstacles that led to the final design. This journey started from zero knowledge of Data Science, zero knowledge of R and zero knowledge of Cloud Computing. It highlights key areas of data security and cloud architecture needed as the application moved from concept, through to prototype and then final commercial delivery.
- 
+
 
 #### Posa：
 
