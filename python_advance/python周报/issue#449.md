@@ -63,49 +63,58 @@ Experts discuss hard web production problems. 40+ talks on Django, Plone, CI/CD,
 
 在这段视频中，我们将从一些基础开始。我们看看我们为什么使用神经网络以及它们是如何工作的。我们做了一个网络结构的概述（输入层，隐藏层，输出层）。我们讨论了一下如何选择隐藏层和神经元的数量。我们还看了一下超参数，如批处理大小、学习率、优化器（`adam`）、激活函数（`relu、sigmoid、softmax`）和 `dropout`。
 
-
 [使用Python的concurrent.futures实现无障碍并发。](https://rednafi.github.io/digressions/python/2020/04/21/python-concurrent-futures.html)
 用 `concurrent.futures` 并发运行简单任务。
 
 [如何建立一个神经网络将手语翻译成英语](https://www.digitalocean.com/community/tutorials/how-to-build-a-neural-network-to-translate-sign-language-into-english)
-In this tutorial, you’ll use computer vision to build an American Sign Language translator for your webcam. As you work through the tutorial, you’ll use OpenCV, a computer-vision library, PyTorch to build a deep neural network, and onnx to export your neural network.
 
-[The Complete Python Course For Beginners](https://www.youtube.com/watch?v=sxTmJE4k0ho) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)
-This python course is designed to take you from beginner to pro in the python language. This python course is designed to teach you everything you need to know about python. It assumes no prior knowledge and is a perfect python tutorial for beginners. 
+在这篇教程中，你将使用计算机视觉为你的网络摄像头来构建一个 `American` 手语翻译器。当你学完教程，你将使用 一个计算机视觉库 `OpenCV、PyTorch` 来构建一个深度神经网络和 `onnx` 来导出你的神经网络。
 
-[Remapping Python Opcodes](https://medium.com/tenable-techblog/remapping-python-opcodes-67d79586bfd5)
-This post takes you step by step through how the author recovered the source code of remapped compiled Python opcodes.
+[面试初学者的完整的 Python 教程](https://www.youtube.com/watch?v=sxTmJE4k0ho) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)（6h21min）
 
-[How To Use the collections Module in Python 3](https://davidmuller.github.io/posts/2020/05/08/collections-module-Python3.html)
-In this tutorial, we’ll go through three classes in the collections module to help you work with tuples, dictionaries, and lists. We’ll use namedtuples to create tuples with named fields, defaultdict to concisely group information in dictionaries, and deque to efficiently add elements to either side of a list-like object.
+这个 `Python` 课程目标是在 `Python` 语言方面让你从初学者晋升为专家。这个 `Python` 课程会教你你需要知道的 `Python` 的一切。不需要前置知识，对于 `Python` 初学者来说是一个完美的教程。
 
-[SQLite Databases With Python](https://www.youtube.com/watch?v=byHcYRpMgI4) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)
-In this course you’ll learn the basics of using SQLite3 with Python. SQLite is a very easy to use database engine included with Python. You’ll learn how to create databases and tables, add data, sort data, create reports, pull specific data, and more. 
+[重新映射 Python 操作码](https://medium.com/tenable-techblog/remapping-python-opcodes-67d79586bfd5)
 
-[How to Prototype a Web App with Django and Vue.js](https://www.sitepoint.com/web-app-prototype-django-vue/)
-Learn how use Django and Vue.js to prototype a custom, responsive and reactive web application with a full-featured back office site to manage the content.
+这篇文章将带你逐步了解作者是如何恢复重新映射编译 `Python` 操作码的源代码。
 
-[Creating and deploying static websites using Markdown and the Python library Pelican](https://shahayush.com/2020/03/web-pelican-intro/)
-Get to know how markdown and the Python library pelican can be used to create your static website without requiring HTML and CSS skills.
+[如何使用 Python 3 中的 collections Module](https://davidmuller.github.io/posts/2020/05/08/collections-module-Python3.html)
 
-[Understand the Fundamentals of the K-Nearest Neighbors (KNN) Algorithm](https://heartbeat.fritz.ai/understand-the-fundamentals-of-the-k-nearest-neighbors-knn-algorithm-533dc0c2f45a)
-An introduction to the famous machine learning algorithm KNN using scikit-learn.
+在这篇教程中，我们将通过 `collections module` 中的三个类来帮你处理元组，字典以及列表。我们将使用 `nametuples` 来创建带有 `named` 字段的元组，`defaultdict ` 来简单在字典中进行分组，以及 `deque` 可以高效的将元素添加到类列表对象的两边。
 
-[Plasma: A learning platform powered by Jupyter](https://blog.jupyter.org/plasma-a-learning-platform-powered-by-jupyter-1b850fcd8624)
 
-[Deep Learning for Guitar Effect Emulation](https://teddykoker.com/2020/05/deep-learning-for-guitar-effect-emulation/)
 
-[Under Discussion: The Performance of Python](https://www.welcometothejungle.com/en/articles/btc-performance-python)
+[使用 Python 的 SQLite 数据库](https://www.youtube.com/watch?v=byHcYRpMgI4) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)（1 h 29 min）
+
+在这课程中你将学习到在 `Python` 使用 `SQLite3` 的基础知识。`SQLite` 是 `Python` 附带的一个非常使用使用的数据库。你将学习如何来创建数据库以及表，数据添加，数据排序，创建 `reports` ，提取特定数据等。
+
+[如何使用 Django and Vue.js 实现一个 Web App 原型](https://www.sitepoint.com/web-app-prototype-django-vue/)
+
+学习如何使用 `Django and Vue.js` 来创建一个自定义的，响应快的，反应灵敏的 `web` 应用原型，并使用一个功能完整的后台网站来管理内容。
+
+[使用 Markdown 和 Python 库 Pelican 来创建和部署一个静态站点](https://shahayush.com/2020/03/web-pelican-intro/)
+
+了解如何使用 `markdown and the Python library pelican` 不要任何 `HTML and CSS` 能力来创建你的静态站点。
+
+[理解 K-近邻 (KNN) 算法的基本原理](https://heartbeat.fritz.ai/understand-the-fundamentals-of-the-k-nearest-neighbors-knn-algorithm-533dc0c2f45a)
+
+介绍著名的机器学习算法 `KNN` 使用 `scikit-learn`。
+
+[Plasma: 基于 Jupyter 的一个学习平台](https://blog.jupyter.org/plasma-a-learning-platform-powered-by-jupyter-1b850fcd8624)
+
+[用于模拟吉他效果的深度学习](https://teddykoker.com/2020/05/deep-learning-for-guitar-effect-emulation/)
+
+[讨论中: Python 的性能](https://www.welcometothejungle.com/en/articles/btc-performance-python)
 
 [Using FastAPI with Django](https://www.stavros.io/posts/fastapi-with-django/)
 
-[Patching requests HTTP hooks with custom arguments](https://seds.nl/posts/http-hooks-with-custom-arguments/)
+[用自定义参数修补 HTTP 请求的钩子](https://seds.nl/posts/http-hooks-with-custom-arguments/)
 
-[An HTTP server to display desktop notifications](https://julienharbulot.com/notification-server.html)
+[用于展示桌面提醒的 HTTP 服务](https://julienharbulot.com/notification-server.html)
 
-[Build a serverless Martian weather display with CircuitPython and AWS Lambda](https://aws.amazon.com/blogs/compute/build-a-serverless-martian-weather-display-with-circuitpython-and-aws-lambda/)
+[用 CircuitPython and AWS Lambda 构建一个无服务的 Martian 天气展示](https://aws.amazon.com/blogs/compute/build-a-serverless-martian-weather-display-with-circuitpython-and-aws-lambda/)
 
-[Accelerating Medical Image Segmentation with NVIDIA Tensor Cores and TensorFlow 2](https://devblogs.nvidia.com/accelerating-medical-image-segmentation-tensor-cores-tensorflow-2/)
+[利用 NVIDIA Tensor Cores and TensorFlow 2 来加速医学图像分割](https://devblogs.nvidia.com/accelerating-medical-image-segmentation-tensor-cores-tensorflow-2/)
 
 [Using Rust to Power Python Importing With oxidized_importer](https://gregoryszorc.com/blog/2020/05/10/using-rust-to-power-python-importing-with-oxidized_importer/)
 
@@ -114,73 +123,79 @@ An introduction to the famous machine learning algorithm KNN using scikit-learn.
 ### 有趣的项目、工具和库
 
 [MicroscoPy](https://github.com/IBM/MicroscoPy)
-An open-source, motorized, and modular microscope built using LEGO bricks, Arduino, Raspberry Pi and 3D printing.
+
+一个利用 `LEGO` 积木， `Arduino, Raspberry and 3D printing` 的开源，电动，模块化的显微镜。
 
 [ar-cutpaste](https://github.com/cyrildiagne/ar-cutpaste)
-Cut and paste your surroundings using AR.
+使用 `AR· 剪切并粘贴您的周围环境。
 
 [this-word-does-not-exist](https://github.com/turtlesoupy/this-word-does-not-exist)
-This is a project allows people to train a variant of GPT-2 that makes up words, definitions and examples from scratch.
+
+这是一个允许人们训练 `GPT-2` 变体的项目，它从零开始组成单词、定义和例子。
 
 [fastpages](https://github.com/fastai/fastpages)
-An easy to use blogging platform, with enhanced support for Jupyter Notebooks. It automates the process of creating blog posts via GitHub Actions, so you don’t have to fuss with conversion scripts. 
+
+一个易于使用的博客平台，增强了对 `Jupyter Notebooks` 的支持。它通过 `GitHub Actions`自动创建博客文章的过程，所以你不必再大惊小怪地使用转换脚本。
 
 [AI-basketball-analysis](https://github.com/chonyy/AI-basketball-analysis)
-An artificial intelligence application built on the concept of object detection. Analyze basketball shots by digging into the data collected from object detection.
+
+基于目标检测概念的人工智能应用。通过挖掘从物体检测中收集的数据来分析篮球投篮。
 
 [spycheck-linux](https://github.com/BjornRuytenberg/spycheck-linux)
-Verify whether your Thunderbolt-enabled Linux system is vulnerable to the Thunderspy attacks.
+验证您的支持 `Thunderbolt` 的 `Linux` 系统是否容易受到 `Thunderspy` 攻击。
 
 [xxh](https://github.com/xxh/xxh)
-Bring your favorite shell wherever you go through the ssh.
+无论你走到哪里，都带上你最喜欢的 `shell`。
 
 [slack-watchman](https://github.com/PaperMtn/slack-watchman)
-Monitoring you Slack workspaces for sensitive information.
+
+监控你的 `Slack` 工作空间来获取敏感信息。
 
 [open_lth](https://github.com/facebookresearch/open_lth)
-A repository in preparation for open-sourcing lottery ticket hypothesis code.
+为开源彩票假设代码做准备的存储库。
 
 [AxCell](https://github.com/paperswithcode/axcell)
-Tools for extracting tables and texts from papers.
+
+从报纸中提取表格和文本的工具。
 
 [senator-filings](https://github.com/neelsomani/senator-filings)
-Scrape public filings of the buy + sell orders of U.S. senators and calculate their returns.
+抓取美国参议员的买入+卖出单的公开文件，计算出他们的回报。
 
 [timeglass](https://github.com/mountwebs/timeglass)
-Simple and unobtrusive menu bar timer for macOS.
+简单而不显眼的菜单栏定时器，适用于macOS。
 
 [pandas_alive](https://github.com/JackMcKew/pandas_alive)
-Animated plotting extension for Pandas with Matplotlib.
+使用 `Matplotlib` 对 `Pandas` 进行动画绘图扩展。
 
 [pyp](https://github.com/hauntsaninja/pyp)
-Easily run Python at the shell! Magical, but never mysterious.
+轻松运行 `Python` 在 `shell` 上运行! 神奇，但绝不神秘。
 
 [sheet2api-python](https://github.com/odwyersoftware/sheet2api-python/)
 Google/Excel Sheets API Python.
 
 [DataGene](https://github.com/firmai/datagene) 
-Identify How Similar Datasets Are to One Another.
+识别数据集的相似性。
 
 [Fluent](https://github.com/breitburg/fluent)
-Fluent makes it easy and fast to build beautiful mobile apps
+`Fluent` 让您轻松、快速地构建美丽的移动应用。
 
 
 
 ### 最近更新
 
 [Python in Visual Studio Code – May 2020 Release](https://devblogs.microsoft.com/python/python-in-visual-studio-code-may-2020-release/)
-In this release we addressed 42 issues, and it includes the ability to browse for or enter an interpreter path on selection. You can check the full list of improvements in the changelog. 
+在这个版本中，我们解决了42个问题，它包括了在选择时浏览或输入解释器路径的能力。你可以在修改日志中查看完整的改进列表。
 
 ### 那些活动
 
 [Virtual: Wagtail Space US 2020](https://us.wagtail.space/)
-We'll be holding our conference virtually this year! We are expecting to launch our Call For Proposals in a few weeks, and announce our schedule during the first week of July. Wagtail Space US will comprise talks, training, and a sprint.
+实际上，今年我们将举行我们的会议！我们期待在几周内启动我们的征集提案活动，并在 7 月的第一周宣布我们的日程安排。`Wagtail Space US` 将包括会谈、训练和冲刺。
 
 [Virtual: PyData Madison Meetup May 2020](https://www.meetup.com/PyData-Madison/events/270204693/)
-There will be a demo using mybinder. Mybinder allows you to take your jupyter notebooks and turn them into an environment you can run from anywhere on any machine with all of the dependancies installed.
+会有一个使用 `mybinder` 的演示。`Mybinder` 可以让你把你的 `jupyter` 笔记本变成一个环境，你可以在任何地方的任何机器上运行，并安装了所有的依赖性软件。
 
 [Virtual: Oops! I’ve Just Spent the Entire AWS Budget](https://www.meetup.com/PyData-Edinburgh/events/270582907/)
-This talk charts the personal development of the speaker during development of a dashboard application for a holiday company. It includes key decisions (and mistakes) and obstacles that led to the final design. This journey started from zero knowledge of Data Science, zero knowledge of R and zero knowledge of Cloud Computing. It highlights key areas of data security and cloud architecture needed as the application moved from concept, through to prototype and then final commercial delivery.
+本讲座记录了演讲者在为一家度假公司开发一个仪表盘应用程序期间的个人发展。它包括了导致最终设计的关键决策（和错误）和障碍。这个旅程从零数据科学知识、零R知识的和零云计算知识开始。它强调了在应用从概念到原型，再到最终商业交付的过程中，所需要的数据安全和云架构的关键领域。
 
 
 #### Posa：
