@@ -12,5 +12,7 @@ async def ws_t(websocket: WebSocket) -> None:
     for i in range(4):
         send_ws.delay(websocket, f"this is {i} msg")
 
+import dataclasses
+dataclasses.dataclass
 if __name__ == '__main__':
     uvicorn.run(app, reload=True)
