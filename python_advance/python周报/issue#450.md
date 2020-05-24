@@ -28,127 +28,131 @@ Slug: pyw-450
 
 
 
-[Preventing SQL injection: a Django author's perspective](https://blog.r2c.dev/2020/preventing-sql-injection-a-django-authors-perspective/)
-In this post, Jacob Kaplan-Moss shares his thoughts on preventing SQL injection.
+[防止 SQL 注入: Django ](https://blog.r2c.dev/2020/preventing-sql-injection-a-django-authors-perspective/)
+在这篇文章中，`Jacob Kaplan-Moss` 分享了他关于防止 `SQL` 注入的想法。
 
-[Tinder for Netflix Using Flask](https://www.youtube.com/watch?v=HZHOhf8EXXc) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)
-Learn how to make a 'Tinder' for Netflix, where you can swipe through random movie recommendations, read details, and watch on Netflix with the click of a button! 
 
-[Configuring Your Flask Application](https://t.co/2KMC8VbADn)
-Best practices on configuring Flask neatly and securely. Handle environment-specific configurations with ease and keep sensitive values out of your source code.
+[Tinder for Netflix Using Flask](https://www.youtube.com/watch?v=HZHOhf8EXXc) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)（5min）
+学习如何为 `Netflix` 制作一个 `'Tinder'`，你可以随意浏览推荐的电影，阅读细节，点击按钮就可以看 `Netflix`！
 
-[Shopify Customer Service Chatbot using Python Automation](https://www.youtube.com/watch?v=xof1OgxcRhY) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)
-Tired of the same ol' sucky customer service? You're not alone! This video runs through how to boost your Shopify customer service game using Watson Assistant and Python Webhooks.
+[配置你的 Flask 应用](https://t.co/2KMC8VbADn)
+灵活安全配置 `Flask` 的最佳实践。轻松处理特定特定环境变量配置，并在将敏感信息分离出源码。
 
-[A Lightning-Fast Introduction to Deep Learning and TensorFlow 2.0](https://builtin.com/machine-learning/introduction-deep-learning-tensorflow-20) 
-A hands-on guide to getting started with TensorFlow 2.0.
+
+[Shopify Customer Service Chatbot using Python Automation](https://www.youtube.com/watch?v=xof1OgxcRhY) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)（22min）
+厌倦了糟糕的客户服务？你并不是一个人！这个视频介绍了如何使用 `Watson Assistant and Python Webhooks` 来提升你的 `Shopify` 客户服务游戏。 
+
+[深度学习和 TebsorFlow 2 的快速介绍](https://builtin.com/machine-learning/introduction-deep-learning-tensorflow-20) 
+`TensorFlow 2.0` 的手把手教程。
+
 
 [RSVP for the ONLY Python Web Conference (Virtual) | June 17-19, 2020](https://pythonwebconference.com/) 
 Experts discuss hard web production problems. 40+ talks on Django, Plone, CI/CD, Containers, Serverless, REST APIs, microservices, etc. Join JetBrains and Six Feet Up to discuss what the future holds. SPONSOR
 
-[Building a serverless hosting platform](https://blog.vtemian.com/post/serverless-hosting-platform/)
-The purpose of this project is to build a system that will allow us to push on a branch and deploy our changes in a separate environment, giving us a unique URL, to check them. Similarly to how now.sh and heroku.com are doing. We’ll need a mechanism that will package our code and dependencies and will deploy it, but also it needs to consider multiple versions, upgrades, load-balancing, scaling and our stateful part (database).
+[构建 serverless 托管平台](https://blog.vtemian.com/post/serverless-hosting-platform/)
+这个项目的目的是建立一个系统，让我们在一个分支上进行推送，并将我们的修改部署在一个单独的环境中，给我们一个唯一的URL，来检查它们。类似于 `now.sh` 和 `heroku.com` 的做法。我们需要一个机制来打包我们的代码和依赖关系，并将其部署，但它还需要考虑到多个版本、升级、负载均衡、缩放和我们的有状态的部分（数据库）。
 
-[Build & Deploy A Python Web App To Automate Twitter](https://www.youtube.com/watch?v=yCYPzoG25ak) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)
-Learn how to build a tweet scheduler app using Flask, Heroku, the Twitter API & Google Sheets API.
 
-[Teach kids Python by building an interactive game](https://opensource.com/article/20/5/python-games)
-Open source tools can help anyone get started learning Python in an easy and fun way—making games.
+[构建和部署一个 Python Web 应用程序来自动化 Twitter](https://www.youtube.com/watch?v=yCYPzoG25ak) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)（1h42min）
+学习如何使用 `Flask，Heroku，Twitter API & Google Sheets API`构建一个 `tweet` 调度 `app`。
 
-[Build A Markdown To HTML Conversion Pipeline Using Python](https://florian-dahlitz.de/blog/build-a-markdown-to-html-conversion-pipeline-using-python)
-Write your posts in markdown and convert them into HTML using Python.
+[通过构建互动游戏来教孩子 Python](https://opensource.com/article/20/5/python-games)
+一个可以帮助任何人用一种简单有趣的方式——做游戏来开始学习 `Python` 的开源工具。
 
-[Security scanners for Python and Docker: from code to dependencies](https://pythonspeed.com/articles/docker-python-security-scan/)
-You don’t want to deploy insecure code to production—but it’s easy for mistakes and vulnerabilities to slip through. So you want some way to catch security issues automatically, without having to think about it. This is where security scanners come in. They won’t solve all your problems—you should still be using services that proactively point out insecure dependencies, for example. But it’s good to have some automated checks in your build or CI system to help catch problems. 
 
-[How to Automate Your Emails With Python](https://www.theseattledataguy.com/how-to-automate-your-emails-with-python/)
-Use the Gmail API to send scraped data to your email.
+[使用 PYthon 制作一个 Markdown To HTML 转化中间件](https://florian-dahlitz.de/blog/build-a-markdown-to-html-conversion-pipeline-using-python)
+使用 `Python` 将你的文章用 `markdown` 转成 `HTML`。
 
-[Introducing JupyterDash](https://t.co/RQ7rKKvO8B)
-JupyterDash, our new library that makes it easy to build Dash apps from Jupyter environments. This post introduces you to JupyterDash's features.
 
-[60 Questions to Test Your Knowledge of Python Lists](https://t.co/ODe1wRyEdd)
-Crush algorithm questions by mastering list fundamentals
+[用于 Python 和 Docker 的安全扫描器：从代码到依赖项的安全扫描器](https://pythonspeed.com/articles/docker-python-security-scan/)
+你不希望在生产中部署不安全的代码--但是错误和漏洞很容易被漏掉。因此，您需要一些方法来自动捕捉到安全问题，而不需要考虑它。这就是安全扫描器的作用所在。它们不能解决你的所有问题---你仍然应该使用能够主动指出不安全的依赖关系的服务，比如说。但在你的构建或CI系统中设置一些自动检查来帮助捕捉问题是很好的。
 
-[Implementing gRPC server using Python](https://martinheinz.dev/blog/23)
-Nowadays, when people want to implement backend API, they go straight to creating an application with RESTful API that communicates using JSON, without even considering other options. In the recent years though, gRPC and its protobufs started to get some traction and popularity thanks to many of their advantages. So, let's see what's all the buzz/hype about and implement gRPC server using Python!
+[如何用 Python 自动化你的邮件](https://www.theseattledataguy.com/how-to-automate-your-emails-with-python/)
+用 `Gmail API` 来发送抓取的数据到你的 `email`。
 
-[Untangling Python Decorators](https://rednafi.github.io/digressions/python/2020/05/13/python-decorators.html)
-Dissecting the anatomy of decorators in Python.
+[JupyterDash 简介](https://t.co/RQ7rKKvO8B)
+`JupyterDash`, 我们新的从 `Jupyter` 环境制作一个 `Dash apps` 的 `library`。这篇文章向你介绍 `JupyterDash` 的功能。
 
-[How to start when building a command-line app with Python](https://www.youtube.com/watch?v=JwwlRkLKj7o) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)
-Learn to build a command-line app using scaffolding. Then create a repository for it, create a PyPi page, use versioning, create documentation, and finally run it as a random internet stranger would.
+[60 个测试你的 Python List 知识的问题](https://t.co/ODe1wRyEdd)
+通过掌握列表基础知识来解决算法问题。
 
-[How to Set Up Your Python Project Docs for Success](https://t.co/YtAf382hTs)
-Automate your document creation workflow with Sphinx and Read the Docs.
+[用 Python 实现 gRPC 服务](https://martinheinz.dev/blog/23)
+现在，当人们想要实现后端 `API` 时，他们会直接使用使用 `JSON` 通信的 `RESTful API` 创建应用程序，甚至不考虑其他选项。近年来，`gRPC` 和它的 `protobufs` 开始得到一些牵引和普及，这要归功于它们的许多优势。那么，让我们来看看所有关于使用 `Python` 实现 `gRPC` 服务器的 `buzz/hype` 是什么!
 
-[Optimizing Django ORM Queries](http://schegel.net/posts/optimizing-django-orm-queries/)
+[解密 Python 装饰器](https://rednafi.github.io/digressions/python/2020/05/13/python-decorators.html)
+剖析 `Python` 中的装饰器。
 
-[Python performance: it’s not just the interpreter](http://blog.kevmod.com/2020/05/python-performance-its-not-just-the-interpreter/) 
+[如何使用 Python 开始构建一个命令行 app](https://www.youtube.com/watch?v=JwwlRkLKj7o) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)（20min）
+学习使用 `scafolding` 制作一个命令行 `app`。然后为它创建一个存储库，创建一个 `PyPi` 页面，使用版本化，创建文档，最后像一个随机的没用过它的人一样运行它。
 
-[Building a Heroku-like infrastructure for $5 a month](https://jakubsvehla.me/posts/infrastructure/)
+[如何设置成功的 Python 项目文档](https://t.co/YtAf382hTs)
+使用 `Sphinx` 和“阅读文档”自动化你的文档创建工作流程。
 
-[Setting Up Vim to Work with Python Applications](https://blog.miguelgrinberg.com/post/video-setting-up-vim-to-work-with-python-applications) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)
+[优化 Django ORM 查询](http://schegel.net/posts/optimizing-django-orm-queries/)
 
-[Caching and scaling for Django](https://eralpbayraktar.com/blog/django/2020/caching-with-django)
+[Python的性能：不仅是解释器](http://blog.kevmod.com/2020/05/python-performance-its-not-just-the-interpreter/) 
 
-[Thoughts on where tools fit into a workflow](https://snarky.ca/thoughts-on-a-tooling-workflow/)
+[以每月5美元的价格构建类似于 Heroku 的基础架构](https://jakubsvehla.me/posts/infrastructure/)
 
-[Stop losing data when writing Django migrations!](https://blog.theodo.com/2020/05/django-migrations-without-losing-data/)
+[设置 Vim 以使用 Python 应用程序](https://blog.miguelgrinberg.com/post/video-setting-up-vim-to-work-with-python-applications) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)
 
-[Python Caches Integers](https://arpitbhayani.me/blogs/python-caches-integers)
+[Django 的缓存和扩展](https://eralpbayraktar.com/blog/django/2020/caching-with-django)
 
-[Speed improvements using hash tables](https://blog.asrpo.com/hashtables)
+[关于工具适合工作流程的想法](https://snarky.ca/thoughts-on-a-tooling-workflow/)
+
+[在编写Django迁移时停止丢失数据!](https://blog.theodo.com/2020/05/django-migrations-without-losing-data/)
+
+[Python 缓存整数](https://arpitbhayani.me/blogs/python-caches-integers)
+
+[使用哈希表提高速度](https://blog.asrpo.com/hashtables)
 
 ### 有趣的项目、工具和库
 
 
-
-
 [jupyter-book](https://github.com/executablebooks/jupyter-book)
-Jupyter Book is an open-source tool for building publication-quality books and documents from computational material.
+`Jupyter Book` 是一个开放源代码工具，用于从计算材料中构建具有出版质量的书籍和文档。
 
 [cocktail-pi](https://github.com/saubury/cocktail-pi)
-A Raspberry Pi to mix cocktails based on your inferred mood via the servo mounted camera.
+`Raspberry Pi` 通过伺服安装的摄像头，根据推断你的心情来调鸡尾酒。
 
 [Realtime_PyAudio_FFT](https://github.com/tr1pzz/Realtime_PyAudio_FFT)
-Realtime audio analysis in Python, using PyAudio and Numpy to extract and visualize FFT features from streaming audio.
+在 `Python` 中进行实时音频分析，使用 `PyAudio` 和 `Numpy` 从流媒体音频中提取FFT特征并可视化。
 
 [python-keyboard](https://github.com/makerdiary/python-keyboard)
-A hand-wired keyboard powered by Python.
+一个由 `Python` 驱动的手写键盘。
 
 [Promnesia](https://github.com/karlicoss/promnesia) 
-Promnesia is a browser extension for Chrome/Firefox (including mobile!) which serves as a web surfing copilot, enhancing your browsing history and web exploration experience.
+`Promnesia` 是一款适用于 `Chrome/Firefox`（包括移动端）的浏览器扩展，它可以作为网络冲浪的副驾驶，增强您的浏览记录和网络探索体验。
 
 [convtools](https://github.com/itechart-almakov/convtools/)
-convtools is a python library to declaratively define fast conversions from python objects to python objects, including processing collections and doing complex aggregations and joins.
+`convtools` 是一个 `Python` 库，用于声明性地定义从 `Python` 对象到 `Python` 对象的快速转换，包括处理集合和做复杂的聚合和合并。
 
 [aitextgen](https://github.com/minimaxir/aitextgen)
-A robust Python tool for text-based AI training and generation using GPT-2. 
+一个强大的 `Python` 工具，使用 `GPT-2` 进行基于文本的AI训练和生成。
 
 [popmon](https://github.com/ing-bank/popmon) 
-popmon is a package that allows one to check the stability of a dataset. popmon works with both pandas and spark datasets.
+`popmon` 是一个可以检查数据集稳定性的软件包。
 
 [Quack](https://github.com/entynetproject/quack) 
-Quack Toolkit is a set of tools to provide denial of service attacks. Quack Toolkit includes SMS attack tool, HTTP attack tool and many other attack tools. 
+`Quack Toolkit` 是一套提供拒绝服务攻击的工具。`Quack Toolkit` 包括短信攻击工具、HTTP攻击工具等多种攻击工具。
 
 [Stormspotter](https://github.com/Azure/Stormspotter)
-Azure Red Team tool for graphing Azure and Azure Active Directory objects
+用于绘制 `Azure` 和 `Azure` 活动目录对象的 `Azure Red Team` 工具
 
 [flowtron](https://github.com/NVIDIA/flowtron)
-Auto-regressive flow-based generative network for text to speech synthesis.
+基于自动递归流的生成网络的文本到语音合成。
 
 [chain-reaction-ai](https://github.com/shridharrhegde/chain-reaction-ai)
-AI opponent for the strategic board game Chain Reaction.
+策略性棋牌游戏《链反应》的AI对手。
 
 [tda_terminal_trader](https://github.com/casey7398/tda_terminal_trader)
-Command Line TD Ameritrade Trading Terminal.
+命令行 `TD Ameritrade` 交易终端。
 
 [Little Ball of Fur](https://github.com/benedekrozemberczki/LittleBallOfFur) 
-Little Ball of Fur is a graph sampling extension library for NetworkX.
+`Little Ball of Fur` 是 `NetworkX` 的图形采样扩展库。
 
 [gtg](https://github.com/getting-things-gnome/gtg)
-Getting Things GNOME! (GTG) is a personal tasks and TODO list items organizer for the GNOME desktop environment inspired by the Getting Things Done (GTD) methodology. GTG is designed with flexibility, adaptability, and ease of use in mind so it can be used as more than just GTD software. 
+`Getting Things GNOME! ((GTG)` 是 `GNOME` 桌面环境中的个人任务和 `TODO` 列表项目整理器，其灵感来源于 `Getting Things Done (GTD)` 方法论。`GTG` 在设计时考虑到了灵活性、适应性和易用性，因此它不仅仅是一个 `GTD` 软件。
 
 
 
@@ -161,24 +165,24 @@ Getting Things GNOME! (GTG) is a personal tasks and TODO list items organizer fo
 ### 那些活动
 
 [Virtual: Scipy Japan 2020](https://www.scipyjapan.scipy.org/)
-SciPy Japan 2020 will be a virtual conference to bring together the growing Scientific Python community in Japan to showcase the latest projects, and learn from skilled users and developers.
+`SciPy Japan 2020` 将是一个虚拟会议，将把日本不断发展的 `SciPy` 社区聚集在一起，展示最新的项目，并向熟练的用户和开发者学习。
 
 [Virtual: San Diego Python Meetup May 2020](https://www.meetup.com/pythonsd/events/gmxcqrybchblc/)
-There will be following talks
+将会有以下话题
 
-- Deep copy and shallow copy in lists
-- Visualizing Sandiego's Covid19 Data in a Browser Without Learning Javascript
-- Python in Hollywood
+- 列表中的深拷贝和浅拷贝
+- 在浏览器中可视化 `Sandiego` 的 `Covid19` 数据，而无需学习 `Javascript`
+- 好莱坞中的 Python
 
 
 [Virtual: NLP basics from text to vectors](https://www.meetup.com/PyData-Boston-Cambridge/events/270610949/)
-In this workshop, we will cover: Tokenization design (Using SpaCy), Token/word counting (Using scikit-learn) and opic models (scikit-learn). We will make use of Google Collaboratory to run the code, so no need to install anything!
+在这个工作坊中，我们将涵盖以下内容 令牌化设计（使用 `SpaCy`），令牌/单词计数（使用 `scikit-learn`）和 `opic` 模型（ `scikit-learn` ）。我们将利用 `Google Collaboratory` 来运行代码，所以不需要安装任何东西！我们将使用 `Google Collaboratory` 来运行代码。
 
 [Virtual: Deep Neural Networks Workshop](https://www.meetup.com/PyData-Manchester/events/270384347/)
-Marc will provide some background on how Machine Learning works, how it's being used at Google, and how it can be used to solve real world problems. Then he'll lead a lab exercise, focusing on how to train and execute a deep neural network.
+`Marc` 将提供一些关于机器学习的工作原理、谷歌如何使用机器学习的背景，以及如何利用机器学习来解决现实世界的问题。然后，他将带领大家做一个实验室练习，重点讲解如何训练和执行深度神经网络。
 
 [Virtual: PyData x PyYYC Meetup May 2020](https://www.meetup.com/PyData-Calgary/events/270635191/)
-There will be couple of talks, Probability Prerequisites and Highly Performant IO.
+将会有几个演讲，概率先决条件和高性能IO。
 
 #### Posa：
 
