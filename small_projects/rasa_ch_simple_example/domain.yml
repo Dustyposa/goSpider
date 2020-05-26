@@ -1,19 +1,32 @@
 intents:
   - greet
-  - mood_happy
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
   - mood_unhappy
+  - bot_challenge
 
-actions:
-- utter_greet
-- utter_happy
-- utter_unhappy
-
-templates:
+responses:
   utter_greet:
-  - text: "你好，你今天过的怎么样"
+  - text: "哈咯，你好吗？"
+
+  utter_cheer_up:
+  - text: "这里有东西可以让你开心一下："
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "有帮到你吗？"
 
   utter_happy:
-  - text: "那很棒棒哦"
+  - text: "棒极了！祝贺"
 
-  utter_unhappy:
-  - text: "咋了，可以告诉我吗"
+  utter_goodbye:
+  - text: "有缘再见"
+
+  utter_iamabot:
+  - text: "我是机器人哦，基于 Rasa."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
