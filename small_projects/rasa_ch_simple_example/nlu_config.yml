@@ -1,0 +1,2 @@
+language: zh
+pipeline: tensorflow_embedding

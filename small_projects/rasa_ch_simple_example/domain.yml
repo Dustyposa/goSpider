@@ -1,0 +1,19 @@
+intents:
+  - greet
+  - mood_happy
+  - mood_unhappy
+
+actions:
+- utter_greet
+- utter_happy
+- utter_unhappy
+
+templates:
+  utter_greet:
+  - text: "你好，你今天过的怎么样"
+
+  utter_happy:
+  - text: "那很棒棒哦"
+
+  utter_unhappy:
+  - text: "咋了，可以告诉我吗"
