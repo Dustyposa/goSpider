@@ -20,8 +20,8 @@ Vettery是一个招聘网站，它改变了人们应聘或者雇佣的方式。�
 
 ### 文章、教程与话题
 
-[Python 中 Asyncio 的Guide to Concurrency in Python with Asyncio](https://www.integralist.co.uk/posts/python-asyncio/)
-This is a quick guide to Python’s asyncio module and is based on Python version 3.8.
+[Python 中 Asyncio 的并发指南](https://www.integralist.co.uk/posts/python-asyncio/)
+这是基于 `Python 3.8` 版本的 `Python asyncio` 模块的快速教程。
 
 [A random failure: Problems upgrading Ansible and Python](https://me.micahrl.com/blog/random-failure-problems-upgrading-ansible-python/)
 What follows is the story of a data loss bug I caused at work, how I fixed it, and my journey to discovering surprising behavior in Python and Ansible.
