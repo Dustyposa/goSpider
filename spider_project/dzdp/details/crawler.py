@@ -14,11 +14,21 @@ class UrlModel:
     ordered_url = "https://reserve.dianping.com/plusdom/poidetail?shopId=H1aHdhkb51pd6oXh"  # 预定人数
     recommend_url = "http://www.dianping.com/ajax/json/shopDynamic/allReview"  # 推荐菜
     recommend_menu_price_url = "http://www.dianping.com/ajax/json/shopDynamic/shopTabs"  # 推荐菜价格
+    shop_url = "http://www.dianping.com/shop/{}"
 
 
 class FontMapper:
-    def __init__(self):
-        ...
+    @staticmethod
+    def map(font_list, map_type=1):
+        if map_type == 1:
+            map_data = ...
+        elif map_type == 2:
+            map_data = ...
+        elif map_type == 4:
+            map_data = ...
+        else:
+            raise NotImplementedError(f"don't know the map type: {map_type}")
+        return "".join(map(lambda x: x, font_list))
 
 
 class PageParser:
@@ -48,15 +58,17 @@ class BaseInfoSelectorXpathRules:
 
 
 class AllMsgGenerator:
-    def __init__(self, view_data):
+    def __init__(self, view_data, shop_id):
         self.view_data = view_data
         self.res = {}
+        self.shop_id = shop_id
         self.comments_parser = CommentsParser("123")  # 推荐菜
 
     def get_order_num(self):
         """预定人数"""
-        url = "https://reserve.dianping.com/plusdom/poidetail?shopId=H1aHdhkb51pd6oXh"
-        content = requests.get(url).content.decode("u8")
+        url = "https://reserve.dianping.com/plusdom/poidetail"
+        params = {"shopId": self.shop_id}
+        content = requests.get(url, params=params).content.decode("u8")
         res = re.search(r"(\d+)人已订", content)
         if res:
             return res.group(1)
@@ -105,25 +117,34 @@ class CommentsParser:
 
 
 class Crawler:
-    def __init__(self, url: str):
-        self.url = url
-        self.headers = COMMON_HEADERS
+    def __init__(self, shop_id, headers=COMMON_HEADERS, session=requests.Session()):
+        self.shop_id = shop_id
+        self.headers = headers
+        self.session = session
+        self.session.headers = headers
+        self.result = {}
 
     def crawl_page(self):
-        response = requests.get(self.url, headers=self.headers)
+        response = self.session.get(url=UrlModel.shop_url.format(self.shop_id))
         try:
             response.raise_for_status()
         except requests.HTTPError:
-            print(f"{self.url} 抓取失败")
-
+            print(f"{response.url} 抓取失败")
         return response.text
 
-    def parse_page(self, text):
+    def parse_base_page(self, text):
         sel = Selector(text=text)
-        pass
+        self.result["per_capita"] = FontMapper.map(sel.xpath(BaseInfoSelectorXpathRules.per_capita_rule).getall())
+        self.result["taste_score"] = FontMapper.map(sel.xpath(BaseInfoSelectorXpathRules.taste_score_rule).getall())
+        self.result["env_score"] = FontMapper.map(sel.xpath(BaseInfoSelectorXpathRules.env_score_rule).getall())
+        self.result["service_score"] = FontMapper.map(sel.xpath(BaseInfoSelectorXpathRules.service_score_rule).getall())
+        self.result["address"] = FontMapper.map(sel.xpath(BaseInfoSelectorXpathRules.shop_address_rule).getall())
+        self.result["phone"] = FontMapper.map(sel.xpath(BaseInfoSelectorXpathRules.shop_phone_rule).getall())
+        self.result["other_shops"] = FontMapper.map(sel.xpath(BaseInfoSelectorXpathRules.other_shop_rule).getall())
+        self.result["opening_time"] = FontMapper.map(sel.xpath(BaseInfoSelectorXpathRules.open_time_rule).getall())
 
     def run(self):
-        self.parse_page(self.crawl_page())
+        self.parse_base_page(self.crawl_page())
 
 
 @dataclass
@@ -150,9 +171,9 @@ class ShopModel:
     mid_review_num: int
     bad_review_num: int
 
-    opening_time: datetime
+    opening_time: str
 
 
 if __name__ == '__main__':
     url = "http://www.dianping.com/shop/H1aHdhkb51pd6oXh"
-    Crawler(url).run()
+    Crawler(shop_id, headers).run()
