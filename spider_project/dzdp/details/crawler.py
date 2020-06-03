@@ -11,10 +11,11 @@ from resource.font.map import address_mapping, review_tag_mapping, shop_num_mapp
 
 class UrlModel:
     coupon_url = "http://www.dianping.com/ajax/json/shopDynamic/promoInfo"  # 优惠促销
-    ordered_url = "https://reserve.dianping.com/plusdom/poidetail?shopId=H1aHdhkb51pd6oXh"  # 预定人数
+    ordered_url = "https://reserve.dianping.com/plusdom/poidetail"  # 预定人数
     recommend_url = "http://www.dianping.com/ajax/json/shopDynamic/allReview"  # 推荐菜
     recommend_menu_price_url = "http://www.dianping.com/ajax/json/shopDynamic/shopTabs"  # 推荐菜价格
     shop_url = "http://www.dianping.com/shop/{}"
+    m_shop_url = 'https://m.dianping.com/shop/{}'
 
 
 class FontMapper:
@@ -53,41 +54,60 @@ class BaseInfoSelectorXpathRules:
     service_score_rule = css2xpath("#comment_score") + "/span[contains(text(), '服务')]/d/text()"  # 服务评分
     shop_address_rule = css2xpath("#address ::text")  # 店铺地址
     open_time_rule = css2xpath(".info.info-indent>.item ::text")  # 开店时间
-    other_shop_rule = css2xpath(".more-shop")  # 更多店铺
+    other_shop_rule = css2xpath(".more-shop ::text")  # 更多店铺
     shop_phone_rule = css2xpath(".expand-info.tel ::text")  # 店铺电话
 
 
 class AllMsgGenerator:
-    def __init__(self, view_data, shop_id):
-        self.view_data = view_data
+    def __init__(self, shop_id, session, params=None):
         self.res = {}
         self.shop_id = shop_id
-        self.comments_parser = CommentsParser("123")  # 推荐菜
+        self.session = session
+        if params:
+            self.params = params
+        else:
+            self.params = {}
+        self.params["shopId"] = shop_id
+        self.comments_parser = CommentsParser(self.session, self.params)  # 推荐菜
 
     def get_order_num(self):
         """预定人数"""
-        url = "https://reserve.dianping.com/plusdom/poidetail"
         params = {"shopId": self.shop_id}
-        content = requests.get(url, params=params).content.decode("u8")
+        content = requests.get(UrlModel.ordered_url, params=params).content.decode("u8")
         res = re.search(r"(\d+)人已订", content)
         if res:
-            return res.group(1)
+            return int(res.group(1))
         return 0
 
     def get_coupon_data(self):
         """优惠券"""
-        res = requests.get(UrlModel.coupon_url).json()
-        return [CouponModel(
-            old_price=conpon_msg["marketPrice"],
-            now_price=conpon_msg["price"],
-            saled_count=conpon_msg["sales"],
-            name=conpon_msg["productTitle"],
-        )
-            for conpon_msg in res["dealDetails"]]
+        url = UrlModel.m_shop_url.format(self.shop_id)
+        resp = requests.get(url=url, headers=COMMON_HEADERS)
+        tags = re.findall(r'<a class="item" (.*?)</a>', resp.text, re.S)
+        res = []
+        for tag in tags[1:]:
+            title = re.search(r'<div class="newtitle">(.*?)</div>', tag, re.S).group(1)
+            price = re.search(r'<div class="price">(\d+)</div>', tag).group(1)
+            o_price = re.search(r'<div class="o-price">(\d+)</div>', tag).group(1)
+            sale = re.search(r'<span class="soldNumNew">已售(\d+)</span>', tag).group(1)
+            print(title, price, o_price, sale)
+            res.append(CouponModel(
+                old_price=float(o_price),
+                now_price=float(price),
+                saled_count=int(sale),
+                name=title))
+        return res
+        # res = self.session.get(UrlModel.coupon_url, params=self.params).json()
+        # return [CouponModel(
+        #     old_price=conpon_msg["marketPrice"],
+        #     now_price=conpon_msg["price"],
+        #     saled_count=conpon_msg["sales"],
+        #     name=conpon_msg["productTitle"], )
+        #     for conpon_msg in res["dealDetails"]]
 
     def get_shop_story(self):
         """品牌故事 和推荐菜品及价格"""
-        res = requests.get(UrlModel.recommend_menu_price_url).json()
+        res = self.session.get(UrlModel.recommend_menu_price_url, params=self.params).json()
         story = res["poiShopBrand"]["story"]  # 品牌故事
         menu_price = [i["finalPrice"] for i in res["dishesWithPic"]]
         recommend_menu = dict(zip(self.comments_parser.recommend_menu, menu_price))  # 推荐菜品及价格
@@ -96,12 +116,15 @@ class AllMsgGenerator:
 
 
 class CommentsParser:
-    def __init__(self, url):
-        self.url = url
+    def __init__(self, session, params):
+        # 需要 shopid cityId shopType
+        self.session = session
+        self.params = params.copy()
+        self.params.update(cityId=8, shopType=10)
         self.res = self._get_response()
 
     def _get_response(self):
-        return requests.get(self.url).json()
+        return self.session.get(UrlModel.recommend_url, params=self.params).json()
 
     @property
     def recommend_menu(self):
@@ -113,7 +136,6 @@ class CommentsParser:
         normal_count = self.res["reviewCountCommon"]  # 中评
         good_count = self.res["reviewCountGood"]  # 好评
         tags = [summary["summaryString"] for summary in self.res["summarys"]]  # 标签
-        return {"all": all_count}
 
 
 class Crawler:
@@ -145,6 +167,12 @@ class Crawler:
 
     def run(self):
         self.parse_base_page(self.crawl_page())
+        other_msg = AllMsgGenerator(self.shop_id, self.session)
+        self.result["order_nums"] = other_msg.get_order_num()
+        self.result["promotions"] = other_msg.get_coupon_data()
+
+        print(f"抓取结果{'-' * 50}")
+        print(self.result)
 
 
 @dataclass
@@ -153,6 +181,7 @@ class ShopModel:
     shop_score: float
     comments_num: int
     other_shops: list
+    order_nums: int
 
     per_capita: float
     taste_score: float
@@ -164,7 +193,7 @@ class ShopModel:
     special: list
 
     promotions: list
-    recommend_menu: list
+    recommend_menu: dict
 
     user_tags: list
     good_review_num: int
@@ -175,5 +204,6 @@ class ShopModel:
 
 
 if __name__ == '__main__':
-    url = "http://www.dianping.com/shop/H1aHdhkb51pd6oXh"
-    Crawler(shop_id, headers).run()
+    url = "http://www.dianping.com/shop/"
+    shop_id = "H1aHdhkb51pd6oXh"
+    Crawler(shop_id).run()
