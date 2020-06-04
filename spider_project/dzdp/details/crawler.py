@@ -6,7 +6,7 @@ from datetime import datetime
 import requests
 from parsel import Selector, css2xpath
 from headers import COMMON_HEADERS
-from resource.font.map import address_mapping, review_tag_mapping, shop_num_mapping
+# from resource.font.map import address_mapping, review_tag_mapping, shop_num_mapping
 
 
 class UrlModel:
@@ -66,14 +66,18 @@ class AllMsgGenerator:
         if params:
             self.params = params
         else:
-            self.params = {}
+            self.params = {"shopId": self.shop_id,
+                           "originUrl": f"http://www.dianping.com/shop/{self.shop_id}",
+                           'shopType': 10,
+                           'cityId': 8}
         self.params["shopId"] = shop_id
         self.comments_parser = CommentsParser(self.session, self.params)  # 推荐菜
+        self.comments_data = self.comments_parser.get_comments_info()
 
     def get_order_num(self):
         """预定人数"""
-        params = {"shopId": self.shop_id}
-        content = requests.get(UrlModel.ordered_url, params=params).content.decode("u8")
+
+        content = requests.get(UrlModel.ordered_url, params=self.params).content.decode("u8")
         res = re.search(r"(\d+)人已订", content)
         if res:
             return int(res.group(1))
@@ -112,7 +116,7 @@ class AllMsgGenerator:
         menu_price = [i["finalPrice"] for i in res["dishesWithPic"]]
         recommend_menu = dict(zip(self.comments_parser.recommend_menu, menu_price))  # 推荐菜品及价格
         # 评论信息
-        return
+        return story, recommend_menu
 
 
 class CommentsParser:
@@ -136,6 +140,7 @@ class CommentsParser:
         normal_count = self.res["reviewCountCommon"]  # 中评
         good_count = self.res["reviewCountGood"]  # 好评
         tags = [summary["summaryString"] for summary in self.res["summarys"]]  # 标签
+        return all_count, bad_count, normal_count, good_count, tags
 
 
 class Crawler:
@@ -170,6 +175,9 @@ class Crawler:
         other_msg = AllMsgGenerator(self.shop_id, self.session)
         self.result["order_nums"] = other_msg.get_order_num()
         self.result["promotions"] = other_msg.get_coupon_data()
+        self.result["comments_num"], self.result["bad_review_num"], self.result["mid_review_num"], \
+        self.result["good_review_num"], self.result["comment_tags"] = other_msg.comments_data
+        self.result["story"], self.result["recommend_menu"] = other_msg.get_shop_story()
 
         print(f"抓取结果{'-' * 50}")
         print(self.result)
@@ -179,7 +187,6 @@ class Crawler:
 class ShopModel:
     shop_name: str
     shop_score: float
-    comments_num: int
     other_shops: list
     order_nums: int
 
@@ -194,8 +201,11 @@ class ShopModel:
 
     promotions: list
     recommend_menu: dict
+    story: str
 
     user_tags: list
+    comments_num: int
+    comment_tags: list
     good_review_num: int
     mid_review_num: int
     bad_review_num: int
@@ -204,6 +214,5 @@ class ShopModel:
 
 
 if __name__ == '__main__':
-    url = "http://www.dianping.com/shop/"
     shop_id = "H1aHdhkb51pd6oXh"
     Crawler(shop_id).run()
