@@ -96,11 +96,12 @@ class AllMsgGenerator:
                            "originUrl": f"http://www.dianping.com/shop/{self.shop_id}",
                            'shopType': 10,
                            'cityId': 8,
-                           '_token': "eJxVj0FvgkAQhf/LXLuB3XUXkBvW2FADTQXWpI0HRFxIASmLoDb9713Seuhp3nzvvWTmCzr/AC7BGDOCYMg7cIEY2LAAQa+0w+eEE844sdgcQfaPUWxbCPadWIL7TiwHoxmzdxPZaPBLCOZ4h+6aanumY3hK+ToERd+3rmmO42gcyrRpy0Ya2ak2VXFqzcoprZDeuuPbpT4/0lEfBbpZx1OTMxtRzCbwMQE907/Z3/dAv6NLqpSNVvnzJY4UU5/HTaDiBAf2Ilk7coiv9BqKpLspOXh+V22fovRhU4lVKlYij7YvxVlIRyzXso/2rzisPK8qF0EG3z9nDFoO",
+                           '_token': "eJxVjk8LgkAQxb/LnBd3VtddFTr072C1HWLrEh7MwiQycSWL6Ls3gR2CgTfzm/fgvaBNj5AIRJSCwf3UQgLCQ08Bg87RJ4yFUnEQSh1LBsUfC0XsMzi0uxkke6EiZCJS2ZdsCAwEQ8zYb/d1xgKk+bpSMsG565qE877vvWOV101Vl15xu3J3vjVcS+lLlEpTG6DI1VKE9DJoPmj3uw3VJ6+rypq20+Jhl06nKz4xzm4DY+dPY8cPI4rpeLYuJ6toBO8PM1REQQ==",
                            }
         self.params["shopId"] = shop_id
         self.comments_parser = CommentsParser(self.session, self.params)  # 推荐菜
-        self.comments_data = self.comments_parser.get_comments_info() if self.res.get("msg") != "该商户不展示评价" else (
+        self.comments_data = self.comments_parser.get_comments_info() if self.res.get(
+            "msg") != "该商户不展示评价" and self.res.get("reviewCountAll") is not None else (
             0, 0, 0, 0, [])
 
     def get_order_num(self):
@@ -176,7 +177,7 @@ class CommentsParser:
 
     @property
     def recommend_menu(self):
-        return self.res["dishTagStrList"] if self.res["dishTagStrList"] else []
+        return self.res["dishTagStrList"] if self.res.get("dishTagStrList") else []
 
     def get_comments_info(self):
         all_count = self.res["reviewCountAll"]  # 所有评论
@@ -321,8 +322,10 @@ def save_data_to_file(data):
     with open("data.txt", "a", encoding="u8") as fp:
         fp.write(data + "\n")
 
+
 def init():
     Path("crawled_font").touch(exist_ok=True)
+    Path("used_id.csv").touch(exist_ok=True)
     Path("address").mkdir(exist_ok=True)
     Path("num").mkdir(exist_ok=True)
     Path("hours").mkdir(exist_ok=True)
@@ -335,19 +338,25 @@ if __name__ == '__main__':
     # shop_id = "H1aHdhkb51pd6oXh"
     # Crawler(shop_id).run()
     init()
-    while True:
+    sleep_time = 4
+    max_retry_cnt = 8
+    tmp_cnt = 0
+    while tmp_cnt < max_retry_cnt:
         try:
             crawled_id = get_crawled_shop_id()
             for shop_id in get_all_shop_id():
                 if shop_id not in crawled_id:
+                    print(UrlModel.shop_url.format(shop_id))
                     res = Crawler(shop_id).run()
                     save_data_to_file(json.dumps(res))
                     record_shop_id(shop_id)
 
                     print("数据存储成功")
-                    time.sleep(15)
+                    time.sleep(sleep_time)
+                    tmp_cnt = 0
             else:
                 break
         except Exception:
             print("抓取失败，即将重试。。。", traceback.print_exc())
-            time.sleep(15)
+            tmp_cnt += 1
+            time.sleep(sleep_time * 2)
