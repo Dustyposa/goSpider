@@ -1,0 +1,18 @@
+
+intents:
+  - greet
+  - bye
+  - thank
+  - faq
+
+responses:
+  utter_noworries:
+    - text: No worries!
+  utter_greet:
+    - text: Hi
+  utter_bye:
+    - text: Bye!
+
+actions:
+  - respond_faq
+
