@@ -96,7 +96,7 @@ class AllMsgGenerator:
                            "originUrl": f"http://www.dianping.com/shop/{self.shop_id}",
                            'shopType': 10,
                            'cityId': 8,
-                           '_token': "eJxVjk8LgkAQxb/LnBd3VtddFTr072C1HWLrEh7MwiQycSWL6Ls3gR2CgTfzm/fgvaBNj5AIRJSCwf3UQgLCQ08Bg87RJ4yFUnEQSh1LBsUfC0XsMzi0uxkke6EiZCJS2ZdsCAwEQ8zYb/d1xgKk+bpSMsG565qE877vvWOV101Vl15xu3J3vjVcS+lLlEpTG6DI1VKE9DJoPmj3uw3VJ6+rypq20+Jhl06nKz4xzm4DY+dPY8cPI4rpeLYuJ6toBO8PM1REQQ==",
+                           '_token': "eJxVjltrg0AQhf/LvHbR2XgX8rBgaE3VkmKkUnyIGjbWS4yKUUv+ezeQPBQGzsw358D5hc7NwaaIqFIC47EDG6iEkg4Ehl58NIsapokUDcUkkP1jFC2NQNpFDtjfVDeRUFNP7uRTgAdBDRPy3FdGQhQUc3e5wgSnYWhtWb5er1JeHJq2aLiUnWu5P51bmSqoGpahomgDIlKHIiK0fOjhocPz9kV94e0L3ojtuJ3CuVT85S348DZVsMwvF2szT0EYT74T7N5NPobzag6ifbf0fMx8tWf7KuZOxU6X14nHtdam9ZZFnLeey2me7nasZOmP/+Wx9RpufyXkWpM=",
                            }
         self.params["shopId"] = shop_id
         self.comments_parser = CommentsParser(self.session, self.params)  # 推荐菜

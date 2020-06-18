@@ -6,7 +6,37 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
-
+  - long
+  - S1_text
+  - S2.1
+  - S2.2
+  - S2.3
+  - S3.1
+  - S3.2
+  - S4.1
+slots:
+  a:
+   type: bool
+  city:
+    type: text
+  risk_level:
+    type: categorical
+    values:
+      - a
+      - b
+      - c
+  old_items:
+    type: list
+  temperature:
+    type: float
+    min_value:  -100
+    max_value:  100
+    auto_fill: false
+  smoking_amount:
+    type: float
+    min_value:  0.0
+    max_value:  0.1
+    auto_fill: false
 responses:
   utter_greet:
   - text: "Hey! How are you?"
@@ -24,8 +54,50 @@ responses:
   utter_goodbye:
   - text: "Bye"
 
+  utter_by:
+    - text: "bybybybybybybybyby"
+
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
+
+  utter_S3.3.2.3:
+  - text: 哮喘控制好了，保证生活质量
+  utter_S3.3.3.1:
+  - text: 上次说的话白说了，把我的话当耳旁风
+  utter_S3.3.3.2:
+  - text: 药物没有按时/按量使用是不能发挥出最大药效的
+  utter_S3.3.3.3:
+  - text: 白白浪费了药钱不说
+  utter_S3.3.3.4:
+  - text: 哮喘控制不好，慢慢变成慢阻肺，你就后悔莫及了！
+  utter_S3.3.3.5:
+  - text: 我这么忙！还抽空管理你们，就是希望你可以好好控制
+  utter_S3.3.3.6:
+  - text: 哮喘控制不好，慢慢变成慢阻肺，你就后悔莫及了！
+  utter_S3.3.3.7:
+  - text: 保证一个较好的生活质量
+  utter_S3.4.1:
+  - text: 你一直做不到按时/按量用药这件事啊
+  utter_S3.4.2:
+  - text: 还是要想办法解决的
+  utter_S3.4.3:
+  - text: 这里有一个用药提醒的小工具
+  utter_S3.4.4:
+  - text: 到了吃药时间会自动提醒你
+  utter_S3.4.5:
+  - text: 你每天进去打卡
+  utter_S3.4.6:
+  - text: 我这边的小护士也会后台督促你的
+  utter_S3.4.7:
+  - text: 到#每日用药记录打卡小程序
+  utter_S3.4.8:
+  - text: 为你们也是操碎了心啊
+  utter_S4.1:
+  - text: 0.0 及以下
+  utter_S4.2:
+  - text: 0.0 - 0.1 之间
+  utter_S4.3:
+  - text: 0.1 及以上
 
 session_config:
   session_expiration_time: 60
