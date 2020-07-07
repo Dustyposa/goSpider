@@ -17,20 +17,21 @@ Vettery是一个招聘网站，它改变了人们应聘或者雇佣的方式。�
 ### 新鲜事
 
 [PEP 622 -- Structural Pattern Matching](https://www.python.org/dev/peps/pep-0622/)
-This PEP proposes adding pattern matching statements to Python in order to create more expressive ways of handling structured heterogeneous data. The authors take a holistic approach, providing both static and runtime specifications.
+这篇 `PEP` 建议在 `Python` 中添加模式匹配语句，以创建更多的表达方式来处理结构化的异构数据。作者采取了一种整体的方法，提供了静态和运行时的规范。
 
 [PyGotham Call for Proposals](https://cfp.pygotham.tv/)
-PyGotham is an eclectic conference that covers policy, culture, and art, along with standard tech and Python topics. The call for talk proposals is open now through July 5. You could propose an infomercial, a talk show, a comedy routine, a sitcom, or just a regular tech talk about Python or any technology subject that interests you.
+`PyGotham` 是一个综合的会议，涉及政策，文化和艺术，以及标准的技术和 `Python` 主题。 讨论提案的征询截止日期为7月5日。您可以提出一个商业广告，脱口秀，喜剧例程，情景喜剧，或者只是有关 `Python` 或你感兴趣的任何技术主题的常规技术讲座。
 
-[DjangoCon Australia returns for the 8th time and opens CFP](https://www.djangoproject.com/weblog/2020/jun/18/djangocon-australia-returns-8th-time-and-opens-cfp)
-This year DjangoCon Australia will run as a specialist track alongside PyConline AU, on September 4th, online. The CFP is open and submissions to speak at DjangoCon AU 2020 will be accepted from now until July 12th.
+[澳大利亚DjangoCon第八次回归并开启CFP](https://www.djangoproject.com/weblog/2020/jun/18/djangocon-australia-returns-8th-time-and-opens-cfp)
+今年 `DjangoCon Australia` 将作为一个专业赛道与 `PyConline AU` 同时进行，时间为9月4日，在线。 `CFP` 已经开放，即日起至7月12日，接受提交 `DjangoCon AU 2020` 的演讲稿。
 
 [PEP 618 -- Add Optional Length-Checking To zip](https://www.python.org/dev/peps/pep-0618/)
-This PEP proposes adding an optional strict boolean keyword parameter to the built-in zip. When enabled, a ValueError is raised if one of the arguments is exhausted before the others.
+这个 `PEP` 建议在内置 `zip` 中添加一个可选的 `strict` 布尔关键字参数。启用后，如果其中一个参数先于其他参数耗尽，则会引发 `ValueError`。
 
-[2020 Python Software Foundation Board of Directors Election Results](https://pyfound.blogspot.com/2020/06/2020-python-software-foundation-board.html)
 
-[PEP 620 -- Hide implementation details from the C API](https://www.python.org/dev/peps/pep-0620/)
+[2020年Python软件基金会董事会选举结果](https://pyfound.blogspot.com/2020/06/2020-python-software-foundation-board.html)
+
+[PEP 620 -- 从C API中隐藏实现细节](https://www.python.org/dev/peps/pep-0620/)
 
 
 
@@ -39,102 +40,102 @@ This PEP proposes adding an optional strict boolean keyword parameter to the bui
 
 
 [Keras with TensorFlow Course](https://www.youtube.com/watch?v=qFJeN9V1ZsI) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)
-This course will teach you how to use Keras, a neural network API written in Python and integrated with TensorFlow. We will learn how to prepare and process data for artificial neural networks, build and train artificial neural networks from scratch, build and train convolutional neural networks (CNNs), implement fine-tuning and transfer learning, and more!
+本课程将教你如何使用 `Keras`，这是一个用 `Python` 编写并与 `TensorFlow` 集成的神经网络 `API`。我们将学习如何为人工神经网络准备和处理数据，从头开始构建和训练人工神经网络，构建和训练卷积神经网络( `CNN` )，实现微调和转移学习等!
 
 [Sonos / Spotify Vinyl Emulator](https://www.hackster.io/mark-hank/sonos-spotify-vinyl-emulator-3be63d)
-Experience the tactile nature of a vinyl music collection (but without actually owning any vinyl) through Sonos, Spotify and NFC tags.
+通过 `Sonos，Spotify和NFC` 标签体验黑胶唱片收藏的触觉性质（但实际上没有任何黑胶唱片）。
 
-[ASGI from scratch](https://shenli.dev/2020/06/20/asgi-from-scratch.html)
-Learning about ASGI by building an ASGI web framework!
+[从零开始 ASGI](https://shenli.dev/2020/06/20/asgi-from-scratch.html)
+通过构建 `ASGI Web` 框架来了解 `ASGI`！
 
 [Python Hangman Tutorials](https://www.youtube.com/playlist?list=PLzMcBGfZo4-ndZlN21DasvpfKwIc1rI6w) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)
-A series of tutorials where you can learn how to create your own version of hangman using Python and Pygame. 
+一系列教程，您可以在其中学习如何使用 `Python` 和 `Pygame` 创建自己的 `hangman` 版本。
 
-[How to Set Up a Python Project For Automation and Collaboration](https://eugeneyan.com/writing/setting-up-python-project-for-automation-and-collaboration/)
-After this article, we'll have a workflow of tests and checks that run automatically with each git push.
+[如何设置Python项目以实现自动化和协作？](https://eugeneyan.com/writing/setting-up-python-project-for-automation-and-collaboration/)
+在这篇文章之后，我们将有一个测试和检查的工作流程，这些工作会在每次 `git push` 时自动运行。
 
-[How to analyze the sentiment of your own Tweets](https://blog.twitter.com/developer/en_us/topics/tips/2020/how-to-analyze-the-sentiment-of-your-own-tweets.html)
-This post helps developers try out sentiment analysis by analyzing their own past Tweets.
+[如何分析自己的推特的情绪](https://blog.twitter.com/developer/en_us/topics/tips/2020/how-to-analyze-the-sentiment-of-your-own-tweets.html)
+如何分析自己的 `Tweets` 的情绪这篇文章通过分析自己过去的 `Tweets`，帮助开发者尝试情绪分析。
 
-[[Webinar\] Write cleaner, safer Python code](https://sonarsource.zoom.us/webinar/register/3615925068190/WN_rvO_CmpfRKigFBRue0NNCg)
+[[Webinar\] 编写更简洁安全的  Python code](https://sonarsource.zoom.us/webinar/register/3615925068190/WN_rvO_CmpfRKigFBRue0NNCg)
 Register for a 30-min webinar on July 16th @ 10am CDT to learn how to make your Python code more reliable and secure with SonarQube; static analysis that's powerful, fast and accurate - out of the box! SPONSOR
 
-[Deciphering Single-byte XOR Ciphertext](https://arpitbhayani.me/blogs/decipher-single-xor)
-Deciphering is the process of recovering the original message from an encrypted byte stream, usually, without having any knowledge of the encryption key. In this essay, we look at how we can use linguistics to recover the original message from a Single-byte XORed Ciphertext.
+[解密单字节XOR密文](https://arpitbhayani.me/blogs/decipher-single-xor)
+解密通常是在不了解加密密钥的情况下从加密的字节流中恢复原始消息的过程。 在本文中，我们将探讨如何使用语言学从单字节异或密文恢复原始消息。
 
-[A Fun Introduction to Internet Security - Part 1](https://www.youtube.com/watch?v=35OH6w1GbY8) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)
-Security is an important aspect of programming that a lot of people neglect. 99% of the hacks out there are just a matter of someone being lazy. This part video series covers responsible security, while also showing how you can have some fun with Game Theory!
+[互联网安全入门-第1部分](https://www.youtube.com/watch?v=35OH6w1GbY8) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)
+安全性是编程的一个重要方面，很多人都忽略了。99%的黑客都是有人偷懒而已。本部分视频系列涵盖了负责任的安全问题，同时也展示了如何用 `Game Theory` 获得一些乐趣!
 
 [Plotting in Pandas Just Got Prettier](https://t.co/e0YuvKSPp4)
-Create rich visualisations and dashboards with the Pandas plotting backend for Plotly and Bokeh.
+使用 `Plotly` 和 `Bokeh` 的 `Pandas` 绘图后端创建丰富的可视化效果和仪表板。
 
-[How to prepare to write your first Mycroft AI skill using Python](https://opensource.com/article/20/6/mycroft-voice-assistant-skill)
-Planning is the essential first step in writing a skill and teaching Mycroft how to do what you want it to do.
+[如何准备使用Python编写第一个Mycroft AI技能？](https://opensource.com/article/20/6/mycroft-voice-assistant-skill)
+计划是写技能必不可少的第一步，教 `Mycroft` 如何做你希望它做的事情。
 
-[Scikit-Learn Course - Machine Learning in Python Tutorial](https://www.youtube.com/watch?v=pqNCD_5r0IU) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)
-Scikit-learn is a free software machine learning library for the Python programming language. Learn about machine learning using scikit-learn in this full course.
+[Scikit-Learn课程--Python中的机器学习教程](https://www.youtube.com/watch?v=pqNCD_5r0IU) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)
+`Scikit-learn` 是一个免费的 `Python` 编程语言的软件机器学习库。在这个完整的课程中，了解使用 `scikit-learn` 进行机器学习。
 
 [Development with Nix: Python](https://thomazleite.com/posts/development-with-nix-python/)
-A tutorial on using Nix to provision Python development environments. No prior knowledge of Nix is required.
+使用 `Nix` 提供 `Python` 开发环境的教程。不需要事先了解 `Nix`。
 
-[Generating cooking recipes using TensorFlow and LSTM Recurrent Neural Network: A step-by-step guide](https://github.com/trekhleb/machine-learning-experiments/blob/master/assets/recipes_generation.en.md)
-This article contains details of how the LSTM model was actually trained on Python using TensorFlow 2 with Keras API.
+[使用TensorFlow和LSTM递归神经网络生成烹饪食谱：分步指南](https://github.com/trekhleb/machine-learning-experiments/blob/master/assets/recipes_generation.en.md)
+本文包含有关如何使用 `TensorFlow 2` 和 `Keras API` 在 `Python` 上实际训练 `LSTM` 模型的详细信息。
 
-[Automatically apply for jobs on LinkedIn (Python + Selenium)](https://www.youtube.com/playlist?list=PLNpKaH98va-EbBrOvqpiSoJB_ghWb5O1n) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)
-In this series, learn how  you can easily automate the process of applying for jobs on LinkedIn!
+[自动在LinkedIn上申请职位（Python + Selenium）](https://www.youtube.com/playlist?list=PLNpKaH98va-EbBrOvqpiSoJB_ghWb5O1n) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)
+在本系列中，学习如何轻松地自动在 `LinkedIn` 上申请工作！
 
-[Turning any CNN image classifier into an object detector with Keras, TensorFlow, and OpenCV](https://www.pyimagesearch.com/2020/06/22/turning-any-cnn-image-classifier-into-an-object-detector-with-keras-tensorflow-and-opencv/)
-In this tutorial, you will learn how to take any pre-trained deep learning image classifier and turn it into an object detector using Keras, TensorFlow, and OpenCV.
+[使用Keras，TensorFlow和OpenCV将任何CNN图像分类器转换为对象检测器](https://www.pyimagesearch.com/2020/06/22/turning-any-cnn-image-classifier-into-an-object-detector-with-keras-tensorflow-and-opencv/)
+在本教程中，您将学习如何使用任何预先训练的深度学习图像分类器，并使用 `Keras，TensorFlow和OpenCV` 将其变成对象检测器。
 
-[Plugin Architecture in Python (aka Py3EE)](https://www.dsouzaman.net/python_plugin_architecture.html)
-This article looks at how dependency direction and interfaces can be used to create a plugin architecture in Python. The toy example here might look over-engineered, but it lets us explore ideas that would be valuable in more realistic contexts when you have multiple people working together.
+[Python的插件架构(aka Py3EE)](https://www.dsouzaman.net/python_plugin_architecture.html)
+本文探讨了如何利用依赖方向和接口在 `Python` 中创建一个插件架构。这里的玩具例子可能看起来过于工程化，但它让我们探索了一些想法，当你有多人一起工作时，这些想法在更现实的情境中会很有价值。
 
 [Clinging to memory](https://pythonspeed.com/articles/function-calls-prevent-garbage-collection/)
-How Python function calls can increase your memory usage.
+`Python` 函数调用是如何增加你的内存使用率。
 
 [Pickle’s nine flaws](https://nedbatchelder.com/blog/202006/pickles_nine_flaws.html)
-Python’s pickle module is a very convenient way to serialize and de-serialize objects. It needs no schema, and can handle arbitrary Python objects. But it has problems. This post briefly explains the problems.
+`Python 的 pickle ` 模块是一种非常方便的序列化和反序列化对象的方法。它不需要模式，并且可以处理任意的 `Python` 对象。但它也有问题。这篇文章简单解释一下这些问题。
 
 [Stock Analysis in Python](https://beta.deepnote.com/article/stock-analysis-in-python)
-Exploring financial data with object-oriented programming and additive models.
+使用面向对象的编程和附加模型探索财务数据。
 
-[Blockchain Explained: Supply Chain Example with Python Tutorial](https://www.youtube.com/watch?v=MyXndVDCIY8) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)
-This video walks you through a python tutorial with a simple blockchain explained video for a simple supply chain example. We explore topics like the block, block chain, nonce and proof of work as well as briefly review smart contracts.
+[区块链解释：Python教程中的供应链示例](https://www.youtube.com/watch?v=MyXndVDCIY8) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)
+该视频将带您通过一个 `Python` 教程，并获得一个简单的区块链解释视频，以了解一个简单的供应链示例。 我们探索诸如区块，区块链，随机数和工作量证明之类的主题，并简要回顾智能合约。
 
-[Automating Convention: Linting and Formatting Python Code](https://www.laac.dev/blog/automating-convention-linting-formatting-python/)
-In this tutorial, We'll walk through how to use pre-commit to manage git hooks for code formatting and linting. We use flake8, black, isort, and bandit to automatically lint and format our Python code on every git commit.
+[自动化约定：整理和格式化Python代码](https://www.laac.dev/blog/automating-convention-linting-formatting-python/)
+在本教程中，我们将逐步介绍如何使用 `pre-commit` 管理git钩子以进行代码格式化和插入。 我们使用 `flake8，black，isoort` 和 `bandit` 在每个 `git commit` 上自动完成对 `Python` 代码的格式化和格式化。
 
-[What I learned from looking at 200 machine learning tools](https://huyenchip.com/2020/06/22/mlops.html)
+[我从200种机器学习工具中学到了什么](https://huyenchip.com/2020/06/22/mlops.html)
 
-[What is the core of the Python programming language?](https://snarky.ca/what-is-the-core-of-the-python-programming-language/)
+[Python编程语言的核心是什么？](https://snarky.ca/what-is-the-core-of-the-python-programming-language/)
 
 [Python 101 – Working with Files](https://www.blog.pythonlibrary.org/2020/06/24/python-101-working-with-files/)
 
-[Property Testing with Complex Inputs](https://www.hillelwayne.com/post/property-testing-complex-inputs/)
+[使用复杂输入进行属性测试](https://www.hillelwayne.com/post/property-testing-complex-inputs/)
 
-[How to Performance Test Python Code: timeit, cProfile, and More](https://therenegadecoder.com/code/how-to-performance-test-python-code/)
+[如何性能测试Python代码：timeit，cProfile等](https://therenegadecoder.com/code/how-to-performance-test-python-code/)
 
 
 
 ### 有趣的项目、工具和库
 
 [sktime](https://github.com/alan-turing-institute/sktime)
-A scikit-learn compatible Python toolbox for machine learning with time series.
+一个 `scikit-learn` 兼容的 `Python` 工具箱，用于按时间序列进行机器学习。
 
 [EasyOCR](https://github.com/JaidedAI/EasyOCR)
-Ready-to-use OCR with 40+ languages supported including Chinese, Japanese, Korean and Thai.
+即用型 `OCR`，支持40多种语言，包括中文、日文、韩文和泰文。
 
 [nginx-ui](https://github.com/schenkd/nginx-ui)
-Nginx UI allows you to access and modify the nginx configurations files without cli.
+`Nginx UI` 允许你在没有 `cli` 的情况下访问和修改 `nginx` 配置文件。
 
 [Caliban](https://github.com/google/caliban)
-Research workflows made easy, locally and in the Cloud.
+在本地和云端简化了研究工作流程。
 
 [Jamboree](https://github.com/kivo360/jamboree)
-Fast event-sourcing library using Redis and Mongo.
+使用 `Redis` 和 `Mongo` 的快速事件源库。
 
 [xfeat](https://github.com/pfnet-research/xfeat)
-Flexible Feature Engineering & Exploration Library using GPUs and Optuna.
+使用 `Redis` 和 `Mongo` 的快速事件源库.使用 `GPU` 和 `Optuna` 的灵活特征工程和探索库。
 
 [deepsnap](https://github.com/snap-stanford/deepsnap)
 DeepSNAP is a Python library to assist efficient deep learning on graphs. DeepSNAP features in its support for flexible graph manipulation, standard pipeline, heterogeneous graphs and simple API.
