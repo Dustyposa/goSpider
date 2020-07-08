@@ -1,5 +1,5 @@
 Title: pythonista-weekly : Pyw 455
-Date: 2020-06-6 14:22
+Date: 2020-06-27 14:22
 Tags: Weekly,pythonweekly,Zh 
 Slug: pyw-455
 
@@ -138,41 +138,41 @@ Register for a 30-min webinar on July 16th @ 10am CDT to learn how to make your 
 使用 `Redis` 和 `Mongo` 的快速事件源库.使用 `GPU` 和 `Optuna` 的灵活特征工程和探索库。
 
 [deepsnap](https://github.com/snap-stanford/deepsnap)
-DeepSNAP is a Python library to assist efficient deep learning on graphs. DeepSNAP features in its support for flexible graph manipulation, standard pipeline, heterogeneous graphs and simple API.
+`DeepSNAP` 是一个 `Python` 库，可帮助您高效地进行图的深度学习。`DeepSNAP` 支持灵活的图形操作，标准管道，异构图形和简单的 `API`。
 
 [spacy-streamlit](https://github.com/explosion/spacy-streamlit)
-spaCy building blocks for Streamlit apps.
+`spaCy` 是 `Streamlit` 应用的构件。
 
 [gpt-3-experiments](https://github.com/minimaxir/gpt-3-experiments)
-A repo containing test prompts for OpenAI's GPT-3 API and the resulting AI-generated texts, which both illustrate the model's robustness, plus a Python script to quickly query texts from the API. 
+一个包含 `OpenAI's GPT-3 API` 的测试提示和由此产生的 `AI` 生成的文本的 `Repo`，它们都说明了模型的鲁棒性，另外还有一个 `Python` 脚本来快速查询 `API` 中的文本。
 
 
 
 ### 新的版本
 
 [SciPy 1.5.0](https://github.com/scipy/scipy/releases/tag/v1.5.0)
-SciPy 1.5.0 is the culmination of 6 months of hard work. It contains many new features, numerous bug-fixes, improved test coverage and better documentation. There have been a number of deprecations and API changes in this release.
+`SciPy 1.5.0` 是6个月努力工作的结晶。它包含了许多新的功能，修复大量的错误，改进的测试覆盖率和更好的文档。在这个版本中，有一些废弃和API变化。
 
 [NumPy 1.19.0](https://numpy.org/devdocs/release/1.19.0-notes.html)
-This NumPy release is marked by the removal of much technical debt: support for Python 2 has been removed, many deprecations have been expired, and documentation has been improved. The polishing of the random module continues apace with bug fixes and better usability from Cython.
+此 `NumPy` 版本的特点是消除了许多技术债务：删除了对 `Python 2` 的支持，许多弃用已过期，并且文档已得到改进。`Cython` 修复了漏洞，并提高了可用性，从而继续对随机模块进行优化。
 
 ### 那些活动
 
 [PyTorch Summer Hackathon 2020](https://pytorch2020.devpost.com/)
-The PyTorch Summer Hackathon is back this year with all new opportunities for you to connect with the PyTorch community to build innovative, impactful models, applications and other projects that create positive impact for organizations or people. In addition to cash and promotion, first place winners in each category will get a 30 minute virtual meeting with the PyTorch team to discuss your winning submissions!
+今年 `PyTorch` 夏季黑客马拉松又回来了，您将有全新的机会与 `PyTorch` 社区进行交流，构建创新、有影响力的模型、应用程序和其他项目，为组织或人们创造积极影响。除了现金和促销之外，每个类别的第一名获奖者还将获得与 `PyTorch` 团队进行 30 分钟虚拟会议的机会，以讨论您的获奖作品。
 
 [Virtual: Planning ahead: using Markov decision processes to optimize your life](https://www.meetup.com/PyDataCharlotte/events/271330993/)
-In this talk, Eric Cotner will discuss Markov decision processes (MDP's); a quantitative framework for determining an optimal sequence of actions. We'll learn how to set up an MDP, what kinds of situations they can be applied to, some of the math behind it, and finally, an easy way to solve simple MDP's using the python package `pymdptoolbox`. 
+在本讲座中，`Eric Cotner` 将讨论马尔科夫决策过程（MDP's）；一个用于确定最佳行动序列的量化框架。我们将学习如何建立一个 `MDP`，它们可以应用于什么样的情况，它背后的一些数学，最后，使用 `python` 包`pymdptoolbox`来解决简单的 `MDP` 的简单方法。
 
 [Virtual: PyData Triangle July 2020 Meetup](https://www.meetup.com/PyData-Triangle/events/271465941/)
-There will be following talks
+将会有以下的话题:
 
-- Data Governance and compliance with the Open Government Data Act
-- Quantifying Gerrymandering: Algorithmic Advances and the Need for Open Source Software
+- 数据治理和遵守《Open Government Data Act》
+- 量化Gerrymandering: 算法的进步和对开源软件的需求
 
 
 [Virtual: PyData Budapest Online #5 - Dataviz Evolution](https://www.meetup.com/PyData-Budapest/events/270866403/)
-We will look into the evolution of the Python data visualization landscape with the following invited talks:
+我们将通过以下邀请的演讲探讨 `Python` 数据可视化领域的发展：
 
 - Holoviews/hvPlot & Panel
 
