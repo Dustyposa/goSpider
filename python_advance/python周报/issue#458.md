@@ -1,12 +1,12 @@
-Title: pythonista-weekly : Pyw 457
-Date: 2020-07-12 14:22
+Title: pythonista-weekly : Pyw 458
+Date: 2020-07-16 14:22
 Tags: Weekly,pythonweekly,Zh 
-Slug: pyw-457
+Slug: pyw-458
 
-### 欢迎阅读《pythonista周刊》第457期。Let us start!
+### 欢迎阅读《pythonista周刊》第458期。Let us start!
 
 
->原文: [https://mailchi.mp/pythonweekly/python-weekly-issue-457](https://mailchi.mp/pythonweekly/python-weekly-issue-457)  
+>原文: [https://mailchi.mp/pythonweekly/python-weekly-issue-458](https://mailchi.mp/pythonweekly/python-weekly-issue-458)  
 >翻译：Dustyposa
 
 **来自赞助商（PS：原文的赞助商）:** 
@@ -179,6 +179,6 @@ A JavaScript Change Monitor for BugBounty.
 
 
 
-- 首发: [pythonista-weekly~蠎周刊 ~汇集全球蠎事儿 ;-)](http://weekly.pychina.org/python-weekly/pyw-457.html)
-- 改进: [issue-457.md](https://github.com/PyChina/weekly/blob/master/content/python-weekly/issue%23457.md)
+- 首发: [pythonista-weekly~蠎周刊 ~汇集全球蠎事儿 ;-)](http://weekly.pychina.org/python-weekly/pyw-458.html)
+- 改进: [issue-458.md](https://github.com/PyChina/weekly/blob/master/content/python-weekly/issue%23458.md)
 
