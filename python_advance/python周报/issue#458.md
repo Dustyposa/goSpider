@@ -11,161 +11,139 @@ Slug: pyw-458
 
 **来自赞助商（PS：原文的赞助商）:** 
 
-作为 `Python` 开发人员，你知道编写干净，安全的 `Python` 代码对您和您的用户很重要。 `SonarQube` 通过功能强大，快速且准确的静态代码分析使开箱即用的 `Python` 开发变得更加轻松。 [Register now to see for yourself in a live webinar on July 16th!](https://sonarsource.zoom.us/webinar/register/3615925068190/WN_rvO_CmpfRKigFBRue0NNCg)
+[每周进行一次编程](https://pythonweekly.us2.list-manage.com/track/click?u=e2e180baf855ac797ef407fc7&id=6df46e32b7&e=57c131a127)
+A weekly newsletter featuring the best hand curated news, articles, tutorials, talks, tools and libraries etc for programmers. [Join For Free](https://pythonweekly.us2.list-manage.com/track/click?u=e2e180baf855ac797ef407fc7&id=36d17c6ec8&e=57c131a127)
+
+
+
+### 新闻
+
+[Python恶意软件的兴起](https://pythonweekly.us2.list-manage.com/track/click?u=e2e180baf855ac797ef407fc7&id=606eb039dd&e=57c131a127)
+低准入门槛、易用性、快速的开发过程和大量的库集合，使得 `Python` 对数百万开发者--包括恶意软件作者--具有吸引力。`Python` 已经迅速成为一种标准语言，威胁行为者可以用它来创建远程访问木马（`RAT`）、信息窃取者和漏洞利用工具。随着 `Python` 的不断普及，C语言恶意软件的单一文化不断受到挑战，`Python` 将越来越多地被用作网络攻击中的恶意软件，这似乎是唯一确定的。
 
 
 
 ### 新鲜事
 
-[如何使用吉他编程](https://www.youtube.com/watch?v=4rbp83fJTkg) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)（7min）
-学习如何用吉他......而不是键盘来编程。使用一些自定义的 `Python` 代码和一些其他插件，作者已经创建了一些东西，将原始的吉他信号变成键击。在吉他上用 `Python` 编程听起来像什么？什么时候你可以扔掉你的键盘来做这样的东西？
+[使用Python理解和解码JPEG图像](https://pythonweekly.us2.list-manage.com/track/click?u=e2e180baf855ac797ef407fc7&id=8d5f1d4f36&e=57c131a127)
+很多人不知道的一件事是，`JPEG` 不是一种格式，而是一种算法。你看到的 `JPEG` 图像大多是 `JFIF` 格式（ `JPEG` 文件交换格式），内部使用 `JPEG` 压缩算法。在本文的最后，你会对 `JPEG` 算法如何压缩数据以及如何编写一些自定义的 `Python` 代码来解压有更深的了解。
 
-[Python and Go : Part II - 用 Go 扩展 Python](https://www.ardanlabs.com/blog/2020/07/extending-python-with-go.html)
-在这篇文章中，我们将通过在 `Go` 中编写一个 `Python` 程序可以直接使用的共享库来降低使用 `gRPC` 的复杂性。 采用这种方法，无需进行任何网络连接，也无需依赖数据类型，也无需编组。 在使用 `Python` 共享库调用函数的几种方法中，我们决定使用 `Python` 的 `ctypes` 模块。
+[2020年如何找到一份Python开发人员的工作](https://pythonweekly.us2.list-manage.com/track/click?u=e2e180baf855ac797ef407fc7&id=100dbb446f&e=57c131a127) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)
+在这段视频中，`Daniel Feldroy` 给出了作为开发者的求职建议。这不是关于算法，而是如何以最好的方式沟通和展示自己。另外还包括如何证明你知道并理解编码标准和最佳实践。
 
-[Putting More Buzz in Your Python Fizz](https://www.capitalone.com/tech/software-engineering/fizz-buzz-python-type-hints/)
-关于类型提示如何改进代码的四个过度工程的示例。
+[使用serverless构建电子安全锁](https://pythonweekly.us2.list-manage.com/track/click?u=e2e180baf855ac797ef407fc7&id=298ee1c3cf&e=57c131a127)
+使用 `serverless` 构建电子安全锁本指南向你展示了如何构建电子安全锁，以用于包裹交付、保护物理文件的安全或授予对秘密实验室的访问权。该项目使用 `AWS Serverless` 创建一个触摸屏键盘锁，使用 `SMS` 向收件人发出警报，并提供自定义消息和解锁代码。所示的锁箱包含文件，但该系统可以安装在任何有门的地方。
 
-[用 Flask 处理文件上传](https://blog.miguelgrinberg.com/post/handling-file-uploads-with-flask)
-本文介绍了如何为 `Flask` 服务器实现强大的文件上传功能，该功能与 `Web` 浏览器中的标准文件上传支持以及很酷的基于 `JavaScript` 的上传小部件兼容。
+[使用 Django 的内容安全策略入门指南](https://pythonweekly.us2.list-manage.com/track/click?u=e2e180baf855ac797ef407fc7&id=6593884eab&e=57c131a127)
+在本教程中，我们将探讨如何在 `Django` 项目中实现内容安全策略头，以及如何使我们的策略适应现实世界的场景。本教程使用的是 `Django` 的内容安全策略的实现，但这些经验适用于任何类型的内容安全策略实现。
 
-[Multiple User Types in Django](https://www.youtube.com/watch?v=f0hdXr2MOEA) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)
-学习如何用 `Django` 以可维护的方式实现多种用户角色。
+[Goodwill.com Hunting](https://pythonweekly.us2.list-manage.com/track/click?u=e2e180baf855ac797ef407fc7&id=7fa1c62acb&e=57c131a127)
+A Graphical Analysis of Women's Tops Sold on Goodwill's Website.
 
-[Interfaces, Mixins 在 Python 中构建强大的自定义数据结构。](https://rednafi.github.io/digressions/python/2020/07/03/python-mixins.html)
-增强 `Python` 的内置数据结构。   
+[在Python中从头开始使用机器学习对OCR进行编码](https://pythonweekly.us2.list-manage.com/track/click?u=e2e180baf855ac797ef407fc7&id=495cec070c&e=57c131a127) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)
+在本视频中，我们使用 `Python` 中的简单机器学习（无需导入）实现OCR /图像识别！
 
-[Fighting Coronavirus with AI](https://blog.paperspace.com/fighting-coronavirus-with-ai-building-covid-19-classifier/)
-这是一个使用 `PyTorch` 从胸部 `CT` 扫描建立 `COVID-19` 分类器的分步教程。
+[如何在Python 3中使用pathlib模块操纵文件系统路径](https://pythonweekly.us2.list-manage.com/track/click?u=e2e180baf855ac797ef407fc7&id=d6e1390f88&e=57c131a127)
+`pathlib` 类似于 `os.path` 模块，但 `pathlib` 提供了比 `os.path` 更高级别的，而且通常更方便的界面。在本教程中，我们将介绍一些使用 `pathlib` 模块来表示和操作文件系统路径的方法。
 
-[用这个RTOS的VSCode插件，用Python对物联网系统进行编程。](https://opensource.com/article/20/7/python-rt-thread)
-像 `RTOS` 这样的实时嵌入式操作系统可以让嵌入式系统的编程变得更加简单。
+[使用Python进行机器人编程的初学者指南。](https://pythonweekly.us2.list-manage.com/track/click?u=e2e180baf855ac797ef407fc7&id=fae491b75d&e=57c131a127)
+本文向你展示了如何使用 `Python` 机器人框架来开发控制软件，描述了我为我的模拟机器人开发的控制方案，说明了它是如何与环境交互并实现目标的，并讨论了我在这一过程中遇到的一些机器人编程的基本挑战。
 
-[2019年YouTube热门视频分析（美国）](https://ammar-alyousfi.com/2020/youtube-trending-videos-analysis-2019-us)
-对 `2019` 年全年所有热门视频进行分析（超过7万条视频）。标题，描述，缩略图，标签，浏览量，喜欢/不喜欢，和评论都被分析，以产生本文章中显示的结果。
+[使用AWS DeepLens和GluonCV构建在家工作的姿势跟踪器](https://pythonweekly.us2.list-manage.com/track/click?u=e2e180baf855ac797ef407fc7&id=cb1ce4f9e0&e=57c131a127)
+在家工作对你的人体工程学设置有很大的改变，这会让你很难保持健康的姿势，并在一天中频繁休息。为了帮助你保持良好的姿势，并在这个过程中享受机器学习(ML)的乐趣，本篇文章将向你展示如何使用AWS DeepLens(AWS可编程摄像机)构建一个姿势跟踪器项目，供开发者学习ML。
 
-[Introducing iommi](https://www.youtube.com/watch?v=8IwAlM9lVZc) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)
-这是对 `iommi` 的介绍，它是一个基于 `Django` 的框架，它可以根据你的应用模型神奇地创建页面、表单和表格，并提供先进的开箱即用的功能，而不会牺牲灵活性和控制力。
+[数据科学和机器学习的NumPy基础知识](https://pythonweekly.us2.list-manage.com/track/click?u=e2e180baf855ac797ef407fc7&id=2838683395&e=57c131a127)
+本篇文章回顾了 `NumPy` 的主要组件和功能，关注数据科学和机器学习从业者的需求，以及有志于成为数据专业人士的人。
 
-[Deploying Django+React+Nginx to DigitalOcean with Ansible](https://www.rrebase.com/posts/deploying-knboard-to-digitalocean-with-ansible)
-本文将带你了解 `Django+React+Nginx` 应用部署到 `DigitalOcean` 的过程。`Ansible` 和 `Docker` 的结合，使其成为一个优秀的自动化部署过程。
+[Hashing it Out](https://pythonweekly.us2.list-manage.com/track/click?u=e2e180baf855ac797ef407fc7&id=1afd256a8e&e=57c131a127)
+深入了解 `Python` 字典。
 
-[Flask项目设置。TDD、Docker、Postgres等。](https://www.thedigitalcatonline.com/blog/2020/07/05/flask-project-setup-tdd-docker-postgres-and-more-part-1/)
-一个 3 部分的系列，向你逐步展示如何使用 `TDD、Docker和Postgres` 设置一个Flask项目。请看 [part 2](https://www.thedigitalcatonline.com/blog/2020/07/06/flask-project-setup-tdd-docker-postgres-and-more-part-2/) and [part 3](https://www.thedigitalcatonline.com/blog/2020/07/07/flask-project-setup-tdd-docker-postgres-and-more-part-3/).
+[对象过多：减少了Python实例的内存开销](https://pythonweekly.us2.list-manage.com/track/click?u=e2e180baf855ac797ef407fc7&id=d4a110ba75&e=57c131a127)
+每当您在 `Python` 中创建一个类的实例时，您都会使用一些内存--包括开销，这些开销实际上可能比您关心的数据还要大。创建一百万个对象，你就有一百万倍的开销。而这个开销可能会增加，要么阻止你运行你的程序，要么增加你花在配置硬件上的钱。所以，让我们来看看这个开销到底有多大（偷看：很大！），以及你能做些什么。
 
-[Django和Nginx中无效的HTTP_HOST头错误。](https://www.borfast.com/blog/2020/07/06/invalid-http_host-header-errors-in-django-and-nginx/)
-你是否有一个在 `Nginx` 后面运行的 `Django` 应用，即使你已经正确配置了 `ALLOWED_HOSTS`，但还是收到了很多无效的 `HTTP_HOST` 头错误？这是个很常见的问题，但修复起来也很简单。
+[使用Keras，TensorFlow和深度学习进行R-CNN对象检测](https://pythonweekly.us2.list-manage.com/track/click?u=e2e180baf855ac797ef407fc7&id=b07dc2891f&e=57c131a127)
+在本教程中，您将学习如何使用 `Keras、TensorFlow` 和深度学习构建一个 `R-CNN` 对象检测器。
 
-[Serverless Web Apps in Python](https://www.sanjaysiddhanti.com/2020/07/05/serverless/)
-在 `AWS Lambda` 上部署 `Python` 网络应用的实践指南。
+[计算机视觉中的半监督式学习](https://pythonweekly.us2.list-manage.com/track/click?u=e2e180baf855ac797ef407fc7&id=3983165209&e=57c131a127)
+全面介绍了计算机视觉中最新的半监督学习方法。
 
-[The Stable Marriage Problem and Modern Dating](https://www.arvarik.com/the-stable-marriage-problem-and-modern-dating)
-尝试用稳定婚姻问题的经验来模拟现代交友的模式
+[容器化的Python开发--第一部分](https://pythonweekly.us2.list-manage.com/track/click?u=e2e180baf855ac797ef407fc7&id=2c36d4f4c5&e=57c131a127)
+该系列的第一部分涵盖了如何将 `Python` 服务/工具容器化以及最佳实践。
 
-[Flatter wait-free hazard pointers](https://pvk.ca/Blog/2020/07/07/flatter-wait-free-hazard-pointers/)
-这篇文章展示了如何通过一点工程技巧将这个抽象平坦化，变成一些实用的东西，并拿出免等待的替代方案来替代通常的无锁危险指针，这些替代方案在最佳情况下是有竞争力的。 `Blelloch` 和 `Wei` 的见解是，危险指针可以使用任何免等待的原子内存-内存拷贝，这让我们可以在不影响普通情况下改进最坏情况！这也是我们的一个优势。
+[Self-replicating Python code](https://pythonweekly.us2.list-manage.com/track/click?u=e2e180baf855ac797ef407fc7&id=57845f24cd&e=57c131a127) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)
 
-[SlicerJupyter: a 3D Slicer kernel for interactive publications](https://blog.jupyter.org/slicerjupyter-a-3d-slicer-kernel-for-interactive-publications-6f2ad829f635)
-使用 `Jupyter` 和 `3D Slicer` 内核在笔记本上实现生物医学数据处理工作流程。
+[构建一个自更新的档案 README for GitHub](https://pythonweekly.us2.list-manage.com/track/click?u=e2e180baf855ac797ef407fc7&id=58dabfc6fb&e=57c131a127)
 
-[Zen Guardian](https://glyph.twistedmatrix.com/2020/07/zen-guardian.html)
-Let’s rewrite a fun toy Python program - in Python!
+[Python 101 – Creating Multiple Processes](https://pythonweekly.us2.list-manage.com/track/click?u=e2e180baf855ac797ef407fc7&id=ed9aed49e0&e=57c131a127)
 
-[Weaponizing favicon.ico for BugBounties , OSINT and what not](https://t.co/XT5sQnN7BT)
-
-[FlaskCon 2020 Videos](https://www.youtube.com/playlist?list=PL-MSuSC-Kjb45rrRGL6gWGn6gv35O1mC1) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)
-
-[Django Testing Toolbox](https://www.mattlayman.com/blog/2020/django-testing-toolbox/)
-
-[Massive memory overhead: Numbers in Python and how NumPy helps](https://pythonspeed.com/articles/python-integers-memory/)
-
-[Python 101 – Debugging Your Code with pdb](https://www.blog.pythonlibrary.org/2020/07/07/python-101-debugging-your-code-with-pdb/)
-
-[Huey作为Django的最小任务队列](https://www.untangled.dev/2020/07/01/huey-minimal-task-queue-django/)
+[没有一个正确的方式来测试你的代码](https://pythonweekly.us2.list-manage.com/track/click?u=e2e180baf855ac797ef407fc7&id=9018e68c4d&e=57c131a127)
 
 
 
 ### 有趣的项目、工具和库
 
 
-[EyeLoop](https://github.com/simonarvin/eyeloop) 
-`EyeLoop` 是一款基于 `Python 3` 的眼动追踪器，专门为消费级硬件上的动态闭环实验量身定做。
+[gradio](https://pythonweekly.us2.list-manage.com/track/click?u=e2e180baf855ac797ef407fc7&id=c59745e9ba&e=57c131a127)
+在3分钟内快速创建机器学习模型原型的用户界面。
 
-[Dataprep](https://github.com/sfu-db/dataprep) 
-`Dataprep` 让你只需几行代码就可以使用一个库来准备你的数据。
+[mljar-supervised](https://pythonweekly.us2.list-manage.com/track/click?u=e2e180baf855ac797ef407fc7&id=4c75b001df&e=57c131a127)
+自动机器学习 `Python `包，旨在为数据科学家节省时间。
 
-[inquest](https://github.com/yiblet/inquest)
-`Inquest` 可以让你在不重启 `python` 实例的情况下向 `python` 添加日志语句。它可以帮助你快速发现问题所在。
+[MMEditing](https://pythonweekly.us2.list-manage.com/track/click?u=e2e180baf855ac797ef407fc7&id=a423e28c30&e=57c131a127) 
+`MMEditing` 是一个基于 `PyTorch` 的开源图片和视频编辑工具箱。
 
-[rat-sql](https://github.com/microsoft/rat-sql)
-从英语到 `SQL` 的关系感知语义解析模式。
+[modmail](https://pythonweekly.us2.list-manage.com/track/click?u=e2e180baf855ac797ef407fc7&id=4bebb8e7e7&e=57c131a127)
+功能丰富的 `discord Modmail` 机器人。
 
-[Sweetviz](https://github.com/fbdesignpro/sweetviz) 
-只需一行代码就可以可视化和比较数据集、目标值和关联。
+[Sprinkler_system](https://pythonweekly.us2.list-manage.com/track/click?u=e2e180baf855ac797ef407fc7&id=668c306140&e=57c131a127)
+自动洒水系统，使用开放的天气 `API` 和 `MySQL` 数据库来确定洒水系统应该在什么时候开启，然后 `Raspberry Pi` 会检查数据，并开启电动洒水系统。 
 
-[geemap](https://github.com/giswqs/geemap)
-一个 `Python` 包，用于与 `Google Earth Engine、ipyleaflet和ipywidgets` 交互式地图。
+[language-statistics](https://pythonweekly.us2.list-manage.com/track/click?u=e2e180baf855ac797ef407fc7&id=045c546fd2&e=57c131a127)
+在你的目录中的编程语言的可视化颜色条，有百分比和标签。
 
-[Cadmus](https://github.com/josh-richardson/cadmus)
-`Cadmus` 是一个图形化的应用程序，它允许你在任何通信应用程序中实时去除音频中的背景噪音。
+[stocks-manager](https://pythonweekly.us2.list-manage.com/track/click?u=e2e180baf855ac797ef407fc7&id=985c0d06c2&e=57c131a127)
+使用 `Flask` 的股票投资组合管理网站。
 
-[carefree-learn](https://github.com/carefree0910/carefree-learn)
-基于`PyTorch` 的表格式数据集的最小自动机器学习（`AutoML`）解决方案。
+[lazypredict](https://pythonweekly.us2.list-manage.com/track/click?u=e2e180baf855ac797ef407fc7&id=c038fa9071&e=57c131a127)
+`Lazy Predict` 帮助建立了很多基本的模型，不需要太多的代码，帮助了解哪些模型的效果更好，不需要任何参数调整。
 
-[Surprisify](https://github.com/StephenChou/Surprisify-Playlist-Generator) 
-使用 `Spotify API` 的播放列表生成器。
+[scispacy](https://pythonweekly.us2.list-manage.com/track/click?u=e2e180baf855ac797ef407fc7&id=7bd134ef18&e=57c131a127)
+一个完整的 `spaCy` 管道和科学/生物医学文件的模型。
 
-[Guietta](https://github.com/alfiopuglisi/guietta)
-一个用于制作简单的 `Python GUIs` 的工具。
+[mmsegmentation](https://pythonweekly.us2.list-manage.com/track/click?u=e2e180baf855ac797ef407fc7&id=c41378d225&e=57c131a127)
+`OpenMMLab` 语义分割工具箱和基准。
 
-[FavFreak](https://github.com/devanshbatham/FavFreak)
-让基于 `Favicon.ico` 的 `Recon` 再次大放异彩!
+[torchsde](https://pythonweekly.us2.list-manage.com/track/click?u=e2e180baf855ac797ef407fc7&id=08153b116f&e=57c131a127)
+具有 `GPU` 支持的差异化 `SDE` 求解器和高效的灵敏度分析。
 
-[White-box-Cartoonization](https://github.com/SystemErrorWang/White-box-Cartoonization)
-`CVPR2020` 论文 "Learning to Cartoonize Using White-box Cartoon Representations "的 `Tensorflow` 实现。
-
-[Ai-Doctor](https://github.com/himanshu2406/Ai-Doctor)
-开源 `Ai Discord` 机器人，只需X射线扫描，就能在几秒钟内检测出疾病。请记住，这是一个测试软件，你可以用于学习的目的，而不是用于现实生活的应用，建议一定要咨询真正的医生!
-
-[Universities](https://github.com/ycd/universities) 
-免费的 `API` 服务，您可以获取有关全球 `9600+` 所大学的信息。
-
-[omg-badges](https://github.com/kautukkundan/omg-badges)
-Gamify Livestreams - distribute badges to attendees while they watch your event's live stream on your website.
-
-[jsmon](https://github.com/robre/jsmon)
-A JavaScript Change Monitor for BugBounty.
+[rootend](https://pythonweekly.us2.list-manage.com/track/click?u=e2e180baf855ac797ef407fc7&id=ca0f55f9ac&e=57c131a127)
+`rootend` 是一个 `python 3.x *nix` 枚举器和自动权限升级工具。
 
 
 
 ### 新的版本
 
-[Python 3.9.0b4](https://pythoninsider.blogspot.com/2020/07/python-390b4-is-now-ready-for-testing.html)
+[Python 3.8.4](https://pythonweekly.us2.list-manage.com/track/click?u=e2e180baf855ac797ef407fc7&id=8a7dc4f79d&e=57c131a127)
+
+
 
 ### 那些活动
 
-[Virtual: PhillyPUG Meetup July 2020](https://www.meetup.com/phillypug/events/271570394/)
-将会有以下话题：
+[Virtual: Boston Python Meetup July 2020](https://pythonweekly.us2.list-manage.com/track/click?u=e2e180baf855ac797ef407fc7&id=9a7dfeb62e&e=57c131a127)
+将会有一个演讲， 《用SQLite和Datasette进行个人分析》。
 
-- 用 `Tensorboard` 和 `PyTorch` 实现深度学习的可视化
-- 自编程人工智能
+[Virtual: Python for Quant Finance Meetup](https://pythonweekly.us2.list-manage.com/track/click?u=e2e180baf855ac797ef407fc7&id=f56990dc2c&e=57c131a127)
+将会有以下话题:
 
-
-[Virtual: [Workshop\] IndyPy Mixer - CI/CD 101 with CircleCI](https://www.meetup.com/indypy/events/hwstlrybckbsb/)
-在本讲座中，将向学员介绍持续集成和持续交付/部署的基本原理。学员将学习 `CI/CD` 的核心原则，并有机会通过 `CircleCI` 平台的实践活动巩固所学知识。研讨会将演示 `CI/CD` 构建配置、代码提交、提交构建、代码测试和打包。
-
-[Virtual: Cleveland Python Meetup July 2020](https://www.meetup.com/Cleveland-Area-Python-Interest-Group/events/fhqrtrybckbrb/)
-将会有以下话题：
-
-- Notebooks are still cool...with Jupyter
-- Why Pattern Matching is AWESOME!
+- 如何建立一个可持续和风险优化的投资组合？
+- 用AI预测股市数据
 
 
-[Virtual: PyData Berlin Meetup July 2020](https://www.meetup.com/PyData-Berlin/events/259561236/)
-将会有以下话题：
+[Virtual Django Meetup](https://pythonweekly.us2.list-manage.com/track/click?u=e2e180baf855ac797ef407fc7&id=59b415a8db&e=57c131a127)
+在上一次全国范围内的 `Django` 虚拟聚会中，我们聚集了超过 `160` 人。这次我们希望能有更大的规模。虽然 `DjangoCon 2020` 被取消了，但这并不意味着展会不能继续。
 
-- Quantum Machine Learning for Programmers
-- Application of NLP in the UK rail Industry
+[Virtual: San Diego Python Meetup July 2020](https://pythonweekly.us2.list-manage.com/track/click?u=e2e180baf855ac797ef407fc7&id=026cc71658&e=57c131a127)
+There will a talk, tmp_path For Working with Files in Pytest.
 
 #### Posa：
 
