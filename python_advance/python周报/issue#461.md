@@ -10,129 +10,158 @@ Slug: pyw-461
 >翻译：Dustyposa
 
 **来自赞助商（PS：原文的赞助商）:**
-[获取每周的编程量](https://www.programmerweekly.com/?utm_source=pwad&utm_medium=newsletter)
-一份每周的简报，为程序员提供最好的手工策划的新闻、文章、教程、讲座、工具和库等。 [Join For Free](https://www.programmerweekly.com/?utm_source=pwad&utm_medium=newsletter)
+使用 `Datadog` 监控你的python指标，日志，集群分析。使用`Datadog`的应用分析，可以深入任何纬度并且能找到你所需要的信息，来进行动态诊断和快速故障排除。[来免费试用 14 天吧！](https://www.datadoghq.com/dg/apm/python-troubleshooting/?utm_source=Advertisement&utm_medium=Advertisement&utm_campaign=PythonWeekly-Troubleshooting)
+
+
+
+### 新鲜事
+
+[Announcing the new Jupyter Book](https://blog.jupyter.org/announcing-the-new-jupyter-book-cbf7aa8bc72e)
+`Jupyter Book` 是一个开源项目，用于从包含计算内容的源材料中构建漂亮的、具有出版质量的书籍、网站和文档。`Jupyter Book` 已经从头开始重新编写，使其更容易安装，更快使用，并能够在你的书籍中创建更复杂的出版内容。
 
 ### 文章、教程与话题
 
 
-[TinyPilot: Build a KVM Over IP for Under $100](https://mtlynch.io/tinypilot/)
-仅使用 `Raspberry Pi` 和 `$ 11` 的视频捕获适配器，你就可以创建自己的基于 `IP` 的 `KVM`，从而可以将键盘输入发送到远程计算机并捕获其显示。
+[Python 网络编程](https://www.youtube.com/watch?v=FGdiSJakIS4) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)
+通过建立四个项目来学习 `Python` 的网络编程。你将学会建立一个邮件客户端、一个 `DDOS` 脚本、一个端口扫描器和一个 `TCP` 聊天室。
 
-[隐藏于众目睽睽之下，深度窃密](https://app.wandb.ai/authors/stenography_tf/reports/Hiding-In-Plain-Sight-Deep-Steganography--VmlldzoxNzE5NDc)
-我们能否设计一个神经网络来寻找隐藏在另一幅图像中的全尺寸彩色图像？改变学习率和其他超参数会如何影响我们的模型性能？
+[Python 匿名函数指南](https://adamj.eu/tech/2020/08/10/a-guide-to-python-lambda-functions/)
+在这篇文章中，我们将介绍什么是 `Lambda` 函数，如何使用它们，以及它们与普通函数和其它替代函数的比较。我们还将介绍 `lambda` 函数的历史，比如 "`lambda`"这个名字的由来，以及为什么`Python` 的创建者 `Guido van Rossum` 想要删除它们。
 
-[在Django应用中的XSS漏洞问题](https://tonybaloney.github.io/posts/xss-exploitation-in-django.html)
-深入剖析 `Django` 应用中的 `XSS` 漏洞，如何发现和修复。
+[Python和Go.NET 第三部分 - 打包Python代码](https://www.ardanlabs.com/blog/2020/08/packaging-python-code.html)
+在这篇文章中，我们将通过编写一个 `Python` 模块来完成开发过程，该模块隐藏了与共享库工作的低级细节，然后将这段代码打包成一个 `Python` 包。
 
-[音频处理基础知识。在命令行或Python中处理音频文件](https://hackernoon.com/audio-handling-basics-how-to-process-audio-files-using-python-cli-jo283u3y)
-对于在语音分析、音乐信息检索和多模态数据分析领域工作的机器学习工程师来说，处理音频数据是一项必不可少的任务，但对于那些只想编辑、记录和转码声音的开发人员来说，也是必不可少的。本文展示了使用命令行工具处理音频数据的基础知识，同时也对用 `Python` 处理声音进行了不深不浅的探讨。
+[Django Views — The Right Way](https://spookylukey.github.io/django-views-the-right-way/)
+关于如何在 `Django` 中写视图的指南!
 
-[How to Modernize a Django Index Definition with Zero Downtime](https://adamj.eu/tech/2020/07/27/how-to-modernize-your-django-index-definitions/)
-这篇文章向你展示了一种改进的定义索引的方法，以及如何编写零宕机迁移。
+[用Poetry & Poetry2nix开发Python。可复制的灵活Python环境](https://www.tweag.io/blog/2020-08-12-poetry2nix/)
+学习如何使用 `Nix` 来创建高重现性的 `Python` 构建，并了解本地的依赖性。
 
-[How to manage logs with Django, Gunicorn and NGINX](https://mattsegal.dev/django-gunicorn-nginx-logging.html)
-使用 `Django`， `Gunicorn` 和 `NGINX` 时可用的日志记录选项概述。
+[Django 3.1 Async](https://wersdoerfer.de/blogs/ephes_blog/django-31-async/)
+了解如何在3.1版本的 `Django` 中使用异步视图、中间件和测试。
 
-[连续文档：托管在GitHub Pages（2/2）上阅读文档](https://tech.michaelaltfield.net/2020/07/23/sphinx-rtd-github-pages-2/)
-这篇文章将介绍如何将翻译(i18n)、`pdf/epub` 构建和特定分支的版本化文档添加到用 `GitHub Pages` 托管的 `Read-the-Docs` 主题的 `sphinx` 站点中，并使用GitHub的免费 `CI/CD` 工具构建。
+[Keras for Beginners: 实现循环神经网络](https://victorzhou.com/blog/keras-rnn-tutorial/)
+在 `Python` 中使用 `Keras` 实现一个简单的循环神经网络(RNN)的初级指南。
 
-[使用Django、DRF、Alpine.Js和Axios创建一个待办事项列表应用。](https://janowski.dev/blog/2020/7/23/creating-do-list-app-django-drf-alpinejs-and-axios/)
-待办事项列表是一个非常基本的示例应用，通常作为第一个项目之一来做。在这篇文章中，我们将通过使用一些有趣的技术让它变得更加有趣。作为后端，我们将使用 `Django` 和 `Django Rest Framework`，以及 `Alpine.js + Axios` 来在前端轻松地将其结合在一起。
+[在Rust中编写和发布Python模块。](https://blog.yossarian.net/2020/08/02/Writing-and-publishing-a-python-module-in-rust)
+这篇文章是我如何用 `Rust` 编写一个 `Python` 库 `procmaps` 的快速演练。它使用 `PyO3` 来进行绑定，并使用 `maturin` 来管理构建（以及生产 `manylinux1` 兼容的轮子）。
 
-[Slowsort - a pessimal sorting algorithm](https://arpitbhayani.me/blogs/slowsort)
-慢排序是一种确定次优排序算法。这个算法是由 `Andrei Broder` 和 `Jorge Stolfi` 在他们的论文 `《Pessimal Algorithms and Simplexity Analysis》` 中发表的，其中他们表达了一堆非常低效的算法。这些技术和算法很特别，因为它们在解决问题时从不出错，相反，它们会找到延迟成功的方法。在本文中，我们主要研究基于乘法和投降范式的慢排序算法。
+[用Python从头开始编写一个可扩展的Twitch机器人--不需要库!](https://www.youtube.com/watch?v=hmWN41GMVWw) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)
+在这个视频中，我们用 `Python` 从头开始实现了一个可扩展的 `Twitch` 机器人，不需要任何库！这个机器人支持两种基本的命令。该机器人支持两种基本的命令。模板命令是诸如 "欢迎来到频道，{用户}！"这样的命令。自定义命令是具有更多高级功能的命令--你可以把它们变成任何你想要的东西。
 
-[容器Python开发-第3部分](https://www.docker.com/blog/containerized-python-development-part-3/)
-在本系列的最后一部分，我们回顾了项目的开发周期，并更详细地讨论了如何应用代码更新和调试容器化 `Python` 服务的故障。目标是分析如何加快这些开发过程中的反复阶段，从而使我们获得与本地开发类似的体验。
+[在Django中使用表单集和JavaScript动态添加表单。](https://www.brennantymrak.com/articles/django-dynamic-formsets-javascript.html)
+本教程演示了如何使用 `Django` 表单集和 `JavaScript` 将表单的多个副本动态添加到页面并进行处理。
 
-[What's new in TensorFlow 2.3?](https://blog.tensorflow.org/2020/07/whats-new-in-tensorflow-2-3.html)
-`TensorFlow 2.3` 已经发布! 这个版本的重点是新的工具，让你更容易加载和预处理数据，并解决输入管道瓶颈，无论你是在一台机器上工作，还是在许多机器上工作。
+[从零开始的隐私分析](https://healeycodes.com/privacy-focused-analytics-from-scratch/)
+通过自己编写分析系统，学习更多关于用户数据收集的知识。
 
-[OpenCV GrabCut: 前景分割和提取](https://www.pyimagesearch.com/2020/07/27/opencv-grabcut-foreground-segmentation-and-extraction/)
-在本教程中，你将学习如何使用 `OpenCV` 和 `GrabCut` 来执行前景分割和提取。
+[审查依赖性。确保软件的可维护性](https://www.laac.dev/blog/vetting-dependencies-ensuring-software-maintainability/)
+在本教程中，我们将探讨何时在你的软件项目中包含一个新的包依赖关系。低质量的依赖关系会阻碍软件项目的升级和可维护性。本教程将教你如何在搜索新的依赖关系时设置一个高标准，以便包含在你的软件项目中。
 
-[在Python Web服务中寻找内存泄漏-奋斗的故事](https://soumyadipdm.github.io/)
+[如何使用Python来抓取地图数据](https://www.youtube.com/watch?v=zesUhmT7Oz0) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)
+学习如何用 `Python` 抓取 `google` 地图数据，或者更准确地说，如何用 `Python` 刮取 `ZeeMaps`。它带你了解如何使用 `Python` 请求 `BeautifulSoup` 和 `pandas` 来收集所有底层地图API数据。
 
-[在NVIDIA A100 GPU上加速TensorFlow](https://developer.nvidia.com/blog/accelerating-tensorflow-on-a100-gpus/)
+[Python知识图谱。理解语义关系](https://programmerbackpack.com/python-knowledge-graph-understanding-semantic-relationships/)
+使用 `Python、NLTK和SpaCy` 构建具有类-子类关系的知识图谱的 `NLP` 教程。
 
-[On Liberating My Smartwatch From Cloud Services](https://www.bunniestudios.com/blog/?p=5863)
+[开发coinflip，一个随机性测试套件。](https://github.com/Honno/coinflip/blob/report/report.pdf)
+本报告介绍了创建 `coinflip` 的过程，这是一个用于随机性测试的 `Python` 库，其中还包括一个命令行接口。在介绍之后，下面的章节将详细介绍实现 `coinflip` 的各个方面。最后的评估是 
 
-[使用Core ML构建用于人为操作的离线视频分类器](https://lukereichold.com/blog/posts/video-action-classification-coreml/)
+[如何用Python将语音录音转录成文本？](https://www.fullstackpython.com/blog/transcribe-recordings-speech-text-assemblyai.html)
+学习使用 `Python` 和 `AssemblyAI` 的 `API` 将 `MP3` 等录音中的语音转录成文本。
 
-[Sans I/O when rubber meets the road](https://fractalideas.com/blog/sans-io-when-rubber-meets-road/)
+[Django如何配置NGINX的详细信息](https://mattsegal.dev/nginx-django-reverse-proxy-config.html)
+详细查看 `Django` 通常使用的所有 `NGINX` 配置。
+
+[使用Python进行模板匹配的端到端对象检测](https://www.sicara.ai/blog/object-detection-template-matching)
+如何使用模板匹配来实现自定义对象检测。 无需注释数据！
+
+[如何使用Python执行两次样本T检验：3种不同的方法](https://www.marsja.se/how-to-perform-a-two-sample-t-test-with-python-3-different-methods)
+在本教程中，你将学习如何使用 `Python` 执行两次样本t检验，如何解释以及如何报告结果。
+
+[How To Use the Python Map Function](https://www.digitalocean.com/community/tutorials/how-to-use-the-python-map-function)
+我们可以使用内置函数 `map()` 将函数应用于可迭代项（例如列表或字典）中的每个项目，并返回一个新的迭代器以检索结果。 在本教程中，我们将介绍三种使用 `map()` 的不同方法：使用 `lambda` 函数，使用用户定义的函数以及最后使用使用多个可迭代参数的内置函数。
+
+[E-commerce website using Django 3 and Vue.js](https://www.youtube.com/playlist?list=PLpyspNLjzwBmIDrDOaPkLLuy5YDDNW9SA) ![img](https://mcusercontent.com/e2e180baf855ac797ef407fc7/images/af76283a-6e65-436c-967a-900427cf6399.png)
+
+[Django在生产环境中的最小Websockets设置](https://www.untangled.dev/2020/08/02/django-websockets-minimal-setup/)
+
+[异步Python中的完全一次初始化](https://nullprogram.com/blog/2020/07/30/)
+
+[Surviving Django (if you care about databases)](https://www.varrazzo.com/blog/2020/07/25/surviving-django/)
+
+[建立神经网络来预测贷款风险](https://tymick.me/blog/loan-risk-neural-network)
+
+
 
 ### 有趣的项目、工具和库
 
-[gpt3-sandbox](https://github.com/shreyashankar/gpt3-sandbox)
-这个项目的目标是让用户使用最新发布的 `OpenAI GPT-3 API`，只需几行 `Python` 就能创建酷炫的网络演示。
+[Pysa](https://engineering.fb.com/security/pysa/)
+一个开源静态分析工具，用于检测和预防 `Python` 代码中的安全性问题。
 
-[DeText](https://engineering.linkedin.com/blog/2020/open-sourcing-detext)
-`DeText` 是一个深度文本理解框架，用于NLP相关的排名、分类和语言生成任务。它利用深度神经网络的语义匹配来理解搜索和推荐系统中的成员意图。
+[Prefect](https://github.com/PrefectHQ/prefect) 
+`Prefect` 是一个新的工作流管理系统，专为现代基础架构设计，并由开源 `Prefect Core` 工作流引擎提供支持。 用户将任务组织到流程中， `Prefect` 负责其余的工作。
 
-[felicette](https://github.com/plant99/felicette)
-傻瓜式卫星图像。
+[dstack](https://github.com/dstackai)
+使用 `Python` 和 `R` 构建数据和 `ML` 应用程序的开源工具。
 
-[q](https://github.com/harelba/q)
-直接在 `CSV` 或 `TSV` 文件上运行 `SQL`。
+[Playwright](https://github.com/microsoft/playwright-python) 
+`Playwright` 是一个 `Python` 库，可通过单个 `API` 自动执行 `Chromium`，`Firefox` 和 `WebKit`。 `Playwright` 旨在实现跨浏览器的 `Web` 自动化，该自动化是绿色，功能强大，可靠且快速的。
 
-[latexify_py](https://github.com/odashi/latexify_py)
-通过 `Python` 函数生成 `LaTeX` 数学描述。
+[UnusualVolumeDetector](https://github.com/SamPom100/UnusualVolumeDetector)
+获取每个股票的最近5个月的交易量历史记录，并在股票交易量在最近3天内超过均值10个标准差的情况下提醒您。
 
-[Gather](https://devblogs.microsoft.com/python/gather-a-new-way-to-clean-notebooks/)
-`Gather` 是一款笔记本清理工具，它可以分析和确定笔记本内必要的代码依赖关系，并进行代码清理，将这项困难、烦人、耗时的工作自动化。
+[automigrate](https://github.com/abe-winter/automigrate)
+使用 `git +` 对 `SQL` 模式进行版本控制会自动迁移它们。
 
-[shtab](https://github.com/iterative/shtab)
-为 `Python CLI` 应用程序自动完成 `shell` 标签。
+[IntelOwl](https://github.com/intelowlproject/IntelOwl)
+Analyze files, domains, IPs in multiple ways from a single API at scale.
 
-[stonky](https://github.com/jkwill87/stonky)
-用于监控股票的命令行仪表盘。
+[bpytop](https://github.com/aristocratos/bpytop)
+Linux/OSX/FreeBSD 资源监控
 
-[PyEyeTrack](https://github.com/algoasylum/pyEyeTrack) 
-`PyEyeTrack` 是一个基于 `python` 的瞳孔跟踪库。该库通过商品网络摄像头追踪眼睛，并给出实时的眼睛坐标流。
+[Wildebeest](https://github.com/ShopRunner/wildebeest)
+A Python File-Processing Framework.
 
-[reNgine](https://github.com/yogeshojha/rengine) 
-`reNgine` 是一个自动侦察框架，目的是在 `Web` 应用的渗透测试过程中收集信息， `reNgine` 有可定制的扫描引擎，可以用来扫描网站、端点并收集信息。
+[flask-pg-extras](https://github.com/nickjj/flask-pg-extras)
+`Flask` 扩展，可从 `PostgreSQL` 数据库中获取有用的信息。 
 
-[movement-tracking](https://github.com/surya-veer/movement-tracking)
-`90` 行代码，将你的脸部动作转换成键盘命令。
+[futurecoder](https://github.com/alexmojaki/futurecoder)
+一个供初学者学习 `Python` 编程的平台。
+ 
+[django-jazzmin](https://github.com/farridav/django-jazzmin)
+`django` 管理的 `Drop-in` 主题，利用 `AdminLTE 3` 和 `Bootstrap 4` 让你的管理看起来很有活力。
 
-[WiFi-of-house](https://github.com/singhkumarpratik/WiFi-of-house)
-一个简单的 `Web` 应用程序，它允许你与你的朋友和家人即时分享你的 `WiFi` 证书。使用 `Python`、`Flask` 和 `Bootstrap` 构建。
+[Sharp](https://github.com/revalo/sharp)
+为 `Python Flask` 和 `JavaScript` 自动生成 `REST API` 代码。 
 
-[NYISOData](https://github.com/m4rz910/NYISOData)
-用于对纽约独立系统运营商（NYISO）的电力系统数据进行数据分析的工具。
+[usbkill](https://github.com/hephaest0s/usbkill) 
+usbkill is an anti-forensic kill-switch that waits for a change on your USB ports and then immediately shuts down your computer.
 
-[DyPy](https://arxiv.org/pdf/2007.13815.pdf)
-用于模拟矩阵形式游戏的 `Python` 库。
+[Pyrogram](https://github.com/pyrogram/pyrogram)
+`Telegram MTProto API` 客户端库和 `Python` 框架。
 
-### 新鲜事
+[GetPy](https://github.com/atom-moyer/getpy) 
+与 `numpy` 集成的矢量化 `python dict / set`。
 
-[pip 20.2](https://discuss.python.org/t/announcement-pip-20-2-release/4863)
-此次发布的亮点有：
+[PFRL](https://github.com/pfnet/pfrl)
+一个基于 `PyTorch` 的深度强化学习库。
 
-- 新一代依赖关系解析器的测试版已经推出。
-- 更快的 wheel 文件安装
-- 改进了对包含非 ASCII 文件内容的 whell 的处理。
-- 使用并行化网络操作的更快的pip列表
-- 已安装的软件包现在包含了关于它们是否是直接的
-- 用户要求的（PEP 376的REQUESTED文件）
+[picharsso](https://github.com/kelvindecosta/picharsso)
+将图像转换为文字的实用程序。
 
-[PyTorch 1.6](https://pytorch.org/blog/pytorch-1.6-released/)
-`PyTorch 1.6` 版本包括一些新的 `API`、性能改进和剖析工具，以及对基于分布式数据并行(DDP)和远程过程调用(RPC)的分布式训练的重大更新。同时微软现在也在维护 `Windows` 的构建和二进制文件，也将在 `GitHub` 以及 `PyTorch Windows` 讨论论坛上为社区提供支持。
+[pcicrawler](https://github.com/facebook/pcicrawler)
+`pcicrawler` 是一个 `CLI` 工具，用于显示/过滤/导出有关 `PCI` 或 `PCI Express` 设备及其拓扑的信息。 
 
-[TensorFlow 2.3.0](https://github.com/tensorflow/tensorflow/releases)
+### 最近更新
 
-### 那些活动
+[Python 3.9.0rc1](https://pythoninsider.blogspot.com/2020/08/python-390rc1-is-now-available.html) 
 
-[Virtual: PyData SoCal Meetup August 2020](https://www.meetup.com/PyData-SoCal/events/271952262/)
-本次研讨会将讨论在 `CORD19` 数据集上使用GPT2进行抽象文本总结的缺点、痛点和益处。我们将讨论可解释性如何应用于模型验证之外，以及它如何适合数据科学家的迭代工作流程，特别是NLP。
+[Django 3.1](https://docs.djangoproject.com/en/3.1/releases/3.1/)
 
-[Virtual: DC Python Meetup  August 2020](https://www.meetup.com/dcpython/events/272102598/)
-加入硅谷的 `python` 专家 `Moshe Zadka` 的组织，他将在2小时的免费培训课程中，继续他之前的培训课程，提供关于 `mocks` 的全面培训。编写高质量的单元测试是每个软件工程师应该具备的技能。
+[Django bugfix releases issued: 3.0.9 and 2.2.15](https://www.djangoproject.com/weblog/2020/aug/03/django-bugfix-releases-309-2215/)
 
-[Virtual: Miami PyLadies Meetup August 2020](https://www.meetup.com/Miami-PyLadies/events/272059618/)
-请听 `Claire McKay Bowen` 博士介绍什么是 `SDC`，调查 `SDC` 方法是如何实施的，并涵盖目前在应用较新的 `SDC` 方法方面的长期挑战。她将提供一些具有激励性的例子，例如目前与城市研究所和国税局合作，生成合成的报税数据，这些数据对于分析美国总统候选人的税收政策建议是非常宝贵的。
+
 
 #### Posa：
 
