@@ -37,6 +37,13 @@ slots:
     min_value:  0.0
     max_value:  0.1
     auto_fill: false
+
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
 responses:
   utter_greet:
   - text: "Hey! How are you?"
@@ -92,13 +99,9 @@ responses:
   - text: 到#每日用药记录打卡小程序
   utter_S3.4.8:
   - text: 为你们也是操碎了心啊
+  utter_S4.3:
+  - text: 0.1 及以上
   utter_S4.1:
   - text: 0.0 及以下
   utter_S4.2:
   - text: 0.0 - 0.1 之间
-  utter_S4.3:
-  - text: 0.1 及以上
-
-session_config:
-  session_expiration_time: 60
-  carry_over_slots_to_new_session: true

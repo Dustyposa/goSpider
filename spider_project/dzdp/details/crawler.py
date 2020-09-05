@@ -96,7 +96,7 @@ class AllMsgGenerator:
                            "originUrl": f"http://www.dianping.com/shop/{self.shop_id}",
                            'shopType': 10,
                            'cityId': 8,
-                           '_token': "eJxVjltrg0AQhf/LvHbR2XgX8rBgaE3VkmKkUnyIGjbWS4yKUUv+ezeQPBQGzsw358D5hc7NwaaIqFIC47EDG6iEkg4Ehl58NIsapokUDcUkkP1jFC2NQNpFDtjfVDeRUFNP7uRTgAdBDRPy3FdGQhQUc3e5wgSnYWhtWb5er1JeHJq2aLiUnWu5P51bmSqoGpahomgDIlKHIiK0fOjhocPz9kV94e0L3ojtuJ3CuVT85S348DZVsMwvF2szT0EYT74T7N5NPobzag6ifbf0fMx8tWf7KuZOxU6X14nHtdam9ZZFnLeey2me7nasZOmP/+Wx9RpufyXkWpM=",
+                           '_token': "eJxVTttuglAQ/Jd97QkcbodL0gcvxUIVRY0IjQ/gBaii4MGiNP33rok+NNlkZmdnsvMDZ2cDlkQpVSUC39szWCAJVGBAoOZ40UxZU5ikUI1qBNb/NZ0xAsl50QfrU2IGJZLBVndlisJDweCKPLmsr4hCce4uB02Q1XVpiWLTNMImj49lfkyF9akQeXYqRXyh6qauUmwDGCnmGEHcPzB+YP3cR1gfvTxPj8i27nU+4yqvdtMRTxb+jSqj9t0bD98OXnszer1pngzcNKq6y/2BrQM5qio72O3t9qu/cBzVd+KMhwP3Egda7tth0zOunrmUWZi8RO2lmLiyaZpF0c4MpfXtYWb7Qemd4kGedjvedfIx7rzC7x9djWVR",
                            }
         self.params["shopId"] = shop_id
         self.comments_parser = CommentsParser(self.session, self.params)  # 推荐菜

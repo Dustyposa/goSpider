@@ -3,6 +3,7 @@
 language: en
 pipeline:
   - name: WhitespaceTokenizer
+  - name: classification.CustomPipeline
   - name: RegexFeaturizer
   - name: LexicalSyntacticFeaturizer
   - name: CountVectorsFeaturizer
@@ -22,5 +23,5 @@ policies:
   - name: MemoizationPolicy
   - name: TEDPolicy
     max_history: 2
-    epochs: 50
+    epochs: 10
   - name: MappingPolicy
