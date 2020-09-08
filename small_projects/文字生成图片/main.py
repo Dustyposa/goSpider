@@ -84,7 +84,7 @@ class PngProducer:
             for single_data in hot_data.data:
                 drawer.text((base_x, base_y), single_data.title, fill=(255, 0, 0),
                             font=font)
-                drawer.text((h - base_x - 2 * font_size, base_y), single_data.heat, fill=(255, 0, 0),
+                drawer.text((w - base_x - 5 * font_size, base_y), single_data.heat, fill=(255, 0, 0),
                             font=font)
                 base_y += line_spacing
             base_y += line_spacing * 3
