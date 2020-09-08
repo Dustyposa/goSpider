@@ -7,7 +7,9 @@ from PIL import Image, ImageDraw, ImageFont
 
 from small_projects.文字生成图片.config import HOT_LIST_URL
 
-font = ImageFont.truetype("AaTianShiZhuYi-2.ttf")
+font_size = 30
+font = ImageFont.truetype("AaTianShiZhuYi-2.ttf", size=font_size)
+line_spacing = font_size + 5
 
 
 # img = Image.new('RGB', (200, 100), (255, 255, 255))
@@ -55,7 +57,7 @@ class HotListCrawler:
             name = hot_data.css(".cc-cd-lb>span::text").get()
             scope = hot_data.css(".cc-cd-sb-st::text").get()
             data = []
-            for single_data in sel.css(".cc-cd-cb-ll")[:10]:
+            for single_data in hot_data.css(".cc-cd-cb-ll")[:10]:
                 title = single_data.css(".t::text").get()
                 heat = single_data.css(".e::text").get()
                 data.append(SingleData(title=title, heat=heat))
@@ -71,19 +73,21 @@ class PngProducer:
     @classmethod
     def draw_from_hot_data(cls, data: List[HotData]):
         data_length = len(data)
-        img = Image.new('RGB', (400, 300 * data_length), (255, 255, 255))
+        w, h = 1200, 600
+        img = Image.new('RGB', (w, h * data_length), (255, 255, 255))
         drawer = ImageDraw.Draw(img)
         base_x, base_y = 10, 10
         for hot_data in data:
             drawer.text((base_x, base_y), hot_data.name, fill=(255, 0, 0),
                         font=font)
-            base_y += 20
+            base_y += line_spacing
             for single_data in hot_data.data:
                 drawer.text((base_x, base_y), single_data.title, fill=(255, 0, 0),
                             font=font)
-                drawer.text((base_x + 200, base_y), single_data.heat, fill=(255, 0, 0),
+                drawer.text((h - base_x - 2 * font_size, base_y), single_data.heat, fill=(255, 0, 0),
                             font=font)
-                base_y += 15
+                base_y += line_spacing
+            base_y += line_spacing * 3
 
         cls.save(img)
 
