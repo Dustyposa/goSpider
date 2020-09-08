@@ -3,9 +3,11 @@ from typing import List
 
 import requests
 from parsel import Selector
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageFont
 
 from small_projects.文字生成图片.config import HOT_LIST_URL
+
+font = ImageFont.truetype("AaTianShiZhuYi-2.ttf")
 
 
 # img = Image.new('RGB', (200, 100), (255, 255, 255))
@@ -73,14 +75,25 @@ class PngProducer:
         drawer = ImageDraw.Draw(img)
         base_x, base_y = 10, 10
         for hot_data in data:
-            drawer.text((base_x, base_y), hot_data.name, fill=(255, 0, 0))
-            base_y += 10
+            drawer.text((base_x, base_y), hot_data.name, fill=(255, 0, 0),
+                        font=font)
+            base_y += 20
+            for single_data in hot_data.data:
+                drawer.text((base_x, base_y), single_data.title, fill=(255, 0, 0),
+                            font=font)
+                drawer.text((base_x + 200, base_y), single_data.heat, fill=(255, 0, 0),
+                            font=font)
+                base_y += 15
 
-    def save(self):
+        cls.save(img)
+
+    @classmethod
+    def save(cls, img):
         with open("res.png", "wb") as fp:
             img.save(fp, 'png')
             print("生成图片成功")
 
 
 if __name__ == '__main__':
-    HotListCrawler.crawl()
+    data = HotListCrawler.crawl()
+    PngProducer.draw_from_hot_data(data)
