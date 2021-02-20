@@ -14,7 +14,7 @@ from orjson import dumps
 class CustomAppHandler(TimedRotatingFileHandler):
     def emit(self, record: logging.LogRecord) -> None:  # pragma: no cover
         self.format(record)
-        print(record.asctime)
+        # print(record.asctime)
         pprint(record.__dict__)
         # Get corresponding Loguru level if it exists
         # try:
@@ -59,10 +59,11 @@ handlers = [
 
 #
 logger.configure(handlers=handlers)
-logger.add(sink=CustomAppHandler("test.log", when="M"), format=format_record)
+logger.add(sink=CustomAppHandler("test.log", when="M"))
+# logger.add(sink=CustomAppHandler("test.log", when="M"), format=format_record)
 # logger.configure(handlers=handlers)
 logger.info("this is a logger， 加上中文")
-import time
-time.sleep(2 * 45)
+# import time
+# time.sleep(2 * 45)
 
 logger.info("this is a logger2222222， 加上中文")
